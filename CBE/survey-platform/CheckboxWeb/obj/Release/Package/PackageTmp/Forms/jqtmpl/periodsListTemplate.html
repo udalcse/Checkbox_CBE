@@ -1,0 +1,12 @@
+﻿ <div class="gridHeader ckbxGridHeader">
+    <div class="fixed_50 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/periodList/id", "Period Id")}</b></div>
+    <div class="fixed_175 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/periodList/name", "Name")}</b></div>
+    <div class="fixed_150 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/periodList/start", "Start")}</b></div>
+    <div class="fixed_150 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/periodList/finish", "Finish")}</b></div>
+    <div class="left"></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, report) items}}
+    {{tmpl(report, {index: index}) 'periodListItemTemplate.html'}}
+{{/each}}

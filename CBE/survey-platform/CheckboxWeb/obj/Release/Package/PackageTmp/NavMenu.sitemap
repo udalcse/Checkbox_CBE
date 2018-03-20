@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <!-- Top Level Node -->
+    <siteMapNode url="~/None.aspx">
+        <!--
+            The icons used are determined
+            by the title field.  The ICON itself is /Images/ckbx_Icon_[title].gif and the image for the Text is
+            /Images/ckbx_Text_[title].gif.
+
+            To specify whether an item is available for specific users, the AllowAnonymousAccess or RequiredRoles attributes
+            can be set.  If neither is set, the option will be available to all logged-in users.  If RequiredPermissions is set
+            (true / false), the item will be displayed/hidden accordingly for anonymous users.  When RequiredPermissions is set, the value
+            should be a comma-separated list of permissions.  If the logged-in user is in a role that grants any one of these permissions,
+            then the item will be displayed.  Finally, SystemAdminOnly specfies the item is only available to users in the
+            System Administrator role.
+        -->
+
+        <!-- Manage Surveys -->
+        <siteMapNode url="~/Forms/Manage.aspx" key="dashboard" title="Surveys" description="Survey Manager" RequiredRolePermissions="Form.Edit,Analysis.Administer" prefix="false" >
+          <siteMapNode url="~/Forms/Surveys/Edit.aspx" key="editing" prefix="false" >
+            <siteMapNode url="~/Forms/Surveys/Reports/Manage.aspx" key="reports" prefix="true" >
+              <siteMapNode url="~/Forms/Surveys/Reports/Filters/Manage.aspx" key="filters" prefix="true" />
+              <siteMapNode url="~/Forms/Surveys/Reports/Edit.aspx" key="reportedit" prefix="true" />
+            </siteMapNode>
+            <siteMapNode url="~/Forms/Surveys/Responses/Manage.aspx" key="responses" prefix="true" />
+            <siteMapNode url="~/Forms/Surveys/Invitations/Manage.aspx" key="invitations" prefix="true" />
+          </siteMapNode>
+        </siteMapNode>
+
+        <!-- Available Surveys for Respondent-->
+        <siteMapNode url="~/AvailableSurveys.aspx?" title="Surveys"  description="Available Surveys" AllowAuthenticated="true" RequiredRolePermissions="Form.Fill" ExcludedRolePermissions="Form.Edit,Analysis.Administer" />
+
+
+        <!-- Available Surveys - Hidden for now until AvailableSurveys completed -->
+        <siteMapNode url="~/AvailableSurveys.aspx" title="Surveys"  description="Available Surveys" AllowAuthenticated="false" />
+      
+        <!-- Available Reports -->
+        <siteMapNode url="~/AvailableReports.aspx" title="Reports" description="Available Reports" AllowAuthenticated="false" />
+
+      <!-- User Management -->
+      <siteMapNode url="~/Users/Default.aspx" title="Users" description="Users" RequiredRolePermissions="Group.View,EmailList.View">
+        <siteMapNode url="~/Users/Groups/Manage.aspx" title="Groups" description="Groups" RequiredRolePermissions="Group.View" />
+      </siteMapNode>
+
+        <!-- Styles -->
+      <siteMapNode url="~/Styles/Manage.aspx" title="Styles" description="Style Manager" RequiredRolePermissions="Form.Edit">
+        <siteMapNode url="~/Styles/Forms/Edit.aspx" title="Styles" description="Style Editor" RequiredRolePermissions="Form.Edit"/>
+      </siteMapNode>
+
+        <!-- Item Libraries -->
+        <siteMapNode url="~/Libraries/Manage.aspx" title="Libraries"  description="Libraries" LicienseLimit="LibraryLimit" RequiredRolePermissions="Library.Edit" />
+        
+
+        <!-- Invitations -->
+        <!--<siteMapNode url="~/Invitations/Manage.aspx?folder=0" title="Invitations"  description="Invitations" RequiredRolePermissions="Form.Administer" />-->
+
+        <!-- Settings -->
+        <!--<siteMapNode url="~/Settings/Default.aspx" title="Settings"  description="Settings" RequiredRoles="System Administrator" />-->
+     
+
+        <!-- Help -->
+        <!--<siteMapNode url="~/Help/Public/Default.htm" target="_blank" title="Help"  description="Help" AllowAuthenticated="false"/>
+        <siteMapNode url="~/Help/Admin/Default.htm" target="_blank" title="Help"  description="Help" AllowAnonymous="false"/>-->
+
+        <!-- Login Page -->
+        <siteMapNode url="~/Login.aspx" title="Login" description="Login" AllowAuthenticated="false"  />
+
+        <!-- Logout -->
+        <!--<siteMapNode url="~/Logout.aspx" title="Logout"  description="Logout" AllowAnonymous="false" />-->
+    </siteMapNode>
+</siteMap>

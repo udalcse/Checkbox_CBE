@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+<setParameter name="DatabaseName" value="checkbox" />
+<setParameter name="DatabaseHostname" value="localhost" />
+<setParameter name="DatabaseInstanceName" value="" />
+<setParameter name="DatabaseUsername" value="checkbox" />
+<setParameter name="DatabasePassword" value="checkbox" />
+<setParameter name="DatabaseAdminUsername" value="checkbox" />
+<setParameter name="DatabaseAdminPassword" value="checkbox" />
+<setParameter name="AdminUsername" value="admin" />
+<setParameter name="AdminPassword" value="2getin" />
+<setParameter name="DatabaseDeployArgs" value="" />
+<setParameter name="AdminUserGUID" value="da6271f2-b898-4489-87f4-1e548645a335" />
+<setParameter name="SystemEmailAddress" value="" />
+</parameters>

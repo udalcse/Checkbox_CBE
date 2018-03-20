@@ -1,0 +1,9 @@
+﻿{{if ($item.index % 2 == 0)}}
+    <div class="gridContent zebra surveySearchResult" itemType="survey" surveyId="${ID}">
+{{else}}
+    <div class="gridContent detailZebra surveySearchResult" itemType="survey" surveyId="${ID}">
+{{/if}}
+        <div class="fixed_175 left surveyGuid">${SurveyGuid}</div>
+        <div class="fixed_175 left">${Name}</div>
+        <br class="clear" />
+    </div>

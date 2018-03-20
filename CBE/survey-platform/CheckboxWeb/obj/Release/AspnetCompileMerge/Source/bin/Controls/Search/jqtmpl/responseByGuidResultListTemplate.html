@@ -1,0 +1,10 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_175 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/responseList/guid", "Guid")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/responseList/user", "User")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/responseList/ended", "Ended")}</b></div>
+    <br class="clear" />
+ </div>
+ 
+ {{each(index, response) items}}
+   {{tmpl(response, {index: index}) 'responseByGuidResultListItemTemplate.html'}}
+{{/each}}

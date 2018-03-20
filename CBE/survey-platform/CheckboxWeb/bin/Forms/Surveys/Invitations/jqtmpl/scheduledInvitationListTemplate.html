@@ -1,0 +1,38 @@
+﻿<div class="gridHeader">
+    <div class="fixed_25 left" style="width:4% !important;"><input type="checkbox" id="_selectAllInvitations"/></div>
+    <div class="fixed_25 left headerPart" sortField="InvitationId">
+        <span class="header_sorter hand">
+            <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/invitationID", "ID")}</b></span>
+            <span class="toggle-arrow-up gridsorter" sortField="InvitationId" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_150 left headerPart" sortField="Name">
+        <span class="header_sorter hand">
+            <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/name", "Name")}</b></span>
+            <span class="toggle-arrow-up gridsorter" sortField="Name" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_50 left headerPart" sortField="CreatedBy">
+        <span class="header_sorter hand">
+            <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/createdBy", "Created By")}</b></span>
+            <span class="toggle-arrow-up gridsorter" sortField="CreatedBy" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_50 left headerPart" sortField="LastSentOn">
+        <span class="header_sorter hand">
+            <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/lastSent", "Last Sent")}</b></span>
+            <span class="toggle-arrow-up gridsorter" sortField="LastSentOn" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_50 left" sortField="Scheduled"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/scheduledDate", "Scheduled Date")}</b></div>
+     <div class="fixed_150 left headerPart" sortField="">
+         <span class="header_sorter hand">
+             <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/status", "Status")}</b></span>
+         </span>
+     </div>
+    <br class="clear" />
+ </div>
+
+{{each(index, invitation) items}}
+    {{tmpl(invitation, {index: index}) 'scheduledInvitationListItemTemplate.html'}}
+{{/each}}

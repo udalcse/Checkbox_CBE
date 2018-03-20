@@ -1,0 +1,48 @@
+﻿{{if ($item.index % 2 == 0)}}
+        <div class="gridContent zebra">
+{{else}}
+        <div class="gridContent detailZebra">
+{{/if}}
+        <div class="fixed_50 left">
+            {{if CanBeDeleted}}
+            <input type="checkbox" scheduleItemId="${InvitationScheduleID}" class="selectScheduleItem"/>
+            {{/if}}
+        </div>
+            
+        <div class="fixed_150 left">
+            {{if InvitationActivityType == 'Reminder'}}
+            ${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.ascx/reminder", "Reminder")}
+            {{else}}
+            ${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.ascx/invitation", "Invitation")}
+            {{/if}}
+        </div>
+        <div class="fixed_150 left">
+            {{if ProcessingFinished==null}}
+            <input type="text" invitationId="${InvitationID}" scheduleItemId="${InvitationScheduleID}" id="dateinput${InvitationScheduleID}" value="${dateUtils.jsonDateToInvariantDateString(Scheduled)}" oldvalue="${dateUtils.jsonDateToInvariantDateString(Scheduled)}" class="dateTimePickerInput" style="width:100px"/>
+            <img src="../../../App_Themes/CheckboxTheme/Images/chk_off.png" scheduleItemId="${InvitationScheduleID}" class="cancelScheduleImg" style="display:none" title="Cancel" />
+            <img src="../../../App_Themes/CheckboxTheme/Images/chk_on.png" scheduleItemId="${InvitationScheduleID}" class="saveScheduleImg" style="display:none" title="Save" />
+            {{/if}}
+        </div>
+        {{if Scheduled != null }}
+            <div class="fixed_150 left">${dateUtils.jsonDateToInvariantDateString(ProcessingStarted)}</div>
+            <div class="fixed_150 left">
+            ${dateUtils.jsonDateToInvariantDateString(ProcessingFinished)}
+            </div>
+        {{/if}}
+        <div class="fixed_175 left">
+        {{if ErrorMessage != null && ErrorMessage != ""}}
+            ${ErrorMessage}
+        {{/if}}
+
+        {{if BouncedEmails.length}}
+                <a href="#" onclick="event=event||window.event;if(event){event.stopPropagation();};$('#bounced${InvitationScheduleID}').show();setTimeout(function(){$('#bounced${InvitationScheduleID}').hide('slow');}, 5000);">&gt;&gt;</a>
+                <div id="bounced${InvitationScheduleID}" style="display:none;">
+                    {{each(index, email) BouncedEmails}}
+                            ${email}
+                    {{/each}}
+                </div>
+        {{/if}}
+
+        </div>
+
+        </div> 

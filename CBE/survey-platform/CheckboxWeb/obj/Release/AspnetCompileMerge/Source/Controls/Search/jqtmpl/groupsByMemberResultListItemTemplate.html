@@ -1,0 +1,10 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra groupSearchResult" groupId="${DatabaseId}" id="groupContainer_${group.DatabaseId}" index="${index}">
+{{else}}
+    <div class="gridContent detailZebra groupSearchResult" groupId="${DatabaseId}" id="groupContainer_${group.DatabaseId}" index="${index}">
+{{/if}}
+        <div class="fixed_150 left groupResultGroupName">${Name}</div>
+        <div class="fixed_125 left">${CreatedBy}</div>
+        <div class="fixed_100 left">${MemberCount}</div>
+        <br class="clear" />
+    </div>

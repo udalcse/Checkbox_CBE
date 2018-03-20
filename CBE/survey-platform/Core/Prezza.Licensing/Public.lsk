@@ -1,0 +1,18 @@
+<SigningKey version="2.0">
+  <RSAKeyValue>
+    <Modulus>vN38N5Lynuhmh4PLB7u/vSL7FWgou+UvzTnTNbGQ+SRoY5yctb8LTKRSufU/PsJ6cXq8Hr/RjoWZxp92D7sr8PMjYxDCPfOSbTDEaVLRKZZkRMTd0cPCgHLeAYS+gf82L5vu0flpc+YWHFbuTH0sxhM+oDK/c5p/z6rEpNMFKQk=</Modulus>
+    <Exponent>AQAB</Exponent>
+    <P>8xNCTV7edxqtyegA7tHjoCof1RvLsKoOYGzxRD/PKr9z1jNdlAmyij9dOIugmDvG6OivC34oy8/Gb+trTSdQSw==</P>
+    <Q>xujYaK5/uXHv5iafohHCw5B/Q4L5p3v/R5dsbdDmgWHr6KpTAppMzfhDU4KXwWPVtiSD7WOvI0WFs4GUhumfew==</Q>
+    <DP>MZiwYpEE21B6PUQ1TIVO6JMvw4/UU8ue+1W/NKnAX3yI6h+47Ee+Qi8DmlIDBozL3SH89V9ce5l9Z8ClOCzZWQ==</DP>
+    <DQ>m9z1RwIFv7DSRUxapkq4jTn7H1HQgzcc0GKNanfZR+UNUKG2rkFuka9KQnQAql+qpTFz117XbBIcNI8Dbbw/ZQ==</DQ>
+    <InverseQ>IpoP2bQSRkMvamvIEh6tfr4u3ZTZNsMqrJco0axfaatV8xdsNKkmUsIutNCeQ0tyk/OD/FsiRNECdPo5RmGk/A==</InverseQ>
+    <D>ouzAQdSzFaAXqnlnsMEms2s0vA/Ba+1Woixq5hvKmxHsN1oH2cT3Y2Mxthc5OtObur8M/12r0c2wjSZMO1/Uk6ZzG7ib5ZegMJOwvYGFebM/o5qGPRmruV8CBo+cu/FDt9jViT5iZZxou9OUH+tXP9ZrOPU9Faf214Xudng1iB0=</D>
+  </RSAKeyValue>
+  <SNKeys>
+    <Key size="32" e="pDt1bw==" n="w7rFPNqHdCU=" p="xXgNSQ==" q="/b67/Q==" d="nzBenw1xtA8=" />
+    <Key size="48" e="g9fx/RkB" n="veR7JUvpNyCtOPyp" p="1xSEEZfn" q="4gUzXPTv" d="AyaQbMvMMGtIAvrF" />
+    <Key size="64" e="x3GrgPhSaKk=" n="YqzgDPzE+bMYDBA4fvHISw==" p="mt5Pmxgab38=" q="oxyjusHQzTU=" d="VwO6clo8unz1mOaYnLXCEQ==" />
+    <Key size="160" e="1N0gaEe52CjPQrbTfQKIWLCjKzk=" n="f4efZAv9+TD2UkcOFZz98++Wm7Zk0TfwZudzcfwfDwz8jVP7J5HJ9Q==" p="wOFLxUmrOjZ6Hx8UjlSs71te8vE=" q="qUOL5nkBSlTbxH7niHxVYxpBP0U=" d="cMzMztgfof11JVxpJ0wVD5Eb5PglMzynYjexD/EFXKUPwCjlIW09yQ==" />
+  </SNKeys>
+</SigningKey>

@@ -1,0 +1,142 @@
+﻿<div class="survey-header-container clearfix">
+    <div class="header-content">
+        <a id="survey_favorite_button" protectPermission="Form.Edit, Analysis.Administer" href="#" class="favorite-survey"></a>
+        <a id="survey_actions_button" class="action-share action-menu-toggle action-button ckbxButton silverButton" href="#"><span class="toggle-arrow"></span>Survey Actions</a>
+
+        <a id="survey_info_button" class="action-info action-menu-toggle action-button ckbxButton silverButton" href="#"><span class="toggle-arrow"></span>Analyze</a>
+        {{if Description != '~~chopped template~~'}}
+        <a id="survey_share_button" protectPermission="Form.Administer" class="action-share action-menu-toggle action-button ckbxButton silverButton" href="#"><span class="toggle-arrow"></span>Share</a>
+        {{/if}}
+        <a class="action-edit action-button ckbxButton orangeButton" protectPermission="Form.Edit" href="Surveys/Edit.aspx?s=${Id}" windowName="wizard">${textHelper.getTextValue("/pageMenu/survey_editor/_edit", "Edit")} &raquo;</a>
+        <div id="survey_info_menu" class="groupMenu">
+            <ul class="itemActionMenu" style="width: " data-assosiatedbutton="survey_info_button">
+                <li class="responses" protectPermission="Analysis.Responses.View"><a class="ckbxButton" href="Surveys/Responses/Manage.aspx?s=${Id}">${textHelper.getTextValue("/pageMenu/survey_editor/viewResponses", "View Responses")}</a></li>
+                <li class="reports" protectPermission="Analysis.Create"><a class="ckbxButton" href="Surveys/Reports/Manage.aspx?s=${Id}">${textHelper.getTextValue("/pageMenu/survey_editor/summaryReports", "Summary Reports")}</a></li>
+                <li class="exportdata" protectPermission="Analysis.Responses.View"><a class="ckbxButton" href="javascript:showDialog('Surveys/Responses/Export.aspx?s=${Id}', 'longlargeProperties');">${textHelper.getTextValue("/pageMenu/survey_editor/exportData", "Export Data")}</a></li>
+                 
+            </ul>
+        </div>
+        {{if Description != '~~chopped template~~'}}
+        <div id="survey_share_menu" class="groupMenu">
+            <ul class="itemActionMenu" data-assosiatedbutton="survey_share_button">
+                <li protectpermission="Form.Edit"><a class="ckbxButton" href="javascript:showDialog('Surveys/Test.aspx?s=${Id}', 'wizard');" id="testSurveyLink">${textHelper.getTextValue("/pageMenu/survey_editor/_takeSurvey", "Test")}</a></li>
+                <li protectPermission="Form.Administer"><a class="ckbxButton" href="javascript:showDialog('Surveys/Launch.aspx?s=${Id}&onClose=onDialogClosed', 'wizard');">Launch</a></li>
+                <li protectPermission="Form.Administer" class="popup"><a class="ckbxButton" href="#"><span class="toggle-arrow"></span>Social Sharing</a>
+                    <ul class="itemActionMenu groupMenu " style="width: 7em !important; left: -7em !important;">
+                        <li protectPermission="Form.Administer"><a class="ckbxButton statistics_TwitterShare" href="${TwitterUrl}" onclick=" javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">${textHelper.getTextValue("/pageMenu/survey_editor/Twitter" , "Twitter")}</a></li>
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="${FacebookUrl}" onclick=" javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">${textHelper.getTextValue("/pageMenu/survey_editor/Facebook" , "Facebook")}</a></li>
+                        <li protectpermission="Form.Administer"><a class="ckbxButton" href="${LinkedInUrl}" onclick=" javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">${textHelper.getTextValue("/pageMenu/survey_editor/LinkedIn" , "LinkedIn")}</a></li>
+                        <li protectpermission="Form.Administer"><a class="ckbxButton" href="${GplusUrl}" onclick=" javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">${textHelper.getTextValue("/pageMenu/survey_editor/Google+" , "Google+")}</a></li>
+                    </ul>
+                </li>
+                <li protectPermission="Form.Administer"><a class="ckbxButton" href="javascript:showDialog('Surveys/EmbedMenu.aspx?s=${Id}', 450, 650)">Link or Embed</a></li>
+                {{if Id && ShowInvitations}}
+                <li class="popup"><a class="ckbxButton" href="#"><span class="toggle-arrow"></span>${textHelper.getTextValue("/pageMenu/survey_editor/EmailInvitations" , "Email Invitations")}</a>
+                    <ul class="itemActionMenu groupMenu" style="top: 6em !important; left: -10em !important;">
+                        {{if SheduledInvitations}}
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="javascript:showDialog('Surveys/Invitations/AddScheduled.aspx?s=${Id}', 'wizard')">${textHelper.getTextValue("/pageMenu/survey_editor/newInvitation", "+Email Invitation")}</a></li>
+                        {{else}}
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="javascript:showDialog('Surveys/Invitations/Add.aspx?s=${Id}', 'wizard')">${textHelper.getTextValue("/pageMenu/survey_editor/newInvitation", "+Email Invitation")}</a></li>
+                        {{/if}}
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="Surveys/Invitations/Manage.aspx?s=${Id}">${textHelper.getTextValue("/pageMenu/survey_editor/manageInvitations", "Manage Invitations")}</a></li>
+                    </ul>
+                </li>
+                <li class="popup">
+                    <a class="ckbxButton" href="#"><span class="toggle-arrow"></span>${textHelper.getTextValue("/pageMenu/survey_editor/UserLinks" , "User Links")}</a>
+                    <ul class="itemActionMenu groupMenu" style="top: 6em !important; left: -10em !important;">
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="javascript:showDialog('Surveys/Invitations/AddUsers.aspx?s=${Id}', 'wizard')">${textHelper.getTextValue("/pageMenu/survey_editor/plusUserLinks", "+User Links")}</a></li>
+                        <li protectPermission="Form.Administer"><a class="ckbxButton" href="Surveys/Invitations/UserManage.aspx?s=${Id}">${textHelper.getTextValue("/pageMenu/survey_editor/manageUserLinks", "Manage Links")}</a></li>
+                    </ul>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+        {{/if}}
+        <div id="survey_actions_menu" class="groupMenu">
+            <ul class="itemActionMenu" data-assosiatedbutton="survey_actions_button">
+                <li protectpermission="Form.Administer"><a class="ckbxButton" href="javascript:void(0);" surveydashlink="Surveys/Copy.aspx?s=${Id}" windowname="properties">${textHelper.getTextValue("/pageMenu/survey_editor/_copy_move", "Copy/Move")}</a></li>
+                <li protectpermission="Form.Edit"><a class="ckbxButton" href="Surveys/Preview.aspx?s=${Id}&loc=${DefaultLanguage}" target="_blank">${textHelper.getTextValue("/pageMenu/survey_editor/_preview", "Preview")}</a></li>
+                <li protectPermission="Form.Administer" class="popup"><a class="ckbxButton" href="#"><span class="toggle-arrow"></span>Export</a>
+                    <ul class="itemActionMenu groupMenu " style="top: 4em !important; left: -10.2em !important;">
+                        <li protectpermission="Form.Edit"><a class="ckbxButton statistics_ExportData" href="javascript:void(0);" id="exportSurveyLink">${textHelper.getTextValue("/pageText/manageSurveys.aspx/export", "Export Survey XML")}</a></li>
+                        <li protectpermission="Form.Edit"><a class="ckbxButton pdfExportButton" href="javascript:showDialog('Surveys/Export.aspx?s=${Id}&loc= EN-US' , 'properties')" id="pdfExportLink">${textHelper.getTextValue("/pageMenu/survey_editor/_printPdf","Export Survey PDF")}</a></li>
+                    </ul>
+                </li>
+                <li protectpermission="Form.Edit"><a class="ckbxButton" href="Surveys/preview.aspx?print=default&s=${Id}&loc=EN-US" id="printLink">${textHelper.getTextValue("/pageMenu/survey_editor/_print")}</a></li>
+                <li protectpermission="Form.Administer"><a class="ckbxButton redButton" href="javascript:void(0);" id="deleteSurveyLink">${textHelper.getTextValue("/users/groupDashboardTemplate/delete", "Delete")}</a></li>
+            </ul>
+        </div>
+
+        <h3 id="surveyName" settingName="Name" editMode="Text">${Name}</h3>
+    </div>
+   
+</div>
+<p style="float:left;font-size:11px;">
+    Survey is 
+    {{if IsActive}}
+        <span style="color: green; font-weight:bold;">Active </span><span id ="surveyStatusDates"></span>
+    {{else}}
+        <span style="color:red;font-weight:bold;">Inactive </span>
+    {{/if}}
+</p>
+<p style="float:right;font-size:11px;padding-right:22px;">
+<label class="inline">${textHelper.getTextValue("/pageText/forms/manage.aspx/createdBy", "Created by ")}</label><span>${CreatedBy}</span></p>
+    
+<br  class="clear" />
+
+{{if Description != '~~chopped template~~'}}
+<div class="surveyDescription">${Description}</div>
+
+<div class="survey-links-container" protectPermission="Form.Fill">
+        <div class="setting-item">
+            <label class="inline">Default URL<a class="tooltip" data-message="${textHelper.getTextValue("/controlText/surveyDashboard/tooltip/defaultUrl", "Default URL")}" href="#"></a></label>
+            <span class="static url-default"><a title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled." target="_blank" href="${SurveyUrls[0]}">${SurveyUrls[0]}</a></span>
+        </div>
+    {{if SurveyUrls.length > 1}}
+    <div class="setting-item">
+        <label class="inline">Custom Url<a class="tooltip" data-message="${textHelper.getTextValue("/controlText/surveyDashboard/tooltip/customUrl", "Custom URL")}" href="#"></a></label>
+        <span class="static url-default"><a title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled." target="_blank" href="${SurveyUrls[1]}">${SurveyUrls[1]}</a></span>
+    </div>
+    {{/if}}
+   
+   
+   <!--
+    {{if CanRewriteSurveyUrl}}
+    <div class="dashStatsContent" id="altSurveyUrlPlace">
+        {{if SurveyUrls.length > 1}}
+            <input class="surveyUrl left" type="text" readonly="readonly" value="${SurveyUrls[1]}" size="${SurveyUrls[1].length}" />
+            <a class="left editUrlLink" href="" title="Click to edit this">&nbsp;</a>
+            <a class="left newWindow" href="${SurveyUrls[0]}" target="_blank" title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled.">&nbsp;</a>
+            <br class="clear" />
+        {{else}}
+            <input class="surveyUrl left" type="text" readonly="readonly" value="" size="50" />
+            <a class="left editUrlLink" href="" title="Click to edit this">&nbsp;</a>
+            <a class="left newWindow" href="" target="_blank" title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled.">&nbsp;</a>
+            <br class="clear" />
+        {{/if}}
+    </div>
+{{/if}}
+-->
+    <!--<a class="ckbxButton silverButton roundedCorners shadow999 border999 smallButton" id="addCustomUrlBtn" style="display:none;margin: 10px 0px 10px 25px">${textHelper.getTextValue("/controlText/surveyDashboard/addCustomUrl", "Add Custom URL")}</a>-->
+
+    <div class="dashStatsContent" id="editAltSurveyUrlPlace" style="display:none;">
+        <div class="surveyUrl left" style="margin-top:2px;">${AppBaseUrl}/</div>
+        <input class="left" type="text" size="50" value="" id="newAltUrl" />
+        <select id="newAltUrlExtension" class="left">
+        {{each(index, extension) AllowedUrlRewriteExtensions}}
+            <option value=".${extension}">.${extension}</option>
+        {{/each}}
+        </select>
+        <div class="checkOn hand left" style="margin-top:2px;" id="saveNewAltUrlBtn">&nbsp;</div>
+        <div class="checkOff hand left" style="margin-top:2px;" id="cancelNewAltUrlBtn">&nbsp;</div>
+        <div class="spinner16 left" style="margin-top:2px;display:none;" id="newAltUrlSpinner">&nbsp;</div>
+        <div class="error message left" style="margin-left:10px;display:none;" id="URL_INVALID_Error">${textHelper.getTextValue("/pageText/surveyProperties.aspx/invalidName", "Only letters and numbers allowed.")}</div>
+        <div class="error message left" style="margin-left:10px;display:none;" id="URL_MAPPING_IN_USE_Error">${textHelper.getTextValue("/pageText/surveyProperties.aspx/mappingExists", "This url is already in use by another survey.")}</div>
+        <div class="error message left" style="margin-left:10px;display:none;" id="URL_FILE_EXISTS_Error">${textHelper.getTextValue("/pageText/surveyProperties.aspx/mappedFileExists", "A file with this name already exists on the web server.")}</div>
+        <div class="error message left" style="margin-left:10px;display:none;" id="URL_TOO_LONG_Error">${textHelper.getTextValue("/pageText/surveyProperties.aspx/alternateURLTooLong", "Alternate URL length is limited by 200 characters.")}</div>
+        <br class="clear" />
+    </div>
+</div><!-- .survey-links-container -->
+<div class="setting-section-divider"></div>
+
+{{/if}}

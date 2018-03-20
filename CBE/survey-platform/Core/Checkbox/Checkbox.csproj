@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FDE1F16-41BF-45BD-A1FC-4A8EFAE02AFB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Checkbox</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Checkbox</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Checkbox/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Checkbox.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x86'">
+    <OutputPath>bin\x86\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x64'">
+    <OutputPath>bin\x64\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x86'">
+    <OutputPath>bin\x86\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x64'">
+    <OutputPath>bin\x64\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affirma.ThreeSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1e54ad6f8dc2fac8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AffirmaThreeSharp.2.0.0.2\lib\Affirma.ThreeSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HiQPdf, Version=9.21.0.0, Culture=neutral, PublicKeyToken=acd8b62594985b24, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\hiqpdf.9.21\lib\net40\HiQPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spss">
+      <HintPath>..\..\binaries\SPSS\CheckboxSPSS_x64\Spss.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Checkbox.Wcf.Services.Proxies\Checkbox.Wcf.Services.Proxies.csproj">
+      <Project>{B181F819-319B-4390-86C9-B51B940C4133}</Project>
+      <Name>Checkbox.Wcf.Services.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox.Common\Checkbox.Common.csproj">
+      <Name>Checkbox.Common</Name>
+      <Project>{50A76D2E-1479-4AB8-949F-9A5B699ED84E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox.LicenseLibrary\Checkbox.LicenseLibrary.csproj">
+      <Project>{3E42F329-2034-4B5F-B8B5-D7EA3D624120}</Project>
+      <Name>Checkbox.LicenseLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework.Common\Prezza.Framework.Common.csproj">
+      <Name>Prezza.Framework.Common</Name>
+      <Project>{2328F020-50E3-4DAF-A4F9-9C1A4D3CA238}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework\Prezza.Framework.csproj">
+      <Name>Prezza.Framework</Name>
+      <Project>{D8846AF1-ABF4-41AB-8BBE-07AF7AFB597C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analytics\Analysis.cs" />
+    <Compile Include="Analytics\AnalysisTemplateDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Analytics\Computation\AverageScoreByPageDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\NetPromoterScoreItemDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\NetPromoterScoreStatisticsItemDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\PointsDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\StatisticsItemDataCalculator.cs" />
+    <Compile Include="Analytics\Configuration\ReportPerformanceConfiguration.cs" />
+    <Compile Include="Analytics\Data\AnalysisAnswerData.cs">
+    </Compile>
+    <Compile Include="Analytics\Data\AnalysisDataProxy.cs" />
+    <Compile Include="Analytics\Data\AnalysisDataProxyCacheItem.cs" />
+    <Compile Include="Analytics\Data\AnalysisItemResult.cs" />
+    <Compile Include="Analytics\Data\DetailedScoreData.cs" />
+    <Compile Include="Analytics\Computation\AverageScoreDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\CrossTabReportDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\DetailsItemAnswerAggregator.cs" />
+    <Compile Include="Analytics\Computation\FrequencyDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\MatrixReportDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\ReportDataCalculator.cs" />
+    <Compile Include="Analytics\Computation\ItemAnswerAggregator.cs" />
+    <Compile Include="Analytics\Computation\TabularReportDataCalculator.cs" />
+    <Compile Include="Analytics\Data\MatrixSummaryAnalysisItemResult.cs" />
+    <Compile Include="Analytics\Filters\Configuration\SourceItemFilterData.cs" />
+    <Compile Include="Analytics\Export\XmlDataExporter.cs" />
+    <Compile Include="Analytics\Filters\Configuration\FilterDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Analytics\Filters\ContainsFilter.cs" />
+    <Compile Include="Analytics\Filters\DoesntContainFilter.cs" />
+    <Compile Include="Analytics\Filters\GreaterEqualFilter.cs" />
+    <Compile Include="Analytics\Filters\GreaterFilter.cs" />
+    <Compile Include="Analytics\Filters\LessEqualFilter.cs" />
+    <Compile Include="Analytics\Filters\LessFilter.cs" />
+    <Compile Include="Analytics\Filters\SourceItemFilter.cs" />
+    <Compile Include="Analytics\Filters\Validators\IFilterValidator.cs" />
+    <Compile Include="Analytics\Filters\Validators\NumericSliderFilterValidator.cs" />
+    <Compile Include="Analytics\Import\XmlDataImporter.cs" />
+    <Compile Include="Analytics\Import\XmlDataValidator.cs" />
+    <Compile Include="Analytics\Items\AverageScoreByPageItem.cs" />
+    <Compile Include="Analytics\Items\Configuration\AnalysisItemDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Analytics\Items\Configuration\AnalysisItemFactory.cs" />
+    <Compile Include="Analytics\Items\Configuration\AverageScoreByPageItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\GradientColorDirectorSkillsMatrixGraphData.cs" />
+    <Compile Include="Analytics\Items\Configuration\HeatMapData.cs" />
+    <Compile Include="Analytics\Items\Configuration\NetPromoterScoreItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\NetPromoterScoreStatisticsItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\RankOrderSummaryTableData.cs" />
+    <Compile Include="Analytics\Items\Configuration\CrossTabItemDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Analytics\Items\Configuration\AnalysisItemConfigurationManager.cs" />
+    <Compile Include="Analytics\Items\Configuration\AnalysisWizardOptions.cs" />
+    <Compile Include="Analytics\Items\Configuration\RankOrderSummaryItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\StatisticsItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\GovernancePriorityGraphData.cs" />
+    <Compile Include="Analytics\Items\GovernancePrioritySummaryItem.cs" />
+    <Compile Include="Analytics\Items\GradientColorSkillsMatrixItem.cs" />
+    <Compile Include="Analytics\Items\HeatMapItem.cs" />
+    <Compile Include="Analytics\Items\ISummaryChartItemAppearance.cs" />
+    <Compile Include="Analytics\Items\NetPromoterScoreItem.cs" />
+    <Compile Include="Analytics\Items\NetPromoterScoreItemBase.cs" />
+    <Compile Include="Analytics\Items\NetPromoterScoreItemResult.cs" />
+    <Compile Include="Analytics\Items\NetPromoterScoreStatisticsItem.cs" />
+    <Compile Include="Analytics\Items\NetPromoterScoreStatisticsItemResult.cs" />
+    <Compile Include="Analytics\Items\RankOrderSummary.cs" />
+    <Compile Include="Analytics\Items\StatisticsItem.cs" />
+    <Compile Include="Analytics\Items\StatisticsItemReportingOption.cs" />
+    <Compile Include="Analytics\Items\StatisticsItemResult.cs" />
+    <Compile Include="Analytics\Items\UI\AverageScoreByPageItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\GovernancePrioritySummaryAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\GradientColorDirectorSkillsMatrixAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\HeatMapSummaryAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\NetPromoterScoreAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\NetPromoterScoreStatisticsAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\StatisticsItemAppearanceData.cs" />
+    <Compile Include="Configuration\StaticConfiguration.cs" />
+    <Compile Include="Forms\AutocompleteListManager.cs" />
+    <Compile Include="Forms\CachableResponse.cs" />
+    <Compile Include="Forms\CacheContext.cs" />
+    <Compile Include="Forms\Data\BasicItemMetaData.cs" />
+    <Compile Include="Forms\Items\Configuration\JavascriptItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\NetPromoterScoreItemData.cs" />
+    <Compile Include="Forms\Items\JavascriptItem.cs" />
+    <Compile Include="Forms\Items\NetPromoterScore.cs" />
+    <Compile Include="Forms\Items\ProgressBarOrientation.cs" />
+    <Compile Include="Forms\Items\ScoredItem.cs" />
+    <Compile Include="Forms\AutocompleteList.cs" />
+    <Compile Include="Forms\Items\UI\Javascript.cs" />
+    <Compile Include="Forms\Items\UI\NetPromoterScore.cs" />
+    <Compile Include="Forms\Items\UI\ProfileUpdater.cs" />
+    <Compile Include="Forms\Logic\Configuration\ExpressionSourceType.cs" />
+    <Compile Include="Forms\Logic\ItemDependentOperand.cs" />
+    <Compile Include="Forms\ResponseStateEntities\ResponseAnswerEntity.cs" />
+    <Compile Include="Forms\ResponseStateEntities\ResponseItemOptionOrderEntity.cs" />
+    <Compile Include="Forms\ResponseStateEntities\ResponseLogEntity.cs" />
+    <Compile Include="Forms\ResponseStateEntities\ResponsePageItemOrderEntity.cs" />
+    <Compile Include="Forms\SurveySectionManager.cs" />
+    <Compile Include="Forms\SurveyTerm.cs" />
+    <Compile Include="Invitations\CompanyProfile.cs" />
+    <Compile Include="Invitations\CompanyProfileFacade.cs" />
+    <Compile Include="Invitations\InvitationEmailTextValidator.cs" />
+    <Compile Include="Invitations\UserInvitation.cs" />
+    <Compile Include="Management\JwtLogin.cs" />
+    <Compile Include="Invitations\InvitationOptOutType.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\AutocompleteRemoteSourceLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\JavascriptItemLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\LibraryLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\VersionLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\VersionMaxLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\VersionMinLimit.cs" />
+    <Compile Include="Management\ProfilePropertiesUpdater.cs" />
+    <Compile Include="PdfExport\HiQPdfExportProvider.cs" />
+    <Compile Include="PdfExport\IPdfExportProvider.cs" />
+    <Compile Include="PdfExport\PdfExportManager.cs" />
+    <Compile Include="PdfExport\PdfExportOrientation.cs" />
+    <Compile Include="PdfExport\PdfExportResult.cs" />
+    <Compile Include="PdfExport\PdfExportSettings.cs" />
+    <Compile Include="Progress\CacheableProgressProvider.cs" />
+    <Compile Include="Progress\DatabaseProvider\DatabaseProgressProvider.cs" />
+    <Compile Include="Progress\DatabaseProvider\ProgressProvider.cs" />
+    <Compile Include="Progress\IProgressProvider.cs" />
+    <Compile Include="Progress\ProgressProviderBase.cs" />
+    <Compile Include="Search\SearchManager.cs" />
+    <Compile Include="Styles\MobileStyle.cs" />
+    <Compile Include="Styles\MobileStyleManager.cs" />
+    <Compile Include="SystemMode\SystemModeEvent.cs" />
+    <Compile Include="SystemMode\SystemModeManager.cs" />
+    <Compile Include="SystemMode\SystemModeEventType.cs" />
+    <Compile Include="Timeline\TimelineManager.cs" />
+    <Compile Include="Forms\EditMode.cs" />
+    <Compile Include="Forms\Items\CategorizedMatrixItem.cs" />
+    <Compile Include="Forms\Items\Configuration\CategorizedMatrixItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\CategorizedMatrixItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\CategorizedSelectManyData.cs" />
+    <Compile Include="Forms\Items\Configuration\CategorizedSelectOneData.cs" />
+    <Compile Include="Forms\Items\Configuration\AddressVerifierItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\CalculatorItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\DisplayAnalysisTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\EmailResponseItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\RankOrderItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ICategorizedItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ICompositeXmlSerializable.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemImportReader.cs" />
+    <Compile Include="Forms\Items\Configuration\ListDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Analytics\LightweightAnalysisTemplate.cs" />
+    <Compile Include="Forms\Data\LightweightItemMetaData.cs" />
+    <Compile Include="Forms\Data\LightweightOptionMetaData.cs" />
+    <Compile Include="Forms\Data\SurveyMetaDataProxy.cs" />
+    <Compile Include="Analytics\Export\CsvDataExporter.cs" />
+    <Compile Include="Analytics\Export\SpssCompatibleCsvDataExporter.cs" />
+    <Compile Include="Analytics\Export\NativeSpssDataExporter.cs" />
+    <Compile Include="Analytics\Export\SurveyDataExporter.cs" />
+    <Compile Include="Analytics\Export\ExportManager.cs" />
+    <Compile Include="Analytics\Export\ExportOptions.cs" />
+    <Compile Include="Analytics\Filters\AnalysisFilterCollection.cs" />
+    <Compile Include="Analytics\Filters\AnalysisItemFilterCollection.cs" />
+    <Compile Include="Analytics\Filters\AnsweredFilter.cs" />
+    <Compile Include="Analytics\Filters\AnswerDataObjectFilter.cs" />
+    <Compile Include="Analytics\Filters\Configuration\ItemFilterData.cs" />
+    <Compile Include="Analytics\Filters\Configuration\ProfileFilterData.cs" />
+    <Compile Include="Analytics\Filters\Configuration\ResponseFilterData.cs" />
+    <Compile Include="Analytics\Filters\EqualFilter.cs" />
+    <Compile Include="Analytics\AnalysisPage.cs" />
+    <Compile Include="Analytics\AnalysisTemplateManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analytics\Filters\Filter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analytics\Filters\FilterDataCollection.cs" />
+    <Compile Include="Analytics\Filters\Configuration\FilterData.cs" />
+    <Compile Include="Analytics\Filters\Configuration\FilterFactory.cs" />
+    <Compile Include="Analytics\Filters\IAnswerDataObjectFilter.cs" />
+    <Compile Include="Analytics\Filters\IQueryFilter.cs" />
+    <Compile Include="Analytics\Filters\ItemFilter.cs" />
+    <Compile Include="Analytics\Filters\ItemQueryFilter.cs" />
+    <Compile Include="Analytics\Filters\NotAnsweredFilter.cs" />
+    <Compile Include="Analytics\Filters\NotEqualFilter.cs" />
+    <Compile Include="Analytics\Filters\ProfileFilter.cs" />
+    <Compile Include="Analytics\Filters\ResponseFilter.cs" />
+    <Compile Include="Analytics\Items\Configuration\CSVExportItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\DetailsItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\SPSSExportItemData.cs" />
+    <Compile Include="Analytics\Items\CSVExportItem.cs" />
+    <Compile Include="Analytics\Items\DetailsItem.cs" />
+    <Compile Include="Analytics\Items\FrequencyAnalysisDataCollection.cs" />
+    <Compile Include="Analytics\Items\AverageScoreAnalysisData.cs" />
+    <Compile Include="Analytics\Items\AverageScoreItem.cs" />
+    <Compile Include="Analytics\Items\Configuration\AnalysisItemData.cs" />
+    <Compile Include="Analytics\Items\AnalysisItem.cs" />
+    <Compile Include="Analytics\AnalysisTemplate.cs" />
+    <Compile Include="Analytics\Items\Configuration\AverageScoreCalculation.cs" />
+    <Compile Include="Analytics\Items\Configuration\AverageScoreItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\CrossTabItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\ExportItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\FrequencyItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\MatrixSummaryItemData.cs" />
+    <Compile Include="Analytics\Items\Configuration\OtherOption.cs" />
+    <Compile Include="Analytics\Items\Configuration\TotalScoreItemData.cs" />
+    <Compile Include="Analytics\Items\CrossTabAnalysisData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analytics\Items\CrossTabItem.cs" />
+    <Compile Include="Analytics\Items\ExportItem.cs" />
+    <Compile Include="Analytics\Items\FrequencyAnalysisData.cs" />
+    <Compile Include="Analytics\Items\FrequencyItem.cs" />
+    <Compile Include="Analytics\Items\MatrixSummaryAnalysisData.cs" />
+    <Compile Include="Analytics\Items\MatrixSummaryItem.cs" />
+    <Compile Include="Analytics\Items\SPSSExportItem.cs" />
+    <Compile Include="Analytics\Items\TotalScoreItem.cs" />
+    <Compile Include="Analytics\Items\UI\AnalysisItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\AverageScoreItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\CrossTabItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\DetailsItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\GraphOptionsLoader.cs" />
+    <Compile Include="Analytics\Items\UI\GraphType.cs" />
+    <Compile Include="Analytics\Items\UI\FrequencyItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\MatrixSummaryItemAppearanceData.cs" />
+    <Compile Include="Analytics\Items\UI\TotalScoreItemAppearanceData.cs" />
+    <Compile Include="Analytics\ResponseManager.cs" />
+    <Compile Include="Analytics\Security\AnalysisPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analytics\Security\AnalysisSecurityEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Install\UpgradeInstaller.cs" />
+    <Compile Include="Content\ContentFolder.cs" />
+    <Compile Include="Content\ContentItem.cs" />
+    <Compile Include="Content\DBContentFolder.cs" />
+    <Compile Include="Content\DBContentItem.cs" />
+    <Compile Include="Content\DBContentManager.cs" />
+    <Compile Include="Forms\FolderManager.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Items\Configuration\MatrixDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Items\Configuration\RowSelectData.cs" />
+    <Compile Include="Forms\Items\Configuration\ScoreMessage.cs" />
+    <Compile Include="Forms\Items\Configuration\ScoreMessageDictionary.cs" />
+    <Compile Include="Forms\Items\AddressVerifierItem.cs" />
+    <Compile Include="Forms\Items\Configuration\SliderItemData.cs" />
+    <Compile Include="Forms\Items\Calculator.cs" />
+    <Compile Include="Forms\Items\MatrixChildType.cs" />
+    <Compile Include="Forms\Items\RankOrder.cs" />
+    <Compile Include="Forms\Items\IItemFormatter.cs" />
+    <Compile Include="Forms\IResponseSession.cs" />
+    <Compile Include="Forms\Items\AnswerableItem.cs" />
+    <Compile Include="Forms\Items\CaptchaItem.cs" />
+    <Compile Include="Configuration\Install\ApplicationInstaller.cs" />
+    <Compile Include="Configuration\ConfigurationValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Install\InstallFileInfo.cs" />
+    <Compile Include="Configuration\Install\ModuleInfo.cs" />
+    <Compile Include="Configuration\Install\PatchInfo.cs" />
+    <Compile Include="Configuration\Install\ProductInfo.cs" />
+    <Compile Include="Forms\FormFolder.cs" />
+    <Compile Include="Forms\IAnswerData.cs" />
+    <Compile Include="Forms\Items\AnswerFormat.cs" />
+    <Compile Include="Forms\Items\CloseWindowItem.cs" />
+    <Compile Include="Forms\Items\Configuration\CaptchaItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\CloseWindowItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\CurrentScoreItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\DisplayAnalysisItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\DisplayResponseItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\DisplayResponseItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\EmailItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\EmailItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\EmailResponseItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\UploadItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\HorizontalLineItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\HtmlItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\HtmlItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\ICompositeItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ImageItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\LabelledItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\ListData.cs">
+    </Compile>
+    <Compile Include="Forms\Items\Configuration\ListOptionData.cs" />
+    <Compile Include="Forms\Items\Configuration\LocalizableResponseItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\LocalizableResponseItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\MatrixItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\MatrixSumTotalItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\MessageItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\MultiLineTextItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ProfileUpdaterItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\RedirectItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\RedirectItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\ResponseItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ScoreMessageItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ScoreMessageTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\TabularItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\TextItemDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\RatingScaleItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\RatingScaleItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\Configuration\SelectItemTextDecorator.cs" />
+    <Compile Include="Forms\Items\CurrentScore.cs" />
+    <Compile Include="Forms\Items\DisplayAnalysisItem.cs" />
+    <Compile Include="Forms\Items\DisplayResponseItem.cs" />
+    <Compile Include="Forms\Items\EmailItem.cs" />
+    <Compile Include="Forms\Items\EmailResponseItem.cs" />
+    <Compile Include="Forms\Items\IItemRenderer.cs" />
+    <Compile Include="Forms\Items\ItemFormatterFactory.cs" />
+    <Compile Include="Forms\Items\ItemRendererFactory.cs" />
+    <Compile Include="Forms\Items\MatrixColumnInfo.cs" />
+    <Compile Include="Forms\Items\MatrixRowInfo.cs" />
+    <Compile Include="Forms\Items\RandomComparer.cs" />
+    <Compile Include="Forms\Items\RowSelect.cs" />
+    <Compile Include="Forms\Items\Slider.cs" />
+    <Compile Include="Forms\Items\UI\AppearanceDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Items\UI\AppearanceProperty.cs" />
+    <Compile Include="Forms\Items\UI\CategorizedMatrix.cs" />
+    <Compile Include="Forms\Items\UI\CategorizedMatrixCheckboxes.cs" />
+    <Compile Include="Forms\Items\UI\CategorizedMatrixDropDownList.cs" />
+    <Compile Include="Forms\Items\UI\CategorizedMatrixRadioButtons.cs" />
+    <Compile Include="Forms\Items\UI\CategorizedMatrixRadioButtonScale.cs" />
+    <Compile Include="Forms\Items\UI\AddressVerifier.cs" />
+    <Compile Include="Forms\Items\UI\Calculator.cs" />
+    <Compile Include="Forms\Items\UI\MatrixSlider.cs" />
+    <Compile Include="Forms\Items\UI\RankOrder.cs" />
+    <Compile Include="Forms\Items\UI\MatrixMessage.cs" />
+    <Compile Include="Forms\Items\UI\MatrixSumTotal.cs" />
+    <Compile Include="Forms\Items\UI\RowSelectAppearanceData.cs" />
+    <Compile Include="Forms\Items\UI\Slider.cs" />
+    <Compile Include="Forms\Items\XsltItemFormatter.cs" />
+    <Compile Include="Forms\LibraryTemplateDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\LightweightLibraryTemplate.cs" />
+    <Compile Include="Forms\LightweightResponseTemplate.cs" />
+    <Compile Include="Forms\Logic\CategorizedItemOperand.cs" />
+    <Compile Include="Forms\Logic\Configuration\ActionReceiverType.cs" />
+    <Compile Include="Forms\Logic\Configuration\CategorizedMatrixItemOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ItemRuleImportReader.cs" />
+    <Compile Include="Forms\Logic\Configuration\ItemRuleWriter.cs" />
+    <Compile Include="Forms\Logic\Configuration\PageRuleImportReader.cs" />
+    <Compile Include="Forms\Logic\Configuration\PageRuleWriter.cs" />
+    <Compile Include="Forms\Logic\Configuration\RuleExportWriter.cs" />
+    <Compile Include="Forms\Logic\Configuration\RuleImportReader.cs" />
+    <Compile Include="Forms\Logic\FormulaCalculator.cs" />
+    <Compile Include="Forms\Logic\RulesEntities.cs" />
+    <Compile Include="Forms\Logic\RulesObjectSet.cs" />
+    <Compile Include="Forms\PageImportReader.cs" />
+    <Compile Include="Forms\RenderMode.cs" />
+    <Compile Include="Forms\ResponseProgressInfo.cs" />
+    <Compile Include="Forms\ResponseFormatter.cs" />
+    <Compile Include="Forms\ResponsePageFormatter.cs" />
+    <Compile Include="Forms\ResponseTemplateDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Items\UploadItem.cs" />
+    <Compile Include="Forms\Items\HorizontalLine.cs" />
+    <Compile Include="Forms\Items\IAnswerable.cs" />
+    <Compile Include="Forms\Items\ICompositeItem.cs" />
+    <Compile Include="Forms\Items\IScored.cs" />
+    <Compile Include="Forms\Items\MatrixSumTotalItem.cs" />
+    <Compile Include="Forms\Items\MultiLineTextBoxItem.cs" />
+    <Compile Include="Forms\Items\ProfileUpdater.cs" />
+    <Compile Include="Forms\Items\RedirectItem.cs" />
+    <Compile Include="Forms\Items\ResponseItem.cs" />
+    <Compile Include="Forms\Items\ScoreMessageItem.cs" />
+    <Compile Include="Forms\Items\TabularItem.cs" />
+    <Compile Include="Forms\Items\UI\AppearanceDataManager.cs" />
+    <Compile Include="Forms\Items\UI\Captcha.cs" />
+    <Compile Include="Forms\Items\UI\CloseWindowAppearanceData.cs" />
+    <Compile Include="Forms\Items\UI\DisplayResponse.cs" />
+    <Compile Include="Forms\Items\UI\Email.cs" />
+    <Compile Include="Forms\Items\UI\Upload.cs" />
+    <Compile Include="Forms\Items\UI\Hidden.cs" />
+    <Compile Include="Forms\Items\UI\HorizontalLine.cs" />
+    <Compile Include="Forms\Items\UI\Html.cs" />
+    <Compile Include="Forms\Items\UI\HtmlImage.cs" />
+    <Compile Include="Forms\Items\UI\LabelledItemAppearanceData.cs" />
+    <Compile Include="Forms\Items\UI\LabelPosition.cs" />
+    <Compile Include="Forms\Items\UI\Matrix.cs" />
+    <Compile Include="Forms\Items\UI\MatrixCheckboxes.cs" />
+    <Compile Include="Forms\Items\UI\MatrixDropDownList.cs" />
+    <Compile Include="Forms\Items\UI\MatrixRadioButtons.cs" />
+    <Compile Include="Forms\Items\UI\MatrixRadioButtonScale.cs" />
+    <Compile Include="Forms\Items\UI\MatrixRatingScale.cs" />
+    <Compile Include="Forms\Items\UI\MatrixSelectLayout.cs" />
+    <Compile Include="Forms\Items\UI\MatrixSingleLineText.cs" />
+    <Compile Include="Forms\Items\UI\MultiLineText.cs" />
+    <Compile Include="Forms\Items\UI\RadioButtonScale.cs" />
+    <Compile Include="Forms\Items\UI\RatingScale.cs" />
+    <Compile Include="Forms\Items\UI\RedirectItemAppearanceData.cs" />
+    <Compile Include="Forms\Items\UI\ScoreMessageAppearanceData.cs" />
+    <Compile Include="Forms\LibraryTemplate.cs" />
+    <Compile Include="Forms\LibraryTemplateManager.cs" />
+    <Compile Include="Forms\LightweightTemplate.cs" />
+    <Compile Include="Forms\Logic\Configuration\ActionDataFactory.cs" />
+    <Compile Include="Forms\Logic\Configuration\IncludeExcludeActionData.cs" />
+    <Compile Include="Forms\Logic\Configuration\MatrixItemOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ResponseOperandData.cs" />
+    <Compile Include="Forms\Logic\CompositeExpression.cs" />
+    <Compile Include="Forms\Logic\Configuration\ActionData.cs" />
+    <Compile Include="Forms\Logic\Configuration\BranchPageActionData.cs" />
+    <Compile Include="Forms\Logic\Configuration\CompositeExpressionData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ExpressionData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ItemOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\OperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\OperandDataFactory.cs" />
+    <Compile Include="Forms\Logic\Configuration\OptionOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ProfileOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\RuleData.cs" />
+    <Compile Include="Forms\Logic\Configuration\RuleDataService.cs" />
+    <Compile Include="Forms\Logic\Configuration\StringOperandData.cs" />
+    <Compile Include="Forms\Logic\Configuration\ValidationState.cs" />
+    <Compile Include="Forms\Logic\ExpressionBuilder.cs" />
+    <Compile Include="Forms\Logic\ExpressionOperandType.cs" />
+    <Compile Include="Forms\Logic\GoToPageAction.cs" />
+    <Compile Include="Forms\Logic\IncludeExcludeAction.cs" />
+    <Compile Include="Forms\Logic\OperandComparer.cs" />
+    <Compile Include="Forms\Logic\AnswerableOperand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Logic\OperandDataType.cs" />
+    <Compile Include="Forms\Logic\OperandValue.cs" />
+    <Compile Include="Forms\Logic\OptionOperand.cs" />
+    <Compile Include="Forms\Logic\GroupOperandValue.cs" />
+    <Compile Include="Forms\Logic\ProfileOperand.cs" />
+    <Compile Include="Forms\Logic\ResponseOperand.cs" />
+    <Compile Include="Forms\Logic\RulesEngine.cs" />
+    <Compile Include="Forms\Logic\RuleType.cs" />
+    <Compile Include="Forms\Logic\SelectItemOperand.cs" />
+    <Compile Include="Forms\Logic\SelectOperandValue.cs" />
+    <Compile Include="Forms\Logic\StringOperand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Logic\SumOperand.cs" />
+    <Compile Include="Forms\Logic\SumOperandValue.cs" />
+    <Compile Include="Forms\Page.cs" />
+    <Compile Include="Forms\PageLayout\Configuration\LayoutTemplateExtendedProperty.cs" />
+    <Compile Include="Forms\PageLayout\Configuration\LayoutTemplateExtendedPropertyType.cs" />
+    <Compile Include="Forms\PageLayout\Configuration\PageLayoutConfigurationFactory.cs" />
+    <Compile Include="Forms\PageLayout\Configuration\PageLayoutTemplateData.cs" />
+    <Compile Include="Forms\PageLayout\ILayoutZone.cs" />
+    <Compile Include="Forms\PageLayout\IPageLayoutTemplate.cs" />
+    <Compile Include="Forms\PageLayout\PageLayoutTemplateManager.cs" />
+    <Compile Include="Forms\Piping\PipeHandlers\AnswerPipeHandler.cs" />
+    <Compile Include="Forms\Piping\PipeHandlers\PipeHandler.cs" />
+    <Compile Include="Forms\Piping\PipeHandlers\ProfilePipeHandler.cs" />
+    <Compile Include="Forms\Piping\PipeHandlers\ResponsePipeHandler.cs" />
+    <Compile Include="Forms\Piping\PipeHandlers\ResponseTemplatePipeHandler.cs" />
+    <Compile Include="Forms\Piping\Tokens\ItemToken.cs" />
+    <Compile Include="Forms\Piping\PipeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Piping\PipeMediator.cs" />
+    <Compile Include="Forms\Piping\Tokens\ProfileToken.cs" />
+    <Compile Include="Forms\Piping\Tokens\ResponseTemplateToken.cs" />
+    <Compile Include="Forms\Piping\Tokens\ResponseToken.cs" />
+    <Compile Include="Forms\Piping\Tokens\Token.cs" />
+    <Compile Include="Forms\Piping\Tokens\TokenType.cs" />
+    <Compile Include="Forms\ReportSecurityType.cs" />
+    <Compile Include="Forms\Response.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemConfigurationManager.cs" />
+    <Compile Include="Forms\Items\Configuration\HiddenItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ImageItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\ItemConfigurationFactory.cs" />
+    <Compile Include="Forms\Items\Configuration\LabelledItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\MatrixItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\MessageItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\Select1Data.cs" />
+    <Compile Include="Forms\Items\Configuration\SelectItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\SelectManyData.cs" />
+    <Compile Include="Forms\Items\Configuration\SingleLineTextItemData.cs" />
+    <Compile Include="Forms\Items\Configuration\TextItemData.cs" />
+    <Compile Include="Forms\Items\ListOption.cs" />
+    <Compile Include="Forms\Exceptions.cs" />
+    <Compile Include="Forms\ResponseController.cs" />
+    <Compile Include="Forms\ResponsePage.cs" />
+    <Compile Include="Forms\ResponseProperties.cs" />
+    <Compile Include="Forms\ResponseSession.cs" />
+    <Compile Include="Forms\ResponseState.cs" />
+    <Compile Include="Forms\ResponseStateManager.cs" />
+    <Compile Include="Forms\ResponseTemplateFilterCollection.cs" />
+    <Compile Include="Forms\ResponseViewDisplayFlags.cs" />
+    <Compile Include="Forms\SecurityType.cs" />
+    <Compile Include="Forms\Security\LibraryPolicy.cs" />
+    <Compile Include="Forms\Security\LibrarySecurityEditor.cs" />
+    <Compile Include="Forms\Security\Principal\AnonymousRespondent.cs" />
+    <Compile Include="Forms\Security\Providers\ResponseTemplateAuthorizationProvider.cs" />
+    <Compile Include="Forms\Security\Providers\ResponseTemplateAuthorizationProviderData.cs" />
+    <Compile Include="Forms\SurveyBehaviorSettings.cs" />
+    <Compile Include="Forms\SurveyLanguageSettings.cs" />
+    <Compile Include="Forms\SurveyStyleSettings.cs" />
+    <Compile Include="Forms\Template.cs" />
+    <Compile Include="Forms\TemplateDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TemplatePage.cs" />
+    <Compile Include="Forms\TemplatePageComparer.cs" />
+    <Compile Include="Forms\Items\UI\AppearanceData.cs" />
+    <Compile Include="Forms\Items\UI\AppearanceDataFactory.cs" />
+    <Compile Include="Forms\Items\UI\Checkboxes.cs" />
+    <Compile Include="Forms\Items\UI\DropDown.cs" />
+    <Compile Include="Forms\Items\UI\Layout.cs" />
+    <Compile Include="Forms\Items\UI\SelectLayout.cs" />
+    <Compile Include="Forms\Items\UI\Message.cs" />
+    <Compile Include="Forms\Items\UI\RadioButtons.cs" />
+    <Compile Include="Forms\Items\UI\SingleLineText.cs" />
+    <Compile Include="Forms\Items\HiddenItem.cs" />
+    <Compile Include="Forms\Items\HtmlItem.cs" />
+    <Compile Include="Forms\Items\ImageItem.cs" />
+    <Compile Include="Forms\Items\Item.cs" />
+    <Compile Include="Forms\Items\SelectItem.cs" />
+    <Compile Include="Forms\Items\MatrixItem.cs" />
+    <Compile Include="Forms\Items\Message.cs" />
+    <Compile Include="Forms\Items\LabelledItem.cs" />
+    <Compile Include="Forms\Items\RatingScale.cs" />
+    <Compile Include="Forms\Items\Select1.cs" />
+    <Compile Include="Forms\Items\SelectMany.cs" />
+    <Compile Include="Forms\Items\SingleLineTextBoxItem.cs" />
+    <Compile Include="Forms\Items\TextItem.cs" />
+    <Compile Include="Forms\Logic\Action.cs" />
+    <Compile Include="Forms\Logic\Expression.cs" />
+    <Compile Include="Forms\Logic\IOperandComparer.cs" />
+    <Compile Include="Forms\Logic\LogicalOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Logic\Operand.cs" />
+    <Compile Include="Forms\Logic\Rule.cs" />
+    <Compile Include="Forms\ResponseTemplate.cs" />
+    <Compile Include="Forms\ResponseTemplateManager.cs" />
+    <Compile Include="Forms\Security\FormFolderPolicy.cs" />
+    <Compile Include="Forms\Security\FormFolderSecurityEditor.cs" />
+    <Compile Include="Forms\Security\FormPolicy.cs" />
+    <Compile Include="Forms\Security\FormRespondentSecurityEditor.cs" />
+    <Compile Include="Forms\Security\FormSecurityEditor.cs" />
+    <Compile Include="Forms\Security\FormViewerSecurityEditor.cs" />
+    <Compile Include="Forms\TemplatePageExportWriter.cs" />
+    <Compile Include="Forms\TemplatePageType.cs" />
+    <Compile Include="Forms\UploadItemManager.cs" />
+    <Compile Include="Forms\UrlMapper.cs" />
+    <Compile Include="Forms\Validation\AddressVerifierValidator.cs" />
+    <Compile Include="Forms\Validation\AlphaNumericValidator.cs" />
+    <Compile Include="Forms\Validation\AlphaValidator.cs" />
+    <Compile Include="Forms\Validation\AlternateURLValidator.cs" />
+    <Compile Include="Forms\Validation\AnswerLengthValidator.cs" />
+    <Compile Include="Forms\Validation\CanadaZipCodeValidator.cs" />
+    <Compile Include="Forms\Validation\CaptchaItemValidator.cs" />
+    <Compile Include="Forms\Validation\PasswordValidator.cs" />
+    <Compile Include="Forms\Validation\CustomFormatValidator.cs" />
+    <Compile Include="Forms\Validation\DateRangeValidator.cs" />
+    <Compile Include="Forms\Validation\DateValidator.cs" />
+    <Compile Include="Forms\Validation\DecimalValidator.cs" />
+    <Compile Include="Forms\Validation\DoubleRangeValidator.cs" />
+    <Compile Include="Forms\Validation\EmailValidator.cs" />
+    <Compile Include="Forms\Validation\IntegerValidator.cs" />
+    <Compile Include="Forms\Validation\IPAddressValidator.cs" />
+    <Compile Include="Forms\Validation\ItemAnswerUniqueValidator.cs" />
+    <Compile Include="Forms\Validation\ItemSumValidator.cs" />
+    <Compile Include="Forms\Validation\LowerCaseAlphaValidator.cs" />
+    <Compile Include="Forms\Validation\MatrixItemValidator.cs" />
+    <Compile Include="Forms\Validation\NumericValidator.cs" />
+    <Compile Include="Forms\Validation\PercentageValidator.cs" />
+    <Compile Include="Forms\Validation\RangeValidator.cs" />
+    <Compile Include="Forms\Validation\RankOrderValidator.cs" />
+    <Compile Include="Forms\Validation\RatingScaleValidator.cs" />
+    <Compile Include="Forms\Validation\RegularExpressionValidator.cs" />
+    <Compile Include="Forms\Validation\RequiredItemValidator.cs" />
+    <Compile Include="Forms\Validation\ROTWDateValidator.cs" />
+    <Compile Include="Forms\Validation\RowSelectValidator.cs" />
+    <Compile Include="Forms\Validation\SelectItemValidator.cs" />
+    <Compile Include="Forms\Validation\SelectManyValidator.cs" />
+    <Compile Include="Forms\Validation\SingleLineTextAnswerValidator.cs" />
+    <Compile Include="Forms\Validation\SocialSecurityValidator.cs" />
+    <Compile Include="Forms\Validation\TextAnswerValidator.cs" />
+    <Compile Include="Forms\Validation\UploadItemValidator.cs" />
+    <Compile Include="Forms\Validation\UpperCaseAlphaValidator.cs" />
+    <Compile Include="Forms\Validation\UrlValidator.cs" />
+    <Compile Include="Forms\Validation\USADateValidator.cs" />
+    <Compile Include="Forms\Validation\USCurrencyValidator.cs" />
+    <Compile Include="Forms\Validation\USPhoneValidator.cs" />
+    <Compile Include="Forms\Validation\USZipCodeValidator.cs" />
+    <Compile Include="Forms\Validation\Validator.cs" />
+    <Compile Include="Globalization\Configuration\GlobalizationConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Configuration\ISOCode.cs" />
+    <Compile Include="Globalization\GlobalizationManager.cs" />
+    <Compile Include="Globalization\Text\IImportExportTextProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\ITextProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\LanguageTextComparer.cs" />
+    <Compile Include="Globalization\Text\Providers\DefaultLanguageTextProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\Providers\DefaultLanguageTextProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\TextDecorator.cs" />
+    <Compile Include="Globalization\Text\TextFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\TextManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\Text\TextProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Help\HelpManager.cs" />
+    <Compile Include="Invitations\Export\CsvDataExporter.cs" />
+    <Compile Include="Invitations\Export\ExportManager.cs" />
+    <Compile Include="Invitations\Export\InvitationDataExporter.cs" />
+    <Compile Include="Invitations\InvitationActivityType.cs" />
+    <Compile Include="Invitations\InvitationSchedule.cs" />
+    <Compile Include="Invitations\Invitation.cs" />
+    <Compile Include="Invitations\InvitationManager.cs" />
+    <Compile Include="Invitations\InvitationPipeMediator.cs" />
+    <Compile Include="Invitations\InvitationSender.cs" />
+    <Compile Include="Invitations\InvitationTemplate.cs" />
+    <Compile Include="Management\Licensing\CheckboxLicense.cs" />
+    <Compile Include="Management\Licensing\CheckboxLicenseException.cs" />
+    <Compile Include="Management\Licensing\CheckboxLicenseProvider.cs" />
+    <Compile Include="Management\Licensing\LicenseValidator.cs" />
+    <Compile Include="Management\Licensing\Limits\DecrementLicenseLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\EmailLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\StaticLicenseLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\LicenseLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\NumericLicenseLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\RoleMemberLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\RolePermissionLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\InvitationLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\MandatoryCheckboxFooterLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\RatingScaleStatisticsReportItemLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\ScoredSurveyLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\SimpleSecurityLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\TrialLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\MultiLanguageLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\NetworkUserLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\Static\SpssLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\SurveyEditorLimit.cs" />
+    <Compile Include="Management\Licensing\Limits\ValueLimit.cs" />
+    <Compile Include="Management\Licensing\NullLicense.cs" />
+    <Compile Include="Management\UserContext.cs" />
+    <Compile Include="Messaging\Email\BaseEmailProvider.cs" />
+    <Compile Include="Messaging\Email\BatchStatus.cs" />
+    <Compile Include="Messaging\Email\DatabaseRelayEmailProvider.cs" />
+    <Compile Include="Messaging\Email\DatabaseRelayEmailProviderData.cs" />
+    <Compile Include="Messaging\Email\EmailAttachment.cs" />
+    <Compile Include="Messaging\Email\EmailMessageBatchStatus.cs" />
+    <Compile Include="Messaging\Email\EmailMessageStatus.cs" />
+    <Compile Include="Messaging\Email\EmailProviderDoesNotSupportBatchesException.cs" />
+    <Compile Include="Messaging\Email\IEmailAttachment.cs" />
+    <Compile Include="Messaging\Email\IEmailMessageBatchStatus.cs" />
+    <Compile Include="Messaging\Email\IEmailMessageStatus.cs" />
+    <Compile Include="Pagination\PaginationContext.cs" />
+    <Compile Include="Panels\AdHocEmailListPanel.cs" />
+    <Compile Include="Panels\EmailListManager.cs" />
+    <Compile Include="Panels\EmailListPanel.cs" />
+    <Compile Include="Panels\GroupPanel.cs" />
+    <Compile Include="Panels\IPanel.cs" />
+    <Compile Include="Panels\LightweightPanel.cs" />
+    <Compile Include="Panels\Panel.cs" />
+    <Compile Include="Panels\PanelDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\PanelFactory.cs" />
+    <Compile Include="Panels\Panelist.cs" />
+    <Compile Include="Panels\PanelManager.cs" />
+    <Compile Include="Panels\Security\EmailListPolicy.cs" />
+    <Compile Include="Panels\Security\EmailListSecurityEditor.cs" />
+    <Compile Include="Panels\UserPanel.cs" />
+    <Compile Include="Invitations\Recipient.cs" />
+    <Compile Include="Invitations\UserPanelistRecipient.cs" />
+    <Compile Include="Messaging\Configuration\MessagingConfiguration.cs" />
+    <Compile Include="Messaging\Email\EmailFactory.cs" />
+    <Compile Include="Messaging\Email\EmailGateway.cs" />
+    <Compile Include="Messaging\Email\EmailProviderFactory.cs" />
+    <Compile Include="Messaging\Email\IEmailMessage.cs" />
+    <Compile Include="Messaging\Email\IEmailProvider.cs" />
+    <Compile Include="Management\ApplicationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Management\AppSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Management\ConcurrentLoginMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Management\ErrorMessages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Management\UserLoginInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Messaging\Email\EmailMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Panels\UserPanelist.cs" />
+    <Compile Include="Progress\ProgressData.cs" />
+    <Compile Include="Progress\ProgressProvider.cs" />
+    <Compile Include="Progress\ProgressStatus.cs" />
+    <Compile Include="Security\AccessControllablePDOSecurityEditor.cs" />
+    <Compile Include="Security\AccessManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Encryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\PermissionJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Principal\CheckboxPrincipal.cs" />
+    <Compile Include="Security\ProfileManager.cs" />
+    <Compile Include="Security\Providers\DbAuthorizationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Providers\DbAuthorizationProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Providers\ICheckboxMembershipProvider.cs" />
+    <Compile Include="Security\Providers\ICheckboxProfileProvider.cs" />
+    <Compile Include="Security\Providers\ICheckboxRoleProvider.cs" />
+    <Compile Include="Security\QueryHelper.cs" />
+    <Compile Include="Security\RoleManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Ticketing.cs" />
+    <Compile Include="Styles\ChartStyleManager.cs" />
+    <Compile Include="Styles\LightweightStyleTemplate.cs" />
+    <Compile Include="Styles\StyleTemplate.cs" />
+    <Compile Include="Styles\StyleTemplateManager.cs" />
+    <Compile Include="Styles\StyleTemplateTextDecorator.cs" />
+    <Compile Include="Styles\StyleTemplateType.cs" />
+    <Compile Include="Users\CustomFieldType.cs" />
+    <Compile Include="Users\Data\UserDTO.cs" />
+    <Compile Include="Users\EveryoneGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\Group.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\GroupCache.cs" />
+    <Compile Include="Users\GroupManager.cs" />
+    <Compile Include="Users\MatrixField.cs" />
+    <Compile Include="Users\MatrixProfileProperty.cs" />
+    <Compile Include="Users\ProfileProperty.cs" />
+    <Compile Include="Users\PropertyBindingManager.cs" />
+    <Compile Include="Users\RadioButtonField.cs" />
+    <Compile Include="Users\Security\GroupPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\Security\GroupSecurityEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\Tests\GroupSecurityEditorTestFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\UserImportConfigManager.cs" />
+    <Compile Include="Users\UserManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagrams\Group.cd" />
+    <None Include="ClassDiagrams\UserManager.cd" />
+    <None Include="ClassDiagrams\CaptchaItem.cd" />
+    <None Include="ClassDiagrams\CaptchaItemAppearance.cd" />
+    <None Include="ClassDiagrams\CaptchaItemData.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

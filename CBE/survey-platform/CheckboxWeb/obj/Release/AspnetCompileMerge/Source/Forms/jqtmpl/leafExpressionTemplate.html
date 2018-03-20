@@ -1,0 +1,10 @@
+﻿{{each(index, expression) AndExpressions}}
+    {{tmpl(expression, {index: index}) 'editExpressionTemplate.html'}}
+
+    <div class="dialogSubTitle top-divider" >
+        ${textHelper.getTextValue("/expressionEditor/and", "And")}
+    </div>
+{{/each}}
+
+{{tmpl 'addExpressionTemplate.html'}}
+<br class="clear"/>    

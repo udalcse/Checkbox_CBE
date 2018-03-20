@@ -1,0 +1,16 @@
+﻿{{if ($item.index % 2 == 0)}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+
+{{if EntryType.toLowerCase() == "checkbox.users.group"}}
+    <div class="fixed_30 left aclEntryGroup">&nbsp;</div>
+{{else}}
+    <div class="fixed_30 left aclEntryUser">&nbsp;</div>
+{{/if}}
+        <div class="fixed_200 left">${ShortEntryIdentifier}</div>
+
+        <div class="fixed_25 left delete">&nbsp;</div>
+        <br class="clear" />
+    </div>

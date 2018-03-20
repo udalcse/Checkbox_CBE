@@ -1,0 +1,228 @@
+﻿<h3>${UniqueIdentifier}</h3>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        {{if AuthenticationType.toLowerCase() == 'checkboxpassworduser'}}
+        <a class="user-edit-button ckbxButton silverButton" id="_ckbxloginLink" protectPermission="Group.Edit" href="javascript:showDialog('Credentials.aspx?u=${UserGuid}&onClose=onDialogClosed', 'largeProperties');">${textHelper.getTextValue("/users/userDashboardTemplate/edit", "Edit")}</a>
+        <div style="margin-right: 10px; display: inline-block; float: right;">
+            <a class="cancelButton right" style="padding-left:10px; padding-top:3px;" protectPermission="Group.ManageUsers" href="#" onclick="onDeleteUserResponsesLink()">${textHelper.getTextValue("/pageText/Users/Manage.aspx/deleteSelectedUserResponses", "Delete User's Responses")}</a>
+            <a class="cancelButton right" style="padding-top:3px;" protectPermission="Group.Edit" id="_deleteUserLink" href="#" onclick="onDeleteUser()">${textHelper.getTextValue("/pageText/Users/Manage.aspx/deleteSelectedUser", "Delete User")}</a>&nbsp;
+        </div>
+        {{else}}
+        <a class="user-edit-button ckbxButton redButton" protectPermission="Group.ManageUsers" href="#" onclick="onDeleteUserResponsesLink()">${textHelper.getTextValue("/pageText/Users/Manage.aspx/deleteSelectedUserResponses", "Delete User's Responses")}</a>
+        <a class="user-edit-button ckbxButton silverButton" id="_extloginLink" href="#" onclick="onCredentialsEdit()">${textHelper.getTextValue("/users/userDashboardTemplate/edit", "Edit")}</a>
+        {{/if}}
+        <span class="mainStats left">${textHelper.getTextValue("/users/userDashboardTemplate/loginInformation", "Login Information")}</span>
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_125 left"><b>${textHelper.getTextValue("/users/userDashboardTemplate/userName", "User Name")} :</b></div>
+        <div class="left">${UniqueIdentifier}</div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_125 left"><b>${textHelper.getTextValue("/users/userDashboardTemplate/email", "Email")} :</b></div>
+        <div class="left">${Email}</div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_125 left"><b>${textHelper.getTextValue("/users/userDashboardTemplate/authType", "Auth Type")} :</b></div>
+        <div class="left">${AuthenticationType}</div>
+        <br class="clear" />
+    </div>
+
+    {{if AuthenticationType.toLowerCase() == 'checkboxpassworduser'}}
+    <div class="dashStatsContent detailZebra" id="autoLogin">
+        <div class="fixed_125 left"><b>${textHelper.getTextValue("/users/userDashboardTemplate/automaticLogin", "Auto Login")} :</b></div>
+        <div class="left">${$item.appRoot}/Login.aspx?u=${UserGuid}</div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+
+    <div class="dashStatsContent zebra" id="lockOut" style="display:block;" protectPermission="Group.Edit">
+        <div class="fixed_125 left"><b>${textHelper.getTextValue("/users/userDashboardTemplate/accountStatus", "User Status")} :</b></div>
+        <div class="left">
+            {{if LockedOut == true}}
+            <input id="_lockUserSwitch" type="checkbox" class="switch icons" uniformIgnore="true" />
+            {{else}}
+            <input id="_lockUserSwitch" type="checkbox" class="switch icons" value="yes" checked="checked" uniformIgnore="true" />
+            {{/if}}
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <a class="user-edit-button ckbxButton silverButton" id="_extprofileLink" protectPermission="Group.Edit" href="#" onclick="onUserEdit('Profile.aspx', 'screenSize')">${textHelper.getTextValue("/users/userDashboardTemplate/edit", "Edit")}</a>
+        <span class="mainStats left">${textHelper.getTextValue("/users/userDashboardTemplate/profileProperties", "Profile Properties")}</span>
+    </div>
+    {{each(index, item) Profile.NameValueList}}
+    {{if index % 2 == 0}}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_150 left ">
+            <b class="left">${item.Name}: </b>
+        </div>
+        {{if typeof(item.Value) == 'object'}}
+        <div class="matrixField" style="display: none">${JSON.stringify(item.Value)}</div>
+        {{else}}
+        <div class="left decodePropery">${item.Value}</div>
+        {{/if}}
+        <br class="clear" />
+    </div>
+    {{else}}
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_150 left ">
+            <b class="left">${item.Name}: </b>
+        </div>
+        {{if typeof(item.Value) == 'object'}}
+        <div class="matrixField" style="display: none">${JSON.stringify(item.Value)}</div>
+        {{else}}
+        <div class="left decodePropery">${item.Value}</div>
+        {{/if}}
+        <br class="clear" />
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <a class="user-edit-button ckbxButton silverButton" id="_ckbxrolesLink" protectPermission="Group.Edit" href="#" onclick="onUserEdit('Roles.aspx', 'largeProperties')">${textHelper.getTextValue("/users/userDashboardTemplate/edit", "Edit")}</a>
+        <span class="mainStats left">${textHelper.getTextValue("/users/userDashboardTemplate/userRoles", "User Roles")}</span>
+    </div>
+    {{each(index, item) RoleMemberships}}
+    {{if index % 2 == 0}}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_175">${item}</div>
+    </div>
+    {{else}}
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_175">${item}</div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <a class="user-edit-button ckbxButton silverButton" id="_ckbxgroupsLink" protectPermission="Group.Edit" href="#" onclick="onUserEdit('GroupMemberships.aspx', 'largeProperties')">${textHelper.getTextValue("/users/userDashboardTemplate/edit", "Edit")}</a>
+        <span class="mainStats left">${textHelper.getTextValue("/users/userDashboardTemplate/groupMemberships", "Group Memberships")}</span>
+    </div>
+    {{if GroupMemberships.length == 0}}
+    <div class="dashStatsContent">
+        <div class="fixed_250">${textHelper.getTextValue("/users/userDashboardTemplate/noGroupMemberships", "User is not a member of any user groups.")}</div>
+    </div>
+    {{else}}
+    {{each(index, item) GroupMemberships}}
+    {{if index % 2 == 0}}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_175">${item}</div>
+    </div>
+    {{else}}
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_175">${item}</div>
+    </div>
+    {{/if}}
+    {{/each}}
+    {{/if}}
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/users/userDashboardTemplate/optedOutSurveyList", "Opted Out Survey List")}</span>
+    </div>
+    {{if OptedOutFromAccount != null}}
+    <div class="dashStatsContent">
+        <div>${OptedOutFromAccount}</div>
+    </div>
+    {{if OptedOutFromAccountComment != null}}
+    <div class="dashStatsContent">
+        <div class="optOutComment">${OptedOutFromAccountComment}</div>
+    </div>
+    {{/if}}
+    {{else OptedOutSurveys.NameValueList.length == 0}}
+    <div class="dashStatsContent">
+        <div class="fixed_250">${textHelper.getTextValue("/users/userDashboardTemplate/noOptOuts", "User is not opted out of any surveys.")}</div>
+    </div>
+    {{else}}
+    <div class="optedOutList">
+        {{each(index, item) OptedOutSurveys.NameValueList}}
+        {{if index % 2 == 0}}
+        <div class="dashStatsContent zebra">
+            <div class="left truncate" style="max-width: 90%"><b>${item.Value}</b></div>
+            <div class="right"><a href="javascript:showDialog('OptOutDetails.aspx?s=${item.Name}&email=${Email}', 'Opt Out Details')">details</a></div>
+            <br class="clear" />
+        </div>
+        {{else}}
+        <div class="dashStatsContent detailZebra">
+            <div class="left truncate" style="max-width: 90%"><b>${item.Value}</b></div>
+            <div class="right"><a href="javascript:showDialog('OptOutDetails.aspx?s=${item.Name}&email=${Email}', 'Opt Out Details')">details</a></div>
+            <br class="clear" />
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var matrices = $(".matrixField");
+        $.each(matrices, function (i, val) {
+            var matrixData = $.parseJSON($(val).html());
+            if (matrixData.FieldType == 3) {
+                var radioButton = '';
+                $.each(matrixData.Options, function (index, value) {
+                    radioButton += '<input type="radio" disabled ';
+                    if ($(value)[0].IsSelected) {
+                        radioButton += 'checked="checked" ';
+                    }
+                    radioButton += '" /><label>' + $(value)[0].Name + '</label>';
+                });
+                $(this).html(radioButton);
+                $(this).css('display', 'block');
+            }
+            else {
+                $(this).html('');
+                var matrixTable = '';
+                matrixTable += '<table class="dynamicMatrix">';
+                $.each(matrixData, function (index, row) {
+                    matrixTable += '<tr class="dymanicMatrixRow">';
+                    $.each(row.Cells, function (i, col) {
+                        var cssClass = col.IsHeader || col.IsRowHeader ? "dynamicMatrixHeader" : "";
+                        matrixTable += '<td class="dynamicMatrixCol ' + cssClass + '">'
+                            + "&nbsp;" + col.Data + '</td>';
+                    });
+                    matrixTable += '</tr>';
+                });
+                matrixTable += '</table>';
+                $(this).append(matrixTable);
+                $(this).css('display', 'block');
+            }
+        });
+    });
+
+    function onUserEdit(dialogPage, mode) {
+        if ("${AuthenticationType}".toLowerCase() == 'checkboxpassworduser')
+            showDialog(dialogPage + '?u=${UserGuid}&onClose=onDialogClosed', mode);
+        else
+            showDialog(dialogPage + '?e=' + getUser() + '&onClose=onDialogClosed', mode);
+    }
+    function getUser() {
+        return "${EscapedUniqueIdentifier}".replace(/'/g, "&#39;");
+    }
+
+    function onCredentialsEdit() {
+        showDialog('Credentials.aspx?e=' + getUser() + '&onClose=onDialogClosed', 'largeproperties');
+    }
+    function onDeleteUserResponsesLink() {
+        deleteUserResponses("${EscapedUniqueIdentifier}".replace(/'/g, "&#39;"));
+    }
+    function onDeleteUser() {
+        deleteUser("${EscapedUniqueIdentifier}".replace(/'/g, "&#39;"));
+    }
+    function drawJsonElements() {
+        console.log("fff");
+    }
+
+</script>

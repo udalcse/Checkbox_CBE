@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Licenses>
+	<License signature="gKyr/k9IWaxguJo971L0TZU8z91WngvqP+CzhJQA3FGrEvxVIvtnJICEVAAaDMt6rxf8+fz9/o3LrgS5kTB5peR5GcgiiFsP6LO6uRJ82v0xKCeFwBfa6NBZN9SPbfFHRIyixWPfIJvEV2PQFtfr9NyucIeohxvXGDenzBzLqrg=" version="2.0" assemblyName="Xheo.Licensing, Version=1.1.0.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Component>*</Component>
+		<Expires>2103-02-27T00:00:00</Expires>
+		<SerialNumber>TRIAL</SerialNumber>
+		<Limits>
+			<Limit type="Registration" requiredFields="firstname,lastname" privacyPolicyUrl="http://www.xheo.com/privacypolicy.aspx" logoBitmapResource="http://www.xheo.com/images/licensing/triallogo.jpg" serialNumberIsAllCaps="true" serialNumberMask="XXXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX">
+				<Field name="email" displayName="Email Address For Update Notices (Optional)" type="Text" />
+			</Limit>
+			<Limit type="Trial" terms="This is a trial version of XHEO|Licensing. Please visit our website or click Buy Now to purchase the full version." purchaseUrl="http://www.xheo.com/buynow/ondemand.aspx?product=XSL2" infoUrl="http://www.xheo.com/products/licensing/" bitmapResource="http://www.xheo.com/licensing/Image.aspx?image=licensing2_0.jpg&amp;product=XSL" logoResource="http://www.xheo.com/images/licensing/triallogo.jpg" useGui="true" duration="30" />
+		</Limits>
+		<Values>
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+	</License>
+	<License signature="frr+kCAJvb84P+NWviNgkWS1xDAi4aUQYGXOdOaxvC8YTSF2p/j2uvV3uts19vQkkyqMexdXIQluSrqvsrHzSa7vcjoePYhwlPzB3NSwXqAQlar4h9ZHzKvoh1LTXnqHxA2azmuewIa+I5UhPrJlK0Ru2BXr2lgK2IXG9g/V9Wg=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLDEV-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com/</IssuerUrl>
+		<Tag>Developer License</Tag>
+		<Type>XSL2-D</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="kDByx47HK0N/2h4mX3k7o+xxvGCwhj2XRXNRisaHBzLEz7bCpdAttW1GjasNOtjOF2kDp6Yr3kfIYYOpVObgitN6YWhW9U+qsDZ4iOltUvXx54kgCxBj1hKy2npI/b3xzpRLbIqnLdCxxbwDUmnrocwJlJOwOtN77WUp0xdSofc=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLDVU-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com/</IssuerUrl>
+		<Tag>Developer License Upgrade</Tag>
+		<Type>XSL2-DU</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="eUuekQmtvMwehoVQ63s2623D+j+ZPdQ5libWn0exDMaqJFz0Ue64Vovy/fVTrvCGCkSS4op504YSf8W/4SKNj6460exWm5/eGiLtRu7VMKI2VdG4qmu9gPYSggsnDzKA1wzKcEWNX6SII7MnVPCctcynd746ZZ/P0Wb5wJ4ob4E=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLPRO-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Developer Pro License</Tag>
+		<Type>XSL2-DP</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="TuDnuiyy6ISvAHJLCxTdZVRmEJfIMMW9bze3CGEsHxsdRjdO4aOoEKjKd8qom2d5lr/ebMA04bVo1H5Vog/FjSchwA2nga1dmk4ursUfQcskrKbvv04A6a7cgKK4leT/2qGrsYcgOjua2p4izptIj9CAwfSD/C6vPfT6Hu5wckM=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLDPU-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Developer Pro License Upgrade</Tag>
+		<Type>XSL2-DPU</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="ORgBXDCUR2fh+9MN77a3IOI9Cv77wigzRtRCICxv8xEwTQM4uU8SRaiPvBc3exU2WmuMT1NVymwfJb+XkIiM1XkexcSnKmC5Mz9d4vGmkTHGCnd2xptn7te1mZQx0PyT7COFcE7D7D9kzXmMvlw4F89zxQu40BYE/H08kK3TKL4=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLPU2-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Developer Pro License Upgrade</Tag>
+		<Type>XSL2-DPU2</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="mC86HXevIDnEhNE3XCDIkAsLb8E8sICgJT6aef9WW1o28nDQbSYi3AbEw6A557EnOB3mjpn4DWd0gP4jnp/klbB6qN3nqsGbJG1v85dglmCvpVbbarL3dyxIHUpTsmFHFws6xesNWceJueL7rwTw6Nd5oQRJLOhzcu0u/KIAOrE=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLUNI-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Universal License</Tag>
+		<Type>XSL2-U</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="bH/5RcoXYbJ8oUsq6/pPlgBsL+pECVxpmc0mfFqp8/E5Xl+FsJpvfGki1cBmQP7hu8tvMRmGx+qW0zDC64nwGQ0W3zlH7K+AmzpKod01vph/175LXs9VZFTdC/03oZhSPNjW0HjXEIcYyOxpEFViyVrJINE2iL7y0wjArl8tFPM=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLUNU-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Universal License Upgrade</Tag>
+		<Type>XSL2-UU</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="Xkm+zmGSs658OtHQ+4KfeOFdQJdZWsCLC9tNoK1Og+NPEAzZeqI5OdLiV8d2Asyztqd04Uo4Rho7Onw/XXCS4Pn9gmhm4cya2WIWcWgJZj6gaNTsWv3VByOcQMTc7RxPY3aMmrMw8AAnbO8gGNLlhKnqyekRup586h9NEUNl4tI=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-09T00:00:00</Expires>
+		<SerialNumber>XSLUUS-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Universal License Upgrade</Tag>
+		<Type>XSL2-UUS</Type>
+		<Limits>
+			<Limit type="Or">
+				<Limit type="And">
+					<Limit type="OnServer" allowed="false" />
+					<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+				</Limit>
+				<Limit type="And">
+					<Limit type="OnServer" required="true" />
+				</Limit>
+			</Limit>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+		</Limits>
+		<Values>
+			<Value key="XL_PRO" value="TRUE" />
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+	<License signature="JCAbVRFfLJo2qycl4iifMM0w0vnWNy/VyZGIoKJG85fkHCkXRtVlwDqw8s/wmjqmEH9r0IQ9fQkp36xYVQsaMGQZ/YcnqLDLDc0Ce8nIl+1qY58aK0AmYqdkUQXfkH4b7yu7XZeFKcRJuPELiHZ24J0aN+UL2znHUBbQnMUl4lg=" version="2.0" assemblyName="Xheo.Licensing, Version=2.1.5000.0, Culture=neutral, PublicKeyToken=798276055709c98a">
+		<Expires>2103-07-13T00:00:00</Expires>
+		<SerialNumber>XSL2DS-</SerialNumber>
+		<IssuerUrl>http://www.xheo.com</IssuerUrl>
+		<Tag>Additional Developer License</Tag>
+		<Type>XSL2 -DS</Type>
+		<Limits>
+			<Limit type="Version" maximum="2.9" minimum="2.0" />
+			<Limit type="OnServer" allowed="false" />
+			<Limit type="Activation" url="http://www.xheo.com/licensing/activation.asmx" tolerance="3" profileHash="" graceDuration="7" />
+		</Limits>
+		<Values>
+			<Value key="__XL_PRO" value="TRUE" />
+		</Values>
+		<UnlockBySerial acceptedSizes="12" minimumSeed="1000000000" maximumSeed="1000090000">true</UnlockBySerial>
+	</License>
+</Licenses>

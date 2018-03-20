@@ -1,0 +1,6 @@
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.dll
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Release\Prezza.Framework.Common.csprojResolveAssemblyReference.cache
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Release\Prezza.Framework.Common.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Release\Prezza.Framework.Common.csprojResolveAssemblyReference.cache
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Release\Prezza.Framework.Common.dll

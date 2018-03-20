@@ -1,0 +1,418 @@
+﻿<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        /*$('#fontsColorsAccordion').accordion({ autoHeight: false, icons: '' });*/
+
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.Matrix .header', styleEditor.setValues, { '_matrixHeaderRowColor': 'background-color' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.Matrix .subheader', styleEditor.setValues, { '_matrixSubHeadingRowColor': 'background-color' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.Matrix .Item', styleEditor.setValues, { '_matrixDefaultRowColor': 'background-color' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.Matrix .AlternatingItem', styleEditor.setValues, { '_matrixAltRowColor': 'background-color' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, 'body', styleEditor.setValues, { '_bodyBgColor': 'background-color', '_backgroundImageUrl': 'background-image' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.surveyContentFrame', styleEditor.setValues, { '_contentFrameBgColor': 'background-color', '_contentFrameMaxWidth':'max-width', '_contentFrameMinWidth':'min-width'});
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.Page', styleEditor.setValues, { '_itemSpace': 'height' });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            'body',
+            styleEditor.applyTemplate,
+            {
+                id: '_baseFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/bodyFont',
+                defaultText: 'Body Font',
+                elementId: 'body',
+                elementName: 'body',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.title',
+            styleEditor.applyTemplate,
+            {
+                id: '_titleFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/titleFont',
+                defaultText: 'Title Font',
+                elementId: 'title',
+                elementName: '.title',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.PageNumber',
+            styleEditor.applyTemplate,
+            {
+                id: '_pageNumberFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/pageNumber',
+                defaultText: 'Page Number Font',
+                elementId: 'pageNumber',
+                elementName: '.PageNumber', 
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Error',
+            styleEditor.applyTemplate,
+            {
+                id: '_errorMessage',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/errorMessage',
+                defaultText: 'Error Font',
+                elementId: 'error',
+                elementName: '.Error',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Question',
+            styleEditor.applyTemplate,
+            {
+                id: '_questionFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/questionFont',
+                defaultText: 'Question Font',
+                elementId: 'question',
+                elementName: '.Question',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Description',
+            styleEditor.applyTemplate,
+            {
+                id: '_subtextFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/subtextFont',
+                defaultText: 'Subtext Font',
+                elementId: 'description',
+                elementName: '.Description',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Answer',
+            styleEditor.applyTemplate,
+            {
+                id: '_answerFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/answerFont',
+                defaultText: 'Answer Font',
+                elementId: 'answer',
+                elementName: '.Answer',
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            "#tinymce a[href='#']",
+            styleEditor.applyTemplate,
+                {
+                id: '_flyoverFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/answerFont',
+                defaultText: 'Flyover Font',
+                elementId: 'flyover',
+                elementName: '.Flyover',
+                enableStyleBuilder: 'false',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+         svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            "#tinymce a:not([href*='#'])",
+            styleEditor.applyTemplate,
+                {
+                id: '_linkFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/answerFont',
+                defaultText: 'Link Font',
+                elementId: 'link',
+                elementName: '.Link',
+                enableStyleBuilder: 'false',
+                templateUrl: 'fontSelectorTemplate.html'
+                });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix .header',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixHeaderQuestionFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/headerQuestionFont',
+                defaultText: 'Question Font',
+                elementId: 'matrixHeader',
+                elementName: '.Matrix .header',
+                altElementNames: ['.Matrix .header td p', '.Matrix .header th'],
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix .Answer',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixHeaderAnswerFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/headerAnswerFont',
+                defaultText: 'Answer Font',
+                elementId: 'matrixAnswer',
+                elementName: '.Matrix .Answer',
+                altElementNames: ['.Answer td', '.Matrix .header td.Answer', '.Matrix .Answer span'],
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix .subheader',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixSubheaderFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/subheadingFont',
+                defaultText: 'Subheader Font',
+                elementId: 'matrixSubheader',
+                elementName: '.subheader',
+                altElementNames: ['.subheader td'],
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix .Item',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixRowFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/rowFont',
+                defaultText: 'Row Font',
+                elementId: 'matrixItem',
+                elementName: '.Item',
+                altElementNames: ['.Item td', '.Item td span'],
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix .AlternatingItem',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixAltRowFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/alternatingRowFont',
+                defaultText: 'Alternating Row Font',
+                elementId: 'matrixAltItem',
+                elementName: '.AlternatingItem',
+                altElementNames: ['.AlternatingItem td', '.AlternatingItem td span'],
+                enableStyleBuilder: 'true',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.Matrix',
+            styleEditor.applyTemplate,
+            {
+                id: '_matrixBorder',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/matrixBorder',
+                defaultText: 'Matrix Border',
+                elementId: 'matrix',
+                elementName: '.Matrix',
+                enableStyleBuilder: 'false',
+                templateUrl: 'borderSelectorTemplate.html'
+            });
+
+            svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.surveyContentFrame',
+            styleEditor.applyTemplate,
+            {
+                id: '_surveyContentFrameBorder',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/contentFrameBorder',
+                defaultText: 'Frame Border',
+                elementId: 'surveyContentFrame',
+                elementName: '.surveyContentFrame',
+                enableStyleBuilder: 'false',
+                templateUrl: 'borderSelectorTemplate.html'
+            });
+    });
+</script>
+<div id="fontsColorsAccordion" class="border999 editorSubMenuItems" style="margin-top:-1px;">
+    <h3 class="menu_head"><a href="#" class="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/bodyStyles", "Body Styles")}</a></h3>
+    <div>
+        <div class="dashStatsContent zebra formInput">
+            <p>
+                <label class="fixed_200 left" for="_bodyBgColor">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/backgroundColor", "Background Color")}</label>
+                <input class="left" id="_bodyBgColor" name="bodyBgColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['body'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p>
+                <label class="full-width" for="_backgroundImageUrl">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/backgroundImage", "Background Image")}<a class="more-options-button ckbxButton silverButton" href="javascript:showDialog('../Forms/BackgroundImage.aspx?s=${Id}&onClose=styleEditor.onDialogClosed&img=' + serviceHelper.urlEncode($('#_backgroundImageUrl').val()), 'wizard');" >More Options</a></label>
+                <input class="left" type="text" readonly="readonly" id="_backgroundImageUrl" name="_backgroundImageUrl" size="39" />
+                <img class="left" id="_deleteBgImageLnk" src="../../App_Themes/CheckboxTheme/Images/delete16.gif" alt="Delete" title='${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/deleteBgImg", "Delete Image")}' onclick="styleEditor.deleteBackgroundImage();" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_baseFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p>
+                <label class="fixed_175 left" for="_itemSpace">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/itemSpacing", "Item Spacing")}</label>
+                <input class="left" id="_itemSpace" name="itemSpace" type="text" runat="server" size="5" onchange="styleEditor.updateStyle({ classNames: ['.Page'], propertyMap: { height: this.value + 'px' }});" />
+                <label class="left">&nbsp;px</label>
+                <br class="clear" />
+            </p>
+        </div>
+    </div>
+
+    <h3 class="menu_head"><a href="#" class="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/contentFrame", "Content Frame")}</a></h3>
+    <div>
+        <div class="dashStatsContent zebra formInput">
+            <p>
+                <label class="fixed_200 left" for="_contentFrameBgColor" >${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/backgroundColor", "Background Color")}</label>
+                <input class="left" id="_contentFrameBgColor" name="contentFrameBackgroundColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.surveyContentFrame'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_surveyContentFrameBorder"></p>
+        </div>
+        <div class="dashStatsContent formInput">
+            <p>
+                <label class="fixed_175 left" for="_contentFrameMaxWidth">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/contentFrameWidth", "Content Frame Maximum Width").replace("Maximum", "Max")}</label>
+                <input class="left" type="text" size="5" style="width:50px;" id="_contentFrameMaxWidth" name="contentMaxFrameWidth"/> <label class="left">&nbsp;px</label>
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent formInput">
+            <p>
+                <label class="fixed_175 left" for="_contentFrameMinWidth">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/contentFrameMinWidth", "Content Frame Minimum Width").replace("Minimum", "Min")}</label>
+                <input class="left" type="text" size="5" style="width:50px;" id="_contentFrameMinWidth" name="contentFrameMinWidth"/> <label class="left">&nbsp;px</label>
+                <br class="clear" />
+            </p>
+        </div>
+        <p class='dashStatsContent'>
+            <span id="_minWidthValidationError" class="Error" />
+        </p>
+    </div>
+    
+    <h3 class="menu_head"><a href="#" class="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/fontStyles", "Fonts and Colors")}</a></h3>
+    <div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_titleFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_pageNumberFont"></p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_errorMessage"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_questionFont"></p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_subtextFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_answerFont"></p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_flyoverFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_linkFont"></p>
+        </div>
+   </div>
+
+    <h3 class="menu_head"><a href="#" class="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/matrixStyles", "Matrix Styles")}</a></h3>
+    <div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_matrixHeaderQuestionFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_matrixHeaderAnswerFont"></p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_matrixSubheaderFont"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p id="_matrixRowFont"></p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_matrixAltRowFont"></p>
+        </div>
+    </div>
+
+    <h3 class="menu_head"><a href="#" class="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/otherMatrixStyles", "Other Styles")}</a></h3>
+    <div>
+        <div class="dashStatsContent zebra formInput">
+            <p id="_matrixBorder"></p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p>
+                <label class="fixed_200 left" id="gridRowHeaderRowLbl">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/headerRow", "Header Row")}</label>
+                <input class="left" id="_matrixHeaderRowColor" name="matrixHeaderRowColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.header', '.header td', '.header th'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p>
+                <label class="fixed_200 left" id="gridRowSubHeadingLabel">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/subHeadingRow", "Sub Header Row")}</label>
+                <input class="left" id="_matrixSubHeadingRowColor" name="matrixSubHeadingRowColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.subheader', '.subheader td'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent detailZebra formInput">
+            <p>
+                <label class="fixed_200 left" id="gridRowDefaultRowLbl">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/defaultRow", "Default Row")}</label>
+                <input class="left" id="_matrixDefaultRowColor" name="matrixDefaultRowColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.Item', '.Item td'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+        <div class="dashStatsContent zebra formInput">
+            <p>
+                <label class="fixed_200 left" id="gridRowAlternateRowLbl">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/alternatingRow", "Alternate Row")}</label>
+                <input class="left" id="_matrixAltRowColor" name="matrixAltRowColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.AlternatingItem', '.AlternatingItem td'], propertyMap: { 'background-color': this.value }});" />
+                <br class="clear" />
+            </p>
+        </div>
+    </div>
+</div>

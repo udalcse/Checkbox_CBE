@@ -1,0 +1,9 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_150 left">User Name</div>
+    <div class="fixed_150 left">Email</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+    {{tmpl(user, {index: index}) 'usersByEmailResultListItemTemplate.html'}}
+{{/each}}

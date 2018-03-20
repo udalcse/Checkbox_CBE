@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<securityConfiguration>
+  <providers>
+    <provider default="true" type="authorization" name="DbAuthorizationProvider" filePath="DbAuthorizationProvider.xml" configDataType="Checkbox.Security.Providers.DbAuthorizationProviderData,Checkbox" />
+    <provider default="false" type="authorization" name="ResponseTemplateAuthorizationProvider" filePath="ResponseTemplateAuthorizationProvider.xml" configDataType="Checkbox.Forms.Security.Providers.ResponseTemplateAuthorizationProviderData,Checkbox" />
+  </providers>
+</securityConfiguration>

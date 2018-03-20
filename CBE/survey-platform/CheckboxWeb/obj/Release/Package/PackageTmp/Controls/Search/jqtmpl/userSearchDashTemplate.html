@@ -1,0 +1,96 @@
+﻿<h3>${UniqueIdentifier}</h3>
+
+<ul class="itemActionMenu allMenu">
+{{if AuthenticationType != 'ExternalUser'}}
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_userLoginLink" href="javascript:showDialog('Users/Credentials.aspx?u=${UserGuid}&onClose=onEditUserDialogClosed', 'largeProperties');">Login Credentials</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_profileLink"  href="javascript:showDialog('Users/Profile.aspx?u=${UserGuid}&onClose=onEditUserDialogClosed', 'largeProperties');">Profile Properties</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_rolesLink" href="javascript:showDialog('Users/Roles.aspx?u=${UserGuid}&onClose=onEditUserDialogClosed');">User Roles</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_groupsLink" href="javascript:showDialog('Users/GroupMemberships.aspx?u=${UserGuid}&onClose=onEditUserDialogClosed', 'wizard');">Group Memberships</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="_deleteUserLink" href="javascript:confirmDeleteUser('${UniqueIdentifier}&onClose=onEditUserDialogClosed');"><span>Delete</span></a></li>
+{{else}}
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_extUserLoginLink" href="javascript:showDialog('Users/Credentials.aspx?e=${EscapedUniqueIdentifier}&onClose=onEditUserDialogClosed',  'largeProperties');">Login Credentials</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_extProfileLink"  href="javascript:showDialog('Users/Profile.aspx?e=${EscapedUniqueIdentifier}&onClose=onEditUserDialogClosed', 'largeProperties');">Profile Properties</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_extRolesLink" href="javascript:showDialog('Users/Roles.aspx?e=${EscapedUniqueIdentifier}&onClose=onEditUserDialogClosed');">User Roles</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_extGroupsLink" href="javascript:showDialog('Users/GroupMemberships.aspx?e=${EscapedUniqueIdentifier}&onClose=onEditUserDialogClosed', 'wizard');">Group Memberships</a></li>
+{{/if}}
+</ul>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Login Information</span>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_75 left">User Name:</div>
+        <div class="left"><b>${UniqueIdentifier}</b></div>
+        <br class="clear" />
+    </div>
+    {{if AuthenticationType != 'ExternalUser' && AuthenticationType != 'CheckboxNetworkUser'}}
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_75 left">Direct Login:</div>
+        <div class="left"><b>${$item.appRoot}/Login.aspx?u=${UserGuid}</b></div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+
+    {{if LockedOut}}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_75 left">${textHelper.getTextValue("/users/userDashboardTemplate/accountStatus", "Account Status")} :</div>
+        <div class="left">
+            ${textHelper.getTextValue("/users/userDashboardTemplate/disabled", "Disabled")}        
+        </div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+</div>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Profile Properties</span>
+        <br class="clear" />
+    </div>
+{{each(index, property) Profile.NameValueList}}
+    {{if index % 2 == 0}}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${property.Name}:</div>
+        <div class="left"><b>${property.Value}</b></div>
+        <br class="clear" />
+    </div>
+    {{else}}
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">${property.Name}:</div>
+        <div class="left"><b>${property.Value}</b></div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+{{/each}}
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">User Roles</span>
+        <br class="clear" />
+    </div>
+{{each(index, role) RoleMemberships}}
+    {{if index % 2 == 0}}
+    <div class="dashStatsContent zebra"><b>${role}</b></div>
+    {{else}}
+    <div class="dashStatsContent detailZebra"><b>${role}</b></div>
+    {{/if}}
+{{/each}}
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Group Memberships</span>
+        <br class="clear" />
+    </div>
+
+{{each(index, group) GroupMemberships}}
+    {{if index % 2 == 0}}
+        <div class="dashStatsContent zebra"><b>${group}</b></div>
+    {{else}}
+        <div class="dashStatsContent detailZebra"><b>${group}</b></div>
+    {{/if}}
+{{/each}}
+</div>

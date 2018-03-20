@@ -1,0 +1,11 @@
+C:\Project\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.XML
+C:\Project\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.dll
+C:\Project\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.pdb
+C:\Project\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\obj\Debug\Checkbox.Wcf.Services.Proxies.dll
+C:\Project\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\obj\Debug\Checkbox.Wcf.Services.Proxies.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.XML
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.dll
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\bin\Debug\Checkbox.Wcf.Services.Proxies.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\obj\Debug\Checkbox.Wcf.Services.Proxies.csprojResolveAssemblyReference.cache
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\obj\Debug\Checkbox.Wcf.Services.Proxies.dll
+C:\Project\RogerDev1\CBE\survey-platform\Checkbox.Wcf.Services.Proxies\obj\Debug\Checkbox.Wcf.Services.Proxies.pdb

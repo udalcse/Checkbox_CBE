@@ -1,0 +1,21 @@
+﻿{{if Editable}}
+{{if ($item.index % 2 == 0)}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+{{else}}
+{{if ($item.index % 2 == 0)}}
+    <div class="nonEditable gridContent zebra">
+{{else}}
+    <div class="nonEditable gridContent detailZebra">
+{{/if}}
+{{/if}}
+        <div class="fixed_50 left">${ReportId}</div>
+        <div class="fixed_175 left">${Name}</div>
+        <div class="fixed_100 left">${CreatedBy}</div>
+        <div class="fixed_100 left">${DateCreated ? dateUtils.jsonDateToInvariantDateString(DateCreated) : '&nbsp;'}</div>
+        <div class="fixed_100 left">${LastModified ? dateUtils.jsonDateToInvariantDateString(LastModified) : '&nbsp;'}</div>
+        <div class="left"><a class="ckbxButton silverButton roundedCorners shadow999 border999 smallButton stopEvent" style="line-height:16px !important; margin-top:5px;" href="../RunAnalysis.aspx?aid=${ReportId}" target="_blank">${textHelper.getTextValue("/pageText/editAnalysis.aspx/runAnalysis", "Run Report")}</a></div>
+        <br class="clear" />
+    </div>

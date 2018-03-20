@@ -1,0 +1,60 @@
+﻿/****************************************************************************
+ * HandheldSurveyStyles.css                                                  *
+ *  Use this page to set mobile styles to apply to all surveys.             *
+ *  Styles for specific HTML elmeents can be applied, as well as styles     *
+ *  that apply to Checkbox Survey items.                                    *
+ *                                                                          *
+ * In general, this file should not be modified for customer installations. *
+ * Instead, css changes should be placed in CustomSurveyStyles.css which    *
+ * exists for this purpose.  That file is included last in the survey style *
+ * chain, so settings in that file can be used to override settings in this *
+ * file.                                                                    *
+ ****************************************************************************/
+ 
+ /**************************************************************************************
+  * "Resest" Styles to attempt to account for different browser handling of elements.  *
+  **************************************************************************************/
+
+@-viewport
+{
+    zoom: 1.0;
+    width: device-width;
+}
+
+@viewport
+{
+    zoom: 1.0;
+    width: device-width;
+}
+
+@-ms-viewport 
+{
+    zoom: 1.0;
+    width: device-width;
+}
+
+/***************************************************************************
+  * Page Layout Styles                                                      *
+  ***************************************************************************/
+
+.surveyContentFrame 
+{
+    padding: 7px 0px 0px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background:#F3F3F3;
+    display: inline-block;
+    text-align: left;
+    overflow: auto;
+    width: 90%;
+}
+
+/*****************************************************************************
+ * Containers                                                                *
+ *****************************************************************************/
+
+div.itemContent 
+{
+    display: block;
+}
+

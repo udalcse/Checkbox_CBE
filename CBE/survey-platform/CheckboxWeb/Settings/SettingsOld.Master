@@ -1,0 +1,229 @@
+<%@ Master Language="C#" MasterPageFile="~/DetailList.Master" AutoEventWireup="false" CodeBehind="SettingsNew.Master.cs" Inherits="CheckboxWeb.Settings.SettingsNew" %>
+<%@ MasterType VirtualPath="~/DetailList.Master" %>
+<%@ Import Namespace="Checkbox.Web" %>
+<%@ Register src="../Controls/Status/StatusControl.ascx" tagname="StatusControl" tagprefix="status" %>
+
+<asp:Content ID="_head" runat="server" ContentPlaceHolderID="_head">
+    <style type="text/css">
+            .groupContent {display:none;}
+    </style>
+                    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.groupHeader').click(function () {
+                $('.groupContent :visible').parent().hide('bind', null, 'fast');
+                $(this).siblings('.groupContent').show('blind', null, 'fast');
+            });
+
+            $('.groupContent').click(function () {
+                
+                showSettingsPage($(this).attr('settingsPage'));
+            });
+        });
+
+        //
+        function showSettingsPage(settingsPage) {
+            if (settingsPage == null
+                || settingsPage == '') {
+                return;
+            }
+
+            //Update preview
+            $('#_editFrame').attr('src', '<%=ResolveUrl("~/Settings/")%>' + settingsPage);
+        }
+
+    </script>
+</asp:Content>
+
+<asp:Content ID="_top" runat="server" ContentPlaceHolderID="_topContent">
+    <div style="border-style:double;border-width:3px;border-color:red;background-color:#F5F5F5;font-size:10px;">
+        <b>To Do:</b>
+        <div style="float:left;margin-left:15px;">
+            * Eliminate RadAjax (if any)
+            <br />
+            * Change child page Masters to Dialog.Master
+            <br />
+            * Update child page styles.
+        </div>
+        <div style="float:left;margin-left:15px;">
+        </div>
+        <div style="float:left;margin-left:15px;">
+        </div>
+        <div class="clear"></div>
+    </div>
+</asp:Content>
+
+<asp:Content ID="_left" runat="server" ContentPlaceHolderID="_leftContent">
+    <%-- Survey Settings --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/surveySettings")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+        <ul class="groupContent allMenu" settingsPage="SurveyPreferences.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/surveyPreferences")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="UploadItem.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/uploadItem")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+
+     <%-- Report Settings --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/reportSettings")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+        <ul class="groupContent allMenu" settingsPage="ReportPreferences.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/reportPreferences")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="ResponseDetails.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/responseDetails")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="ResponseExport.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/responseExport")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+
+     <%-- User Settings --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/userSettings")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+        <ul class="groupContent allMenu" settingsPage="Users.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/users")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="ExternalUsers.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/externalUsers")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="CustomUserFields.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/customUserFields")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+
+     <%-- System Settings --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/systemSettings")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+        <ul class="groupContent allMenu" settingsPage="Branding.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/branding")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="Email.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/email")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="Licensing.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/licensing")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="Performance.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/performance")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="Security.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/security")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="SystemPreferences.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/systemPreferences")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+
+     <%-- Application Text --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/textSettings")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+       <ul class="groupContent allMenu" settingsPage="Languages.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/languages")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="LanguageNames.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/languageNames")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="WelcomeText.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/welcomeText")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="SurveyText.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/surveyText")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent allMenu" settingsPage="ValidationText.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/validationText")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="ImportText.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/importText")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+
+     <%-- System Status --%>
+    <div class="groupWrapper">
+        <ul class="groupHeader allMenu">
+            <li class="groupName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/systemStatus")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+
+        <ul class="groupContent allMenu" settingsPage="LoggedInUsers.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/currentUsers")%></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="groupContent zebra allMenu" settingsPage="Exceptions.aspx">
+            <li class="groupContentName"><%= WebTextManager.GetText("/pageText/settings/navigation.ascx/exceptionLog")%></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</asp:Content>
+
+<asp:Content ID="_right" runat="server" ContentPlaceHolderID="_rightContent">
+    <div id="detailProgressContainer" style="display:none;">
+        <div id="detailProgress" style="text-align:center;">
+            <p>Loading...</p>
+            <p>
+                <asp:Image ID="_progressSpinner" runat="server" SkinId="ProgressSpinner" />
+            </p>
+        </div>   
+    </div>
+
+    <iframe id="_editFrame" frameborder="0" height="650" width="700"></iframe>
+</asp:Content>

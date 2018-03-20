@@ -1,0 +1,11 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+        <div class="fixed_25 left"><input type="checkbox" value="${FilterId}" class="deleteFilter" /></div>
+        <div class="fixed_50 left">${FilterId}</div>
+        <div class="fixed_75 left">${SourceType}</div>
+        <div class="fixed_300 left" id="filterName_${FilterId}" title="${FilterText}">${ShortText}</div>
+        <br class="clear" />
+    </div>

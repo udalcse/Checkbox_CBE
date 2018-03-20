@@ -1,0 +1,115 @@
+﻿<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $(document).on('keyup', '#_progressBarHeight', function(){
+            styleEditor.updateStyle({ classNames: ['.ProgressBar', '.ProgressBarInner'], propertyMap: { 'height': this.value + 'px' }});
+        });
+
+        $(document).on('keyup', '#_progressBarWidth', function(){
+            styleEditor.updateStyle({ classNames: ['.ProgressBar'], propertyMap: { 'width': this.value + 'px' }});
+        });
+
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.ProgressBarInner', styleEditor.setValues, { '_progressBarForeColor': 'background-color' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.ProgressBar', styleEditor.setValues, { '_progressBarBackColor': 'background-color', '_progressBarHeight': 'height', '_progressBarWidth': 'width' });
+        svcStyleEditor.getStyleElementProperties(_at, ${Id}, '.surveyFooterButton', styleEditor.setValues, { '_buttonBackgroundColor': 'background-color' });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.surveyFooterButton',
+            styleEditor.applyTemplate,
+            {
+                id: '_buttonFont',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/buttonFont',
+                defaultText: 'Button Font',
+                elementId: 'button',
+                elementName: '.surveyFooterButton',
+                enableStyleBuilder: 'false',
+                templateUrl: 'fontSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.surveyFooterButton',
+            styleEditor.applyTemplate,
+            {
+                id: '_buttonBorder',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/buttonBorder',
+                defaultText: 'Button Border',
+                elementId: 'button',
+                elementName: '.surveyFooterButton',
+                enableStyleBuilder: 'false',
+                templateUrl: 'borderSelectorTemplate.html'
+            });
+
+        svcStyleEditor.getStyleElementProperties(
+            _at,
+            ${Id},
+            '.ProgressBar',
+            styleEditor.applyTemplate,
+            {
+                id: '_progressBarBorder',
+                styleId: ${Id},
+                textId: '/pageText/styles/forms/editor.aspx/progressBarBorder',
+                defaultText: 'Progress Bar Border',
+                elementId: 'progressBar',
+                elementName: '.ProgressBar',
+                enableStyleBuilder: 'false',
+                templateUrl: 'borderSelectorTemplate.html'
+            });
+    });
+</script>
+
+<!--<div class="styleSectionContainer" style="margin-top:-1px;">
+    <!--<div class="dashStatsContentHeader" style="font-size:14px;">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/progressBar", "Progress Bar")}</div>-->
+    <div class="dashStatsContent zebra formInput">
+        <p>
+            <label class="fixed_175 left">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/height", "Height")}</label>
+            <input class="left" type="text" id="_progressBarHeight" name="progressBarHeight" size="5" />
+            <label class="left">&nbsp;px</label>
+            <br class="clear" />
+        </p>
+    </div>
+    <div class="dashStatsContent detailZebra formInput">
+        <p>
+            <label class="fixed_175 left">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/width", "Width")}</label>
+            <input class="left" type="text" id="_progressBarWidth" name="progressBarWidth" size="5" />
+            <label class="left">&nbsp;px</label>
+            <br class="clear" />
+        </p>
+    </div>
+    <div class="dashStatsContent zebra formInput">
+        <p id="_progressBarBorder"></p>
+    </div>
+    <div class="dashStatsContent detailZebra formInput">
+        <p>
+            <label class="fixed_200 left">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/foreColor", "Bar Color")}</label>
+            <input class="left" id="_progressBarForeColor" name="progressBarForeColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.ProgressBarInner'], propertyMap: { 'background-color': this.value }});" />
+            <br class="clear" />
+        </p>
+    </div>
+    <div class="dashStatsContent zebra formInput">
+        <p>
+            <label class="fixed_200 left">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/backColor", "Bar Background Color")}</label>
+            <input class="left" id="_progressBarBackColor" name="progressBarBackColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.ProgressBar'], propertyMap: { 'background-color': this.value }});" />
+            <br class="clear" />
+        </p>
+     </div>
+     <!--<div class="spacing"></div>
+     <div class="dashStatsContentHeader" style="font-size:14px;">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/buttonStyle", "Button Style")}</div>-->
+     <div class="dashStatsContent zebra formInput">
+        <p id="_buttonFont"></p>
+     </div>
+     <div class="dashStatsContent zebra formInput">
+        <p id="_buttonBorder"></p>
+    </div>
+    <div class="dashStatsContent zebra formInput">
+        <p>
+            <label class="fixed_200 left">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/buttonBackColor", "Background Color")}</label>
+            <input class="left" id="_buttonBackgroundColor" name="buttonBackgroundColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" onchange="styleEditor.updateStyle({ classNames: ['.surveyFooterButton'], propertyMap: { 'background-color': this.value }});" />
+            <br class="clear" />
+        </p>
+    </div>
+<!--</div>-->

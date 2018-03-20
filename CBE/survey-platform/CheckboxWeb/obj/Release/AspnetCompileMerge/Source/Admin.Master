@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="Admin.master.cs" Inherits="CheckboxWeb.Admin" %>
+<%@ Register src="Controls/Header.ascx" tagname="Header" tagprefix="ckbx" %>
+<%@ Register src="Controls/Footer.ascx" tagname="Footer" tagprefix="ckbx" %>
+<%@ Register src="Controls/Status/StatusControl.ascx" tagname="StatusControl" tagprefix="status" %>
+<%@ Import Namespace="Checkbox.Management" %>
+<%@ Import Namespace="Checkbox.Web" %>
+<%@ Import Namespace="Checkbox.Globalization" %>
+
+<!DOCTYPE html>
+<html>
+    <head id="_header" runat="server">
+        <meta charset="utf-8" />
+        <title id="_title" runat="server">Engauge&reg; Survey</title>
+        <link id="_favicon" runat="server" rel="icon" href="~/favicon.png" type="image/ico" />
+
+        <%-- Style Includes --%>
+        <ckbx:ResolvingCssElement ID="_uiSmoothnessInclude" runat="server" Source="~/Resources/css/smoothness/jquery-ui-1.10.2.custom.css" />
+        <ckbx:ResolvingCssElement runat="server" media="screen, print" Source="CheckboxScreen.css" />
+        <ckbx:ResolvingCssElement runat="server" media="screen" Source="Resources/css/timePicker.css" />
+ <%--       <ckbx:ResolvingCssElement runat="server" media="screen" Source="Resources/css/listswap.css" />--%>
+        <asp:ContentPlaceHolder ID="_styleContent" runat="server" />
+        
+        <asp:Literal runat="server" ID ="TypeKit"></asp:Literal>
+
+        <%-- scripts that currently must be in the document head ***For performance reasons these should be moved to the end of the form tag (eventually) *** --%>
+        <ckbx:ResolvingScriptElement ID="_jqueryInclude" runat="server" Source="~/Resources/jquery-latest.min.js" />
+        <ckbx:ResolvingScriptElement ID="_textHelperInclude" runat="server" Source="~/Resources/textHelper.js" />
+        
+        <script type="text/javascript">
+            //<![CDATA[
+            $(function () {
+                if (typeof (__doPostBack) != "function") {
+                    __doPostBack = function (eventTarget, eventArgument) {
+                        var theForm = document.getElementById('aspnetForm');
+                        if (!theForm) {
+                            theForm = document.aspnetForm;
+                        }
+
+                        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                            theForm.__EVENTTARGET.value = eventTarget;
+                            theForm.__EVENTARGUMENT.value = eventArgument;
+                            theForm.submit();
+                        }
+                    };
+                    $('#__EVENTTARGET_holder').attr('name', '__EVENTTARGET').attr('id', '__EVENTTARGET');
+                    $('#__EVENTARGUMENT_holder').attr('name', '__EVENTARGUMENT').attr('id', '__EVENTARGUMENT');
+                }
+            });
+        //]]>
+        </script>
+        
+        <%-- Specified script include placeholder --%>
+        <asp:PlaceHolder ID="_scriptIncludesPlace" runat="server" />
+    </head>
+    <body class="editor">
+        <form id="_theForm" class="formContainer" runat="server">
+            <input type="hidden" name="__EVENTTARGET_holder" id="__EVENTTARGET_holder" value="" />
+            <input type="hidden" name="__EVENTARGUMENT_holder" id="__EVENTARGUMENT_holder" value="" />                
+            
+            <asp:PlaceHolder ID="_trialMessagePlace" runat="server"></asp:PlaceHolder>
+            
+            <status:StatusControl id="_databaseVersionWarning" runat="server" />
+
+            <div id="_statusPanel" class="StatusPanel"></div>
+            <ckbx:Header id="_headerCtrl" runat="server" />
+            <%-- <asp:PlaceHolder ID="_pageTitlePlace" runat="server" Visible="true"></asp:PlaceHolder> --%>
+
+            <asp:PlaceHolder ID="_errorPlace" runat="server" Visible="false">
+                <asp:Panel ID="_errorPanel" runat="server" CssClass="MasterErrorPanel">
+                    <div class="left">
+                        <asp:Image ID="_warningImage" SkinID="Warning" runat="server" />
+                    </div>
+                    <div class="left" style="margin-left:15px;">
+                        <div style="font-weight:bold;"><asp:Literal ID="_errorMessageLiteral" runat="server" /></div>
+                        <div style="color:#333333;"><asp:Literal ID="_errorDescriptionLiteral" runat="server" /></div>
+                    </div>
+                    <br class="clear" />
+                </asp:Panel>
+            </asp:PlaceHolder>
+
+            <div class="pageContent">
+                <asp:ContentPlaceHolder ID="_pageContent" runat="server" />
+            </div>
+
+            <!-- Dialog Container -->
+            <div id="ckbx_dialogContainer" class="ckbx_simplemodal-container"></div>
+            <!-- Ckbx Dialog Windows -->
+            <div id="confirmationDialog" class="ckbx_simplemodal-container">
+                <div class="confirmContainer">
+                    <div class="label confirmText"></div>
+                </div>
+                <div class="confirmButtonsContainer">
+                    <hr size="1" />
+                    <div class="buttonWrapper">
+                        <a href="javascript:void(0);" id="_yesBtn" class="right ckbxButton roundedCorners orangeButton shadow999 border999 ckbx-closedialog"><%=WebTextManager.GetText("/common/yes") %></a>
+                        <a href="javascript:void(0);" id="_noBtn" class="left ckbxButton roundedCorners redButton shadow999 border999 ckbx-closedialog"><%=WebTextManager.GetText("/common/no") %></a>
+                        
+                        <br class="clear" />
+                    </div>
+                </div>
+            </div>
+            <ckbx:Footer ID="_footer" runat="server" />
+
+            <%-- Script Includes --%>
+            <ckbx:ResolvingScriptElement ID="_mDomUpdateInclude" runat="server" Source="~/Resources/mDOMupdate.js" Visible="false" />
+
+           <ckbx:ResolvingScriptElement ID="_json2Include" runat="server" Source="~/Resources/json2.min.js" />
+            <ckbx:ResolvingScriptElement ID="_jqueryUIInclude" runat="server" Source="~/Resources/jquery-ui-1.10.2.custom.min.js" />
+            <ckbx:ResolvingScriptElement ID="_jqTemplateInclude" runat="server" Source="~/Resources/jquery.tmpl.min.js" />
+            <ckbx:ResolvingScriptElement ID="_dialogHandlerInclude" runat="server" Source="~/Resources/DialogHandler.js" />
+            <ckbx:ResolvingScriptElement ID="_watermarkInclude" runat="server" Source="~/Resources/jquery.watermark.js" />
+            <ckbx:ResolvingScriptElement ID="_uniformInclude" runat="server" Source="~/Resources/jquery.uniform.min.js" />
+            <ckbx:ResolvingScriptElement ID="_modalInclude" runat="server" Source="~/Resources/jquery.simplemodal.1.4.1.min.js" />
+            <ckbx:ResolvingScriptElement ID="_jScrollPaneInclude" runat="server" Source="~/Resources/jquery.tinyscrollbar.min.js" />
+            <ckbx:ResolvingScriptElement ID="_jqueryMousewheelInclude" runat="server" Source="~/Resources/jquery.mousewheel.min.js" />
+            <ckbx:ResolvingScriptElement ID="_datetimepickerAddon" runat="server" Source="~/Resources/jquery-ui-timepicker-addon.js" />
+            <ckbx:ResolvingScriptElement ID="_jqueryUICombobox" runat="server" Source="~/Resources/jquery-ui-combobox.js" />
+            <ckbx:ResolvingScriptElement ID="_serviceHelperInclude" runat="server" Source="~/Services/js/serviceHelper.js" />
+            <ckbx:ResolvingScriptElement ID="_searchService" runat="server" Source="~/Services/js/svcSearch.js" />
+            <ckbx:ResolvingScriptElement ID="_search" runat="server" Source="~/Resources/search.js" />
+            <ckbx:ResolvingScriptElement ID="_customJS" runat="server" Source="~/Resources/custom.js" />
+            <ckbx:ResolvingScriptElement ID="_liveSearch" runat="server" Source="~/Resources/gridLiveSearch.js" />
+            <ckbx:ResolvingScriptElement ID="_tinymce" runat="server" Source="~/Resources/tiny_mce/jquery.tinymce.min.js" />
+            <ckbx:ResolvingScriptElement ID="_globalHelper" runat="server" Source="~/Resources/globalHelper.js" />
+            <%--<ckbx:ResolvingScriptElement ID="ResolvingScriptElement1" runat="server" Source="~/Resources/jquery.listswap.js" />--%>
+            <ckbx:ResolvingScriptElement ID="ResolvingScriptElement2" runat="server" Source="~/Resources/jquery.lwMultiSelect.js" />
+
+
+            <asp:ContentPlaceHolder ID="_scriptIncludes" runat="server" />
+             <%-- Add statistics to application --%>
+            <script type="text/javascript">
+                //init app root for custom.js
+                _appRoot = '<%=ApplicationManager.ApplicationURL + ApplicationManager.ApplicationRoot%>';
+
+                $(document).tooltip();
+            </script>
+
+            <%-- Init Service Helper --%>
+            <script type="text/javascript" language="javascript">
+                function htmlEncode(val) { if (val) { return jQuery('<div/>').text(val).html(); } else { return ''; } }
+                function htmlDecode(val) {if (val) { return $('<div/>').html(val).text(); } else { return ''; }   }
+
+                //avoids javascript injections, replaces html tags
+                function escapeInjections(htmlString) {
+                    return htmlString
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#39;");
+                }
+
+                ///UrlEncode
+                function UrlEncode(c) {
+                    var o = ''; var x = 0; c = c.toString(); var r = /(^[a-zA-Z0-9_.]*)/;
+                    while (x < c.length) {
+                        var m = r.exec(c.substr(x));
+                        if (m != null && m.length > 1 && m[1] != '') {
+                            o += m[1]; x += m[1].length;
+                        } else {
+                            if (c[x] == ' ') o += '+'; else {
+                                var d = c.charCodeAt(x); var h = d.toString(16);
+                                o += '%' + (h.length < 2 ? '0' : '') + h.toUpperCase();
+                            } x++;
+                        }
+                    } return o;
+                }
+
+				function onHeaderSearchClick() {
+                    //document.location = '<%=ResolveUrl("~/Search.aspx?term=") %>' + UrlEncode($('#headerSearchText').val());
+                }
+                var _at = '';
+                var _dateFormat = '<%=GlobalizationManager.GetDateFormat()%>';
+                var _timeFormat = '<%=GlobalizationManager.GetTimeFormat()%>';
+                var _pageSize = <%= ApplicationManager.AppSettings.PagingResultsPerPage %>;
+                if (typeof (serviceHelper) != 'undefined') { serviceHelper.initialize('<%=ResolveUrl("~/Services/") %>', '<%=ResolveUrl("~") %>'); }
+
+                //initialize search
+                $(document).ready(function () {
+                    if ($('#headerSearchText').length > 0) {
+                        search.initialize({ searchInputId: 'headerSearchText', at: _at, resultRequestPeriod: 500, minSearchTermLength: 2,
+                            appPath: '<%=ResolveUrl("~/") %>'
+                        });
+                    }
+                });
+            </script>
+            <asp:ContentPlaceHolder ID="_scriptContent" runat="server" />
+        </form>
+        <asp:PlaceHolder ID="_trialChatScript" runat="server"></asp:PlaceHolder>
+    </body>
+</html>

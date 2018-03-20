@@ -1,0 +1,20 @@
+﻿{{if $item.index % 2 == 0}}
+<div id="response_${Id}" class="gridContent zebra {{if IsTest}} flagged" title="This is a test response and should be removed before performing analysis on response data.{{/if}}">
+{{else}}
+<div id="response_${Id}" class="gridContent detailZebra {{if IsTest}} flagged" title="This is a test response and should be removed before performing analysis on response data.{{/if}}">
+{{/if}}
+    <div class="left input" style="width: 3%"><input type="checkbox" value="${Id}" class="deleteResponse" /></div>
+    <div class="left" style="width: 7%">${Id}</div>
+    <div class="left truncate" style="width: 25%"title="${UserIdentifier}">${UserIdentifier}</div>
+    <div class="left" style="width: 15%">${dateUtils.jsonDateToInvariantDateString(Started)}</div>
+    <div class="left" style="width: 15%">${dateUtils.jsonDateToInvariantDateString(LastEditDate)}</div>
+    <div class="fixed_50 left" style="text-align: center;">
+        {{if CompletionDate != null}}
+        <div class="completed-icon" title='${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/completed", "Completed")}'></div>
+        {{/if}}
+    </div>
+    {{if isAggregativeResult && isAggregativeResult==true}}
+        <div class="fixed_150 left truncate">${SurveyName}</div>
+    {{/if}}
+    <br class="clear" />
+</div>

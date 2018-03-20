@@ -1,0 +1,15 @@
+﻿/****************************************************************************
+ * CustomSurveyStyles.css                                                   *
+ * This stylesheet is included in report pages after report style template  *
+ * so this file may be used to override style settings for all report and   *
+ * to make additional custom styles available in the "Apply Style" dropdown *
+ * of item text editors for messages, etc. in report.                       *
+ ****************************************************************************/
+ 
+ .important
+ {
+     font-weight:bold;
+     color:Orange;
+ }
+ 
+ 

@@ -1,0 +1,13 @@
+﻿{{if $item.index % 2 == 1}}
+    <ul class="styleContent allMenu">
+{{else}}
+    <ul class="styleContent zebra allMenu">
+{{/if}}
+    
+    <li class="groupContentAttributes fixed_25">{{if IsDefault}}<div class="styleDefault"></div>{{/if}}</li>
+    <li class="groupContentAttributes fixed_50">{{if IsPublic}}<div class="check2"></div>{{/if}}</li>
+    <li class="groupContentAttributes fixed_50">{{if item.IsReadOnly}}<div class="check2"></div>{{/if}}</li>
+    <li class="groupContentAttributes fixed_125">${Name}</li>
+    <div class="clear"></div>
+</ul>
+<div class="clear"></div>

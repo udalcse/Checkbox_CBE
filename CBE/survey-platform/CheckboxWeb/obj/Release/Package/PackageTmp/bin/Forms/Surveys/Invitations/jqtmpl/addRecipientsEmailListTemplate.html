@@ -1,0 +1,11 @@
+﻿ <div class="gridHeader">
+    <div class="left fixed_25"><input type="checkbox" id="selectAllEmailLists"/></div>
+    <div class="left fixed_200"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddEmailListsControl.ascx/grid/listName", "Name")}</b></div>
+    <div class="left fixed_200"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddEmailListsControl.ascx/grid/description", "Description")}</b></div>
+    <div class="left"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddEmailListsControl.ascx/grid/addressCount", "Addresses")}</b></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+  {{tmpl(user, {index: index}) 'addRecipientsEmailListItemTemplate.html'}}
+{{/each}}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flatFileSinkConfiguration>
+  <logFile>c:\temp\CheckboxExceptionLog.txt</logFile>
+  <header>
+  </header>
+  <footer>
+  </footer>
+</flatFileSinkConfiguration>

@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="ResMimeType">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="Version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="Reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+    </resheader>
+    <resheader name="Writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+    </resheader>
+    <!-- 
+    
+    COMMON ERRORS
+    Errors used throughout the assembly.
+    
+    -->
+    <data name="E_NotActivated">
+        <value>������� �� ���� ������������. ����� ���������� ���������, �������� 
+������ "activateLicense={0}" � �������� ��������� � ������ ������� ���� �������� � 
+��������� ������. ��� �������� �������� � �������, �� ������� ����������� ��� ��������.
+�������� ������ ����� ����� ��� ������ � ���� �������� ��������, ����� ���������� 
+���������.</value>
+    </data>
+    <data name="E_CouldNotActivate">
+        <value>���������� ������������ �������� �� {0}: {1}</value>
+    </data>
+    <data name="E_ActivateNotSaved">
+        <value>�� ����� ������ �������������� �������� �� ����, ������ � �������� �������� ��� ��������. �� ������ &lt;a href="{0}&amp;downloadLicense=true"&gt;��������� �������������� ��������&lt;/a&gt; � ����������� �� ������ �������� ��������.</value>
+    </data>
+    <data name="E_ProfileMismatch">
+        <value>������� ���������� ���������� �� ������������� ������� ����������, �� ������� ���� ����������� ��������� ��������. �������� {0} �� �������� ��������. ����� ���������� ��������� �� ��������� ����������.</value>
+    </data>
+    <data name="E_InvalidSignature">
+        <value>�������� ����� �������� �������.</value>
+    </data>
+    <data name="E_InvalidProfileHash">
+        <value>�������� ���-��� �������.</value>
+    </data>
+    <data name="E_MissingActivation">
+        <value>����������� ��������� ����������� � ��������.</value>
+    </data>
+    <data name="E_InvalidSigningKeys">
+        <value>�������� ����� �������: {0}. ����� ������ ����� ���, ����������� � ������ ������, ��� ������ ������� ��� ���������������.</value>
+    </data>
+    <data name="E_UnregisterNotSupported">
+        <value>������ �� ������������ ������ ����������� ��������.</value>
+    </data>
+    <data name="E_RegisterNotSupported">
+        <value>������ �� ������������ ����������� ��������.</value>
+    </data>
+    <data name="E_NewLicenseRegister">
+        <value>������ �� ������������ ��������� �������� � ���� �����������.</value>
+    </data>
+    <data name="E_InvalidLicenseCannotValidate">
+        <value>�������� ��������, �������� ����������.</value>
+    </data>
+    <data name="E_NewTrialNotSupported">
+        <value>������ �� ������������ ��������� ����� ��������������� ��������.</value>
+    </data>
+    <data name="E_MissingLicenseServer">
+        <value>����������� �� ������ �������� �� ������� � ��������.</value>
+    </data>
+    <data name="E_AppLimitReached">
+        <value>��������� ������ ���������� ������������� ����������. ������������ ���������� {0}.</value>
+    </data>
+    <data name="E_MustBeWebControl">
+        <value>{0} ������ ���� �������� �� System.Web.UI.Control.</value>
+    </data>
+    <data name="E_DesigntimeOnly">
+        <value>�������� ������ �� ������ ����������.</value>
+    </data>
+    <data name="E_InvalidDomain">
+        <value>����� {0} �� �������� ���������� ��� �� �������� ����������� IP �������.</value>
+    </data>
+    <data name="E_InvalidVersion">
+        <value>�������� ������, ������ ���� 1.0-{0}.</value>
+    </data>
+    <data name="E_LicenseNotSigned">
+        <value>�������� ������ ���� ���������, ����� ������������.</value>
+    </data>
+    <data name="E_RegistrationFailed">
+        <value>��������� ����������� �� {0}: {1}</value>
+    </data>
+    <data name="E_LaterVersion">
+        <value>�������� ���� ������� � ����� ������� XHEO|Licensing. ���������� � ������������� �� ���������� ����� ��������.</value>
+    </data>
+    <data name="E_MissingComponents">
+        <value>�������� �� �������� �����������.</value>
+    </data>
+    <data name="E_LicenseExpired">
+        <value>����� �������� �������� �������. ���� ��������� ��������: {0}.</value>
+    </data>
+    <data name="E_InvalidLicense">
+        <value>�������� ��������.</value>
+    </data>
+    <data name="E_LicenseReadOnly">
+        <value>�������� ������������� ������ ��� ������.</value>
+    </data>
+    <data name="E_InvalidSerialForIndexer">
+        <value>�������� �������� �����. �������� � �������� ����� ������ ��������� ��� ��������� �� �����������.</value>
+    </data>
+    <data name="E_CouldNotLoadPack">
+        <value>���������� ��������� ����� ��������: {0}</value>
+    </data>
+    <data name="E_ResponseMustBeBuffered">
+        <value>����� ������ ���� �����������. ���������� �������� Response.BufferOutput = True.</value>
+    </data>
+    <data name="E_InvalidSearchPath">
+        <value>�������� ���� ������ {0} ({1}).</value>
+    </data>
+    <data name="E_NoLicensesFound">
+        <value>� {0} �������� �� �������.</value>
+    </data>
+    <data name="E_ErrorLoadingPack">
+        <value>������ ��� �������� {0}: {1}</value>
+    </data>
+    <data name="E_GetTrialFailure">
+        <value>�� ������� �������� ��������������� ��������, ����� �������: {0}</value>
+    </data>
+    <data name="E_GetTrialUnexpectedFailure">
+        <value>������ �� ����� ��������������� ��������� ��������������� ��������: {0}</value>
+    </data>
+    <data name="E_UnexpectedValidate">
+        <value>������. {0}
+
+{1}</value>
+    </data>
+    <data name="E_UnexpectedErrorValidate">
+        <value>������ ��� ������� ��������� �������� ��� {0}. ���������� � {1} ��� ��������� ������ (Url = {2}, Email = {3}, ������� = {4}). ��������� ���������� {5}</value>
+    </data>
+    <data name="E_NoLicenseEx">
+        <value>���������� �������� �������� ��� '{0}'. ���������� � {1} ��� ��������� ������ (Url = {2}, Email = {3}, ������� = {4}). 
+�������: 
+{5}</value>
+    </data>
+    <data name="E_SkipTrial">
+        <value>�������� {0} ���������, ��������������� �������� ��������.</value>
+    </data>
+    <data name="E_CouldNotValidate">
+        <value>���������� ��������� �������� (��� �������� ���������) {0} (#{2}) - {1}</value>
+    </data>
+    <data name="E_InvalidSignatureIn">
+        <value>������� � {0 } �� ����� ���� ������������ ��� ������� ������.</value>
+    </data>
+    <data name="E_NoPublicKey">
+        <value>���������� ����� �������� ���� �������� � ������ {0}. ����������� {1}.{2}.plsk.</value>
+    </data>
+    <data name="E_AllowedAlreadySet">
+        <value>�������� ��������� AllowedInstances ��� ���� ����������� � �� ����� ���� ��������.</value>
+    </data>
+    <data name="E_CouldNotCreateInstanceBroker">
+        <value>���������� ������� InstanceBroker.</value>
+    </data>
+    <data name="E_InvalidIP">
+        <value>IP ����� {0} �� �������� ����������.</value>
+    </data>
+    <data name="E_FirstIPRange">
+        <value>������ IP ����� � ��������� ������ ���� ������ ��� ����� ���������� ������.</value>
+    </data>
+    <data name="E_InvalidDataIPRange">
+        <value>������������ ������ ��� IPRangeCollection.</value>
+    </data>
+    <data name="E_NoLicenseUrl">
+        <value>�� ������ URL ��������.</value>
+    </data>
+    <data name="E_CouldNotValidateWith">
+        <value>���������� ��������� �������� �� {0}.</value>
+    </data>
+    <data name="E_CouldNotValideWithInvalid">
+        <value>���������� ��������� �������� �� {0}. ������� �������� �����.</value>
+    </data>
+    <data name="E_CouldNotValideWithUnexpected">
+        <value>���������� ��������� �������� �� {0}, ����� �������: {1}</value>
+    </data>
+    <data name="E_InvalidKeysVersion">
+        <value>�������� ���� ���������� ��������. ��� ������ ���������� �������������� �������� ������ � �������� {0} � ����.</value>
+    </data>
+    <data name="E_InvalidKeyFile">
+        <value>�������� ���� ���������� ��������.</value>
+    </data>
+    <data name="E_LimitDoesNotExist">
+        <value>�� ������� ����������� {0}.</value>
+    </data>
+    <data name="E_InvalidXmlForLimits">
+        <value>�������� ������ XML, ��� ���������� ��������� ����������� �� XML.</value>
+    </data>
+    <data name="E_VersionOrder">
+        <value>������������ ������ ������ ���� ������ ��� ����� ����������� ������.</value>
+    </data>
+    <data name="E_DidNotAcceptTrial">
+        <value>������� ��������������� �������� �� �������.</value>
+    </data>
+    <data name="E_TrialExpiredVisit">
+        <value>��������������� �������� �������. ����� ���������� ������ ��������, �������� {0}.</value>
+    </data>
+    <data name="E_ClockRolledBack">
+        <value>���� ���� ���������� �����.</value>
+    </data>
+    <data name="E_CollectionReadOnly">
+        <value>������ � ��������� {0} �������� ������ ��� ������.</value>
+    </data>
+    <data name="E_MissingContextOrSession">
+        <value>����������� HttpContext ��� ������.</value>
+    </data>
+    <data name="E_MaxSessionsReached">
+        <value>������� ����� �������������. �������� ��������� ������������� ����������� ������ {0} �������������.</value>
+    </data>
+    <data name="E_MustRegister">
+        <value>��������� ���������������� ��������.</value>
+    </data>
+    <data name="E_DidNotRegister">
+        <value>�� ����������������.</value>
+    </data>
+    <data name="E_ReplacedBy">
+        <value>�������� ��������� �� {0}.</value>
+    </data>
+    <data name="E_CustomFieldValidName">
+        <value>���������������� ���� ������ ����� ���������� �����.</value>
+    </data>
+    <data name="E_InvalidPublisher">
+        <value>����� �������������� ������ ��������, ������������ {0} ������� ��������� ����� {1}.</value>
+    </data>
+    <data name="E_InvalidMachine">
+        <value>�������� ����� ���� ������������ ������ �� ���������� {0}.</value>
+    </data>
+    <data name="E_NotLocal">
+        <value>��������� ��������� ������ � ���������� ����������. �� ������ ���������� � ����� �� ������, ������������� � http://localhost.</value>
+    </data>
+    <data name="E_VersionMismatch">
+        <value>������ ������ {0} �� ��������� � {1}.</value>
+    </data>
+    <data name="E_VersionMismatchRange">
+        <value>������ ������  {0} �� ������ � �������� �� {1} �� {2}.</value>
+    </data>
+    <data name="E_DidNotContinue">
+        <value>�� ����������.</value>
+    </data>
+    <data name="E_BetaExpired">
+        <value>������ ����-������������ �����. �������� {0}, ����� ��������� ������� ������.</value>
+    </data>
+    <data name="E_CannotChangeMask">
+        <value>���������� �������� ����� ��������� ������ ����� ����, ��� ����� �������.</value>
+    </data>
+    <data name="E_InvalidSerialNumber">
+        <value>��������� �������� ����� �������.</value>
+    </data>
+    <data name="E_SerialNumberMismatch">
+        <value>�������� �������� �����. ����� ������ ���������� � {0}. ���������� ���������� �������� AbsoluteSerialNumber.</value>
+    </data>
+    <data name="E_InvalidEmulateVersion">
+        <value>�������� ������ ��������. ������� ���� �� �������� ������ (��������, 1.0, 1.1, � �.�.)</value>
+    </data>    
+    <data name="E_InvalidSigningKeyFormat">
+        <value>�������� ������ ����� ���������� ��������.</value>
+    </data>        
+    <data name="E_KeyMustBeUpgraded">
+        <value>����, ������������ ��� ���������� ��������, ������ ���� �������� �� ������ �� ���� {0}.</value>
+    </data>        
+    <data name="E_MissingPrivateKey">
+        <value>����������� �������� ����.</value>
+    </data>        
+    <data name="E_InvalidSerialKeySize">
+        <value>���������� ���������� ������ �����, ������� �������� �������� �����.</value>
+    </data>
+    <data name="E_BadSerialNumber">
+        <value>�������� �������� �����, ������������ ������ ��� ����� ��� ������ ��������.</value>
+    </data>
+    <data name="E_CannotValidateSerialNumbersOfLength">
+        <value>���������� ��������� {0} ������� �������� ������.</value>
+    </data>
+    <data name="E_NoComponentInLicense">
+        <value>��������� {0} �� ������������ {1}.</value>
+    </data>
+    <data name="E_DidNotActivateOrContinue">
+        <value>�������� �� ������������.</value>
+    </data>
+    <data name="E_InvalidUnlockSerialNumber">
+        <value>������������������ ��� �������� �������� �����.</value>
+    </data>
+    <data name="E_Unlocked">
+        <value>�������������� ������ �������� � ��� �� ������ ��������.</value>
+    </data>
+    <data name="E_InvalidActivationKey">
+        <value>�������� ���� ���������. ��������� ��������� ��������.</value>
+    </data>
+    <data name="E_UnlockedSamePack">
+        <value>�������������� �������� ������ ������� � ��� �� ����� �������� (���� .LIC), ��� � �������� ��������.</value>
+    </data>    
+    <data name="E_NotAllowedOnServer">
+        <value>������������� ��������� ������ ��� ���-�������� � ���-��������.</value>
+    </data>
+    <data name="E_MustBeOnServer">
+        <value>������ �������� ������ �� ���-�������� � ���-��������.</value>
+    </data>
+    
+    <!-- 
+    
+    COMMON USER INTERFACE STRINGS
+    Command names, and UI strings uses by multiple forms.
+    
+    -->
+    <data name="UI_SU">
+        <value>���-����� ������ ���������</value>
+    </data>
+    <data name="UI_SE">
+        <value>E-mail ����� ������ ���������</value>
+    </data>
+    <data name="UI_SP">
+        <value>������� ������ ���������</value>
+    </data>
+    <data name="UI_SN">
+        <value>�������� �����</value>
+    </data>
+    <data name="UI_Warning">
+        <value>��������������: ��� ������������ ��������� �������� ������� �� ��������� ����� � ������������� �����������������. ���������� ����������� ������������ �� ������.</value>
+    </data>
+    <data name="UI_OK">
+        <value>O&amp;K</value>
+    </data>
+    <data name="UI_Browse">
+        <value>&amp;�������...</value>
+    </data>
+    <data name="UI_AlreadyHaveLicense">
+        <value>� ��� ���� ��������</value>
+    </data>
+    <!-- 
+    
+    COMMON TEXT AND MESSAGES
+    Errors used throughout the assembly.
+    
+    -->
+    <data name="M_LicenseExistsOverwrite">
+        <value>{0} ��� ����������. ������������?</value>
+    </data>
+    <data name="M_LicenseExistsOverwriteTitle">
+        <value>����������� ���� ��� ����������, ������������?</value>
+    </data>
+    <!-- 
+    
+    ACTIVATION FORM USER INTERFACE
+
+    -->
+    <data name="UIA_Title">
+        <value>��������� ���������</value>
+    </data>
+    <data name="UIA_Days">
+        <value>�������� ����</value>
+    </data>
+    <data name="UIA_Key">
+        <value>���� ����������</value>
+    </data>
+    <data name="UIA_ActivationKey">
+        <value>���</value>
+    </data>    
+    <data name="UI_Continue">
+        <value>&amp;����������</value>
+    </data>
+    <data name="UIA_MWarning">
+        <value>��������� �������� �������� � ����� ����������. ���� �� ������ ���������� ��������� �� ������ ����������, �� ������ ��������� ������� ��������� �� ��� ����������.</value>
+    </data>
+    <data name="UIA_Inst">
+        <value>�� ������ ���������� � ������ ��������� �� ����������� ����� ��� �� ��������, ��������� �����, � �������� ��������� ����������. ��� ������� ��� ��� �� ������ ������������ ���� ��������.</value>
+    </data>
+    <data name="UIA_Online">
+        <value>������������ ����� ��������</value>
+    </data>
+    <data name="UIA_Phone">
+        <value>������������ �� ����������� ����� ��� ��������</value>
+    </data>
+    <data name="UIA_ACont">
+        <value>���������� ��� ���������</value>
+    </data>
+    <data name="UIA_Welcome">
+        <value>��� ����������� ��������� ��������� ���������. ����� ����, ��� �������� ����� ������������ �� ����������, ��� �� ����� ���� ������������ �� ������ ����������. ��������� �������� �� ������������ �� � ���������� ����������.</value>
+    </data>
+    <data name="UIA_Clipboard">
+        <value>�&amp;���������� � �����</value>
+    </data>
+    <data name="UIA_Email">
+        <value>����������� � &amp;������</value>
+    </data>
+    <data name="UIA_Back">
+        <value>&lt;&lt; &amp;�����</value>
+    </data>
+    <!-- 
+    
+    ACTIVATION FORM TEXT AND MESSAGES
+    
+    -->
+    <data name="MAL_Clipboard">
+        <value>�������� �����: {0}
+���� ���������: {1}</value>
+    </data>
+    <!-- 
+    
+    ADDITIONAL INFORMATION USER INTERFACE
+    
+    -->
+    <data name="UIAI_Title">
+        <value>�������������� ����������</value>
+    </data>
+    <data name="UIAI_Online">
+        <value>�������������� ���������� ����� �������� � ���������.</value>
+    </data>
+    <!-- 
+    
+    ADDRESS FORM USER INTERFACE
+
+    -->
+    <data name="UIAD_Country">
+        <value>������</value>
+    </data>
+    <data name="UIAD_StreetAddress">
+        <value>�����</value>
+    </data>
+    <data name="UIAD_City">
+        <value>�����</value>
+    </data>
+    <data name="UIAD_State">
+        <value>����������/�������</value>
+    </data>
+    <data name="UIAD_Zip">
+        <value>�������� ������</value>
+    </data>
+    <data name="UIAD_Phone">
+        <value>�������</value>
+    </data>
+    <data name="UI_BuyNow">
+        <value>&amp;������</value>
+    </data>
+    
+    <data name="MAD_EnterStreet">
+        <value>����������, ������� �����.</value>
+    </data>
+    <data name="MAD_EnterCity">
+        <value>����������, ������� �����.</value>
+    </data>
+    <data name="MAD_EnterState">
+        <value>����������, ������� �������� ����������/�������.</value>
+    </data>
+    <data name="MAD_EnterZip">
+        <value>����������, ������� �������� ������.</value>
+    </data>
+    <data name="MAD_EnterPhone">
+        <value>����������, ������� ����� ��������.</value>
+    </data>
+    <data name="MAD_EnterCountry">
+        <value>����������, �������� ������. �������� XX - Other, ���� ������ ����������� � ������.</value>
+    </data>    
+
+    
+    <!-- 
+    
+    REGISTRATION FORM USER INTERFACE
+    
+    -->
+    <data name="UIR_Title">
+        <value>������� ��������������� ����������</value>
+    </data>
+    <data name="UIR_Name">
+        <value>&amp;���</value>
+    </data>
+    <data name="UIR_Organization">
+        <value>&amp;�����������</value>
+    </data>
+    <data name="UIR_More">
+        <value>&amp;������ &gt;&gt;</value>
+    </data>
+    <data name="UIR_Less">
+        <value>&lt;&lt; &amp;������</value>
+    </data>
+    <data name="UIR_AdditionalInformation">
+        <value>�������������� ����������</value>
+    </data>
+    <data name="UIR_Register">
+        <value>&amp;����������������</value>
+    </data>
+    <data name="UIR_DontRegister">
+        <value>&amp;�� ��������������</value>
+    </data>
+    <data name="UIR_RemindMeLater">
+        <value>��������� ��� &amp;�����</value>
+    </data>
+    <data name="UIR_ConnectionWarning">
+        <value>��������������: ��������, ��� �������� ���������� ���������� � ���������� ��� ����, ����� ��������� �����������.</value>
+    </data>
+    <data name="UIR_Privacy">
+        <value>������������ � ����� ��������� � ��������� ������ ������������������ ������� ����������.</value>
+    </data>
+    <!-- 
+    
+    REGISTRATION FORM ERRORS
+    
+    -->
+    <data name="ER_CannotAddCustomFieldAfterLoad">
+        <value>���������� �������� ���������������� ���� ����� �������� �����.</value>
+    </data>
+    <data name="ER_MustSetLicenseTypeToGetLicense">
+        <value>�� ������ ���������� �������� LicensedType ��� ����, ����� ������������� ����� ��������.</value>
+    </data>
+    <data name="ER_FirstNameRequired">
+        <value>������� ���.</value>
+    </data>
+    <data name="ER_LastNameRequired">
+        <value>������� �������.</value>
+    </data>
+    <data name="ER_MiddleNameRequired">
+        <value>������� ��������.</value>
+    </data>
+    <data name="ER_SNRequired">
+        <value>������� �������� �����.</value>
+    </data>
+    <data name="ER_OrganizationRequired">
+        <value>������� �������� �����������.</value>
+    </data>
+    <data name="ER_YouMustSelect">
+        <value>�������� {0}.</value>
+    </data>
+    <data name="ER_YouMustEnterAValueFor">
+        <value>������� �������� ��� {0}.</value>
+    </data>
+    <data name="ER_SNRequired">
+        <value>��� ����������� ��������� �������� �����.</value>
+    </data>
+    <data name="ER_CouldNotRegister">
+        <value>���������� ���������������� � {0}: {1}
+</value>
+    </data>
+    <data name="ER_InvalidLicenseFromServer">
+        <value>������ ������ �������� ��������.</value>
+    </data>
+    <data name="ER_CouldNotComplete">
+        <value>���������� ��������� �����������.</value>
+    </data>
+    <data name="ER_CouldNotComplete1">
+        <value>���������� ��������� �����������: {0}</value>
+    </data>
+    <!-- 
+    
+    REGISTRATION FORM TEXT AND MESSAGES
+    
+    -->
+    <data name="MR_RegistrationRequired">
+        <value>��� ����������� ������ ��������� �����������. ������ ��������?</value>
+    </data>
+    <data name="MR_RegistrationRequiredTitle">
+        <value>��������� �����������</value>
+    </data>
+    <data name="MR_ContinueInTrial">
+        <value>������ �������� �������� �����. ���������� ������ � ������ ������������?</value>
+    </data>  
+    <data name="MR_ContinueInTrialTitle">
+        <value>���������� ������ � ������ ������������?</value>
+    </data>      
+    <!-- 
+    
+    BUY NOW FORM USER INTERFACE
+    
+    -->
+    <data name="UIB_ConnectionSecure">
+        <value>���������� ����������</value>
+    </data>
+    <data name="UIB_Back">
+        <value>�����</value>
+    </data>
+    <data name="UIB_Forward">
+        <value>�����</value>
+    </data>
+    <data name="UIB_Stop">
+        <value>����</value>
+    </data>
+    <data name="UIB_Refresh">
+        <value>��������</value>
+    </data>
+    <data name="UIB_Print">
+        <value>������</value>
+    </data>
+    <data name="UIB_BuyNowTitle">
+        <value>������</value>
+    </data>
+    <data name="UIB_YouAreNowBuying">
+        <value>�� � �������� �������</value>
+    </data>
+    <data name="UIB_DownloadingLicense">
+        <value>�������� ��������...</value>
+    </data>
+    <data name="UIB_PageSecure">
+        <value>���������� ��������</value>
+    </data>
+    <data name="UIB_PageNotSecure">
+        <value>������������ ��������</value>
+    </data>
+    <!-- 
+    
+    BUY NOW FORM TEXT AND MESSAGES
+    
+    -->
+    <data name="MB_SaveBackupTitle">
+        <value>���� ����� �������� ���� ��������� � ��������� � {0}.
+������� ��������� ����� �� ������, ���� ��� ������������ �������������� ���������?</value>
+    </data>
+    <!-- 
+    
+    BUY NOW FORM ERRORS
+    
+    -->
+    <data name="EB_CouldNotBackup">
+        <value>���������� ������� ��������� �����: {0}</value>
+    </data>
+    <data name="EB_CouldNotDownload">
+        <value>���������� ��������� ��������: {0}</value>
+    </data>
+    <data name="EB_RequestTimedOut">
+        <value>����� ������� �������.</value>
+    </data>
+    <!-- 
+    
+    FAILURE REPORT FORM USER INTERFACE
+    
+    -->
+    <data name="UIF_DontShow">
+        <value>������ �� ����������</value>
+    </data>
+    <data name="UIF_Copy">
+        <value>&amp;�����������</value>
+    </data>
+    <data name="UIF_Details">
+        <value>�����������</value>
+    </data>
+    <data name="UIF_Assemblies">
+        <value>������</value>
+    </data>
+    <data name="UIF_SysInfo">
+        <value>��������� ����������</value>
+    </data>
+    <data name="UIF_Title">
+        <value>����� �� �������</value>
+    </data>
+    <data name="UIF_Assembly">
+        <value>������</value>
+    </data>
+    <data name="UIF_Version">
+        <value>������</value>
+    </data>
+    <data name="UIF_FileVersion">
+        <value>������ �����</value>
+    </data>
+    <data name="UIF_Location">
+        <value>����</value>
+    </data>
+    <!-- 
+    
+    FAILUIRE REPORT FORM ERRORS
+    
+    -->
+    <data name="EF_Generic">
+        <value>'{0}' ����������, ��������� � {1}, ����� �������� ������.</value>
+    </data>
+    <data name="EF_NoLicense">
+        <value>���������� �������� �������� ��� {0}. ����������, ��������� � {1}, ����� �������� ������.</value>
+    </data>
+    <data name="EF_Details">
+        <value>
+
+�����������:
+
+{0}</value>
+    </data>
+    <data name="EF_ErrorInfo">
+        <value>������: {0}</value>
+    </data>
+    <!-- 
+    
+    TRIAL FORM USER INTERFACE
+    
+    -->
+    <data name="UIT_Title">
+        <value>��������������� ������</value>
+    </data>
+    <data name="UIT_Info">
+        <value>&amp;����������</value>
+    </data>
+    <data name="UIT_Try">
+        <value>&amp;����������</value>
+    </data>
+    <data name="UI_Cancel">
+        <value>&amp;������</value>
+    </data>
+    <data name="UIT_Warning">
+        <value>����� ��� ������ �� ��������� ���� �������� � ������������ ����������� (EULA) ����� ������������ ����������.</value>
+    </data>
+    <data name="UIT_Expired">
+        <value>��� ������ ������������ ��������.</value>
+    </data>
+    <!-- 
+    
+    TRIAL FORM TEXT AND MESSAGES
+    
+    -->
+    <data name="MT_BNWarning">
+        <value>�������� �������, � ������� �� ��������� ���� � ���������.
+
+������� OK, ����� ������� ������������ ����, ��� ������, ����� �������� ��������.</value>
+    </data>
+    <data name="MT_BNWarningTitle">
+        <value>����������� ��������</value>
+    </data>
+    <data name="MT_TrialExpired">
+        <value>������ ������������ ��������.</value>
+    </data>
+    <data name="MT_DaysRemaining">
+        <value>�������� {0} ����.</value>
+    </data>
+    <!-- 
+    
+    TRIAL FORM ERRORS
+    
+    -->
+    <data name="ET_InvalidDateRange">
+        <value>������ ������������ ����� �������.</value>
+    </data>
+    <!-- 
+
+    GUI BRANDED FORM USER INTERFACE
+    
+    -->
+    <data name="UIB_ContinueTerms">
+        <value>��������� �� ������������� ���� �������� � ���������</value>
+    </data>
+    <data name="UIB_Continuing">
+        <value>���������� ({0})</value>
+    </data>
+    <!-- 
+
+    SELECT EXISTING LICENSE FORM USER INTERFACE
+    
+    -->
+    <data name="UIS_Title">
+        <value>�������� ��������</value>
+    </data>
+    <data name="UIS_LicenseFileLabel">
+        <value>������������ ������������� �����</value>
+    </data>
+    <data name="UIS_ThisApp">
+        <value>���������� �������� ������ ��� ����� ����������</value>
+    </data>
+    <data name="UIS_AllApps">
+        <value>���������� �������� ��� ���� ����������, ������� ���������� ��������� (��������� ����� ��������������)</value>
+    </data>
+    <data name="UIS_Message">
+        <value>���� �� ��������� �������� �� ���� ������� � �������� ������������ ����, �� �� ������ ������� ��� ������. ����� ��������� ������������� ����� ���������� ����� ��������������.</value>
+    </data>
+    <!-- 
+
+    SELECT EXISTING LICENSE FORM ERRORS
+    
+    -->
+    <data name="ES_MustSelectLocation">
+        <value>�� ������ ������� ������������ ������������ ����.</value>
+    </data>
+    <data name="ES_CouldNotCopy">
+        <value>���������� ����������� ��������: {0}</value>
+    </data>
+    <!-- 
+    
+    ACTIVATION LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MAL_HeaderHtml">
+        <value>&lt;table cellpadding="5" cellspacing="0" border="0" bgcolor="yellow" width="100%"&gt;&lt;tr&gt;&lt;td align="center"&gt;&lt;b&gt;��������� ���������:&lt;/b&gt; &lt;a href="#DoActivation"&gt;������ ����&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    </data>
+    <data name="MAL_FooterHtml">
+        <value>
+&lt;A name="DoActivation"&gt;&lt;/a&gt;
+        &lt;TABLE cellSpacing="0" cellPadding="0" width="100%" border="0" style="border: solid 3px black"&gt;
+            &lt;TR&gt;
+                &lt;TD bgcolor="buttonface" background="{11}" vAlign="top"&gt;
+                    &lt;table cellpadding="10" cellspacing="0" border="0" width="100%"&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;
+                                &lt;font size="1" color="white" face="Arial"&gt;
+                                    &lt;b&gt;�������� ����&lt;/b&gt;&lt;br&gt;
+                                    &lt;font size="5" color="yellow" face="Arial"&gt;{0}&lt;/font&gt;
+                                    &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+                                    &lt;b&gt;Url ������ ���������&lt;/b&gt;&lt;br&gt;
+                                    &lt;a href="{1}" style="COLOR: white" target="_blank"&gt;{1}&lt;/a&gt;&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;b&gt;Email ������ ���������&lt;/b&gt;&lt;br&gt;
+                                    &lt;a href="mailto:{2}" style="COLOR: white"&gt;{2}&lt;/a&gt;&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;b&gt;������� ������ ���������&lt;/b&gt;&lt;br&gt;
+                                    {3} &lt;/font&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/TD&gt;
+                &lt;td width="100%" vAlign="top" bgColor="buttonface"&gt;
+                    &lt;TABLE cellSpacing="10" cellPadding="0" width="100%" border="0"&gt;
+                        &lt;TR&gt;
+                            &lt;TD&gt;
+                                &lt;P&gt;&lt;FONT face="Arial Black" size="4"&gt;��������� ���������&lt;/FONT&gt;&lt;/P&gt;
+                                &lt;P&gt;&lt;FONT face="Arial" size="2" color="red"&gt;{5}&lt;/FONT&gt;&lt;/P&gt;
+                                &lt;FONT face="Arial" size="2"&gt;
+                                &lt;P&gt;��� ����������� ���� �������� ��� &lt;b style="color: blue;"&gt;{6}&lt;/b&gt; ��������� ���������.
+                                        ����� ����, ��� �������� ������������, ��� �� ����� ���� ������������ �� ������ ����������.
+                                        ��������� �������� �������� �� � ����� ����������.&lt;/P&gt;
+                                &lt;P&gt;&lt;A href="{4}"&gt;&lt;b&gt;������ ������� ���������&lt;/b&gt;&lt;/A&gt;&lt;/P&gt;
+                                &lt;p&gt;&lt;b&gt;������������ �� �������� ��� E-mail&lt;/b&gt;&lt;/p&gt;
+                                &lt;p&gt;��� ����, ����� ���������� ��������� �� �������� ��� e-mail �������� ������ �� ������ {8} ��� ��������� �� ��������, ���������� �����. 
+                                �������� ������ ��������� ���� ����������, ��������� ����. ����� �������� ���������� �����������.&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;�������� �����:&lt;/b&gt; {10}&lt;/p&gt;
+                                &lt;p&gt;&lt;b&gt;���� ����������:&lt;/b&gt; {9}&lt;/p&gt;
+                                
+                                &lt;p&gt;&lt;b&gt;���� ���������:&lt;/b&gt;&lt;/p&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa1"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa2"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa3"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa4"/&gt;&lt;br/&gt;
+                                
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa5"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa6"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa7"/&gt;
+                                &lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa8"/&gt;
+                                &lt;p&gt;&lt;input type="button" value="Activate" onClick="location.href='{4},' + __xa1.value + __xa2.value + __xa3.value + __xa4.value + __xa5.value + __xa6.value + __xa7.value + __xa8.value;"/&gt;&lt;/p&gt;
+                                &lt;/FONT&gt;
+
+                                
+                            &lt;/TD&gt;
+                        &lt;/TR&gt;
+                    &lt;/TABLE&gt;
+                &lt;/td&gt;
+            &lt;/TR&gt;
+            &lt;TR&gt;
+                &lt;td valign="bottom" bgcolor="black"&gt;{7}&lt;/td&gt;
+                &lt;TD valign="bottom" bgcolor="buttonface"&gt;
+                    &lt;P style="padding: 5px;"&gt;&lt;FONT face="Verdana" color="threeddarkshadow" size="1"&gt;&lt;b&gt;��������������:&lt;/b&gt; ��� ������������ 
+                            ��������� �������� ������� �� ��������� ����� � ������������� �����������������.
+                            ���������� ����������� ������������ �� ������.&lt;/FONT&gt;&lt;/P&gt;
+                &lt;/TD&gt;
+            &lt;/TR&gt;
+        &lt;/TABLE&gt;
+</value>
+    </data>
+    <data name="MAL_Description">
+        <value>��������� ������������� ������ �� ��� ����������, �� ������� ������������� ��������� ��������.</value>
+    </data>
+    <!-- 
+    
+    APPLICATION LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MAPPL_Description">
+        <value>��������� ������������� ������������� ���� ������� ������������� ����� ���������� �� ����� ����������.</value>
+    </data>
+    <data name="MAPPL_DetailedDescription">
+        <value>{0} ����������, ������������� �� ����� {1}.</value>
+    </data>
+    <!-- 
+    
+    BRANDED LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MBRL_Description">
+        <value>��������� HTML ����� � ���, ��� ������ �� ���������������� � �������� �����.</value>
+    </data>
+    <!-- 
+    
+    DESIGN TIME LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MDTL_Description">
+        <value>��������� ������������� ������ � ������ ����������.</value>
+    </data>
+    <!-- 
+    
+    DOMAIN NAME LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MDL_Description">
+        <value>��������� ������������� �������� ������� �������� ����.</value>
+    </data>
+    <data name="MDL_DetailedDescription">
+        <value>������ ���� ��������� � {0}.</value>
+    </data>
+    <!-- 
+    
+    GUI BRANDED LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MGBL_Description">
+        <value>��������� ������� ��������, ��� ������������� ������� ������������ ������������ ������ � �����������, ����� ��� ��� �� ��������� ������.</value>
+    </data>
+    <data name="MGBL_DetailedDescription">
+        <value>�������: {0}, �������: {1}</value>
+    </data>
+    <!-- 
+    
+    IP LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MIPL_Description">
+        <value>��������� ������������� ������������� ���������� IP �������.</value>
+    </data>
+    <!-- 
+    
+    VERSION LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MVL_Description">
+        <value>��������� ������������� ������������� �������� ������.</value>
+    </data>
+    <data name="MVL_DetailedDescription">
+        <value>�� {0} �� {1}.</value>
+    </data>
+    <!-- 
+    
+    TRIAL LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MTL_Description">
+        <value>�������� �������� ��� ��������������� � ������������� ���������� �� �������� ������������ ���������.</value>
+    </data>
+    <data name="MTL_DetailedDescription">
+        <value>�������: {0}, �������: {1}.</value>
+    </data>
+    <!-- 
+    
+    SESSION LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MSL_Description">
+        <value>������������ ����� ������������ ���������� ���������������� ������.</value>
+    </data>
+    <data name="MSL_DetailedDescription">
+        <value>{0} ��������, {1} ���������.</value>
+    </data>
+    <!-- 
+    
+    RUNTIME LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MRTL_Description">
+        <value>��������� ������������� ������ � ������ ����������.</value>
+    </data>
+    <!-- 
+    
+    REGISTRATION LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MRL_Description">
+        <value>������� ����������� ������������.</value>
+    </data>
+    <!-- 
+    
+    PUBLISHER LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MPL_Description">
+        <value>��������� ������������� ������ ��������, ������������ ������ ������������ ��������������.</value>
+    </data>
+    <!-- 
+    
+    OR LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MOL_Description">
+        <value>��������� �������������, ���� ��������������� ����� ����������� �� ������.</value>
+    </data>
+    <!-- 
+    
+    NON-COMMERCIAL LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MNCL_Description">
+        <value>��������� ������������� ������ � �������������� �����.</value>
+    </data>
+    <!-- 
+    
+    LICENSE SERVER LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MLS_Description">
+        <value>���������� �������� ������������ �������� �� �������� ������� ��������.</value>
+    </data>
+    <!-- 
+    
+    MACHINE LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MML_Description">
+        <value>��������� ������������� ������ �� ����� ������.</value>
+    </data>
+    <!-- 
+    
+    LOCAL COMPUTER LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MLCL_Description">
+        <value>��������� ������������� ������ �� ��������� ����������.</value>
+    </data>
+    <!-- 
+    
+    BETA LIMIT TEXT AND MESSAGES
+    
+    -->
+    <data name="MBL_Description">
+        <value>������������ ������������� ����-������ ����� ��������� ����� ������������.</value>
+    </data>
+    <data name="MBL_DetailedDescription">
+        <value>������� ������: {0}, ����������: {1}</value>
+    </data>
+    <data name="MBL_BetaExpired">
+        <value>���� ������������� ����-����� �����</value>
+    </data>
+    <!-- 
+    
+    AS SERVER LIMIT
+    
+    -->
+    <data name="MASL_Description">
+        <value>������������ ������������� ������ ������ �� ���-�������� ��� � ������� ���-��������.</value>
+    </data>
+    <data name="MASL_DetailedDescription">
+        <value>��������� = {0}, ��������� = {1}.</value>
+    </data>    
+</root>

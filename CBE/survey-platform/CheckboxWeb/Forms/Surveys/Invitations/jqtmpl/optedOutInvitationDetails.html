@@ -1,0 +1,21 @@
+﻿<div class="opted-out-details-header">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/email", "Email")}</div>
+<div class="opted-out-details-text" >${Email}</div>
+<div class="opted-out-details-header">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/optOutStatus", "Status")}</div>
+{{if Type == 0}}
+    <div class="opted-out-details-text">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/optOutStatus_0", "User opted out from the invitation")}</div>
+{{else}}
+    {{if Type == 1}}
+        <div class="opted-out-details-text">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/optOutStatus_1", "User opted out all invitations from you")}</div>
+    {{else}}
+        {{if Type == 2}}
+            <div class="opted-out-details-text">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/optOutStatus_2", "User marked the invitation as SPAM")}</div>
+        {{else}}
+            <div class="opted-out-details-text">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/optOutStatus_3", "Opted out by admin")}</div>
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+{{if Type != 3}}
+    <div class="opted-out-details-header">${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/details", "Details")}</div>
+    <div class="opted-out-details-text" id="details-message">${UserComment}</div>
+{{/if}}

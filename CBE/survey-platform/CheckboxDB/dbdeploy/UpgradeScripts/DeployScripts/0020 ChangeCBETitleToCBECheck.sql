@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Text_Set '/siteText/siteName', 'en-US', N'CBECheck'

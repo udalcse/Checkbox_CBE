@@ -1,0 +1,15 @@
+﻿<table class="timelineSettingsItem" style="width:100%;" objectType="${ObjectType}" eventorder="${Order}">
+    <tr>
+        <td width="15%" class="hand">${ObjectType}</td>
+        <td width="20%">
+            {{if Included}}
+            <input type="checkbox" checked="checked" class="settingsCheckbox"
+                   objectType="${ObjectType}"/>
+            {{else}}
+            <input type="checkbox" class="settingsCheckbox"
+                   objectType="${ObjectType}"/>
+            {{/if}}
+        </td>
+        <td width="65%" class="searchRoles" objectType="${ObjectType}">${Roles}</td>
+    </tr>
+</table>

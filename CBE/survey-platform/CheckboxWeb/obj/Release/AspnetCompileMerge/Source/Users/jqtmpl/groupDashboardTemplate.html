@@ -1,0 +1,42 @@
+﻿<div class="survey-header-container">
+    <div class="header-content clearfix">
+        {{if allowEdit}}
+        <a class="action-menu-toggle action-button ckbxButton silverButton" href="#" id="user_actions_button"><span class="toggle-arrow"></span>Group Actions</a>
+        <a class="action-button ckbxButton silverButton" protectPermission="Group.Edit" id="_membersLink"  href="javascript:showDialog('Groups/AddMembers.aspx?g=${DatabaseId}', 'largeProperties', '', function(){loadGroupData(_dashGroupId, false); groupListUpdateHandler();});">${textHelper.getTextValue("/users/groupDashboardTemplate/addMembers", "Add Members")}</a>
+        {{/if}}
+        <div id="user_actions_menu" class="groupMenu" style="display: none;margin-top:30px !important;">
+            <ul id="groupActionsPlace" class="itemActionMenu">
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" protectPermission="Group.Edit" id="_propertiesLink" href="javascript:showDialog('Groups/Properties.aspx?g=${DatabaseId}&onClose=onDialogClosed');">${textHelper.getTextValue("/users/groupDashboardTemplate/properties", "Properties")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" protectPermission="Group.Edit" id="_permissionsLink" href="javascript:showDialog('Groups/Security.aspx?g=${DatabaseId}', 'security');">${textHelper.getTextValue("/users/groupDashboardTemplate/permissions", "Permissions")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_copyGroupLink" href="javascript:copyGroup(${DatabaseId});">${textHelper.getTextValue("/users/groupDashboardTemplate/copy", "Copy")}</a></li>
+                <li><a class="ckbxButton redButton smallButton" id="_deleteAllGroupMembersFromCheckBox">${textHelper.getTextValue("/users/groupDashboardTemplate/deleteAllGroupMembersFromCheckbox", "Delete All Group Members")}</a> </li>
+                <li><a class="ckbxButton redButton smallButton" protectPermission="Group.Edit" href="javascript:deleteGroup(${DatabaseId});" id="deleteGroupLink">${textHelper.getTextValue("/users/groupDashboardTemplate/delete", "Delete Group")}</a></li>
+            </ul>    
+        </div>
+        
+        <h3>${Name}</h3>
+    </div>
+</div>
+<div class="surveyDescription">${Description}</div>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader allMenu">
+        
+        <span class="mainStats left">${textHelper.getTextValue("/users/groupDashboardTemplate/members", "Members")}</span>
+        {{if allowEdit}}
+        <div class="itemActionMenuSmall right" style="padding-right:5px;">
+            <a class="cancelButton" id="_deleteSelectedMembersLink" href="javascript:void(0);">${textHelper.getTextValue("/users/groupDashboardTemplate/deleteSelected", "Delete Selected")}</a>            
+            <a class="cancelButton" style="margin-left:10px; margin-right:10px;"id="_removeAllUsersFromGroup" href="javascript:void(0);">${textHelper.getTextValue("/users/groupDashboardTemplate/removeAllUsersFromGroup", "Remove All Users from Group")}</a>
+        </div>
+        {{/if}}
+        <br class="clear" />
+    </div>
+    <div id="gridPaginationTopContainer" class="shadow999 gridPagingContainer">
+        <ul id="paginationTop" class="pagination"></ul>
+    </div>
+    <div id="groupMembersPlace"></div>
+    
+    <div id="gridPaginationBottomContainer" class="border999 shadow999 gridPagingContainer">
+        <ul id="paginationBottom" class="pagination"></ul>
+    </div>
+</div>

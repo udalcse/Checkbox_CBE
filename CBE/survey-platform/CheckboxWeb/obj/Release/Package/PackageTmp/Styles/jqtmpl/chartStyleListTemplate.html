@@ -1,0 +1,12 @@
+﻿<div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllStyles"/></div>
+    <div class="fixed_25 left">&nbsp;</div>
+    <div class="left fixed_225" sortField="Name"><b>${textHelper.getTextValue("/styles/formStyleListTemplate/styleName", "Style Name")}</div>
+    <div class="left fixed_125" sortField="CreatedBy"><b>${textHelper.getTextValue("/styles/formStyleListTemplate/createdBy", "Created By")}</div>
+</div>
+
+{{each(index, style) items}}
+    <div id="styleContainer_${style.Id}" index="${index}">
+        {{tmpl(style, {index: index}) 'chartStyleListItemTemplate.html'}}
+    </div>
+{{/each}}

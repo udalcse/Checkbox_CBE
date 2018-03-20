@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptionHandlingConfiguration>
+  <policies>
+    <policy name="FrameworkCache">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="None">
+          <exceptionHandlers>
+<!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="ConfigurationManager">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="baseReplaceHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="FrameworkPublic">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--
+            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" />-->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="baseReplaceHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="FrameworkInternal">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="frameworkWrapHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="BusinessPublic">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="businessWrapHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="BusinessProtected">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="businessWrapHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="BusinessPrivate">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="businessWrapHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="BusinessInternal">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="baseReplaceHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="UIProcess">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="NotifyRethrow">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="baseReplaceHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="Service">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="None">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+            <exceptionHandler name="baseReplaceHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+    <policy name="Login">
+      <exceptionTypes>
+        <exceptionType name="Exception" type="System.Exception" postHandlingAction="None">
+          <exceptionHandlers>
+            <!--            <exceptionHandler name="textLoggingExceptionHandler" />
+            <exceptionHandler name="xmlLoggingExceptionHandler" /> -->
+            <exceptionHandler name="databaseLoggingExceptionHandler" />
+          </exceptionHandlers>
+        </exceptionType>
+      </exceptionTypes>
+    </policy>
+  </policies>
+  <exceptionHandlers>
+    <exceptionHandler name="textLoggingExceptionHandler" filePath="TextLoggingExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.LoggingExceptionHandlerData,Prezza.Framework" />
+    <exceptionHandler name="xmlLoggingExceptionHandler" filePath="XmlLoggingExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.LoggingExceptionHandlerData,Prezza.Framework" />
+    <exceptionHandler name="databaseLoggingExceptionHandler" filePath="DatabaseLoggingExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.DatabaseLoggingExceptionHandlerData,Prezza.Framework" />
+    <exceptionHandler name="frameworkWrapHandler" filePath="FrameworkWrapExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.WrapHandlerData,Prezza.Framework" />
+    <exceptionHandler name="businessWrapHandler" filePath="BusinessWrapExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.WrapHandlerData,Prezza.Framework" />
+    <exceptionHandler name="baseReplaceHandler" filePath="BaseReplaceExceptionHandler.xml" configDataType="Prezza.Framework.ExceptionHandling.Configuration.ReplaceHandlerData,Prezza.Framework" />
+  </exceptionHandlers>
+</exceptionHandlingConfiguration>

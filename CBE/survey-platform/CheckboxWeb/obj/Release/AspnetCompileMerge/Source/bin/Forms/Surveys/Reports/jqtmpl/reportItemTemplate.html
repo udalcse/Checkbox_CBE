@@ -1,0 +1,27 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="templateItemList zebra itemContainer" itemIndex="${ItemPosition}" pageIndex="${PagePosition}" {{if $item.index == 0}}style="border-top:1px solid #999;"{{/if}}>
+{{else}}
+    <div class="templateItemList detailZebra itemContainer" itemIndex="${ItemPosition}" pageIndex="${PagePosition}">
+{{/if}}
+        <div class="left">
+            <div class="left">
+                <div class="fixed_25 left" style="font-weight:bold;">${PagePosition}.${ItemPosition}</div>
+                <div class="itemText left">${templateEditor.getTextValue(TextData, "navText", $item.languageCode)}</div>
+            </div>
+            <br class="clear" />
+            <div class="fixed_175 left">${textHelper.getTextValue("/itemType/" + TypeName + "/name", TypeName)}</div>
+        </div>
+        <div class="upDownArrow right fixed_25" style="line-height:3;">&nbsp;</div>
+        <br class="clear" />
+    </div>  
+    
+    <script type="text/javascript">
+        $(function () {
+            $('.templateItemList[itemIndex=${ItemPosition}][pageIndex=${PagePosition}] .itemText').truncate({
+                width: 210,
+                after: '…',
+                side: 'center',
+                multiline: false
+            });
+        });
+    </script>

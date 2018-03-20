@@ -1,0 +1,43 @@
+﻿<!-- Hidden Items -->
+<div class="templateNavPage" pageId="${PageIds[0]}" pageIndex="0" id="pageContainer_${PageIds[0]}"></div>
+
+<div id="pageNavList">
+    <input type="hidden" id="templateIdVal" value="${Id}" />
+    <!-- Content Pages -->
+    {{each PageBreaks}}
+    {{if $index > 0 && $index < PageBreaks.length - 1}}
+    <div class="templateNavPage" pageId="${$value.Key}" pageIndex="${$index}" id="pageContainer_${$value.Key}"></div>
+    <div class="templateNavPage">
+        {{if $index != PageBreaks.length - 2 || $index == 1 }}
+        <input data-page="${$value.Key}" class="pageBreakCkbx" type="checkbox" {{if $value.Value}} checked {{/if}}/>
+        <label for="${$value.Key}pageBreak">Physical Page Break</label>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    {{/each}}
+</div>
+
+<!-- Completion Events -->
+<div class="templateNavPage" pageId="${PageIds[PageIds.length - 1]}" pageIndex="${PageIds.length - 1}" id="pageContainer_${PageIds[PageIds.length - 1]}"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).on('mouseenter', '.templateItemList', 
+            function () {
+                $(this).find('.upDownArrow').show('fast');
+            });
+            
+        $(document).on('mouseleave', '.templateItemList', 
+            function () {
+                if (!$(this).hasClass('activeContent')) {
+                    $(this).find('.upDownArrow').hide('fast');
+                }
+            }
+        );
+
+        $(document).on('change', '.pageBreakCkbx', function() {
+            surveyEditor.addPageBreak($(this).attr("data-page"), $(this).is(':checked'), $('#templateIdVal').val());
+        });
+    });
+</script>

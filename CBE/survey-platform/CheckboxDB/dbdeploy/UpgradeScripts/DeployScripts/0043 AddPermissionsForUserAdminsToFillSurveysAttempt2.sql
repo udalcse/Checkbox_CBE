@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Install_AddRolePermission 'User Administrator', 'Form.Fill'

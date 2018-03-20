@@ -1,0 +1,1 @@
+exec ckbx_sp_Text_Set '/pageText/forms/surveys/invitations/add.aspx/nameInstructions', 'en-US', N'Provide a name for your invitation and choose the options you''d like to use in creating the invitation.  The name is visible only within Engauge to help you identify this invitation.  You will be able to set the invitation subject separately in the next step.' 

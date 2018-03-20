@@ -1,0 +1,35 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+
+    "adminUsername": {
+      "value": "checkbox_admin"
+    },
+    "adminPassword": {
+      "value": "Checkb0x_Adm!n"
+    },
+    "appveyerEnvKey": {
+
+      "value": "none"
+    },
+    "uniqueEnvName": {
+      "value": "esttst7"
+
+    },
+      "vmSku": {
+          "value": "Standard_A2_v2"
+      },
+      "azureHostName": {
+          "value": "esttst7"
+      },
+      "azureRegion": {
+          "value": "East US"
+      },
+      "fqdn": {
+          "value": "esttst7.cbesurveys.com"
+
+      }
+
+  }
+}

@@ -1,0 +1,12 @@
+﻿ <div class="gridHeader ckbxGridHeader">
+    <div class="fixed_50 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/invitationList/type", "Type")}</b></div>
+    <div class="fixed_75 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/invitationList/status", "Status")}</b></div>
+    <div class="fixed_175 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/invitationList/name", "Name")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/invitationList/created", "Created")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/invitationList/lastSent", "Last Sent")}</b></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, invitation) items}}
+   {{tmpl(invitation, {index: index}) 'invitationSentListItemTemplate.html'}}
+{{/each}}

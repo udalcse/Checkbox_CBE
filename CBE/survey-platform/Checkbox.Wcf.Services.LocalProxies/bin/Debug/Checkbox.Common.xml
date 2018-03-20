@@ -1,0 +1,3051 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Checkbox.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Checkbox.Common.AbstractPersistedDomainObjectDataSet">
+            <summary>
+            Data container for abstract pdo, which is a pdo that has a parent mapping in another
+            table that lists a number of like pdos.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AbstractPersistedDomainObjectDataSet.ParentDataTableName">
+            <summary>
+            Get name of parent table for relationship.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AbstractPersistedDomainObjectDataSet.ObjectDataTableNames">
+            <summary>
+            Get object data table names
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AbstractPersistedDomainObjectDataSet.#ctor(System.String,System.String,System.String,System.String[])">
+            <summary>
+            </summary>
+            <param name="owningObjectTypeName"></param>
+            <param name="dataTableName"></param>
+            <param name="identityColumnName"></param>
+            <param name="additionalTableNames"></param>
+        </member>
+        <member name="M:Checkbox.Common.AbstractPersistedDomainObjectDataSet.CreateAbstractDataCommand(Prezza.Framework.Data.Database,System.Int32)">
+            <summary>
+            Get a command wrapper for loading "abstract" data for the object.
+            </summary>
+            <param name="db"></param>
+            <param name="owningObjectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.AbstractPersistedDomainObjectDataSet.Load(System.Int32,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            Load abstract data
+            </summary>
+            <param name="owningObjectId"></param>
+            <param name="loadSprocName"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="T:Checkbox.Common.AccessControllablePersistedDomainObject">
+            <summary>
+            Base class for persisted domain objects requiring access control.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.AccessControllablePersistedDomainObject._defaultPolicy">
+            <summary>
+            The default <see cref="T:Prezza.Framework.Security.Policy"/> for this resource
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.AccessControllablePersistedDomainObject._acl">
+            <summary>
+            The <see cref="T:Prezza.Framework.Security.AccessControlList"/> for this resource.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.AccessControllablePersistedDomainObject._supportedPermissions">
+            <summary>
+            This array of supported permissions for this resource.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.AccessControllablePersistedDomainObject._supportedPermissionMasks">
+            <summary>
+            The array of supported permissions masks for this resource.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.#ctor(System.String[],System.String[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="supportedPermissionMasks"></param>
+            <param name="supportedPermissions"></param>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.SetAccess(Prezza.Framework.Security.Policy,Prezza.Framework.Security.AccessControlList)">
+            <summary>
+            Set access to the object
+            </summary>
+            <param name="defaultPolicy"></param>
+            <param name="acl"></param>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.DefaultPolicyID">
+            <summary>
+            Get the default policy id
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.AclID">
+            <summary>
+            Get the AclID for the item
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.DomainDBTableName">
+            <summary>
+            Get the name of the DB table containing PDO domain object data.  Value is used for updating security information
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.DomainDBIdentityColumnName">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.DefaultPolicy">
+            <summary>
+            Get the default policy for the item
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.ReloadDefaultPolicy">
+            <summary>
+            Cause the default policy to be reloaded on next access
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.ReloadACL">
+            <summary>
+            Cause the acl to be reloaded on next access
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.ACL">
+            <summary>
+            Get the access control list for the item
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.CreatePolicy(System.String[])">
+            <summary>
+            Create a policy for the item
+            </summary>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.SupportedPermissions">
+            <summary>
+            Get the item's supported permissions
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.SupportedPermissionMasks">
+            <summary>
+            Get the item's supported permission masks
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.AccessControllablePersistedDomainObject.GetEditor">
+            <summary>
+            Get a security editor for the item
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Checkbox.Common.AccessControllablePersistedDomainObject.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.CaptchaGenerator">
+            <summary>
+            Captcha image and code generator.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.CaptchaGenerator.GenerateCode(Checkbox.Common.Captcha.CodeType,System.Int32,System.Int32)">
+            <summary>
+            Generate a CAPTCHA code of the specified type.
+            </summary>
+            <param name="codeType">Type of code to produce.</param>
+            <param name="minLength">Minimum length of the code.</param>
+            <param name="maxLength">Maximum length of the code.</param>
+            <returns>A code meeting the specified parameters.  Please note that for alphanumeric codes, 1, l, O, and 0 are not used to avoid potential confusion.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.CaptchaGenerator.GenerateAndStoreImage(System.String,Checkbox.Common.Captcha.Image.ImageFormatEnum,System.Int32,System.Int32,System.Collections.Generic.List{Checkbox.Common.Captcha.Image.TextStyleEnum})">
+            <summary>
+            Generate and store a captcha image and return the ID for the image.
+            </summary>
+            <param name="code">Code to display.</param>
+            <param name="imageFormat">Format of the image.</param>
+            <param name="imageWidth">Width of the image.</param>
+            <param name="imageHeight">Height of the image.</param>
+            <param name="textStyles"></param>
+            <returns>ID of image to display.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.CaptchaGenerator.GetTextStyle(System.Collections.Generic.IList{Checkbox.Common.Captcha.Image.TextStyleEnum})">
+            <summary>
+            Choose the text style based on the list of possible styles.
+            </summary>
+            <returns>Text style to use.</returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.CodeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.CodeType.Alpha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.CodeType.Numeric">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.CodeType.AlphaNumeric">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.ImageFormatEnum">
+            <summary>
+            Summary description for ImageFormatEnum.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.ImageFormatEnum.Jpeg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.ImageFormatEnum.Bmp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.ImageFormatEnum.Gif">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.ImageFormatEnum.Png">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.ImageGenerator">
+            <summary>
+            Summary description for ImageGenerator.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Image.ImageGenerator.Image">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Image.ImageGenerator.ImageBytes">
+            <summary>
+            Get the image bytes
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.ImageGenerator.#ctor(System.String,Checkbox.Common.Captcha.Image.TextStyleEnum,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="textToRender"></param>
+            <param name="textStyle"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.CurvedText">
+            <summary>
+            Summary description for CurvedText.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.#ctor(System.Drawing.PointF[],System.Drawing.PointF[])">
+            <summary>
+            
+            </summary>
+            <param name="_arrTop"></param>
+            <param name="_arrBottom"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.DrawText(System.Drawing.RectangleF,System.Drawing.Graphics,System.Drawing.Font,System.String,System.Drawing.Brush,System.Drawing.Pen)">
+            <summary>
+            
+            </summary>
+            <param name="rect"></param>
+            <param name="g"></param>
+            <param name="font"></param>
+            <param name="strText"></param>
+            <param name="brush"></param>
+            <param name="pen"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.GetTextPath(System.Drawing.RectangleF,System.Drawing.Graphics,System.Drawing.Font,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="rect"></param>
+            <param name="g"></param>
+            <param name="font"></param>
+            <param name="strText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.AdjustToNewFrame(System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="newFrame"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.ToRectangle(System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="rectFBounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedText.GetPointsFromFile(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.CurvedTextShapes">
+            <summary>
+            Summary description for CurvedTextShapes.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.CurvedTextShapes.CurvedTextShapeEnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.CurvedTextShapes.CurvedTextShapeEnum.Shape1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.CurvedTextShapes.CurvedTextShapeEnum.Shape2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.CurvedTextShapes.GetCurvedText(Checkbox.Common.Captcha.Image.Support.CurvedTextShapes.CurvedTextShapeEnum)">
+            <summary>
+            
+            </summary>
+            <param name="curvedTextShape"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.RandomClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetBetweenRectangle(System.Drawing.RectangleF,System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="outerRect"></param>
+            <param name="innerRect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetSameSizeRectangle(System.Drawing.RectangleF,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="outerRect"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.ArrayWithOffset(System.Single,System.Single,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.FontStyle">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetColor">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetColorBetween(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="rMin"></param>
+            <param name="rMax"></param>
+            <param name="gMin"></param>
+            <param name="gMax"></param>
+            <param name="bMin"></param>
+            <param name="bMax"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetAlphaNumeric">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.BetweenTwo(System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.BetweenTwo(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetPointInsideRect(System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="Rect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetPointAroundPoint(System.Drawing.PointF,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="pt"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetFourPointsInRect(System.Drawing.RectangleF,System.Drawing.PointF@,System.Drawing.PointF@,System.Drawing.PointF@,System.Drawing.PointF@)">
+            <summary>
+            
+            </summary>
+            <param name="Rect"></param>
+            <param name="pt1"></param>
+            <param name="pt2"></param>
+            <param name="pt3"></param>
+            <param name="pt4"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetFontName">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.RandomClass.GetFontName(Checkbox.Common.Captcha.Image.TextStyleEnum)">
+            <summary>
+            
+            </summary>
+            <param name="textStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.Tools">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.GetNonLinear(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.GetNonLinear(System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="base_number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.ToRectangle(System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="rectFBounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.GetMiddle(System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="rectFBounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.Tools.TextIntoRectPath(System.String,System.Drawing.Font,System.Drawing.RectangleF)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <param name="font"></param>
+            <param name="rectF"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.ColorLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.Support.ColorLine.#ctor(System.Drawing.Color,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="_color"></param>
+            <param name="_coord"></param>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.ColorLine.color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.ColorLine.coord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.Line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Line.color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Line.x2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Line.x1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.Win32Support">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.Win32Support.Bool">
+            <summary>
+            Enumeration to be used for those Win32 function that return BOOL
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.Bool.False">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.Bool.True">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations">
+            <summary>
+            Enumeration for the raster operations used in BitBlt.
+            In C++ these are actually #define. But to use these
+            constants with C#, a new enumeration type is defined.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.SRCCOPY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.SRCPAINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.SRCAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.SRCINVERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.SRCERASE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.NOTSRCCOPY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.NOTSRCERASE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.MERGECOPY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.MERGEPAINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.PATCOPY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.PATPAINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.PATINVERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.DSTINVERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.BLACKNESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.Support.Win32Support.TernaryRasterOperations.WHITENESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.AncientMosaicTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.BlackOverlapTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.BrokenTextGenerator">
+            <summary>
+            Summary description for BrokenTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.Bullets2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.BulletsTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CaughtInTheNet2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CaughtInTheNetTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ChalkboardTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.Chess3DTextGenerator">
+            <summary>
+            Summary description for ChessTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ChessTextGenerator">
+            <summary>
+            Summary description for ChessTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ChippedTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CirclesTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CollageTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CorrosionTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CrossShadow2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CrossShadowTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.CutTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.DartsTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.DistortionTextGenerator">
+            <summary>
+            Summary description for DistortionTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.FingerPrintsTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.FlashTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.GhostlyTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.Graffiti2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.GraffitiTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.GridTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.HaloTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.InBandagesTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.LegoTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.MassTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.MeltingHeatTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.NegativeTextGenerator">
+            <summary>
+            Summary description for NegativeTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.Overlap2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.OverlapTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.PaintMessTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.RoughTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SnowTextGenerator">
+            <summary>
+            Summary description for SnowTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SpiderWebTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SplitTextGenerator">
+            <summary>
+            Summary description for SplitTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.StitchTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.StrippyTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SunAndWarmAirTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SunRays2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.SunRaysTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ThickThinLines2TextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ThickThinLinesTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ThinWavyLettersTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.VertigoTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.WantedCircularTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.WaveTextGenerator">
+            <summary>
+            Summary description for WaveTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.WavyChessTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.WavyColorLettersTextGenerator">
+            <summary>
+            Summary description for GridTextGenerator.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.ITextGenerator">
+            <summary>
+            Summary description for ITextGenerator.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.TextGenerators.ITextGenerator.DrawText(System.String,System.Drawing.Bitmap)">
+            <summary>
+            Draw the text to a bitmap.
+            </summary>
+            <param name="text">Text to draw.</param>
+            <param name="textDestination">Bitmap to render text to.</param>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextGenerators.TextGeneratorFactory">
+            <summary>
+            Summary description for TextGeneratorFactory.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Image.TextGenerators.TextGeneratorFactory.CreateGenerator(Checkbox.Common.Captcha.Image.TextStyleEnum)">
+            <summary>
+            Create a text image generator based on the text style.
+            </summary>
+            <param name="textStyle">Style of text.</param>
+            <returns>Text generator object or NULL of no generator exists for the specified style.</returns>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Image.TextStyleEnum">
+            <summary>
+            Summary description for TextStyleEnum.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.AncientMosaic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.BlackOverlap">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Bullets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Bullets2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.CaughtInTheNet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.CaughtInTheNet2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Chalkboard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Chess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Chess3D">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Chipped">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Circles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Collage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Corrosion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.CrossShadow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.CrossShadow2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Cut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Darts">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Distortion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.FingerPrints">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Flash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Ghostly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Graffiti">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Graffiti2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Halo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.InBandages">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Jail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Lego">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Mass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.MeltingHeat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Negative">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Overlap">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Overlap2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.PaintMess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Rough">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Spiderweb">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Split">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Snow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Stitch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Strippy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.SunAndWarmAir">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.SunRays">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.SunRays2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.ThickThinLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.ThickThinLines2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.ThinWavyLetters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Vertigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.WantedCircular">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.Wave">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.WavyChess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Image.TextStyleEnum.WavyColorLetters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.SoundFormatEnum">
+            <summary>
+            Summary description for SoundFormat.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.SoundFormatEnum.Wav">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.SoundFormatEnum.Mp3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.SoundFormatEnum.Wma">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.SoundGenerator">
+            <summary>
+            Summary description for SoundGenerator.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.SoundGenerator.Sound">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.SoundGenerator.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="textToSpeak"></param>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.Support.Sound">
+            <summary>
+            Summary description for Sound.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.Sound.Save(System.IO.Stream,Checkbox.Common.Captcha.Sound.SoundFormatEnum)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="format"></param>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.Support.sound_lookup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.sound_lookup.ch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.sound_lookup.offset_in_file">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.sound_lookup.raw_data_size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.Support.SoundLookup">
+            <summary>
+            Summary description for SoundLookup.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.SoundLookup.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Captcha.Sound.Support.WavFile">
+            <summary>
+            Summary description for WavFile.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.Create">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.Save">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.Open(System.IO.MemoryStream)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._audioFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.AudioFormat">
+            <summary>
+            PCM = 1
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._channels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.NumChannels">
+            <summary>
+            Mono = 1, Stereo = 2, etc..
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._sampleRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.SampleRate">
+            <summary>
+            Sample rate in Hz
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._bitsPerSample">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.BitsPerSample">
+            <summary>
+            8 bits = 8, 16 bits = 16...
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.ByteRate">
+            <summary>
+            Calculated byte rate
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.BlockAlign">
+            <summary>
+            WAV block alginment
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.DataChunkSize">
+            <summary>
+            Size of the data chunk area
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.FormatChunkSize">
+            <summary>
+            Size of the format chunk area
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.ChunkSize">
+            <summary>
+            Total chunk size
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._sampleNumber">
+            <summary>
+            // Number of samples to include in this wave file
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.SampleNumber">
+            <summary>
+            Number of samples to include in this wave file
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._sampleMaxVal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.SampleHigh">
+            <summary>
+            Maximum value of sample
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Captcha.Sound.Support.WavFile._sampleMinVal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Captcha.Sound.Support.WavFile.SampleLow">
+            <summary>
+            Minimum value of sample
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.Write(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.WriteString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stringValue"></param>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.WriteHeader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Captcha.Sound.Support.WavFile.WriteFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.CsvUtilities">
+            <summary>
+            CSV-Related utilities.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.CsvUtilities.ParserErrors">
+            <summary>
+            Get parser errors
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.CsvUtilities.EnsureInitialized">
+            <summary>
+            Ensure reader has been intialized and throw an exception if it has not been.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.CsvUtilities.Initialize(System.IO.TextReader,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Boolean,System.Boolean)">
+            <summary>
+            Initialize the Csv Reader class with a text reader input.
+            </summary>
+            <param name="inReader">Text reader to read data from.f</param>
+            <param name="inputHasHeaders">Specify whether speicfied input contains a header row.</param>
+            <param name="fieldDelimiter">CSV field delimiter character.</param>
+            <param name="quoteChar">CSV field quote character.</param>
+            <param name="escapeChar">CSV escape character (can be same as quote character)</param>
+            <param name="commentDelimiter">Character to indicate comment rows.</param>
+            <param name="trimSpaces">Trim whitespace from character.</param>
+            <param name="abortOnParseError">Specify whether to abort and throw an exeption when there is a parser error or just
+            keep going but log the error.</param>
+            <remarks>NOTE: It is the responsibility of the calling code for opending/closing readers.</remarks>
+        </member>
+        <member name="M:Checkbox.Common.CsvUtilities._reader_ParseError(System.Object,LumenWorks.Framework.IO.Csv.ParseErrorEventArgs)">
+            <summary>
+            Handler for parse error event.  S
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Checkbox.Common.CsvUtilities.ReadNextRecord">
+            <summary>
+            Read the next record from the CSV
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Checkbox.Common.CsvUtilities.CurrentRecord">
+            <summary>
+            Get a boolean indicating if there are more records to read in the CSV
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.CsvUtilities.CurrentRawData">
+            <summary>
+            Get current raw data 
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.EntityState">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.EntityBase">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.FileUtilities">
+            <summary>
+            A utility class which contains common tasks related to file IO.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.FileUtilities.DuplicateNameAction">
+            <summary>
+            Defines possible courses of action when a duplicate file is found during an attempt to save.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.CreateFolder(System.String,System.Boolean)">
+            <summary>
+             Creates a new folder.
+            </summary>
+            <param name="path">The full path to the folder to create.</param>
+            <param name="deleteIfExisting">Determines if the content of the folder should be deleted if it already exists.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.CompressFolder(System.String,System.String)">
+            <summary>
+            Compress the content of a folder in a zip archive.
+            </summary>
+            <param name="path">The fully qualified path to the directory to compress.</param>
+            <param name="archiveName">The name of the compressed archive.</param>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.CompressFiles(System.String[],System.String)">
+            <summary>
+            Compress the content of a folder in a zip archive.
+            </summary>
+            <param name="path">The fully qualified path to the directory to compress.</param>
+            <param name="archiveName">The name of the compressed archive.</param>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.GetFileStream(System.String,System.String)">
+             <summary>
+             Creates a new file and returns a <see cref="T:System.IO.FileStream"/> which references it.
+             </summary>
+            <param name="path">The full path to the folder to create.</param>
+            <param name="fileName">The file name, including extension, to save.</param>
+             <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.SaveFile(System.String,System.String,System.Byte[])">
+            <summary>
+             Saves a file to disk.
+             If the file already exists no action is taken.
+            </summary>
+            <param name="path">The full path to the folder to create.</param>
+            <param name="fileName">The file name, including extension, to save.</param>
+            <param name="data">The data to be saved to disk.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.SaveFile(System.String,System.Byte[])">
+            <summary>
+             Saves a file to disk.
+             If the file already exists no action is taken.
+            </summary>
+            <param name="path">The full path to the folder to create.</param>
+            <param name="data">The data to be saved to disk.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.SaveFile(System.String,System.String,System.Byte[],System.Int32)">
+            <summary>
+             Saves a file to disk.
+             If the file already exists the course of action is controlled by the duplicateNameAction parameter.
+            </summary>
+            <param name="path">The full path to the folder to create.</param>
+            <param name="fileName">The file name, including extension, to save.</param>
+            <param name="data">The data to be saved to disk.</param>
+            <param name="duplicateNameAction" cref="T:Checkbox.Common.FileUtilities.DuplicateNameAction">Determines the action to take when the specified file name is already in use.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.DeleteFile(System.String)">
+            <summary>
+             Deletes a file from disk.
+            </summary>
+            <param name="path">The full path to the folder to delete.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.DeleteFilesOlderThanTimeSpan(System.String,System.TimeSpan,System.Boolean,System.String[])">
+            <summary>
+            Delete files in with created dates earlier than current time minus timespan.
+            </summary>
+            <param name="folderPath">Folder to look (non-recursively) for files in.</param>
+            <param name="timeSpan">Min age of files to delete.</param>
+            <param name="rethrowExceptions">Rethrow exceptions or silently ignore them.</param>
+            <param name="extensions">Extensions to check for, do not include .period separator.</param>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.DeleteFilesInFolderOlderThanTimeSpan(System.String,System.TimeSpan,System.String,System.Boolean)">
+            <summary>
+            Delete all files in a folder where the folder is older than a given time span.  This method does
+            not actually delete the folder, since doing so could cause ASP.NET app to recycle.
+            </summary>
+            <param name="folderPath">Folder to look (non-recursively) for files in.</param>
+            <param name="timeSpan">Min age of files to delete.</param>
+            <param name="searchSpec">Search fileter for files</param>
+            <param name="rethrowExceptions">Rethrow exceptions or silently ignore them.</param>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.SanitizeName(System.String)">
+             <summary>
+             Ensures that a file name is valid in Windows based systems.
+             A valid file name is 160 characters less in length, ASCII,
+             and does not contain ">", "&#60;", "|", @"", @"\", "/", ":", "*", "?".
+             </summary>
+            <param name="fileName">The file name, including extension, to save.</param>
+             <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.JoinPathAndFileName(System.String,System.String)">
+            <summary>
+            Returns a properly formatted concatenation of a path and file name string.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="fileName">The file name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.JoinPathAndFileName(System.String,System.String,System.Boolean)">
+            <summary>
+            Returns a properly formatted concatenation of a path and file name string.
+            Additionally the fileName can be validated to ensure it does not contain
+            characters which are not legal in Windows.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="fileName">The file name.</param>
+            <param name="sanitizeFileName">Determines if the fileName is validated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.ReadTextFile(System.String)">
+            <summary>
+            Returns the content of a text file as a string. If the file can not be found/read an empty string is returned.
+            </summary>
+            <param name="fileAndPath">The fully qualified path to the text file to read.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.ReadTextStream(System.IO.StreamReader)">
+            <summary>
+            Iterates through a StreamReader and constructs a list of strings from the data.
+            </summary>
+            <param name="reader">The StreamReader to iterate through.</param>
+            <returns>A List which contains one element for each row contained in the specified StreamReader.</returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.ValidateWritableDirectory(System.String)">
+            <summary>
+            Ensures that the specified directory can be written to.
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.FixFileName(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="invalidCharReplacement"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.FixFileName(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="invalidCharReplacement"> </param>
+            <param name="whiteSpaceReplacement"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.FileUtilities.SanitizeFileName(System.String,System.String)">
+            <summary>
+            Remove invalid characters from a file name
+            </summary>
+            <param name="fileName"></param>
+            <param name="invalidCharReplacement"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Folder">
+            <summary>
+            Access Controllable container for objects.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Folder.#ctor(System.String[],System.String[])">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="supportedPermissionMasks">List of permission masks supported by the folder.</param>
+            <param name="supportedPermissions">List of supported permissions for the folder.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.CreateConfigurationDataSet">
+            <summary>
+            Get the configuration data container for a folder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Checkbox.Common.Folder.ObjectTypeName">
+            <summary>
+            Get object type name
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.LoadSprocName">
+            <summary>
+            Get sproc for loading folders
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.Description">
+            <summary>
+            Get/Set the folder description.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.CreatedBy">
+            <summary>
+            Get the unique identifier of the folder's creator.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.ChildrenCount">
+            <summary>
+            Get/set count of children. For the survey it's 0, for the folder -- count of the surveys in it.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.DomainDBTableName">
+            <summary>
+            Get data table name in database
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Folder.DomainDBIdentityColumnName">
+            <summary>
+            Get folder id
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Folder.Add(System.Object)">
+            <summary>
+            Add an item to the folder.
+            </summary>
+            <param name="item">Item to add.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.Add(System.Int32)">
+            <summary>
+            Add an item with the specified id to the folder.
+            </summary>
+            <param name="id">ID of the item to add.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.Remove(System.Object)">
+            <summary>
+            Remove the specified item from the folder.
+            </summary>
+            <param name="item">Item to remove.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.Remove(System.Int32)">
+            <summary>
+            Remove the item with the specified id from the folder.
+            </summary>
+            <param name="id">ID of the item to remove.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.MoveToFolder(Checkbox.Common.Folder,System.Int32)">
+            <summary>
+            Move and item to a folder.
+            </summary>
+            <param name="folder">Folder to move item to.</param>
+            <param name="itemID">Item to move.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.LoadBaseObjectData(System.Data.DataRow)">
+            <summary>
+            Load the folder from a data row.
+            </summary>
+            <param name="data">Data row to load folder information from.</param>
+        </member>
+        <member name="M:Checkbox.Common.Folder.Copy(Prezza.Framework.Security.Principal.ExtendedPrincipal,System.String)">
+            <summary>
+            Copy the folder.
+            </summary>
+            <param name="owner">Owner of the copied folder.</param>
+            <param name="languageCode">Language code used to look up "copy of" naming</param>
+            <returns>Copy of the folder.</returns>
+        </member>
+        <member name="T:Checkbox.Common.FolderDataSet">
+            <summary>
+            Data container for folders
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.FolderDataSet.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.HtmlStrippingStringWriter">
+            <summary>
+            Simple extension to a string writer to support stripping any well-formed HTML/XML
+            markup from the string to write.
+            </summary>
+            <remarks>Overrides the Write(string) and WriteLine(string) methods.</remarks>
+        </member>
+        <member name="P:Checkbox.Common.HtmlStrippingStringWriter.StripHtml">
+            <summary>
+            Get/set whether to strip HTML.
+            </summary>
+            <remarks>Default value is false.</remarks>
+        </member>
+        <member name="M:Checkbox.Common.HtmlStrippingStringWriter.Write(System.String)">
+            <summary>
+            Write a string value
+            </summary>
+            <param name="value">Value to write.</param>
+        </member>
+        <member name="M:Checkbox.Common.HtmlStrippingStringWriter.WriteLine(System.String)">
+            <summary>
+            Write a string as a separate line.
+            </summary>
+            <param name="value">Line to write.</param>
+        </member>
+        <member name="T:Checkbox.Common.LocalizedPersistedDomainObjectDataSet">
+            <summary>
+            Data set container for persisted domain objects that handle associated text data
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.LocalizedPersistedDomainObjectDataSet.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="objectTypeName"></param>
+        </member>
+        <member name="M:Checkbox.Common.LocalizedPersistedDomainObjectDataSet.#ctor(System.String,System.String,System.String,System.String[])">
+            <summary>
+            </summary>
+            <param name="owningObjectTypeName"></param>
+            <param name="dataTableName"></param>
+            <param name="identityColumnName"></param>
+            <param name="additionalTableNames"></param>
+        </member>
+        <member name="M:Checkbox.Common.LocalizedPersistedDomainObjectDataSet.InitializeDataTables">
+            <summary>
+            Initialize data tables
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.LocalizedPersistedDomainObjectDataSet.InitializeTextTables">
+            <summary>
+            Initialize assoicated text data tables
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Location">
+            <summary>
+            Summary description for Location.
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Location.Top">
+            <summary>
+            Top
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Location.Bottom">
+            <summary>
+            Bottom
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Location.Left">
+            <summary>
+            Left
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.Location.Right">
+            <summary>
+            Right
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.OrderedDictionary">
+            <summary>
+            An OrderedDictionary is a Dictionary class that retains the ordering information of key/value pairs added to it.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.OrderedDictionary.Item(System.String)">
+            <summary>
+            Gets or sets the value of a given key
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.OrderedDictionary.Item(System.Int32)">
+            <summary>
+            Gets or sets the value of a key at the given index
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.OrderedDictionary.Keys">
+            <summary>
+            Gets a collection of the Keys in the dictionary
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.OrderedDictionary.Values">
+            <summary>
+            Gets a collection of the Values in the dictionary
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.OrderedDictionary.Insert(System.Int32,System.Object,System.Object)">
+            <summary>
+            Inserts a key/value pair at the given index
+            </summary>
+            <param name="index">The int index</param>
+            <param name="key">the key</param>
+            <param name="val">the value</param>
+        </member>
+        <member name="M:Checkbox.Common.OrderedDictionary.Remove(System.Object)">
+            <summary>
+            Removes a key/value pair from the dictionary
+            </summary>
+            <param name="key">The key</param>
+        </member>
+        <member name="M:Checkbox.Common.OrderedDictionary.Contains(System.Object)">
+            <summary>
+            Gets whether the dictionary contains the object with the specified key.
+            </summary>
+            <param name="o"></param>
+            <returns>true if contains, otherwise false</returns>
+        </member>
+        <member name="M:Checkbox.Common.OrderedDictionary.IndexOf(System.Object)">
+            <summary>
+            Gets the index of a given key object
+            </summary>
+            <param name="o">The key</param>
+            <returns>The int index</returns>
+        </member>
+        <member name="M:Checkbox.Common.OrderedDictionary.Add(System.Object,System.Object)">
+            <summary>
+            Adds a key/value pair to the end of the dictionary
+            </summary>
+            <param name="key">the key</param>
+            <param name="val">the value</param>
+            <returns>the int index of the added key/value pair</returns>
+        </member>
+        <member name="T:Checkbox.Common.PageFilter">
+            <summary>
+            Filter based on a page number.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PageFilter.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="pageNumber">Page number of results to get.</param>
+            <param name="resultsPerPage">Number of results to return per page.</param>
+        </member>
+        <member name="P:Checkbox.Common.PageFilter.PageNumber">
+            <summary>
+            Get the page number of the results to return.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PageFilter.ResultsPerPage">
+            <summary>
+            Get the number of results per page to return.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.Pair`2">
+            <summary>
+            Value pair, useful for hashing with compound key. NULL NOT SUPPORTED FOR VALUES.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="M:Checkbox.Common.Pair`2.#ctor(`0,`1)">
+            <summary>
+            Construct a pair
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+        </member>
+        <member name="P:Checkbox.Common.Pair`2.Value1">
+            <summary>
+            Pair value 1
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Pair`2.Value2">
+            <summary>
+            Pair value 2
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Pair`2.GetHashCode">
+            <summary>
+            Get object hash code
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Pair`2.Equals(Checkbox.Common.Pair{`0,`1})">
+            <summary>
+            Compare values
+            </summary>
+            <param name="toCompare"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObject">
+            <summary>
+            Base class for domain objects that persist data.  This class provides functionality for xml serialization, and transactional
+            operations.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.ID">
+            <summary>
+            Get the data id of the item
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.ObjectTypeName">
+            <summary>
+            Get name of persisted object type
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.LastModified">
+            <summary>
+            Get timestamp of when item was last persisted
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.ModifiedBy">
+            <summary>
+            Who modified the template
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.CreatedDate">
+            <summary>
+            Get timestamp of when item was created
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.LoadSprocName">
+            <summary>
+            Get name of load data stored procedure
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.DataTableName">
+            <summary>
+            Get the name of the datatable containing configuration for this PersistedDomainObject.  This name will
+            be used when searching for object data within a dataset.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.ExportElementName">
+            <summary>
+            Get name of element for exporting/writing to XML
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.IdentityColumnName">
+            <summary>
+            Get the name of the column of the <see cref="T:System.Data.DataTable"/> with a name of <see cref="P:Checkbox.Common.PersistedDomainObject.DataTableName"/> that
+            contains identities for persisted objects.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.GetLoadSprocParameters(Checkbox.Common.PersistedDomainObjectDataSet)">
+            <summary>
+            Get a list of parameters to pass to a load stored procedure
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.SetOriginalID(System.Nullable{System.Int32})">
+            <summary>
+            Set the original id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Create(System.Data.IDbTransaction)">
+            <summary>
+            Create the object
+            </summary>
+            <param name="t">an <see cref="T:System.Data.IDbTransaction"/> in which to participate</param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Update(System.Data.IDbTransaction)">
+            <summary>
+            Update the object
+            </summary>
+            <param name="t">an <see cref="T:System.Data.IDbTransaction"/> in which to participate</param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Delete(System.Data.IDbTransaction)">
+            <summary>
+            Delete the object
+            </summary>
+            <param name="t">an <see cref="T:System.Data.IDbTransaction"/> in which to participate</param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.GetConfigurationDataSet(System.Int32)">
+            <summary>
+            Get a dataset containing configuration for this object.
+            </summary>
+            <returns>a <see cref="T:System.Data.DataSet"/></returns>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.GetSpecificConfigurationDataSet(System.Int32)">
+            <summary>
+            Use it for optimization purposes. It should load only specific configuration data for object.
+            Base object data should be loaded by other ways
+            </summary>
+            <returns>a <see cref="T:System.Data.DataSet"/></returns>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.CreateConfigurationDataSet">
+            <summary>
+            Create the configuration data set.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.LoadConfigurationDataSet(Checkbox.Common.PersistedDomainObjectDataSet)">
+            <summary>
+            Populate the configuration data set.
+            </summary>
+            <param name="dataSet"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.LoadSpecificConfigurationDataSet(Checkbox.Common.PersistedDomainObjectDataSet)">
+            <summary>
+            Use it for optimization purposes. It should load only specific configuration data for object.
+            Base object data should be loaded by other ways 
+            </summary>
+            <param name="dataSet"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.SetConfigurationDataSetColumnMappings(System.Data.DataSet)">
+            <summary>
+            Set column mappings for the dataset (e.g. Attribute, etc).  These mappings are used when the dataset is serialized to XML.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Save(System.Data.IDbTransaction)">
+            <summary>
+            Save as part of a transaction
+            </summary>
+            <param name="t">an <see cref="T:System.Data.IDbTransaction"/> in which to participate</param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Save">
+            <summary>
+            Save.  A transaction will be created
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Delete">
+            <summary>
+            Delete, a transaction will be created
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Load">
+            <summary>
+            Loads a persisted object based on its Database ID
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Load(System.Int32)">
+            <summary>
+            Load a persisted object using its database ID
+            </summary>
+            <param name="dataId">the database ID of the object to load</param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Import(System.Xml.XmlNode,Checkbox.Common.PersistedDomainObject.ReadExternalDataCallback,System.Object)">
+            <summary>
+            Load from serialized data.
+            </summary>
+            <param name="xmlNode"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Load(Checkbox.Common.PersistedDomainObjectDataSet)">
+            <summary>
+            Loads the object data from a <see cref="T:System.Data.DataSet"/>
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.LoadBaseObjectData(System.Data.DataRow)">
+            <summary>
+            Loads a persisted object data from the supplied <see cref="T:System.Data.DataRow"/>.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.LoadAdditionalData(Checkbox.Common.PersistedDomainObjectDataSet)">
+            <summary>
+            Load additional, related data for the object.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.TransactionAborted">
+            <summary>
+            Transaction Abort
+            </summary>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.TransactionCommitted">
+            <summary>
+            Transaction Committed
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Rollback">
+            <summary>
+            Begin rollback processing when the transaction that this object's load/save was a part of
+            has been rolled back.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnRollback">
+            <summary>
+            Perform processing for rollback of save for this item.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.NotifyCommit(System.Object,System.EventArgs)">
+            <summary>
+            Notify the object that the transaction its load/save was part of has been committed.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnCommit(System.Object,System.EventArgs)">
+            <summary>
+            Notify the persisted domain object that the transaction it's save was part of has been
+            committed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.NotifyAbort(System.Object,System.EventArgs)">
+            <summary>
+            Notify the persisted domain object that the transaction it's save was part of has been
+            aborted.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnAbort(System.Object,System.EventArgs)">
+            <summary>
+            Perform abort processing when the transaction that this object's load/save participated in has been aborted.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObject.Events">
+            <summary>
+            Get the event handler list
+            </summary>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.Saving">
+            <summary>
+            Fired after the call to Save() but before the object is saved
+            </summary>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.Deleting">
+            <summary>
+            Fired after the call to Delete() but before the object is deleted
+            </summary>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.Saved">
+            <summary>
+            Fired after the object has been saved
+            </summary>
+        </member>
+        <member name="E:Checkbox.Common.PersistedDomainObject.Deleted">
+            <summary>
+            Fired after the object has been deleted
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnSaved">
+            <summary>
+            Overridable handler for saved event.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnSaving(System.Data.IDbTransaction)">
+            <summary>
+            Overridable handler for saving event.  Base implementation sets a flag indicating a save is in progress.
+            This flag is cleared by OnCommit() or OnAbort()
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnDeleting(System.Data.IDbTransaction)">
+            <summary>
+            Overridable handler for deleting event.
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.OnDeleted">
+            <summary>
+            Overridable handler for deleted event.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObject.PersistedDomainObjectSaveEventHandler">
+            <summary>
+            Delegate for persisted domain object saving events.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObject.WriteExternalDataCallback">
+            <summary>
+            Delegate for writing exernal data when exporting object to xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObject.ReadExternalDataCallback">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="xmlnode"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.GetSchema">
+            <summary>
+            Get the schema for this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Export(System.Xml.XmlWriter)">
+            <summary>
+            Serialize this object to XML
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.WriteXml(System.Xml.XmlWriter,Checkbox.Common.PersistedDomainObject.WriteExternalDataCallback)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="externalDataCallback"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.WriteExportAttributes(System.Xml.XmlWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.WriteConfigurationToXml(System.Xml.XmlWriter,Checkbox.Common.PersistedDomainObject.WriteExternalDataCallback)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Dispose">
+            <summary>
+            Dispose of the item
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObject.Dispose(System.Boolean)">
+            <summary>
+            Overridable dispose method
+            </summary>
+            <param name="isDisposing"></param>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObjectSaveEventArgs">
+            <summary>
+            Event arguments for saving persisted domain objects.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObjectSaveEventArgs.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor that accepts the transaction context the save is occurring in.
+            </summary>
+            <param name="transaction"></param>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectSaveEventArgs.Transaction">
+            <summary>
+            Get the transaction contexts for the save operation.
+            </summary>
+        </member>
+        <member name="T:Checkbox.Common.PersistedDomainObjectDataSet">
+            <summary>
+            Base class for persisted domain object data.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObjectDataSet.#ctor(System.String)">
+            <summary>
+            Construct the data set.
+            </summary>
+            <param name="owningObjectTypeName"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObjectDataSet.#ctor(System.String,System.String,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="owningObjectTypeName"></param>
+            <param name="dataTableName"></param>
+            <param name="identityColumnName"></param>
+            <param name="additionalTableNames"></param>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.OwningObjectTypeName">
+            <summary>
+            Get a name of the pdo that owns this data.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.OwningObjectId">
+            <summary>
+            Get id of object owning this item.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.ObjectDataTableNames">
+            <summary>
+            Get list of data table names for the object.  The object's base data table
+            should always be the first name in this list.  The PDO base class implicitly
+            creates a list with data table as only entry if not overridden.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.AdditionalTableNames">
+            <summary>
+            Get names of "Additional" data tables
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.DataTableName">
+            <summary>
+            Get the name of the datatable containing configuration for this PersistedDomainObject.  This name will
+            be used when searching for object data within a dataset.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.IdentityColumnName">
+            <summary>
+            Get the name of the column of the <see cref="T:System.Data.DataTable"/> with a name of <see cref="P:Checkbox.Common.PersistedDomainObjectDataSet.DataTableName"/> that
+            contains identities for persisted objects.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.DomainObjectDataTable">
+            <summary>
+            Get data table with domain object base data.
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.PersistedDomainObjectDataSet.DomainObjectDataRow">
+            <summary>
+            Get data row associated with domain object
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObjectDataSet.LoadDataSet(System.Int32,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            
+            </summary>
+            <param name="owningObjectId"></param>
+            <param name="loadSprocName"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Checkbox.Common.PersistedDomainObjectDataSet.Load(System.Int32,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            Load the object from the persistent data store
+            </summary>
+            <param name="owningObjectId"></param>
+            <param name="loadSprocName"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="T:Checkbox.Common.ExportMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.ExportMode.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.ExportMode.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.ExportMode.Pdf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Checkbox.Common.ExportMode.ClientPdf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.StringExtensions.AddDoubleQuotes(System.String)">
+            <summary>
+            Adds the double quotes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Triplet`3">
+            <summary>
+            Value triplet, useful for hashing with compound key. NULL NOT SUPPORTED FOR VALUES.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <typeparam name="U"></typeparam>
+        </member>
+        <member name="P:Checkbox.Common.Triplet`3.Value1">
+            <summary>
+            Value 1
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Triplet`3.Value2">
+            <summary>
+            Value 2
+            </summary>
+        </member>
+        <member name="P:Checkbox.Common.Triplet`3.Value3">
+            <summary>
+            Value 3
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Triplet`3.#ctor(`0,`1,`2)">
+            <summary>
+            Construct a triplet
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+        </member>
+        <member name="M:Checkbox.Common.Triplet`3.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Triplet`3.Equals(Checkbox.Common.Triplet{`0,`1,`2})">
+            <summary>
+            Equality
+            </summary>
+            <param name="toCompare"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.Utilities">
+            <summary>
+            Summary description for Utilities.
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.#cctor">
+            <summary>
+            Constructor to initialize random number generator
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetRandomNumber(System.Int32,System.Int32)">
+            <summary>
+            Get a random number
+            </summary>
+            <param name="minValue">INCLUSIVE min value</param>
+            <param name="maxValue">EXCLUSIVE max value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.RandomizeList``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Randomizes the values in a generic list
+            </summary>
+            <param name="list">The list.</param>
+            <returns>The randomized List</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetColor(System.String,System.Boolean)">
+            <summary>
+            Converts a string to a <see cref="T:System.Drawing.Color"/>
+            </summary>
+            <param name="colorString">the string to convert</param>
+            <param name="throwException">Allow avoidance of exception rethrowing</param>
+            <returns>Color if input color is valid or White if invalid and throwException == false.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetColor(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Converts a string to a <see cref="T:System.Drawing.Color"/>
+            </summary>
+            <param name="alphaValue">Alpha value for color as a percentage, where 100 = opaque.</param>
+            <param name="colorString">the string to convert</param>
+            <param name="throwException">Allow avoidance of exception rethrowing</param>
+            <returns>Color if input color is valid or White if invalid and throwException == false.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.SqlEncode(System.String)">
+            <summary>
+            Encodes a string for use in an SQL statement
+            </summary>
+            <param name="s">The string to encode</param>
+            <returns>The encoded string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.SimpleHtmlEncode(System.String)">
+            <summary>
+             Converts a string into an HTML-encoded string.
+            </summary>
+            <param name="s">The string to encode</param>
+            <returns>The Html encoded string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AdvancedHtmlEncode(System.String)">
+            <summary>
+             Converts a string into an HTML-encoded string.
+            </summary>
+            <param name="s">The string to encode</param>
+            <returns>The Html encoded string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.SimpleHtmlDecode(System.String)">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded string
+            </summary>
+            <param name="s">The string to decode</param>
+            <returns>The decoded string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AdvancedHtmlDecode(System.String)">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded string
+            </summary>
+            <param name="s">The string to decode</param>
+            <returns>The decoded string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.DecodeAndStripHtml(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded string
+            and strips tags
+            </summary>
+            <param name="s"></param>
+            <param name="maxLength"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripHtmlAndEncode(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded string
+            and strips tags
+            </summary>
+            <param name="s"></param>
+            <param name="maxLength"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.DoubleToHex(System.Double)">
+            <summary>
+            Converts a double to a hex string representation
+            </summary>
+            <param name="i">the double to convert</param>
+            <returns>the hex string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StringToHex(System.String)">
+            <summary>
+            Converts a common string into hex format
+            </summary>
+            <param name="i">the string to convert</param>
+            <returns>the hex formatted string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.Right(System.String,System.Int32)">
+            <summary>
+            Gets a substring cut from the right side of a given string
+            </summary>
+            <param name="s">the string to cut</param>
+            <param name="length">the length from the right side to cut it</param>
+            <returns>The substring from the right side</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.Left(System.String,System.Int32)">
+            <summary>
+            Gets a substring cut from the left side of a given string
+            </summary>
+            <param name="s">the string to cut</param>
+            <param name="length">the length from the left side to cut it</param>
+            <returns>The substring from the left side</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.Mid(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets a substring cut from the middle of a given string
+            </summary>
+            <param name="s">the string to cut</param>
+            <param name="start">position to start the cut.</param>
+            <param name="length">the length to cut it</param>
+            <returns>The substring from middle</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsNumeric(System.String)">
+            <summary>
+            Determines if the given string is a number
+            </summary>
+            <param name="str">the string to check</param>
+            <returns>true if the string is numeric, otherwise false</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsPositiveNumber(System.String)">
+            <summary>
+            Determines if the given string is a positive number
+            </summary>
+            <param name="str">the string to check</param>
+            <returns>true if positive number; otherwise false</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ReverseString(System.String)">
+            <summary>
+            Returns the reverse of a given string
+            </summary>
+            <param name="inStr">The string to reverse</param>
+            <returns>The reversed string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StringToList(System.String,System.Char)">
+            <summary>
+            Split a delimited string into a List of strings.
+            </summary>
+            <param name="source">The delimited string to split.</param>
+            <param name="delimiter">The token to split the source string on.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.HexStringToByteArray(System.String)">
+            <summary>
+            Converts a hex string to a byte array
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.HexToInt(System.String)">
+            <summary>
+            This method converts a hexvalues string as 80FF into a integer.
+            Note that you may not put a '#' at the beginning of string! 
+            If the string does not represent a valid hexadecimal value it returns 0.
+            </summary>
+            <param name="hexstr">The hex string to convert</param>
+            <returns>An integer representation of the hex</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IntToHex(System.Int32)">
+            <summary>
+            This method converts a integer into a hexadecimal string representing the int value. 
+            The returned string will look like this: 55FF. 
+            Note that there is no leading '#' in the returned string! 
+            </summary>
+            <param name="hexint">The integer representation of a hex</param>
+            <returns>The string representation of a hex</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IntToHex(System.Int32,System.Int32)">
+            <summary>
+            This version of the IntToHex method returns a hexadecimal string representing the 
+            int value in the given minimum length. If the hexadecimal string is shorter then the 
+            length parameter the missing characters will be filled up with leading zeroes.																																										
+            Note that the returned string is not truncated if the value exeeds the length!
+            </summary>
+            <param name="hexint">The integer value</param>
+            <param name="length">The minimum length</param>
+            <returns>hexadecimal string representing the int value</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.HexToColor(System.String)">
+            <summary>
+            Translates a html hexadecimal definition of a color into a .NET Framework Color.
+             The input string must start with a '#' character and be followed by 6 hexadecimal
+             digits. The digits A-F are not case sensitive. If the conversion was not successfull
+             the color white will be returned.
+            </summary>
+            <param name="hexString">The html hex definition</param>
+            <returns>A <see cref="T:System.Drawing.Color"/> object</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.HexToAlphaColor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="hexString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ColorToHex(System.Drawing.Color)">
+            <summary>
+            Translates a .NET Framework Color into a string containing the html hexadecimal 
+             representation of a color. The string has a leading '#' character that is followed 
+             by 8 hexadecimal digits. 
+            </summary>
+            <param name="actColor">The <see cref="T:System.Drawing.Color"/> to translate</param>
+            <returns>The hex string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ColorToHex(System.Drawing.Color,System.Boolean)">
+            <summary>
+            Translates a .NET Framework Color into a string containing the html hexadecimal 
+             representation of a color. The string has a leading '#' character that is followed 
+             by 6 or 8 hexadecimal digits. 
+            </summary>
+            <param name="actColor">The <see cref="T:System.Drawing.Color" /> to translate</param>
+            <param name="includeAlpha">Include alpha channel or not</param>
+            <returns>The hex string</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.PercentToHexColor(System.Int32)">
+            <summary>
+            Translates a percentage value to it's appropriate hexadecimal color value
+            </summary>
+            <param name="percent">The percent value to translate</param>
+            <returns>The hexadecimal color value</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsNotNullOrEmpty(System.String)">
+            <summary>
+            Determines if a string is contains a value other than null or the String.Empty. 
+            Both leading and trailing whitespace are removed before comparisons are made.
+            </summary>
+            <param name="value">The string being evaluated</param>
+            <returns>True is returned if the value is not null or String.Empty; False is returned in all other cases.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsNullOrEmpty(System.String)">
+            <summary>
+            Determines if a string is either null or equal to String.Empty. 
+            Both leading and trailing whitespace are removed before comparisons are made.
+            </summary>
+            <param name="value">The string being evaluated</param>
+            <returns>True is returned if the value is either null or String.Empty. False is returned in all other cases; </returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsNullOrEmpty(System.String@)">
+            <summary>
+            Determines if a string is either null or equal to String.Empty. 
+            Both leading and trailing whitespace are removed before comparisons are made.
+            </summary>
+            <param name="value">The string being evaluated</param>
+            <returns>True is returned if the value is either null or String.Empty. False is returned in all other cases; </returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ListIntersection``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            Return the intersection of two lists
+            </summary>
+            <typeparam name="T">Type of data stored in the list.</typeparam>
+            <param name="list1"></param>
+            <param name="list2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ListToDelimitedString(System.Char,System.Collections.Generic.List{System.String})">
+            <summary>
+            Iterates through a List of strings and constructs a delimited list from 
+            the contents of the list and the specified delimiter.
+            </summary>
+            <param name="delimitValue">The character used to delimit.</param>
+            <param name="values">The data to be converted to a delimited string.</param>
+            <returns>A delimited string. If an empty list is passed in the empty string is returned.</returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ListToLower(System.Collections.Generic.List{System.Object})">
+            <summary>
+             Converts a list of objects to a list of lowercase strings.
+            </summary>
+            <remarks>This method is useful for deterring if values are already in a dictionary.</remarks>
+            <param name="objects">The list of objects to iterate through.</param>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsInt(System.String)">
+            <summary>
+            Returns the int representation of a string. 
+            Null is returned if the string does not represent a valid integer.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsBool(System.Object,System.Boolean)">
+            <summary>
+            Returns the bool representation of an object.
+            Default value is returned if the string does not represent a valid bool.
+            </summary>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsInt(System.Object,System.Int32)">
+            <summary>
+            Returns the int representation of an object.
+            Default value is returned if the string does not represent a valid int.
+            </summary>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsDouble(System.String)">
+            <summary>
+            Returns the double representation of a string.
+            Null is returned if the string does not represent a double.
+            </summary>
+            <param name="value">The string representation of the double to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsLong(System.Object)">
+            <summary>
+            Returns the double representation of a string.
+            Null is returned if the string does not represent a double.
+            </summary>
+            <param name="value">The string representation of the double to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsDouble(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Returns the double representation of a date. Cultural differences are considered when converting the date.
+            Null is returned if the date is not valid.
+            </summary>
+            <param name="dateString">The string representation of the date to convert.</param>
+            <param name="cultureInfo">The format of the date string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.AsPartialGuid(System.String)">
+            <summary>
+            Make a guid-like string conform to a guid format with respect to positioning
+            of dash characters.  No validation is performed for invalid characters or 
+            length.
+            </summary>
+            <param name="guidString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ListEnumValues(System.Type)">
+            <summary>
+            List values of an enum type in string form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsInt32(System.String)">
+            <summary>
+            Check if value is an int32
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetInt32(System.String)">
+            <summary>
+            Get an int value
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsLongInt(System.String)">
+            <summary>
+            Check if value is an int32
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetLongInt(System.String)">
+            <summary>
+            Get an int value
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetCultures">
+            <summary>
+            Get cultures for conversions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetUsCulture">
+            <summary>
+            Get culture for us date/number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetRotwCulture">
+            <summary>
+            Get culture for rest of world date/culture
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsHtmlFormattedText(System.String)">
+            <summary>
+            Get if text contains html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsTextEncoded(System.String)">
+            <summary>
+            Get if text is encoded
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsDouble(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Check if value is a double
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetDouble(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Get a double value. Null
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsValidDouble(System.String,System.Globalization.NumberFormatInfo)">
+            <summary>
+            Return a boolean if a number is valid for the specified number format.
+            </summary>
+            <param name="stringValue">Value as a string.</param>
+            <param name="numberFormat">Number format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsDate(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Check if value is a date
+            </summary>
+            <param name="value">Value of operand as string</param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetDate(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Get a date value
+            </summary>
+            <param name="value"></param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.IsCurrency(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Return a boolean indicating if the value is currency
+            </summary>
+            <param name="value"></param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetCurrencyNumericValue(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Get the numeric portion of a currency string. 
+            </summary>
+            <param name="value"></param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripHtml(System.String,System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Return a string with HTML values stripped out.
+            </summary>
+            <param name="stringToStrip">The string to strip.</param>
+            <param name="maxLength">The maximum length.</param>
+            <param name="removeNewLineCharacters">if set to <c>true</c> [remove new line characters].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.RemoveNewLineCharacters(System.String)">
+            <summary>
+            Removes the new line characters.
+            </summary>
+            <param name="text">The text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.TruncateText(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Determines if text is the appropriate length. 
+            If the text is too long the middle is truncated in order to maintain readability.
+            </summary>
+            <param name="text">The text to truncate.</param>
+            <param name="maxLength">The maximum allowed length of the text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.ValidateCsvFileName(System.String)">
+            <summary>
+            Validate that the specified file name ends in .csv or .txt
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetListDataPage``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Get "page" of data from a list.
+            </summary>
+            <param name="listToPage"></param>
+            <param name="pageNumber"></param>
+            <param name="resultsPerPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.MoveListElement``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Move a list element to a new position.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="currentElementPosition"></param>
+            <param name="newElementPosition"></param>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.GetSaltedMd5Hash(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.RemoveScript(System.String)">
+            <summary>
+            Removes script tag and it's content from the string
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripIframes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Checkbox.Common.Utilities.EncodeTagsInHtmlContent(System.String)" -->
+        <member name="M:Checkbox.Common.Utilities.ReplaceHtmlAttributes(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="html"></param>
+            <param name="validate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.CleanInvalidXmlCharacters(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripHtmlTags(System.String)">
+            <summary>
+            Strips Html Tags from given string
+            </summary>
+            <param name="answer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripDataAttributes(System.String)">
+            <summary>
+            Strips data-* attributes from given string
+            </summary>
+            <param name="answer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.StripMSWordTags(System.String)">
+            <summary>
+            Removes tags and attributes from MS Word
+            
+            Taken from http://tim.mackey.ie/2005/11/23/CleanWordHTMLUsingRegularExpressions.aspx
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.Compress(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Checkbox.Common.Utilities.Decompress(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Checkbox.Common.XssUtilities">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Checkbox.Common.XssUtilities.EncodeHtml(System.String)">
+            <summary>
+             Sanitizes untrusted text which will be displayed to a client.
+            </summary>
+            <param name="input">The text to encode.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

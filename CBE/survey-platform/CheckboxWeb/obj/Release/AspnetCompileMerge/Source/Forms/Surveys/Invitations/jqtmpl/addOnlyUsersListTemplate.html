@@ -1,0 +1,14 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="selectAllUsers"/></div>
+    <div class="fixed_200 left"><b>${textHelper.getTextValue("/pageText/Users/Manage.aspx/username", "User Name")}</b></div>
+    <br class="clear" />
+ </div>
+{{each(index, user) items}}
+  {{tmpl(user, {index: index}) 'addOnlyUsersListItemTemplate.html'}}
+{{/each}}
+
+<script type="text/javascript">
+    $(function () {
+        $('.addUser').change(function () { userSelected($(this).val(), $(this).prop('checked')) });
+    });
+</script>

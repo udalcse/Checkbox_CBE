@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Text_Set '/itemType/HeatMapSummary/name', 'en-US', N'Heat Map'

@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8846AF1-ABF4-41AB-8BBE-07AF7AFB597C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Prezza.Framework</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Prezza.Framework</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Prezza.Framework.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Prezza.Framework.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Prezza.Framework.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x86'">
+    <OutputPath>bin\x86\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x64'">
+    <OutputPath>bin\x64\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x86'">
+    <OutputPath>bin\x86\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x64'">
+    <OutputPath>bin\x64\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK">
+      <HintPath>Components\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Enyim.Caching\Enyim.Caching.csproj">
+      <Project>{33D257C1-8EF3-4370-8085-DA267698E1B0}</Project>
+      <Name>Enyim.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework.Common\Prezza.Framework.Common.csproj">
+      <Name>Prezza.Framework.Common</Name>
+      <Project>{2328F020-50E3-4DAF-A4F9-9C1A4D3CA238}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\BackgroundScheduler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\BackingStoreFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\BackingStoreImplementations\BaseBackingStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\BackingStoreImplementations\NullBackingStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Cache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheCapacityScavengingPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheItemPriority.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheItemRemovedEventArgs.cs" />
+    <Compile Include="Caching\CacheItemRemovedReason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheManagerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\BackingStoreProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CacheConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CacheManagerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CacheStorageData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\MemcachedCacheConfiguration.cs" />
+    <Compile Include="Caching\Configuration\ICacheConfiguration.cs" />
+    <Compile Include="Caching\Configuration\MemcachedPoolConfiguration.cs" />
+    <Compile Include="Caching\Configuration\MemcachedServerConfiguration.cs" />
+    <Compile Include="Caching\MemcachedCache.cs" />
+    <Compile Include="Caching\ExpirationPollTimer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\AbsoluteTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\ExtendedFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\ExtendedFormatTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\FileDependency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\NeverExpired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Expirations\SlidingTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ExpirationTimeoutExpiredMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ExprirationTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\IBackingStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheItemExpiration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheItemRefreshAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheOperations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheScavenger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\IQueueMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\PriorityDateComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ProducerConsumerQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\RefreshActionInvoker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\RefreshActions\DisposableItemExpiredHandler.cs" />
+    <Compile Include="Caching\ScavengerTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\StartScavengingMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationChangeFileWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationSectionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\IConfigurationChangeWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\IConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\IXmlConfigurationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ProviderDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\CachingMechanism.cs" />
+    <Compile Include="Data\Configuration\DatabaseProviderData.cs" />
+    <Compile Include="Data\Configuration\DatabaseSettings.cs" />
+    <Compile Include="Data\Configuration\DatabaseTypeData.cs" />
+    <Compile Include="Data\Configuration\DatabaseTypeDataCollection.cs" />
+    <Compile Include="Data\Configuration\InstanceData.cs" />
+    <Compile Include="Data\Configuration\InstanceDataCollection.cs" />
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\DatabaseConfiguration.cs" />
+    <Compile Include="Data\DatabaseFactory.cs" />
+    <Compile Include="Data\DatabaseProviderFactory.cs" />
+    <Compile Include="Data\DataContextProvider.cs" />
+    <Compile Include="Data\DB2\DB2CommandWrapper.cs" />
+    <Compile Include="Data\DB2\DB2Database.cs" />
+    <Compile Include="Data\DbCommandWrapper.cs" />
+    <Compile Include="Data\DbTransactionWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\ExpectedDataNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\GenericDbParameter.cs" />
+    <Compile Include="Data\IDataContextProvider.cs" />
+    <Compile Include="Data\MySql\MySqlCommandWrapper.cs" />
+    <Compile Include="Data\MySql\MySqlDatabase.cs" />
+    <Compile Include="Data\Npgsql\NpgsqlCommandWrapper.cs" />
+    <Compile Include="Data\Oracle\OracleCommandWrapper.cs" />
+    <Compile Include="Data\Oracle\OracleDatabase.cs" />
+    <Compile Include="Data\ParameterCache.cs" />
+    <Compile Include="Data\Npgsql\NpgsqlDatabase.cs" />
+    <Compile Include="Data\Sprocs\Attributes\DeleteParameter.cs" />
+    <Compile Include="Data\Sprocs\Attributes\DeleteProcedure.cs" />
+    <Compile Include="Data\Sprocs\Attributes\InsertProcedure.cs" />
+    <Compile Include="Data\Sprocs\Attributes\UpdateProcedure.cs" />
+    <Compile Include="Data\Sprocs\ProcedureReflectionInfo.cs" />
+    <Compile Include="Data\Sprocs\ParameterReflectionInfo.cs" />
+    <Compile Include="Data\Sprocs\StoredProcedureExtractionFailure.cs" />
+    <Compile Include="Data\Sprocs\Attributes\FetchParameter.cs" />
+    <Compile Include="Data\Sprocs\Attributes\FetchProcedure.cs" />
+    <Compile Include="Data\Sprocs\Attributes\FetchResult.cs" />
+    <Compile Include="Data\Sprocs\Attributes\InsertParameter.cs" />
+    <Compile Include="Data\Sprocs\Attributes\SprocParameter.cs" />
+    <Compile Include="Data\Sprocs\Attributes\StoredProcedure.cs" />
+    <Compile Include="Data\Sprocs\StoredProcedureCommandExtractor.cs" />
+    <Compile Include="Data\Sprocs\Attributes\UpdateParameter.cs" />
+    <Compile Include="Data\Sql\SqlCommandWrapper.cs" />
+    <Compile Include="Data\Sql\SqlDatabase.cs" />
+    <Compile Include="Data\UpdateBehavior.cs" />
+    <Compile Include="ExceptionHandling\BaseException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\BaseExceptionHandler.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ConfigurationFileException.cs" />
+    <Compile Include="ExceptionHandling\Configuration\DatabaseLoggingExceptionHandlerData.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionHandlerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionHandlerDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionHandlingConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\LoggingExceptionHandlerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ReplaceHandlerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\WrapHandlerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\DatabaseLoggingExceptionHandler.cs" />
+    <Compile Include="ExceptionHandling\ErrorMessage.cs" />
+    <Compile Include="ExceptionHandling\ExceptionFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionHandlerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionHandlingException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionPolicyEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionPolicyFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionUtiilty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\IExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\LoggingExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\PostHandlingAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\ReplaceHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\TextExceptionFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\WrapHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\XmlExceptionFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\CategoryFilterMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\CategoryFilterData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\CategoryFilterDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\DistributionStrategyData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\DistributionStrategyDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\InProcDistributionStrategyData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Configuration\LoggingConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\CategoryData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\CategoryDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\DatabaseSinkData.cs" />
+    <Compile Include="Logging\Distributor\Configuration\DestinationData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\DestinationDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\DistributorConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\FlatFileSinkData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\FormatterData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\FormatterDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\NullFormatterData.cs" />
+    <Compile Include="Logging\Distributor\Configuration\SinkData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\SinkDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\SystemEventLogSinkData.cs" />
+    <Compile Include="Logging\Distributor\Configuration\TextFormatterData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\Configuration\XmlFormatterData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\ILogDistributionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\InProcLogDistributionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\LogDistributionStrategyFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Distributor\LogDistributor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Filters\CategoryFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Filters\ILogFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Filters\LogFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Filters\PriorityFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\DatabaseExceptionFormatter.cs" />
+    <Compile Include="Logging\Formatters\DictionaryToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\ILogFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\KeyValueToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\LogFormatterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\NullLogFormatter.cs" />
+    <Compile Include="Logging\Formatters\TextFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\TimeStampToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\TokenFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Formatters\XmlFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\LogEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Logger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\LogWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Severity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Sinks\DatabaseLogSink.cs" />
+    <Compile Include="Logging\Sinks\FlatFileSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Sinks\ILogSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Sinks\LogSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Sinks\LogSinkFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Sinks\SystemEventLogSink.cs" />
+    <Compile Include="Security\AbstractAccessControlList.cs" />
+    <Compile Include="Security\AccessControlEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AccessControlList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AclMapper.cs" />
+    <Compile Include="Security\AuthenticationProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AuthorizationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AuthorizationFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\AuthorizationProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Configuration\SecurityConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\IAccessControlEntry.cs" />
+    <Compile Include="Security\IAccessControllable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\IAccessControlList.cs" />
+    <Compile Include="Security\IAccessPermissible.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\IAuthorizationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\ISessionTokenProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\IToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\LightweightAccessControllable.cs" />
+    <Compile Include="Security\Policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\PolicyMapper.cs" />
+    <Compile Include="Security\Principal\ExtendedPrincipal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Role.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\SecurityEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\IBM.Data.DB2.dll" />
+    <Content Include="Components\MySql.Data.dll" />
+    <Content Include="Components\Npgsql.dll" />
+    <Content Include="Components\Oracle.DataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Oracle\Tests\" />
+    <Folder Include="Logging\Tracing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

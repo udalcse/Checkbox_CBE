@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Use the following ItemGroup to set the files to be deployed.-->
+	<ItemGroup>
+		<FilesToPackage Include="dbdeploy/**" />
+		<FilesToPackage Include="UpgradeScripts/**" />
+		<FilesToPackage Include="parameters_updated.xml" />
+		<FilesToPackage Include="parameters.xml" />
+  </ItemGroup>
+  <PropertyGroup>
+
+   
+      <DestinationFilePath>c$\Program Files\CheckboxDB</DestinationFilePath>
+      <ParametersFile>$(MSBuildProjectDirectory)\parameters.xml</ParametersFile>
+      <ImportParametersFilesOverride>true</ImportParametersFilesOverride>
+      <ImportParametersFiles>true</ImportParametersFiles>
+      <CurrentSetParameterFile>$(MSBuildProjectDirectory)\EnvironmentConfig\SetParameters.$(Configuration).xml</CurrentSetParameterFile>
+     
+		<DeployOnBuild>True</DeployOnBuild>
+    <!-- Read the readme.txt file in the AppDeploy package folder (typically at "..\packages\AppDeploy[version]\") for help using app deploy. -->
+    <!--<BatchCommandVariables>var1=value1;var2=value2</BatchCommandVariables>-->
+    <AppTypeFolder>Services</AppTypeFolder>
+  
+  </PropertyGroup>
+  
+</Project>

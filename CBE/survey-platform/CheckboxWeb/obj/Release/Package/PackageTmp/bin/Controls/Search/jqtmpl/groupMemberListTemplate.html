@@ -1,0 +1,10 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllMembers"/></div>
+    <div class="fixed_125 left" sortField="UniqueIdentifier">User Name</div>
+    <div class="fixed_125 left" sortField="Email">Email</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+    {{tmpl(user, {index: index}) 'groupMemberListItemTemplate.html'}}
+{{/each}}

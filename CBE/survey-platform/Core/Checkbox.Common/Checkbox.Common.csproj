@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50A76D2E-1479-4AB8-949F-9A5B699ED84E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Checkbox.Common</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Checkbox.Common</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Checkbox.Common.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Checkbox.Common.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Checkbox.Common.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x86'">
+    <OutputPath>bin\x86\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x64'">
+    <OutputPath>bin\x64\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x86'">
+    <OutputPath>bin\x86\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x64'">
+    <OutputPath>bin\x64\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Prezza.Framework.Common\Prezza.Framework.Common.csproj">
+      <Name>Prezza.Framework.Common</Name>
+      <Project>{2328F020-50E3-4DAF-A4F9-9C1A4D3CA238}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework\Prezza.Framework.csproj">
+      <Name>Prezza.Framework</Name>
+      <Project>{D8846AF1-ABF4-41AB-8BBE-07AF7AFB597C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractPersistedDomainObjectDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AccessControllablePersistedDomainObject.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Captcha\CaptchaGenerator.cs" />
+    <Compile Include="Captcha\CodeType.cs" />
+    <Compile Include="Captcha\Image\ImageFormatEnum.cs" />
+    <Compile Include="Captcha\Image\ImageGenerator.cs" />
+    <Compile Include="Captcha\Image\Support\CurvedText.cs" />
+    <Compile Include="Captcha\Image\Support\CurvedTextShapes.cs" />
+    <Compile Include="Captcha\Image\Support\RandomClass.cs" />
+    <Compile Include="Captcha\Image\Support\Tools.cs" />
+    <Compile Include="Captcha\Image\Support\Win32Support.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\AncientMosaicTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\BlackOverlapTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\BrokenTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\Bullets2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\BulletsTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CaughtInTheNet2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CaughtInTheNetTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ChalkboardTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\Chess3DTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ChessTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ChippedTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CirclesTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CollageTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CorrosionTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CrossShadow2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CrossShadowTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\CutTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\DartsTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\DistortionTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\FingerPrintsTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\FlashTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\GhostlyTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\Graffiti2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\GraffitiTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\GridTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\HaloTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\InBandagesTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\LegoTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\MassTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\MeltingHeatTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\NegativeTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\Overlap2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\OverlapTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\PaintMessTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\RoughTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SnowTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SpiderWebTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SplitTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\StitchTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\StrippyTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SunAndWarmAirTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SunRays2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\SunRaysTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ThickThinLines2TextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ThickThinLinesTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\ThinWavyLettersTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\VertigoTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\WantedCircularTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\WaveTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\WavyChessTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\Generators\WavyColorLettersTextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\ITextGenerator.cs" />
+    <Compile Include="Captcha\Image\TextGenerator\TextGeneratorFactory.cs" />
+    <Compile Include="Captcha\Image\TextStyleEnum.cs" />
+    <Compile Include="Captcha\Sound\SoundFormatEnum.cs" />
+    <Compile Include="Captcha\Sound\SoundGenerator.cs" />
+    <Compile Include="Captcha\Sound\Support\Sound.cs" />
+    <Compile Include="Captcha\Sound\Support\SoundLookup.cs" />
+    <Compile Include="Captcha\Sound\Support\WavFile.cs" />
+    <Compile Include="CsvUtilities.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="FileUtilities.cs" />
+    <Compile Include="Folder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FolderDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HtmlStrippingStringWriter.cs" />
+    <Compile Include="LocalizedPersistedDomainObjectDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Location.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrderedDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pair.cs" />
+    <Compile Include="PersistedDomainObject.cs" />
+    <Compile Include="PersistedDomainObjectDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExportMode.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Triplet.cs" />
+    <Compile Include="Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XssUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Captcha\Sound\Support\soundDATA" />
+    <EmbeddedResource Include="Captcha\Sound\Support\soundHEADER" />
+    <EmbeddedResource Include="Captcha\Sound\Support\soundLOOKUP" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

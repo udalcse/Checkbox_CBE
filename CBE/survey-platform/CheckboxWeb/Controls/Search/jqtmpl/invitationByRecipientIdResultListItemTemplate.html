@@ -1,0 +1,12 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra invitationSearchResult" invitationId="${DatabaseId}">
+{{else}}
+    <div class="gridContent detailZebra invitationSearchResult" invitationId="${DatabaseId}">
+{{/if}}
+        <div class="fixed_25 left">${DatabaseId}</div>
+        <div class="fixed_125 left invitationResultsInvitationName">${Name}</div>
+        <div class="fixed_125 left">${CreatedBy}</div>
+        <div class="fixed_100 left">${dateUtils.jsonDateToInvariantDateString(CreatedDate)}</div>
+        <div class="fixed_100 left">${dateUtils.jsonDateToInvariantDateString(LastSent)}</div>
+        <br class="clear" />
+    </div>

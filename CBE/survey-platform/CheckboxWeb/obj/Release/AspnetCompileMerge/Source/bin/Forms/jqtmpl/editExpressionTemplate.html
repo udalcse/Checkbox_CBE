@@ -1,0 +1,31 @@
+﻿<div expressionId="${ExpressionId}" class="leafExpression">
+    <div class="left leafView">
+        <input type="text" value="${SourceType}" readonly="readonly" style="width:130px;" class="text"/>
+        <input type="text" value="${LeftOperandText}" readonly="readonly" style="width:150px;" class="text"/>
+        <input type="text" value="${Operator}" readonly="readonly" style="width:159px;" class="text"/>
+{{if (RightOperandText)}}
+        <input type="text" class="valueDisplay" value="${RightOperandText}" readonly="readonly" style="width:140px;" class="text"/>
+{{else}}
+        <div class="valueDisplay" style="width:148px;display: inline-block;">&nbsp;</div>
+{{/if}}
+    </div>
+    <div class="expressionEditorPanel left" style="display:none">
+        <select onchange="advancedExpressionEditor.onRightParamSelectChange(event);" class="expressionRightParamSelect" uframeignore="true" style="display:none">
+            <option selected="selected" value="SourceTypeNotSpecified">${textHelper.getTextValue("/expressionEditor/value", "Value")}</option>
+        </select>
+        <input onkeypress="advancedExpressionEditor.onRightParamTextChange(event);"  onchange="advancedExpressionEditor.onRightParamTextChange(event);" type="text" class="expressionRightParamText" value="Value" style="display:none" uframeignore="true"/>
+        <input onkeypress="advancedExpressionEditor.onRightParamDateChange(event);" onchange="advancedExpressionEditor.onRightParamDateChange(event);" type="text" class="expressionRightParamDate" style="display:none" uframeignore="true"/>
+
+        <a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton addNewExpressionButton" onclick="advancedExpressionEditor.onSaveEditedExpressionClick(event);" expressionId="${ExpressionId}">${textHelper.getTextValue("/expressionEditor/saveChanges", "Save Changes")}</a>
+        <a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton cancelEditExpressionButton" onclick="advancedExpressionEditor.onCancelEditedExpressionClick(event);">${textHelper.getTextValue("/expressionEditor/cancel", "Cancel")}</a>
+    </div>
+
+    <div class="left leafButtons">
+        <a class="ckbxButton roundedCorners border999 shadow999 orangeButton smallButton" onclick="advancedExpressionEditor.onEditExpressionClick(event);">${textHelper.getTextValue("/expressionEditor/edit", "Edit")}</a>
+        <a class="ckbxButton roundedCorners border999 shadow999 redButton smallButton" href="#" onclick="advancedExpressionEditor.onRemoveExpressionClick(event);" >${textHelper.getTextValue("/expressionEditor/remove", "Remove")}</a>
+    </div>
+</div>
+
+
+                    
+                

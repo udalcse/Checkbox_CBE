@@ -1,0 +1,13 @@
+﻿ <div class="gridHeader ckbxGridHeader" id="responseSummaryHeader">
+    <div class="fixed_75 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/responses.aspx/id", "ID")}</b></div>
+    <div class="fixed_200 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/responses.aspx/invitee", "Invitee")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/responses.aspx/started", "Started")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/responses.aspx/ended", "Ended")}</b></div>
+    <div class="fixed_125 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/responses.aspx/lastEdit", "Last Edit")}</b></div>
+    <div class="clear"></div>
+ </div>
+ <div class="clear"></div>
+
+ {{each(index, response) items}}
+   {{tmpl(response, {index: index}) 'responsesGridListItemTemplate.html'}}
+ {{/each}}

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminStep.Title" xml:space="preserve">
+    <value>Admin User</value>
+  </data>
+  <data name="ConfigStep.Title" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>An error occurred while attempting to connect to the database.  Please verify that the settings are correct and click "Next." &lt;br /&gt;The error returned by the database was: </value>
+  </data>
+  <data name="DatabaseStep.Title" xml:space="preserve">
+    <value>Database Info</value>
+  </data>
+  <data name="FinishInstructions.Text" xml:space="preserve">
+    <value>&lt;p&gt;Checkbox&amp;reg; Survey has gathered all the information it needs.&lt;/p&gt;
+&lt;p&gt;When the configuration process has completed, you will be redirected to the login screen.  Your default username and password are both "admin" &lt;/p&gt;&lt;p&gt; To begin the configuration process click "Finish"&lt;/p&gt;</value>
+  </data>
+  <data name="FinishStep.Title" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="FreeFormConnectionError" xml:space="preserve">
+    <value>An error occurred while attempting to connect to the database.  Please verify that the connection string is properly formatted and click "Next." &lt;br /&gt;The error message was:  </value>
+  </data>
+  <data name="PageTitle.Text" xml:space="preserve">
+    <value>Complete Your Installation</value>
+  </data>
+  <data name="URLStep.Title" xml:space="preserve">
+    <value>Site Address</value>
+  </data>
+  <data name="WelcomeInstructions.Text" xml:space="preserve">
+    <value>&lt;p&gt;This wizard will walk you through the steps required to configure Checkbox&amp;reg; Survey.&lt;/p&gt;
+You will need the following information:
+&lt;ul&gt;
+&lt;li&gt;The name and server address of the database which will store Checkbox&amp;reg; data&lt;/li&gt;
+&lt;li&gt;The administrative credentials to this database (with sufficient permission to create tables, procedures, views, functions, and users)&lt;/li&gt;
+&lt;li&gt;The internet address (url) through which users will reach this Checkbox&amp;reg; installation&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="WelcomeStep.Title" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="_adminDBInstructions.Text" xml:space="preserve">
+    <value>This connection information is used by Checkbox&amp;reg; Survey to connect to its database to install the required database 
+                                objects.  The database must exist and be reachable from the web server running Checkbox&amp;reg; Survey. The user credentials
+                                supplied must have permission to create tables, views, stored procedures, and users. These user credentials will then be stored by Checkbox&amp;reg; and used during normal operation of the application. &lt;br /&gt;</value>
+  </data>
+  <data name="_adminDBTitle.Text" xml:space="preserve">
+    <value>Database Connection</value>
+  </data>
+  <data name="_appConnectionTypeLabel.Text" xml:space="preserve">
+    <value>Connection type</value>
+  </data>
+  <data name="_appDBInstructions.Text" xml:space="preserve">
+    <value>These credentials will be used by Checkbox Survey to access the database specified above; they will be created if needed.</value>
+  </data>
+  <data name="_appDBTitle.Text" xml:space="preserve">
+    <value>Application Connection Credentials</value>
+  </data>
+  <data name="_applicationAddressTitle.Text" xml:space="preserve">
+    <value>Application Web Address</value>
+  </data>
+  <data name="_applicationRootLabel.Text" xml:space="preserve">
+    <value>Application Root</value>
+  </data>
+  <data name="_applicationURLLabel.Text" xml:space="preserve">
+    <value>Application URL</value>
+  </data>
+  <data name="_appPasswordTxtLabel.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="_appPasswordTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_appTrustedConnectionInstructions.Text" xml:space="preserve">
+    <value>Checkbox&amp;reg; Survey will use the application process or thread identity (depending on server configuration) to connect to the SQL database. For more information please see the following MSDN knowledge base article: &lt;a href="http://msdn.microsoft.com/en-us/library/ms998292.aspx" target="_blank"&gt;How To: Connect to SQL Server Using Windows Authentication in ASP.NET 2.0&lt;/a&gt;</value>
+  </data>
+  <data name="_appUsernameTxtLabel.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="_appUsernameTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_connectionTypeLabel.Text" xml:space="preserve">
+    <value>Connection type</value>
+  </data>
+  <data name="_dbNameTxtLabel.Text" xml:space="preserve">
+    <value>Database name</value>
+  </data>
+  <data name="_dbNameTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_freeformConnectionStringLabel.Text" xml:space="preserve">
+    <value>Connection string</value>
+  </data>
+  <data name="_freeformConnectionStringValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_passwordTxtLabel.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="_passwordTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_sampleInstructions.Text" xml:space="preserve">
+    <value>These sample surveys, style templates, and item libraries will help you get started using Checkbox&amp;reg; Survey right away</value>
+  </data>
+  <data name="_sampleTitle.Text" xml:space="preserve">
+    <value>Install Sample Items</value>
+  </data>
+  <data name="_serverTxtLabel.Text" xml:space="preserve">
+    <value>Server name</value>
+  </data>
+  <data name="_serverTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_trustedDbNameLabel.Text" xml:space="preserve">
+    <value>Database name</value>
+  </data>
+  <data name="_trustedDbNameValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_trustedServerLabel.Text" xml:space="preserve">
+    <value>Server name</value>
+  </data>
+  <data name="_trustedServerValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_urlInstructions.Text" xml:space="preserve">
+    <value>Please verify that the application URL and application root values are correct.  For example, if you will
+                                    access Checkbox&amp;reg; Survey through this URL: http://myserver.com/CheckboxSurvey, the application
+                                    URL would be &lt;i&gt;http://myserver.com&lt;/i&gt; and the application root would be &lt;i&gt;/CheckboxSurvey&lt;/i&gt;.</value>
+  </data>
+  <data name="_usernameTxtLabel.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="_usernameTxtValidator.ErrorMessage" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="_dbProviderLabel.Text" xml:space="preserve">
+    <value>Database type</value>
+  </data>
+  <data name="_TimezoneTxtLabel.Text" xml:space="preserve">
+    <value>You may leave this blank for now and set it later in the Settings --&gt; System Settings --&gt; System Preferences --&gt; Global options</value>
+  </data>
+</root>

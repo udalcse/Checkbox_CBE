@@ -1,0 +1,21 @@
+﻿<h3>${Name}</h3>
+<div class="surveyDescription">${Description}</div>
+
+<ul class="itemActionMenu allMenu">
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_propertiesLink" href="javascript:showDialog('Users/Groups/Properties.aspx?g=${DatabaseId}&onClose=onEditGroupDialogClosed', 'properties');">Properties</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_membersLink"  href="javascript:showDialog('Users/Groups/AddMembers.aspx?g=${DatabaseId}&onClose=onEditGroupDialogClosed', 'wizard');">Add Members</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_permissionsLink" href="javascript:showDialog('Users/Groups/Security.aspx?g=${DatabaseId}&onClose=onEditGroupDialogClosed', 'security');">Permissions</a></li>
+</ul>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Members</span>
+        <ul class="itemActionMenuSmall allMenu left">
+            <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="_deleteSelectedMembersLink" href="javascript:void(0);">Delete Selected</a></li>
+        </ul>
+        <br class="clear" />
+    </div>
+    <div class="padding10">
+        <div id="groupMembersPlace" class="border999 shadow999"></div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿{{if $item.index % 2 == 0 }}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+
+{{if $item.allowEdit}}
+        <div class="fixed_25 left"><input type="checkbox" value="${Email}" class="deleteEmailAddress" /></div>
+{{/if}}
+        <div class="fixed_500 left" sortField="Email">${Email}</div>
+        <br class="clear" />
+    </div>

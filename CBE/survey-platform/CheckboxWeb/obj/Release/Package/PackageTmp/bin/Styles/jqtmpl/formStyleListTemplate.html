@@ -1,0 +1,15 @@
+﻿<div class="gridHeader clearfix">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllStyles"/></div>
+    <div class="fixed_450 left headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/styles/formStyleListTemplate/styleName", "Style Name")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="Name" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+</div>
+
+{{each(index, style) items}}
+    <div id="styleContainer_${style.Id}" index="${index}">
+        {{tmpl(style, {index: index}) 'formStyleListItemTemplate.html'}}
+    </div>
+{{/each}}

@@ -1,0 +1,14 @@
+﻿{{if ($item.index % 2 == 0)}}
+<div class="gridContent zebra">
+    {{else}}
+    <div class="gridContent detailZebra">
+        {{/if}}
+        <div class="left">${Name}</div>
+        <a class="ckbxButton orangeButton roundedCorners right" href="javascript:showDialog('Forms/Surveys/Export.aspx?s=${ID}&loc= EN-US&surveyGuid=${SurveyGuid}&printClientPdf=true' , 'properties')">${textHelper.getTextValue("/pageMenu/survey_editor/_printPdf","Export Survey PDF")}</a>
+        <br class="clear"/>
+    </div>
+</div>
+
+
+
+

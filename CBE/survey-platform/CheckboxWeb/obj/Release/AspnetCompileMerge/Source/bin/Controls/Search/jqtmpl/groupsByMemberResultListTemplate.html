@@ -1,0 +1,10 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_150 left">Group Name</div>
+    <div class="fixed_125 left">Created By</div>
+    <div class="fixed_100 left">Member Count</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, group) items}}
+    {{tmpl(group, {index: index}) 'groupsByMemberResultListItemTemplate.html'}}
+{{/each}}

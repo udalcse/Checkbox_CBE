@@ -1,0 +1,16 @@
+﻿{{if $item.index % 2 == 0}}
+<div class="gridContent zebra{{if IsInUse}}{{else}} inactive{{/if}}" id="style_${Id}" index="${$item.index}">
+{{else}}
+<div class="gridContent detailZebra{{if IsInUse}}{{else}} inactive{{/if}}" id="style_${Id}" index="${$item.index}">
+{{/if}}
+{{if IsDefault}}
+    <div class="fixed_25 left">&nbsp;<img src="../App_Themes/CheckboxTheme/Images/style16.gif" alt="system default" title="This is the default style template for new surveys." style="vertical-align:baseline;"/></div>
+{{else}}
+    <div class="fixed_25 left"><input type="checkbox" value="${Id}" class="deleteStyle" /></div>
+{{/if}}
+    <li class="groupContentName listTemplateName truncate" style="padding-left:5px; margin-left:20px;">
+        <a class="edit-link" href="Forms/Edit.aspx?s=${Id}" style="display:inline;">Edit</a>
+        <span title="{{if IsInUse}}{{else}}This style is currently not in use. &#10;{{/if}}${Name}" class="style-name">${Name}</span>
+
+    </li>
+</div>

@@ -1,0 +1,31 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left"></div>
+     <div class="fixed_150 left headerPart" sortField="Name">
+         <span class="header_sorter hand">
+             <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/name", "Name")}</b></span>
+             <span class="toggle-arrow-up gridsorter" sortField="Name" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+     <div class="fixed_50 left headerPart" sortField="CreatedBy">
+         <span class="header_sorter hand">
+             <span class="left"><b>Created Date</b></span>
+             <span class="toggle-arrow-up gridsorter" sortField="DateGenerated" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+     <div class="fixed_50 left headerPart" sortField="LastSentOn">
+         <span class="header_sorter hand">
+             <span class="left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/manage.aspx/lastSent", "Last Sent")}</b></span>
+             <span class="toggle-arrow-up gridsorter" sortField="DatePublished" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+     <div class="fixed_150 left headerPart" sortField="">
+         <span class="header_sorter hand">
+             <span class="left"><b>Link</b></span>
+         </span>
+     </div>
+    <br class="clear" />
+ </div>
+
+{{each(index, invitation) items}}
+    {{tmpl(invitation, {index: index}) 'usersListItemTemplate.html'}}
+{{/each}}

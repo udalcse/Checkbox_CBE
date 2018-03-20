@@ -1,0 +1,16 @@
+﻿<div class="dashStatsContentHeader">
+{{if $item.allowEdit}}
+    <div  class="fixed_25 left"><input type="checkbox" id="_selectAllMembers"/></div>
+{{/if}}
+    <div  class="fixed_275 left" sortField="UniqueIdentifier">${textHelper.getTextValue("/users/groupMemberListTemplate/userName", "User Name")}</div>
+    <div  class="fixed_200 left" sortField="Email">${textHelper.getTextValue("/users/groupMemberListTemplate/email", "Email")}</div>
+    <br class="clear" />
+</div>
+
+{{if items.length == 0}}
+    <div class="dashStatsContent">${textHelper.getTextValue("/users/groupMemberListTemplate/noMembers", "This group has no members")}</div>
+{{else}}
+    {{each(index, user) items}}
+        {{tmpl(user, {index: index, allowEdit: $item.allowEdit, allowManageUsers: $item.allowManageUsers}) 'groupMemberListItemTemplate.html'}}
+    {{/each}}
+{{/if}}

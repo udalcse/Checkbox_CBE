@@ -1,0 +1,12 @@
+﻿{{if ($item.index % 2 == 0)}}
+    <div class="gridContent zebra" periodId="${SurveyPeriodID}">
+{{else}}
+    <div class="gridContent detailZebra" periodId="${SurveyPeriodID}">
+{{/if}}
+        <div class="fixed_50 left">${SurveyPeriodID}</div>
+        <div class="fixed_175 left">${PeriodName}</div>
+        <div class="fixed_150 left">${Start ? dateUtils.jsonDateToInvariantDateString(Start) : '&nbsp;'}</div>
+        <div class="fixed_150 left">${Finish ? dateUtils.jsonDateToInvariantDateString(Finish) : '&nbsp;'}</div>
+        <div class="left"><a class="ckbxButton silverButton roundedCorners shadow999 border999 smallButton" style="line-height:16px !important; margin-top:5px;" onclick="deletePeriod(${SurveyPeriodID})" href="#">${textHelper.getTextValue("/controlText/surveyDashboard/periodList/delete", "Delete")}</a></div>
+        <br class="clear" />
+    </div>

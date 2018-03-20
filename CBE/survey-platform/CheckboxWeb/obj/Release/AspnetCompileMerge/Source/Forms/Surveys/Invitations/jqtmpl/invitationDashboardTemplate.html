@@ -1,0 +1,102 @@
+﻿
+<div class="survey-header-container">
+    <div class="header-content">
+        <a id="invitation_actions_button" href="#" class="action-menu-toggle action-button ckbxButton silverButton">Invitation Actions</a>
+        <div id="invitation_actions_menu" class="groupMenu" style="display:none; margin-top:30px !important;">
+            <ul class="itemActionMenu">
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Properties.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'properties')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/options", "Options")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Message.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/message", "Edit Message")}</a></li>
+            <!--    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Recipients.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/recipients", "Recipients")}</a></li>-->
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Invite.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/inviteRecipients", "Additional Recipients")}</a></li>
+            <!--    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Responses.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/responses", "Responses")}</a></li>-->
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('SendToPending.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')" id="sendToPendingBtn">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/sendToPendingNow", "Send Now")}</a></li>
+                {{if isScheduleActive =='true'}}
+                     <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('SendScheduledReminder.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')" id="A2">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/sendReminderNow", "Send Reminder")}</a></li>
+                {{else}}
+                    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('SendReminder.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')" id="sendReminderBtn">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/sendReminderNow", "Send Reminder")}</a></li>
+                {{/if}}
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Schedule.aspx?i=${DatabaseId}&onClose=onDialogClosed&scheduleEdit=true', 'wizard')" id="scheduleBtn" style="display:none">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/schedule", "View/Edit Schedule")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Copy.aspx?i=${DatabaseId}&s=${ResponseTemplateId}&onClose=onDialogClosed')" id="A1">${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/copy.aspx/copy", "Copy")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton statistics_ExportData" href="javascript:showDialog('ExportProgress.aspx?i=${DatabaseId}&s=${ResponseTemplateId}&onClose=onDialogClosed')" id="exportBtn">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/export", "Export Invitation Details")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="deleteInvitationLink" href="javascript:void(0);">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/delete", "Delete")}</a></li>
+            </ul>
+        </div>
+        <h3>Invitation - ${Name}</h3>
+    </div>
+</div>
+   
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Message</span>
+        <span id="messageToggle" class="pageArrowUp" onclick="toggleDashSection(this, 'messageContainer');">&nbsp;</span>
+    </div>
+    <div id="messageContainer">
+        <div class="dashStatsContent zebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/format", "Format")}:</div>
+            <div class="left"><b>${MailFormat == "Html" ? "HTML" : MailFormat}</b></div>
+            <br class="clear" />
+        </div>
+        <div class="dashStatsContent detailZebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/from", "From")}:</div>
+            <div class="left">
+                <b>
+                    {{if FromName == null}}
+                        ${FromAddress}
+                    {{else}}
+                        ${FromName}&nbsp;&lt;${FromAddress}&gt;
+                    {{/if}}
+                </b>
+            </div>
+            <br class="clear" />
+        </div>
+        <div class="dashStatsContent zebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/loginOption", "Login Option")}:</div>
+            <div class="left"><b>${textHelper.getTextValue("/enum/loginOption/" + LoginOption, LoginOption)}</b></div>
+            <br class="clear" />
+        </div>
+        <div class="dashStatsContent detailZebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/allowOptOut", "Allow Opt Out")}:</div>
+            <div class="left"><b>${textHelper.getBooleanValue(IncludeOptOut)}</b></div>
+            <br class="clear" />
+        </div>
+        <div class="dashStatsContent zebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/subject", "Subject")}:</div>
+            <div class="left"><b>${Subject}</b></div>
+            <br class="clear" />
+        </div>
+        <div class="dashStatsContent detailZebra invitationBody">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/body", "Body")}:</div>
+            <div id="messageBodyHtml" style="display: none">{{html Body}}</div>
+            <div class="left fixed_600"><div class="border999 padding10" style="background:#fff;width: 90%;"><iframe id="messageBody" onload="javascript:messageBodyIframeOnLoad();" style="width: 100%; overflow-y: hidden; height: 80px;"></iframe></div></div>
+            <br class="clear" />
+        </div>
+    </div>
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/recentRecipients", "Recent Recipients")}</span>
+        <div class="itemActionMenuSmall left">
+            <a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton" href="javascript:showDialog('Recipients.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/viewAll", "View All")}</a>
+        </div>
+        <span id="recipientToggle" class="pageArrowUp" onclick="toggleDashSection(this, 'recipientsPlace');">&nbsp;</span>
+        <br class="clear" />
+    </div>
+    <div id="recipientsPlace">
+        <div id="invitationDashRecipientSummaryPlace"></div>
+
+        <div id="invitationDashRecentRecipientPlace" class="padding5"></div>
+    </div>
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/recentResponses", "Responses")}</span>
+        <div class="itemActionMenuSmall left">
+            <a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton" href="javascript:showDialog('Responses.aspx?i=${DatabaseId}&onClose=onDialogClosed', 'wizard')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/viewAll", "View All")}</a>
+        </div>
+        <span id="responseToggle" class="pageArrowUp" onclick="toggleDashSection(this, 'invitationDashRecentResponsePlace');">&nbsp;</span>
+        <br class="clear" />
+    </div>
+    <div id="invitationDashRecentResponsePlace"></div>
+</div>

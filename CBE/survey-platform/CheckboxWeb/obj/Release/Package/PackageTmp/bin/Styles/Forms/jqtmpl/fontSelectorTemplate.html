@@ -1,0 +1,43 @@
+﻿{{if $data.enableStyleBuilder == 'true'}}
+    <label class="full-width">${textHelper.getTextValue($data.textId, $data.defaultText)}<a class="more-options-button ckbxButton silverButton" href="javascript:showDialog('../Forms/StyleBuilder.aspx?s=${$data.styleId}&onClose=styleEditor.onDialogClosed&e=${$data.elementName}', 'wizard');">More Options</a></label>
+{{else}}
+    <label class="full-width">${textHelper.getTextValue($data.textId, $data.defaultText)}</label>
+{{/if}}
+{{if $data.elementId != "flyover" && $data.elementId != "link"}}
+<select class="left" id="_${$data.elementId}FontName" name="${$data.elementId}FontName" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'{{if $data.altElementNames}}{{each(index, name) $data.altElementNames}}, '${name}'{{/each}}{{/if}}], propertyMap: { 'font-family': this.value }});">
+{{if styleEditor.fontNames}}
+    {{each(index, font) styleEditor.fontNames}}
+        {{if (font.value == $item.data.styleData['font-family']) || (("'" + font.value + "'") == $item.data.styleData['font-family']) }}
+            <option value="${font.value}" class="temporary-selected">${font.text}</option>
+        {{else}}
+            <option value="${font.value}">${font.text}</option>
+        {{/if}}
+    {{/each}}
+{{/if}}
+</select>
+<select class="left" id="_${$data.elementId}FontSize" name="${$data.elementId}FontSize" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'{{if $data.altElementNames}}{{each(index, name) $data.altElementNames}}, '${name}'{{/each}}{{/if}}], propertyMap: { 'font-size': this.value }});">
+{{if styleEditor.fontSizes}}
+    {{each(index, size) styleEditor.fontSizes}}
+        {{if size.value == $item.data.styleData['font-size']}}
+            <option value="${size.value}" class="temporary-selected">${size.text}</option>
+        {{else}}
+            <option value="${size.value}">${size.text}</option>
+        {{/if}}
+    {{/each}}
+{{/if}}
+{{/if}}
+</select>
+<input class="left" name="${$data.elementId}FontColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" value="${$data.styleData['color']}" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'{{if $data.altElementNames}}{{each(index, name) $data.altElementNames}}, '${name}'{{/each}}{{/if}}], propertyMap: { 'color': this.value }});" />
+<br class="clear" />
+
+<script type="text/javascript">
+    $(function () {
+        $('#_${$data.elementId}FontSize option:first').attr('selected', 'selected');
+        $('#_${$data.elementId}FontSize option.temporary-selected').removeClass('temporary-selected').attr('selected', 'selected');
+        $('#_${$data.elementId}FontSize').change();
+
+        $('#_${$data.elementId}FontName option:first').attr('selected', 'selected');
+        $('#_${$data.elementId}FontName option.temporary-selected').removeClass('temporary-selected').attr('selected', 'selected');
+        $('#_${$data.elementId}FontName').change();
+    });
+</script>

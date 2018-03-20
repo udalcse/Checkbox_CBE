@@ -1,0 +1,25 @@
+﻿
+<div id="pageNavList">
+    <!-- Content Pages -->
+    {{each PageIds}}
+    <div class="templateNavPage" pageId="${$value}" pageIndex="${$index}" id="pageContainer_${$value}"></div>
+    {{/each}}
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).on("mouseenter", '.templateItemList', 
+            function () {
+                $(this).find('.upDownArrow').show('fast');
+            }
+        );
+
+        $(document).on("mouseleave", '.templateItemList', 
+            function () {
+                if (!$(this).hasClass('activeContent')) {
+                    $(this).find('.upDownArrow').hide('fast');
+                }
+            }
+        );
+    });
+</script>

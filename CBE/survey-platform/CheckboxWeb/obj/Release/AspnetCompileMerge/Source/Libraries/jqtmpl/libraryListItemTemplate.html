@@ -1,0 +1,9 @@
+﻿{{if $item.index % 2 == 0}}
+<div class="gridContent zebra">
+{{else}}
+<div class="gridContent detailZebra clearfix">
+{{/if}}
+    <div class="left fixed_25"><input type="checkbox" value="${DatabaseId}" class="deleteLibrary" /></div>
+    <div class="left fixed_250 truncate" id="libraryName_${DatabaseId}" title="${Name}">${Name}</div>
+    <div class="left fixed_25"id="libraryItemCount_${DatabaseId}" title="There are ${ItemIds.length} in this library.">${ItemIds.length}</div>
+</div>

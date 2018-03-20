@@ -1,0 +1,13 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+        <div class="fixed_25 left"><input type="checkbox" value="${DatabaseId}" class="deleteInvitation" /></div>
+        <div class="fixed_25 left">${DatabaseId}</div>
+        <div class="fixed_150 left truncate" title="${Name ? Name : '&nbsp;'}" >${Name ? Name : '&nbsp;'}</div>
+        <div class="fixed_125 left truncate">${CreatedBy ? CreatedBy : '&nbsp;'}</div>
+        <div class="fixed_50 left">${LastSent ? dateUtils.jsonDateToInvariantDateString(LastSent) : '&nbsp;'}</div>
+        <div class="fixed_150 left truncate" title="${ErrorMessage ? ErrorMessage : '&nbsp;'}">${ErrorMessage ? ErrorMessage : '&nbsp;'}</div>
+        <br class="clear" />
+    </div>

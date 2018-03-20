@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="Message.ascx.cs" Inherits="CheckboxWeb.Forms.Surveys.Controls.AppearanceEditors.Message" %>

@@ -1,0 +1,30 @@
+﻿{{if (Disabled)}}
+    {{if ($item.index % 2 == 0)}}
+        <div class="gridContent zebra disabled">
+    {{else}}
+        <div class="gridContent detailZebra disabled">
+    {{/if}}
+        <div class="fixed_30 left">
+            {{if Selected}}
+                <input type="checkbox" checked="checked" permissionName="${PermissionName}" disabled="disabled" />
+           {{else}}
+            <input type="checkbox" permissionName="${PermissionName}" disabled="disabled" />
+           {{/if}}
+        </div>
+{{else}}
+    {{if ($item.index % 2 == 0)}}
+        <div class="gridContent zebra">
+    {{else}}
+        <div class="gridContent detailZebra">
+    {{/if}}
+        <div class="fixed_30 left">
+            {{if Selected}}
+                <input type="checkbox" checked="checked" permissionName="${PermissionName}" />
+           {{else}}
+            <input type="checkbox" permissionName="${PermissionName}" />
+           {{/if}}
+        </div>
+{{/if}}
+        <div class="fixed_200 left">${DisplayName}</div>
+        <br class="clear" />
+    </div>

@@ -1,0 +1,29 @@
+version: 1.0.{build}
+environment:
+  rgName: NEED_TO_SET
+build_script:
+- ps: >-
+    powershell -NonInteractive -command Disable-AzureDataCollection
+
+    Set-StrictMode -Version Latest
+
+    $ErrorActionPreference = "Stop"
+
+    $PSDefaultParameterValues['*:ErrorAction']='Stop'
+
+
+    $azureAccountName ="a81c2e4f-7b07-461a-bdbb-65a53a5e8ba8"
+
+    $azurePassword = ConvertTo-SecureString "TlMxXJDRXVxS5K23LzRx" -AsPlainText -Force
+
+    $psCred = New-Object System.Management.Automation.PSCredential($azureAccountName, $azurePassword)
+
+
+    echo "Adding account"
+
+    Add-AzureRmAccount -Credential $psCred -TenantId 6eb8aed8-3a80-435b-b838-af0140dddd0c -ServicePrincipal
+
+
+    $r =Get-AzureRmVM -ResourceGroupName $env:rgName
+
+    Start-AzureRmVm -Name $r.Name -ResourceGroupName $env:rgName

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cacheManagerConfiguration>
+  <!-- Frequency in sections -->
+  <expirationPollFrequency>60</expirationPollFrequency>
+  <maxElementsBeforeScavenging>750</maxElementsBeforeScavenging>
+  <scavengeNumberToRemove>150</scavengeNumberToRemove>
+</cacheManagerConfiguration>

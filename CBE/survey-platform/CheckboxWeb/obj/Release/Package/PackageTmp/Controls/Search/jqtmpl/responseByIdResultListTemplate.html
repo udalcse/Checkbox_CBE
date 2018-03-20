@@ -1,0 +1,12 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_50 left">${textHelper.getTextValue("/controlText/surveyDashboard/responseList/id", "ID")}</div>
+    <div class="fixed_125 left">${textHelper.getTextValue("/controlText/surveyDashboard/responseList/user", "User")}</div>
+    <div class="fixed_125 left">${textHelper.getTextValue("/controlText/surveyDashboard/responseList/started", "Started")}</div>
+    <div class="fixed_125 left">${textHelper.getTextValue("/controlText/surveyDashboard/responseList/ended", "Ended")}</div>
+    <div class="fixed_125 left">${textHelper.getTextValue("/controlText/surveyDashboard/responseList/lastEdit", "Last Edit")}</div>
+    <br class="clear" />
+ </div>
+ 
+{{each(index, response) items}}
+   {{tmpl(response, {index: index}) 'responseByUserResultListItemTemplate.html'}}
+{{/each}}

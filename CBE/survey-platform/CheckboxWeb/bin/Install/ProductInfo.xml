@@ -1,0 +1,83 @@
+<productInfo>
+    <properties>
+        <name>CheckboxWeb Survey</name>
+        <version>6.0.0</version>
+    </properties>
+    <install>
+        <dbScripts dbProvider="sqlserver">
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_DropFKConstraints.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_Tables.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_Views.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_StoredProcedures.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_Data.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_InitialSettings.sql</dbScript>
+            <dbScript admin="true">Install/InstallScripts/SqlServer/Checkbox_InstallAdmin.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_LanguageText.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_DefaultText.sql</dbScript>
+            <dbScript>Install/InstallScripts/SqlServer/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts>
+      
+      <!--
+        <dbScripts dbProvider="mysql">
+            <dbScript>Install/InstallScripts/MySql/Checkbox_Tables.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_Views.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_StoredProcedures.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_Data.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_LanguageText.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_DefaultText.sql</dbScript>
+            <dbScript>Install/InstallScripts/MySql/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts>
+        <dbScripts dbProvider="oracle">
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_Tables.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_Views.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_StoredProcedures.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_Data.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_LanguageText.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_DefaultText.sql</dbScript>
+            <dbScript>Install/InstallScripts/Oracle/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts>
+        <dbScripts dbProvider="npgsql">
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_Tables.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_Views.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_StoredProcedures.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_Data.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_LanguageText.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_DefaultText.sql</dbScript>
+            <dbScript>Install/InstallScripts/Pgsql/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts>
+        <dbScripts dbProvider="db2">
+            <dbScript>Install/InstallScripts/DB2/Checkbox_Tables.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_Views.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_StoredProcedures.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_Data.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_LanguageText.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_DefaultText.sql</dbScript>
+            <dbScript>Install/InstallScripts/DB2/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts> -->
+    </install>
+    <upgrade>
+        <dbScripts dbProvider="sqlserver">
+          <dbScript>Install/InstallScripts/Upgrade/Upgrade_Schema_47_to_6.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_SchemaUpdates.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_Patch_Schema.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_StoredProcedures.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_Data.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_LanguageText.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_DefaultText.sql</dbScript>
+          <dbScript>Install/InstallScripts/Upgrade/Upgrade_Data_47_to_6.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_Patch_Data.sql</dbScript>
+          <dbScript>Install/InstallScripts/SqlServer/Checkbox_Product_Version.sql</dbScript>
+        </dbScripts>
+    </upgrade>
+    <emaildbinstall>
+      <dbScripts dbProvider="sqlserver">
+        <dbScript>Install/InstallScripts/SqlServer/EmailDB_Tables.sql</dbScript>
+        <dbScript>Install/InstallScripts/SqlServer/EmailDB_Procedures.sql</dbScript>
+      </dbScripts>
+    </emaildbinstall>
+    <emaildbupgrade>
+      <dbScripts dbProvider="sqlserver">
+        <dbScript>Install/InstallScripts/SqlServer/EmailDB_Upgrade.sql</dbScript>
+      </dbScripts>
+    </emaildbupgrade>
+</productInfo>

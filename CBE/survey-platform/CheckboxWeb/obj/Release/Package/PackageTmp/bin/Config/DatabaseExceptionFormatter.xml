@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<databaseLogFormatterConfiguration>
+  <templateData><![CDATA[<logEntry><timestamp>{timestamp}</timestamp><severity>{severity}</severity><eventId>{eventId}</eventId><message>{message}</message></logEntry>]]></templateData>
+</databaseLogFormatterConfiguration>

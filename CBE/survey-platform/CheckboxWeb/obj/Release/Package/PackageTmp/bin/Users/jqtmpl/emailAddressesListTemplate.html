@@ -1,0 +1,15 @@
+﻿ <div class="dashStatsContentHeader">
+ {{if $item.allowEdit}}
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllEmailAddresses"/></div>
+{{/if}}
+    <div class="fixed_500 left" sortField="Email">${textHelper.getTextValue("/users/emailAddressListTemplate/emailAddress", "Email Address")}</div>
+    <br class="clear" />
+ </div>
+
+ {{if items.length == 0}}
+    <div class="dashStatsContent">${textHelper.getTextValue("/users/emailAddressListTemplate/noAddresses", "There are no addresses in this list")}</div>
+ {{else}}
+    {{each(index, emailAddress) items}}
+        {{tmpl({Email: emailAddress}, {index: index, allowEdit: $item.allowEdit}) 'emailAddressesListItemTemplate.html'}}
+    {{/each}}
+{{/if}}

@@ -1,0 +1,77 @@
+﻿
+<div class="survey-header-container">
+    <div class="header-content">
+        {{if Editable || allowAdminister || allowDelete}}
+        <a id="report_actions_button" href="#" class="action-menu-toggle action-button ckbxButton silverButton">Report Actions</a>
+        {{/if}}
+        <a class="action-button ckbxButton silverButton" href="../../../RunAnalysis.aspx?aid=${ReportId}" target="_blank">${textHelper.getTextValue("/pageText/editAnalysis.aspx/runAnalysis", "Run &raquo;")}</a>        
+        {{if Editable}}
+        <a class="action-button ckbxButton orangeButton" href="Edit.aspx?r=${ReportId}">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/editreport", "Edit &raquo;")}</a>
+        {{/if}}
+        
+        <div id="report_actions_menu" class="groupMenu" style="display:none; margin-top:30px !important;">
+            <ul class="itemActionMenu">
+                {{if Editable}}
+                <li><a class="ckbxButton silverButton" href="javascript:void(0);" reportDashLink="Properties.aspx?ag=${ReportGuid}&onClose=onDialogClosed" windowName="properties">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/properties", "Properties")}</a></li>
+                {{/if}}
+                {{if allowAdminister}}
+                <li><a class="ckbxButton silverButton" href="javascript:void(0);" reportDashLink="Copy.aspx?r=${ReportId}&onClose=onDialogClosed" reportId="${ReportId}" windowName="properties">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/copyreport", "Copy")}</a></li>
+                <li><a class="ckbxButton silverButton" href="javascript:void(0);" reportDashLink="Permissions.aspx?r=${ReportId}&onClose=onDialogClosed" reportId="${ReportId}" windowName="security">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/permissions", "Permissions")}</a></li>
+                {{/if}}
+                {{if Editable}}
+                <li><a class="ckbxButton silverButton" href="javascript:void(0);" reportDashLink="ReportFilters.aspx?r=${ReportId}&onClose=onDialogClosed" reportId="${ReportId}" windowName="largeDialog">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/filters", "Filters")}</a></li>
+                <li><a class="ckbxButton silverButton" href="javascript:void(0);" reportDashLink="SetDateFilter.aspx?r=${ReportId}&onClose=onDialogClosed" reportId="${ReportId}" windowName="largeDialog">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/setdatefilter", "Set Date Filter")}</a></li>
+                {{/if}}
+                {{if allowDelete}}
+                <li><a class="ckbxButton redButton" href="javascript:void(0);" reportDashLink="delete" reportId="${ReportId}">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/deletereport", "Delete")}</a></li>
+                {{/if}}
+            </ul>
+        </div>
+        <h3>${Name}</h3>
+    </div>
+</div>
+<div class="surveyDescription"><a class="ckbxLink" target="_blank" href="${$item.reportUrl}">${$item.reportUrl}</a></div>
+
+
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Report Info</span>
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">Created By</div>
+        <div class="left"><b>${CreatedBy}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">Created Date</div>
+        <div class="left"><b>${dateUtils.jsonDateToInvariantDateString(DateCreated)}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">Last Updated</div>
+        <div class="left"><b>${dateUtils.jsonDateToInvariantDateString(LastModified)}</b></div>
+        <br class="clear" />
+    </div>
+    {{if FilterEndDate != null && FilterStartDate != null }}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">Filters Applied to Entire Report:</div>
+        <div class="left"><b> Survey completed between ${dateUtils.jsonDateToInvariantDateString(FilterStartDate)} and ${dateUtils.jsonDateToInvariantDateString(FilterEndDate)}</b></div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+    {{if FilterEndDate == null && FilterStartDate != null }}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">Filters Applied to Entire Report:</div>
+        <div class="left"><b> Survey completed after ${dateUtils.jsonDateToInvariantDateString(FilterStartDate)}</b></div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+    {{if FilterEndDate != null && FilterStartDate == null }}
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">Filters Applied to Entire Report:</div>
+        <div class="left"><b> Survey completed before ${dateUtils.jsonDateToInvariantDateString(FilterEndDate)}</b></div>
+        <br class="clear" />
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F869D201-91CD-4DC5-B08D-6B676FEDF299}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckboxDB</RootNamespace>
+    <AssemblyName>CheckboxDB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="CheckboxDB.dll.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="database.targets" />
+    <None Include="CheckboxDB.app.targets" />
+    <None Include="dbdeploy\DatabaseDeploy.exe.config" />
+    <None Include="dbdeploy\DatabaseDeploy.pssym" />
+    <None Include="dbdeploy\License.rtf" />
+    <None Include="dbdeploy\log4net.config" />
+    <None Include="dbdeploy\MSBuild.ExtensionPack.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbdeploy\CommandLine.dll" />
+    <Content Include="dbdeploy\CommandLine.xml" />
+    <Content Include="dbdeploy\DatabaseDeploy.Core.dll" />
+    <Content Include="dbdeploy\DatabaseDeploy.Core.pdb" />
+    <Content Include="dbdeploy\DatabaseDeploy.Core.xml" />
+    <Content Include="dbdeploy\DatabaseDeploy.exe" />
+    <Content Include="dbdeploy\DatabaseDeploy.pdb" />
+    <Content Include="dbdeploy\DatabaseDeploy.XML" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\changelog.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\ChangeScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\ChangeScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\EnsureChangeLogExists.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\GetChangeLog.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\ScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\ScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\UndoFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\UndoHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\UndoScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\UndoScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\mssql\UndoToken.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\changelog.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\ChangeScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\ChangeScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\EnsureChangeLogExists.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\GetChangeLog.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\ScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\ScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\UndoFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\UndoHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\UndoScriptFooter.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\UndoScriptHeader.sql" />
+    <Content Include="dbdeploy\Database\Scripts\ora\UndoToken.sql" />
+    <Reference Include="dbdeploy\Interop.COMAdmin.DLL" />
+    <Reference Include="dbdeploy\Interop.IWshRuntimeLibrary.DLL" />
+    <Reference Include="dbdeploy\Ionic.Zip.DLL" />
+    <Reference Include="dbdeploy\IronPython.DLL" />
+    <Reference Include="dbdeploy\IronPython.Modules.dll" />
+    <Reference Include="dbdeploy\IronRuby.DLL" />
+    <Reference Include="dbdeploy\IronRuby.Libraries.dll" />
+    <Reference Include="dbdeploy\log4net.dll" />
+    <content Include="dbdeploy\log4net.xml" />
+    <Reference Include="dbdeploy\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="dbdeploy\Microsoft.Practices.Unity.Configuration.xml" />
+    <Reference Include="dbdeploy\Microsoft.Practices.Unity.dll" />
+    <Reference Include="dbdeploy\Microsoft.Practices.Unity.RegistrationByConvention.dll" />
+    <Content Include="dbdeploy\Microsoft.Practices.Unity.RegistrationByConvention.xml" />
+    <Content Include="dbdeploy\Microsoft.Practices.Unity.xml" />
+    <Reference Include="dbdeploy\MSBuild.ExtensionPack.dll" />
+    <Reference Include="dbdeploy\MSBuild.ExtensionPack.Iis7.dll" />
+    <Reference Include="dbdeploy\MSBuild.ExtensionPack.Loggers.dll" />
+    <Reference Include="dbdeploy\MSBuild.ExtensionPack.Sql2008.dll" />
+    <Reference Include="dbdeploy\MSBuild.ExtensionPack.Sql2012.dll" />
+    <Reference Include="dbdeploy\Oracle.ManagedDataAccess.dll" />
+    <Reference Include="dbdeploy\PostSharp.dll" />
+    <Content Include="dbdeploy\PostSharp.xml" />
+    <Content Include="Scripts\Deployed Scripts\0001 CreateInitialDatabase.sql" />
+    <Content Include="Scripts\Rebuild\0002 Create Admin User.sql" />
+    <Content Include="Scripts\Test Data\Placeholder.txt" />
+    <Content Include="parameters.xml" />
+    <Content Include="parameters_updated.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Build.Framework.14.3.0\lib\net45\Microsoft.Build.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Build.Tasks.Core.14.3.0\lib\net45\Microsoft.Build.Tasks.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Utilities.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Build.Utilities.Core.14.3.0\lib\net45\Microsoft.Build.Utilities.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--<Import Project="database.targets" />-->
+  <Import Project="..\packages\MSDeployAllTheThings.AppDeploy.1.2.6\tools\apppublishingpipeline.targets" />
+  <!-- Import Project="..\packages\MSDeployAllTheThings.PublishingPipeline.1.1.4\tools\PublishingPipelineCore.targets" />-->
+  <!--<Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />-->
+  <!--<Import Project="..\packages\MSBuild.Microsoft.VisualStudio.Web.targets.14.0.0.3\tools\VSToolsPath\Web\Microsoft.Web.Publishing.targets" Condition="false" />-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

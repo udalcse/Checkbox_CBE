@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Xheo.Licensing.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Prezza_Licensing_LicenseEngine_ExternalLicenseServer_Xheo_Licensing_x0020_Server" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.xheo.local/licensingserver.asmx</Value>
+    </Setting>
+    <Setting Name="Prezza_Licensing_LicenseEngine_ExternalActivationServer_Prezza_x0020_Activation_x0020_Server" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/licensing/UltimateSurveyActivationService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

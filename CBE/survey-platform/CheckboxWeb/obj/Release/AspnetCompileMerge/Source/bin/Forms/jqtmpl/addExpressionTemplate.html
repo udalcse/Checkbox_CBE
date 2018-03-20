@@ -1,0 +1,30 @@
+﻿<a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton addExpressionButton" onclick="advancedExpressionEditor.onAddExpressionClick(event);">${textHelper.getTextValue("/expressionEditor/newCondition", "New Condition")}</a>
+<div style="display:none" class="expressionEditorPanel" expressionid="${ExpressionId}">
+    <div class="left">
+        <select onchange="advancedExpressionEditor.onLeftParamTypeChange(event, '${ExpressionId}');" class="expressionLeftParamType" uframeignore="true">
+            <option selected="selected" value="SourceTypeNotSpecified">${textHelper.getTextValue("/expressionEditor/sourceType", "Source Type")}</option>
+            <option value="Question">${textHelper.getTextValue("/expressionEditor/question", "Question")}</option>
+            <option value="UserAttribute">${textHelper.getTextValue("/expressionEditor/userAttribute", "User Attribute")}</option>
+            <option value="ResponseProperty">${textHelper.getTextValue("/expressionEditor/responseProperty", "Response Property")}</option>	
+        </select>
+    </div>
+    <div class="left">
+        <select onchange="advancedExpressionEditor.onLeftParamChange(event);" class="expressionLeftParam" uframeignore="true">
+            <option selected="selected" value="SourceTypeNotSpecified">${textHelper.getTextValue("/expressionEditor/source", "Source")}</option>
+        </select>
+    </div>    
+    <div class="left">
+        <select onchange="advancedExpressionEditor.onOperatorChange(event);" class="expressionOperator" uframeignore="true">
+            <option selected="selected" value="SourceTypeNotSpecified">${textHelper.getTextValue("/expressionEditor/сomparison", "Comparison")}</option>
+        </select>
+    </div>    
+    <div class="left">
+        <select onchange="advancedExpressionEditor.onRightParamSelectChange(event);" class="expressionRightParamSelect" uframeignore="true">
+            <option selected="selected" value="SourceTypeNotSpecified">${textHelper.getTextValue("/expressionEditor/value", "Value")}</option>
+        </select>
+        <input onkeypress="advancedExpressionEditor.onRightParamTextChange(event);"  onchange="advancedExpressionEditor.onRightParamTextChange(event);" type="text" class="expressionRightParamText" value="Value" style="display:none" uframeignore="true"/>
+        <input onkeypress="advancedExpressionEditor.onRightParamDateChange(event);" onchange="advancedExpressionEditor.onRightParamDateChange(event);" type="text" class="expressionRightParamDate" style="display:none" uframeignore="true"/>
+    </div>
+    <a class="ckbxButton roundedCorners border999 shadow999 silverButton smallButton addNewExpressionButton" onclick="advancedExpressionEditor.onAddNewExpressionClick(event);" expressionId="${ExpressionId}">${textHelper.getTextValue("/expressionEditor/add", "Add")}</a>
+</div>
+

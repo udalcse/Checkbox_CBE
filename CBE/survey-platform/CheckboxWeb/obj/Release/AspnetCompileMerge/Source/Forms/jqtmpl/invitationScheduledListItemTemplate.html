@@ -1,0 +1,19 @@
+﻿{{if ($item.index % 2 == 0)}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+        <div class="fixed_50 left">
+        <div class="left ${InvitationActivityType} rounded7" title="${InvitationActivityType}">${textHelper.getTextValue("/forms/invitationScheduledListItemTemplate/"+ (InvitationActivityType == "Invitation"? "invitation_short" : "reminder_short"), "-")}</div>
+        </div>
+        <div class="fixed_75 left" title="${Status}">${textHelper.getTextValue("/forms/invitationScheduledListItemTemplate/status" + (Status != null? Status.substring("InvitationStatus".length, Status.length) : ""))}</div>
+        {{if Name != null && Name !=''}}
+            <div class="fixed_175 left">${Name}</div>
+        {{else}}
+            <div class="fixed_175 left">&nbsp;</div>
+        {{/if}}
+        <div class="fixed_125 left">${dateUtils.jsonDateToInvariantDateString(CreatedDate)}</div>
+        <div class="fixed_150 left" style="white-space:nowrap"><div editmode="datetime" class="editableDiv fixed_125 left" title="Click to change" id="${$item.index}_${DatabaseId}">${dateUtils.jsonDateToInvariantDateString(Scheduled)}</div></div>
+        <br class="clear" />
+    </div>
+

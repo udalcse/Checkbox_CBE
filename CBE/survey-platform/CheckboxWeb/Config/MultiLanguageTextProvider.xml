@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<globalizationConfiguration>
+  <cacheManager>textCacheManager</cacheManager>
+  <defaultLanguage>en-US</defaultLanguage>
+  <exportFormat>XML</exportFormat>
+</globalizationConfiguration>

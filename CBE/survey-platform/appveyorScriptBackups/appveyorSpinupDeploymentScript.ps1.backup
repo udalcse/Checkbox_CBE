@@ -1,0 +1,94 @@
+powershell -NonInteractive -command Disable-AzureDataCollection
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+$PSDefaultParameterValues['*:ErrorAction']='Stop'
+
+$p=$pwd.Path
+$pw=ConvertTo-SecureString "$env:admin_password" -AsPlainText -Force
+
+$azureAccountName ="a81c2e4f-7b07-461a-bdbb-65a53a5e8ba8"
+$azurePassword = ConvertTo-SecureString "TlMxXJDRXVxS5K23LzRx" -AsPlainText -Force
+$psCred = New-Object System.Management.Automation.PSCredential($azureAccountName, $azurePassword)
+
+$rg = $env:new_env_name.subString(0, [System.Math]::Min(9, $env:new_env_name.Length))
+ 
+$fqdn = $env:fqdn
+echo "Setting hostname and domain for $fqdn"
+$hostname = $fqdn.split(".")[0]
+$domain = $fqdn.Substring($fqdn.IndexOf(".") + 1)
+
+if ($env:azureRegion -eq "West US 2")
+{
+	$azureRegionCode = "westus2"
+}
+elseif ($env:azureRegion -eq "East US")
+{
+	$azureRegionCode = "eastus"
+}
+elseif ($env:azureRegion -eq "West Europe")
+{
+	$azureRegionCode = "westeurope"
+}
+else
+{
+	throw "azureRegion not defined.  Cannot continue"
+}
+
+# Create a hash of the domain to user as the azure hostname
+$StringBuilder = New-Object System.Text.StringBuilder 
+[Void]$StringBuilder.Append("cbedns")
+[System.Security.Cryptography.HashAlgorithm]::Create("RIPEMD160").ComputeHash([System.Text.Encoding]::UTF8.GetBytes($fqdn))|%{ 
+    [Void]$StringBuilder.Append($_.ToString("x2")) 
+} 
+$azureHostName = $StringBuilder.ToString() 
+
+$goDaddyCreds = "sso-key 9EVU6kfR8sc_84YkJLiCNstr434gTGh38C:84YzPSEiCXBaa6GJo2cMDA"
+if ($domain -match "cbesurveys.com")
+{
+    echo "Setting Exit83 GoDaddy Creds"
+    $goDaddyCreds="sso-key dL3rCCvfZY5s_3xPMgQLV8uw29Uxxkh5pWG:7VNTMBrNA91yp52qN5zPM7"
+}
+
+echo "Checking hostname $fqdn"
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Authorization",$goDaddyCreds)
+$headers.Add("Content-type","application/json")
+$r = Invoke-RestMethod -Uri https://api.godaddy.com/v1/domains/$domain/records/CNAME/$hostname -Headers $headers 
+   
+if ( $r -and $r.PSobject.Properties.name -and $r.name) 
+{
+    throw "DNS entry already exists"
+}
+
+echo "Adding account"
+Add-AzureRmAccount -Credential $psCred -TenantId 6eb8aed8-3a80-435b-b838-af0140dddd0c -ServicePrincipal
+
+echo "Getting log"
+Get-AzureRmLog -StartTime (Get-Date).AddMinutes(-10)
+
+#Write-Output $env
+#Write-Output $env:fqdn
+
+
+
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Authorization",$goDaddyCreds)
+$headers.Add("Content-type","application/json")
+    
+$body = " [{ `"type`": `"CNAME`",`"name`": `"$hostname`",`"data`": `"${azureHostName}.${azureRegionCode}.cloudapp.azure.com`"}]"
+     
+Invoke-RestMethod -Body $body -Headers $headers -Method Patch -Uri https://api.godaddy.com/v1/domains/$domain/records
+$native_call_success = $?
+if (-not $native_call_success)
+{
+    throw 'error setting up dns'
+}
+
+echo "Starting rollout"
+Write-Output "creating resource group" #  $rg"
+
+# TODO FIX ME :)
+New-AzureRmResourceGroup -Name "$rg" -Location "$azureRegionCode"
+
+echo deploying
+New-AzureRmResourceGroupDeployment -Name "$rg" -ResourceGroupName  "$rg" -TemplateFile AzureAllInOneDeploy\azuredeploy.json -uniqueEnvName "$rg" -appveyerEnvKey $env:appveyor_env_key -adminPassword $pw -adminUsername "$env:admin_username" -fqdn "$env:fqdn" -azureHostName $azureHostName

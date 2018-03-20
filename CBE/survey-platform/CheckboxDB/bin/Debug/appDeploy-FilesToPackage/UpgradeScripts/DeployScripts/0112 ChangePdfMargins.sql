@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Install_UpSertSetting 'ExportPdfMarginBottom', '65'

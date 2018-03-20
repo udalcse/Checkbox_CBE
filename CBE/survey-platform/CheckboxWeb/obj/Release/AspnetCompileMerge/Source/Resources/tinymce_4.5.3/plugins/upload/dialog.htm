@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	    <title>Upload file</title>
+        <script type="text/javascript">
+            function ClosePopup(itemHtml, itemType, contentItemId) {
+                var w = this.getWin();
+                var tinymce = w.tinymce;
+                if (itemType.toLowerCase() == 'image') {
+                    var elemId = '__mce_tmp_' + contentItemId;
+                    tinymce.EditorManager.activeEditor.insertContent('<img id="' + elemId + '" src="' + itemHtml + '"/>');
+
+                    //tinymce.EditorManager.activeEditor.selection.select(tinymce.EditorManager.activeEditor.dom.select('#' + elemId)[0]);
+                    //tinymce.EditorManager.activeEditor.execCommand('mceAdvImage', false);
+                }
+                else {
+                    //need to specify type attr in <a> tag  for firefox because it treats content as xml
+                    var pattern = ' type="text/html" ';
+                    var index = itemHtml.indexOf('href');
+                    itemHtml = [itemHtml.slice(0, index), pattern, itemHtml.slice(index)].join('');
+                    tinymce.EditorManager.activeEditor.insertContent(itemHtml);
+                }
+
+                for (var i = 0; i < tinymce.EditorManager.activeEditor.windowManager.windows.length; i++) {
+                    tinymce.EditorManager.activeEditor.windowManager.windows[i].close();
+                }
+            }
+
+            function getWin() {
+                    return (!window.frameElement && window.dialogArguments) || opener || parent || top;
+                }
+        </script>
+    </head>
+    <body>
+        <iframe src="../../../../PostFile.aspx" frameborder="0" height="250" width="650" />
+
+	    <div class="mceActionPanel">
+        <!--
+		    <input type="submit" id="insert" name="insert" value="{#insert}" />
+            -->
+		    <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	    </div>
+
+    </body>
+</html>

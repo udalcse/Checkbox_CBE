@@ -1,0 +1,9 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_150 left"><b>Survey Name</b></div>
+    <div class="fixed_125 left"><b>Created By</b></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, surveyListItem) items}}
+    {{tmpl(surveyListItem, {index: index}) 'folderDashSurveyListItemTemplate.html'}}
+{{/each}}

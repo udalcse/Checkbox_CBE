@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeDependentResources>
+    <!-- Disclaimer: This file contains all of the fonts that are 
+	 accessible in the HTML Editor in Checkbox.
+	 Please note that even though you may customize
+	 as many fonts as you want, the font must exist
+	 on the client's machine in order to render correctly. -->
+  <StyleFonts>
+	  <FontName Value="Arial" Text="Arial"></FontName>
+	  <FontName Value="Courier" Text="Courier"></FontName>
+	  <FontName Value="Tahoma" Text="Tahoma"></FontName>
+	  <FontName Value="Times New Roman" Text="Times New Roman"></FontName>
+	  <FontName Value="Trebuchet MS" Text="Trebuchet MS"></FontName>
+	  <FontName Value="Verdana" Text="Verdana"></FontName>
+      <FontName Value="Comic Sans MS" Text="Comic Sans MS"></FontName>
+      <FontName Value="MS Sans Serif" Text="MS Sans Serif"></FontName>
+      <FontName Value="Calibri" Text="Calibri"></FontName>
+  </StyleFonts>
+  <FontSizes>
+	  <FontSize Value="10px" Text="10px"></FontSize>
+	  <FontSize Value="12px" Text="12px"></FontSize>
+	  <FontSize Value="14px" Text="14px"></FontSize>
+	  <FontSize Value="16px" Text="16px"></FontSize>
+	  <FontSize Value="18px" Text="18px"></FontSize>
+	  <FontSize Value="20px" Text="20px"></FontSize>
+	  <FontSize Value="24px" Text="24px"></FontSize>
+	  <FontSize Value="32px" Text="32px"></FontSize>
+	  <FontSize Value="48px" Text="48px"></FontSize>
+      <FontSize Value="large" Text="Large"></FontSize>
+      <FontSize Value="larger" Text="Larger"></FontSize>
+      <FontSize Value="medium" Text="Medium"></FontSize>
+      <FontSize Value="small" Text="Small"></FontSize>
+      <FontSize Value="smaller" Text="Smaller"></FontSize>
+      <FontSize Value="x-large" Text="X-Large"></FontSize>
+      <FontSize Value="x-small" Text="X-Small"></FontSize>
+      <FontSize Value="xx-large" Text="XX-Large"></FontSize>
+      <FontSize Value="xx-small" Text="XX-Small"></FontSize>
+  </FontSizes>
+    <FontStyles>
+        <FontStyle Value="Normal_None_Normal" Text="Normal" />
+        <FontStyle Value="Normal_Underline_Normal" Text="Underline" />
+        <FontStyle Value="Normal_None_Italic" Text="Italic" />
+        <FontStyle Value="Bold_None_Normal" Text="Bold" />
+        <FontStyle Value="Bold_Underline_Normal" Text="Bold / Underline" />
+        <FontStyle Value="Bold_None_Italic" Text="Bold / Italic" />
+        <FontStyle Value="Bold_Underline_Italic" Text="Bold / Underline / Italic" />
+    </FontStyles>
+    <BorderStyles>
+        <BorderStyle Value="none" Text="No Border"></BorderStyle>
+        <BorderStyle Value="solid" Text="Solid"></BorderStyle>
+        <BorderStyle Value="dashed" Text="Dashed"></BorderStyle> 
+        <BorderStyle Value="dotted" Text="Dotted"></BorderStyle> 
+        <BorderStyle Value="double" Text="Double"></BorderStyle> 
+        <BorderStyle Value="groove" Text="Groove"></BorderStyle> 
+        <BorderStyle Value="inset" Text="Inset"></BorderStyle> 
+        <BorderStyle Value="outset" Text="Outset"></BorderStyle> 
+    </BorderStyles>
+    <BorderSizes>
+        <BorderSize Value="0px" Text="0px"></BorderSize>
+        <BorderSize Value="1px" Text="1px"></BorderSize>
+        <BorderSize Value="2px" Text="2px"></BorderSize>
+        <BorderSize Value="3px" Text="3px"></BorderSize>
+        <BorderSize Value="4px" Text="4px"></BorderSize>
+        <BorderSize Value="5px" Text="5px"></BorderSize>
+    </BorderSizes>
+  <survey_popup_size>
+	  <width>620</width>
+	  <height>460</height>
+  </survey_popup_size>
+</CodeDependentResources>

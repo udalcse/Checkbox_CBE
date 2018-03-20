@@ -1,0 +1,16 @@
+﻿{{if PageType.toLowerCase() == 'hiddenitems'}}
+    <div class="PageSurveyEditorHeaderNoDrag" id="pageHeader_${Id}">
+        ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/hiddenItems", "Hidden Items")}<span class="groupAttributes num-items-parentheses items-${ItemIds.length}" title="${ItemIds.length} ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/items", "Items")}">(${ItemIds.length})</span>
+    </div>
+{{else}}
+    {{if PageType.toLowerCase() == 'completion'}}
+        <div class="PageSurveyEditorHeaderNoDrag" id="pageHeader_${Id}">
+            ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/completionEvents", "Completion Events")}<span class="groupAttributes num-items-parentheses items-${ItemIds.length}" title="${ItemIds.length} ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/items", "Items")}">(${ItemIds.length})</span>
+        </div>
+    {{else}}
+<div class="PageSurveyEditorHeader" id="pageHeader_${Id}">
+    ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/page", "Page")} ${Position - 1}<span class="groupAttributes num-items-parentheses items-${ItemIds.length}" title="${ItemIds.length} ${textHelper.getTextValue("/pageText/forms/surveys/edit.aspx/items", "Items")}">(${ItemIds.length})</span>
+</div>
+<div class="upDownArrow right fixed_25 upDownArrowDrag" title="To move this page please click and drag">&nbsp;</div>
+    {{/if}}
+{{/if}}

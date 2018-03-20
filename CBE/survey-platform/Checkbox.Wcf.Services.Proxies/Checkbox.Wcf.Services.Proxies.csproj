@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B181F819-319B-4390-86C9-B51B940C4133}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Checkbox.Wcf.Services.Proxies</RootNamespace>
+    <AssemblyName>Checkbox.Wcf.Services.Proxies</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Checkbox.Wcf.Services.Proxies.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AclEntry.cs" />
+    <Compile Include="AuthenticationServiceProxy.cs" />
+    <Compile Include="CalculateResult.cs" />
+    <Compile Include="ExpressionRightParamData.cs" />
+    <Compile Include="GradientColorDirectorMatrixResult.cs" />
+    <Compile Include="HeatMapAnalysisResult.cs" />
+    <Compile Include="ItemAnswer.cs" />
+    <Compile Include="ReportableSection.cs" />
+    <Compile Include="ReportItemSourcePageData.cs" />
+    <Compile Include="TermsMetaData.cs" />
+    <Compile Include="SurveySection.cs" />
+    <Compile Include="TabularResponseExportData.cs" />
+    <Compile Include="ISearchService.cs" />
+    <Compile Include="ITimelineService.cs" />
+    <Compile Include="InvitationScheduleData.cs" />
+    <Compile Include="InvalidEmailAddressException.cs" />
+    <Compile Include="OptedOutInvitationData.cs" />
+    <Compile Include="PageLogic.cs" />
+    <Compile Include="ResponseAggregatedData.cs" />
+    <Compile Include="ResponseExportData.cs" />
+    <Compile Include="ResponseItemAnswer.cs" />
+    <Compile Include="QuestionResult.cs" />
+    <Compile Include="ResponseItemAnswerData.cs" />
+    <Compile Include="ResponseAnswerDoesNotExistException.cs" />
+    <Compile Include="ResponseDataManagementApiProxy.cs" />
+    <Compile Include="IResponseDataManagementApi.cs" />
+    <Compile Include="ResponseDoesNotExistException.cs" />
+    <Compile Include="RoleData.cs" />
+    <Compile Include="ResponseTemplateDoesNotExistException.cs" />
+    <Compile Include="SearchAnswer.cs" />
+    <Compile Include="SearchAnswerData.cs" />
+    <Compile Include="SearchSettingsInfo.cs" />
+    <Compile Include="ServiceHelper.cs" />
+    <Compile Include="SurveyManagementApiProxy.cs" />
+    <Compile Include="ISurveyManagementApi.cs" />
+    <Compile Include="IInvitationManagementApi.cs" />
+    <Compile Include="InvitationManagementApiProxy.cs" />
+    <Compile Include="IUserManagementApi.cs" />
+    <Compile Include="LocalizedTextValue.cs" />
+    <Compile Include="PipeSource.cs" />
+    <Compile Include="SurveyOptionMetaData.cs" />
+    <Compile Include="TimelineAggregatedResult.cs" />
+    <Compile Include="TimelineAnswer.cs" />
+    <Compile Include="TimelineRequestStatus.cs" />
+    <Compile Include="TimelineSettings.cs" />
+    <Compile Include="PageItemUserData.cs" />
+    <Compile Include="UserEmailDoesNotExistException.cs" />
+    <Compile Include="UserGroupDoesNotExistException.cs" />
+    <Compile Include="ISecurityManagementService.cs" />
+    <Compile Include="MatrixSummaryAdditionalData.cs" />
+    <Compile Include="NoUserException.cs" />
+    <Compile Include="ExpressionMetaData.cs" />
+    <Compile Include="IAuthenticationService.cs" />
+    <Compile Include="IAuthorizationService.cs" />
+    <Compile Include="InvitationManagementServiceProxy.cs" />
+    <Compile Include="InvitationRecipientSummary.cs" />
+    <Compile Include="IReportDataService.cs" />
+    <Compile Include="IResponseDataService.cs" />
+    <Compile Include="IStyleEditorService.cs" />
+    <Compile Include="IStyleManagementService.cs" />
+    <Compile Include="ISurveyManagementService.cs" />
+    <Compile Include="IUserManagementService.cs" />
+    <Compile Include="LibraryData.cs" />
+    <Compile Include="PageNumberInfo.cs" />
+    <Compile Include="PermissionEntry.cs" />
+    <Compile Include="PermissionMaskEntry.cs" />
+    <Compile Include="PermissionMaskState.cs" />
+    <Compile Include="PolicyData.cs" />
+    <Compile Include="ReportFilterMetaData.cs" />
+    <Compile Include="RuleMetaData.cs" />
+    <Compile Include="PagedListResult.cs" />
+    <Compile Include="ReportDataServiceProxy.cs" />
+    <Compile Include="ReportItemMetaData.cs" />
+    <Compile Include="ReportItemSourceOptionData.cs" />
+    <Compile Include="ReportItemInstanceData.cs" />
+    <Compile Include="AggregateResult.cs" />
+    <Compile Include="ReportItemSourceItemData.cs" />
+    <Compile Include="DetailResult.cs" />
+    <Compile Include="EmailListPanelData.cs" />
+    <Compile Include="GetProgressResult.cs" />
+    <Compile Include="GroupedResult.cs" />
+    <Compile Include="IInvitationManagementService.cs" />
+    <Compile Include="IItemMetadata.cs" />
+    <Compile Include="InvalidUserContextException.cs" />
+    <Compile Include="InvitationData.cs" />
+    <Compile Include="IProgressReportingService.cs" />
+    <Compile Include="ISurveyEditorService.cs" />
+    <Compile Include="IReportMetaDataService.cs" />
+    <Compile Include="ISurveyResponseService.cs" />
+    <Compile Include="IItemProxyObject.cs" />
+    <Compile Include="ItemProxyObject.cs" />
+    <Compile Include="ItemMetaData.cs" />
+    <Compile Include="PageMetaData.cs" />
+    <Compile Include="RecipientData.cs" />
+    <Compile Include="ReportMetaDataServiceProxy.cs" />
+    <Compile Include="ReportPageMetaData.cs" />
+    <Compile Include="ReportResult.cs" />
+    <Compile Include="ResponseDataServiceProxy.cs" />
+    <Compile Include="ResponseItemPostResult.cs" />
+    <Compile Include="MatrixAdditionalData.cs" />
+    <Compile Include="ResponseData.cs" />
+    <Compile Include="ResponseSummaryData.cs" />
+    <Compile Include="SecuredResourceType.cs" />
+    <Compile Include="ServiceAuthorizationException.cs" />
+    <Compile Include="ServiceOperationResult.cs" />
+    <Compile Include="PagePostResult.cs" />
+    <Compile Include="ProgressData.cs" />
+    <Compile Include="ResponseSessionData.cs" />
+    <Compile Include="ResponseSessionState.cs" />
+    <Compile Include="SimpleNameValueCollection.cs" />
+    <Compile Include="ReportFilterData.cs" />
+    <Compile Include="ReportMetaData.cs" />
+    <Compile Include="StyleData.cs" />
+    <Compile Include="StyleListItem.cs" />
+    <Compile Include="StyleMetaData.cs" />
+    <Compile Include="SurveyListItem.cs" />
+    <Compile Include="SurveyManagementServiceProxy.cs" />
+    <Compile Include="SurveyMetaData.cs" />
+    <Compile Include="SurveyPageMetaData.cs" />
+    <Compile Include="SurveyPeriod.cs" />
+    <Compile Include="TextData.cs" />
+    <Compile Include="UploadItemAdditionalData.cs" />
+    <Compile Include="SurveyItemMetaData.cs" />
+    <Compile Include="SurveyResponseData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurveyResponseItem.cs" />
+    <Compile Include="SurveyResponseItemAnswer.cs" />
+    <Compile Include="SurveyResponseItemOption.cs" />
+    <Compile Include="SurveyResponsePage.cs" />
+    <Compile Include="SurveyResponseServiceProxy.cs" />
+    <Compile Include="UserData.cs" />
+    <Compile Include="UserDoesNotExistException.cs" />
+    <Compile Include="UserGroupData.cs" />
+    <Compile Include="UserGroupMembersDoNotHaveEmailException.cs" />
+    <Compile Include="UserGroupMembersDoNotHavePermissionToTakeSurveyException.cs" />
+    <Compile Include="UsersDoNotHavePermissionsToTakeSurveyException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

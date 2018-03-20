@@ -1,0 +1,13 @@
+﻿{{if $item.index % 2 == 0}}
+<div class="dashStatsContent zebra">
+    {{else}}
+    <div class="dashStatsContent detailZebra">
+        {{/if}}
+        <div class="fixed_25 left">
+            <input type="checkbox" data-username="${EscapedUniqueIdentifier}" value="${UniqueIdentifier}" class="addUser" />
+        </div>
+        <div class="fixed_200 left">${UniqueIdentifier}</div>
+        <!---->
+
+        <br class="clear" />
+    </div>

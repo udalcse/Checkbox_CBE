@@ -1,0 +1,25 @@
+﻿<div class="groupWrapper surveyWrapper" id="folderWrapper_${ID}" folderId="${ID}">
+    <div class="groupHeader allMenu folderHeader" id="folderHeader_${ID}" folderId="${ID}" style="cursor:pointer;">
+        <div>
+            <div class="groupName folderName" style="float:left;" id="folderName_${ID}" folderId="${ID}">${Name}&nbsp;(${ChildrenCount})</div>
+            <div class="groupAttributes" style="float:right;">${textHelper.getTextValue("/pageText/forms/manage.aspx/createdBy", "Created By: ")} ${Creator}</div>
+            <div class="clear"></div>
+        </div>
+        <div style="margin-bottom:4px;float:left;">
+            <ul id="folderMenu_${ID}" class="itemActionMenuSmall allMenu" style="display:none;">
+                <li><a folderLink="Surveys/Create.aspx?f=${ID}" windowName="_newSurveyWindow" href="javascript:void(0);">${textHelper.getTextValue("/pageText/forms/manage.aspx/createSurvey", "Create Survey")}</a></li>
+                <li><a folderLink="Surveys/Import.aspx?f=${ID}" windowName="_largeDialog" href="javascript:void(0);">${textHelper.getTextValue("/pageText/forms/manage.aspx/xmlImport", "Import Survey")}</a></li>
+                <li><a protectPermission="FormFolder.FullControl" folderLink="Folders/Properties.aspx?f=${ID}" windowName="_newFolderWindow" href="javascript:void(0);">${textHelper.getTextValue("/pageText/forms/manage.aspx/renameFolder", "Rename")}</a></li>
+                <li><a protectPermission="FormFolder.FullControl" folderId="${ID}" class="deleteFolderLink" href="javascript:void(0);">${textHelper.getTextValue("/pageText/forms/manage.aspx/delete", "Delete")}</a></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+        
+    <div id="folder_${ID}_children" class="folderContainer" style="display:none;" loaded="false"></div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>

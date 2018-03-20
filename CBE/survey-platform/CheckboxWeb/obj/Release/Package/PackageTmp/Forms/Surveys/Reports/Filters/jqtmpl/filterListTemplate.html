@@ -1,0 +1,11 @@
+﻿<div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllFilters"/></div>
+    <div class="fixed_50 left">${textHelper.getTextValue("/pageText/forms/surveys/reports/filters/manage.aspx/id", "ID")}</div>
+    <div class="fixed_75 left">${textHelper.getTextValue("/pageText/forms/surveys/reports/filters/manage.aspx/filterType", "Type")}</div>
+    <div class="fixed_300 left">${textHelper.getTextValue("/pageText/forms/surveys/reports/filters/manage.aspx/filterOperator", "Filter")}</div>
+    <br class="clear" />
+</div>
+
+{{each(index, filter) items}}
+    {{tmpl(filter, {index: index}) 'filterListItemTemplate.html'}}
+{{/each}}

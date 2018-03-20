@@ -1,0 +1,67 @@
+﻿<h3>${Name}</h3>
+<div class="surveyDescription">${Description}</div>
+    
+<ul class="itemActionMenu allMenu">
+    <li><a class="ckbxButton roundedCorners border999 shadow999 orangeButton" href="Forms/Manage.aspx?s=${Id}&ret=search&term=${searchTerm}">${textHelper.getTextValue("", "Dashboard")}</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyEditorLink" href="Forms/Surveys/Edit.aspx?s=${Id}&ret=search&term=${searchTerm}">Edit Survey</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyResponsesLink" href="Forms/Surveys/Responses/Manage.aspx?s=${Id}&ret=search&term=${searchTerm}">Responses</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyReportsLink"  href="Forms/Surveys/Reports/Manage.aspx?s=${Id}&ret=search&term=${searchTerm}">Reports</a></li>
+</ul>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <!-- Status -->
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/pageMenu/survey_editor/_properties", "Properties")}</span>
+    </div>
+    <div id="surveyStatusContainer">
+        <div class="dashStatsContentHeader">
+            ${textHelper.getTextValue("/controlText/surveyDashboard/surveyLinks", "Survey Links")}
+        </div>
+
+    {{each(index, url) SurveyUrls}}
+        {{if (index % 2 == 0) }}
+        <div class="dashStatsContent zebra">
+            <input class="surveyUrl left" type="text" readonly="readonly" value="${url}" size="${url.length}" /><a class="left newWindow" href="${url}" target="_blank" title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled.">&nbsp;</a><br class="clear" />
+        </div>
+        {{else}}
+        <div class="dashStatsContent detailZebra">
+            <input class="surveyUrl" type="text" readonly="readonly" value="${url}" size="${url.length}" /><a class="left newWindow" href="${url}" target="_blank" title="This link opens a new browser window.  Please ensure that any popup blocking software is temporarily disabled.">&nbsp;</a><br class="clear" />
+        </div>
+        {{/if}}
+    {{/each}}
+
+        <div class="dashStatsContentHeader">
+           ${textHelper.getTextValue("/controlText/surveyDashboard/surveyInfo", "Survey Information")}
+        </div>
+
+        <div class="dashStatsContent zebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/pageText/forms/manage.aspx/createdBy", "Created By: ")}</div>
+            <div class="fixed_175 left"><b>${CreatedBy}</b></div>
+            <br class="clear" />
+        </div>
+
+        <div class="dashStatsContent detailZebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/pageText/forms/manage.aspx/lastUpdated", "Last Updated: ")}</div>
+            <div class="fixed_175 left"><b>${dateUtils.jsonDateToInvariantDateString(LastModified)}</b></div>
+            <br class="clear" />
+        </div>
+        
+        <div class="dashStatsContent zebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/surveyDashboard/scoredSurvey", "Scored Survey")}:</div>
+            <div class="fixed_125 left"><b>${textHelper.getBooleanValue(EnableScoring)}</b></div>
+            <br class="clear" />
+        </div>
+
+        <div class="dashStatsContent detailZebra">
+            <div class="fixed_100 left">${textHelper.getTextValue("/controlText/surveyDashboard/locked", "Locked")}:</div>
+            <div class="fixed_125 left"><b>${textHelper.getBooleanValue(!AllowSurveyEditWhileActive)}</b></div>
+            <br class="clear" />
+        </div>
+
+        <div class="dashStatsContent zebra">
+            <div class="fixed_125 left">${textHelper.getTextValue("/pageText/forms/surveys/permissions.aspx/anonymize", "Anonymize Responses")}:</div>
+            <div class="fixed_125 left"><b>${textHelper.getBooleanValue(AnonymizeResponses)}</b></div>
+            <br class="clear" />
+        </div>
+    </div>
+</div>

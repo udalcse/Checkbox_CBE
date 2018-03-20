@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <modules>
+  <!--    <module name="RadEditorStatistics" dockingZone="Bottom" enabled="true" visible="true" dockable="true" />
+    <module name="RadEditorDomInspector" dockingZone="Module" enabled="true" visible="true" dockable="true" />
+    <module name="RadEditorNodeInspector" dockingZone="Module" enabled="true" visible="true" dockable="true" />
+    <module name="RadEditorDiagnostics" dockingZone="Module" enabled="true" visible="true" dockable="true" />
+    <module name="RadEditorHtmlInspector" dockingZone="Module" enabled="true" visible="false" dockable="true" /> -->
+  </modules>
+
+  <tools name="MainToolbar" enabled="true">
+    <tool name="AjaxSpellCheck"/>
+    <tool separator="true" />
+    <!--<tool name="XhtmlValidator" />
+    <tool name="PageProperties" /> -->
+    <!--<tool name="StyleBuilder" /> -->
+    <!--<tool name="TrackChangesDialog" /> -->
+    <!--<tool name="FormatCodeBlock" /> -->
+    <!--
+    <tool separator="true"/>
+    <tool name="InsertFormElement" />
+    <tool name="InsertFormForm" />
+    <tool name="InsertFormButton" />
+    <tool name="InsertFormCheckbox" />
+    <tool name="InsertFormHidden" />
+    <tool name="InsertFormPassword" />
+    <tool name="InsertFormRadio" />
+    <tool name="InsertFormReset" />
+    <tool name="InsertFormSelect" />
+    <tool name="InsertFormSubmit" />
+    <tool name="InsertFormTextarea" />
+    <tool name="InsertFormText" />
+    <tool separator="true"/>
+    <tool name="StripAll" />
+    <tool name="StripCss" />
+    <tool name="StripFont" />
+    <tool name="StripSpan" />
+    <tool name="StripWord" /> -->
+  </tools>
+
+  <tools name="InsertToolbar" enabled="true" >
+
+    <tool name="ImageManager" shortcut="CTRL+M"/>
+<!--    <tool name="ImageMapDialog"/> -->
+    <tool separator="true"/>
+    <!--<tool name="FlashManager" />-->
+<!--    <tool name="MediaManager" /> -->
+    <!--<tool separator="true"/>-->
+    <tool name="DocumentManager" />
+<!-- <tool name="TemplateManager" /> -->
+    <tool separator="true"/>
+    <tool name="InsertTable" />
+    
+    <!--
+    <tool name="InsertRowAbove" />
+    <tool name="InsertRowBelow" />
+    <tool name="DeleteRow" />
+    <tool name="InsertColumnLeft" />
+    <tool name="InsertColumnRight" />
+    <tool name="DeleteColumn" />
+    <tool separator="true"/>
+    <tool name="MergeColumns" />
+    <tool name="MergeRows" />
+    <tool separator="true"/>
+    <tool name="SplitCell" />
+    <tool name="DeleteCell" />
+    <tool name="SetCellProperties" />
+    <tool name="SetTableProperties" /> -->
+    <tool separator="true"/>
+    <tool name="InsertSymbol" />
+    <tool name="FormatStripper" />
+  </tools>
+
+  <tools enabled="true">
+    <tool name="Undo" />
+    <tool name="Redo" />
+    <tool separator="true"/>
+    <tool name="Cut" />
+    <tool name="Copy" />
+    <tool name="Paste" shortcut="CTRL+!"/>
+    <tool separator="true"/>
+    <tool name="PasteFromWord" />
+    <tool name="PasteFromWordNoFontsNoSizes" />
+    <tool name="PastePlainText" />
+    <tool name="PasteAsHtml"  />
+    <tool separator="true"/>
+    <tool name="Print" />
+    <tool name="FindAndReplace" />
+    <tool name="SelectAll" />
+    <tool separator="true"/>
+    <tool name="InsertGroupbox" />
+    <tool name="InsertParagraph" />
+    <tool name="InsertHorizontalRule" />
+<!--    <tool name="InsertSnippet" /> -->
+    <!--<tool separator="true"/>
+    <tool name="InsertDate" />
+    <tool name="InsertTime" /> -->
+
+    <!--<tool separator="true"/>
+    <tool name="AboutDialog" />
+    <tool name="Help" /> -->
+  </tools>
+
+  <tools enabled="true">
+    <tool name="Bold" />
+    <tool name="Italic" />
+    <tool name="Underline" />
+    <tool name="StrikeThrough" />
+    <tool separator="true"/>
+    <tool name="JustifyLeft" />
+    <tool name="JustifyCenter" />
+    <tool name="JustifyRight" />
+    <tool name="JustifyFull" />
+    <tool name="JustifyNone" />
+
+    <tool separator="true"/>
+    <tool name="Superscript" />
+    <tool name="Subscript" />
+
+<!--    <tool separator="true"/>
+    <tool name="ConvertToLower" />
+    <tool name="ConvertToUpper" /> -->
+
+    <tool name="Indent" />
+    <tool name="Outdent" />
+    <tool name="InsertOrderedList" />
+    <tool name="InsertUnorderedList"/>
+
+    <!--<tool name="AbsolutePosition" />-->
+    <tool name="LinkManager" />
+    <tool name="Unlink" />
+    <tool name="ToggleTableBorder" />
+  </tools>
+
+  <tools name="ColorToolbar">
+    <tool name="ForeColor" />
+    <tool name="BackColor"/>
+  </tools>
+
+  <tools name="DropdownToolbar">
+    <tool separator="true"/>
+    <tool name="FontName" width="150"/>
+    <tool name="CustomFontSize" Text="Font Size" type="DropDown" width="100" />
+<!--    <tool name="FontSize"/>
+    <tool name="RealFontSize" width="75"/> -->
+    <tool name="ApplyClass" width="100"/>
+    <!--<tool name="InsertCustomLink"/> -->
+    <tool name="FormatBlock" width="100"/>
+    <!--<tool name="Zoom" /> -->
+  </tools>
+<!--
+  <tools name="ScreenModeToolbar">
+    <tool name="ToggleScreenMode" />
+  </tools> -->
+
+
+  <links>
+     <!-- Use this space to create link snippets to insert.  Hierarchies can be created
+       by nesting link tags.-->
+     <!--
+    <link name="Microsoft">
+      <link name="Main Site" href="http://www.microsoft.com" />
+      <link name="MSDN Online" href="http://msdn.microsoft.com" />
+      <link name="Windows Update" href="http://windowsupdate.microsoft.com" />
+    </link>
+    -->
+  </links>
+  <snippets>
+    <!-- Use this space to create html snippets to insert. -->
+    <!--<snippet name="Order Confirmation">
+      <![CDATA[
+					<div style="width:300px;border:2px outset #D8D2BD;padding:34px;font-family:Arial, Verdana; font-size:11px;background-color:#F1EFE6;">
+					Dear ____________________,<br />
+					Thank you for inquiring about ____________. Your request will be processed in 48 hours and shipped at the address you have provided. 
+					<br /><br />
+						<b>Please, contact us if you have any problems.</b>
+					</div>
+				]]>
+    </snippet> -->
+  </snippets>
+</root>

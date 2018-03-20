@@ -1,0 +1,31 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $('#_matrixBorderWidth').trigger('change');
+    });
+</script>
+
+<label class="left fixed_200">${textHelper.getTextValue($data.textId, $data.defaultText)}</label>
+<select class="left" id="_${$data.elementId}BorderWidth" name="${$data.elementId}BorderWidth" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'], propertyMap: { 'border-left-width': this.value, 'border-top-width': this.value, 'border-right-width': this.value, 'border-bottom-width': this.value }});">
+{{if styleEditor.borderSizes}}
+    {{each(index, size) styleEditor.borderSizes}}
+        {{if size.value == $item.data.styleData['border-width']}}
+            <option value="${size.value}" selected="selected">${size.text}</option>
+        {{else}}
+            <option value="${size.value}">${size.text}</option>
+        {{/if}}
+    {{/each}}
+{{/if}}
+</select>
+<select class="left" id="_${$data.elementId}BorderStyle" name="${$data.elementId}BorderStyle" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'], propertyMap: { 'border-left-style': this.value, 'border-top-style': this.value,'border-right-style': this.value, 'border-bottom-style': this.value }});">
+{{if styleEditor.borderStyles}}
+    {{each(index, style) styleEditor.borderStyles}}
+        {{if style.value == $item.data.styleData['border-style']}}
+            <option value="${style.value}" selected="selected">${style.text}</option>
+        {{else}}
+            <option value="${style.value}">${style.text}</option>
+        {{/if}}
+    {{/each}}
+{{/if}}
+</select>
+<input class="left" id="_${$data.elementId}BorderColor" name="${$data.elementId}BorderColor" type="color" data-hex="true" data-text="hidden" style="width:20px;height:20px;" value="${$data.styleData['border-color']}" onchange="styleEditor.updateStyle({ classNames: ['${$data.elementName}'], propertyMap: { 'border-left-color': this.value,  'border-top-color': this.value,  'border-right-color': this.value,  'border-bottom-color': this.value }});" />
+<br class="clear" />

@@ -1,0 +1,21 @@
+﻿/****************************************************************************
+ * CustomSurveyStyles_IE.css                                                *
+ *  Workaround for IE <= 7 issues with rendering survey items.              *
+ ****************************************************************************/
+ 
+ /* Fixes for LabelPosition = "Right"
+    When label position is set to right, IE also moves all content to the right
+      which is generally not desired.
+*/
+
+ div.labelRight
+ {
+     float:left;
+ }
+ 
+ div.inputForLabelRight
+ {
+     float:left;
+ }
+ 
+ 

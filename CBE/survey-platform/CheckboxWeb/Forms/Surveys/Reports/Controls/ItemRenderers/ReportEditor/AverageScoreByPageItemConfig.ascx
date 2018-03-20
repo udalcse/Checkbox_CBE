@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="AverageScoreByPageItemConfig.ascx.cs" Inherits="CheckboxWeb.Forms.Surveys.Reports.Controls.ItemRenderers.ReportEditor.AverageScoreByPageItemConfig" %>

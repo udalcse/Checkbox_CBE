@@ -1,0 +1,81 @@
+﻿<h3>${Name}</h3>
+<div class="surveyDescription">${Subject}</div>
+
+<ul class="itemActionMenu allMenu">
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Surveys/Invitations/Properties.aspx?i=${DatabaseId}', 'properties')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/options", "Options")}</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Surveys/Invitations/Message.aspx?i=${DatabaseId}', 600, 800)">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/message", "Message")}</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Surveys/Invitations/Recipients.aspx?i=${DatabaseId}', 650, 800)">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/recipients", "Recipients")}</a></li>
+<!--<li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Surveys/Invitations/Invite.aspx?i=${DatabaseId}', 'properties')">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/inviteRecipients", "Additional Recipients")}</a></li> -->
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Surveys/Invitations/Responses.aspx?i=${DatabaseId}', 600, 800)">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/responses", "Responses")}</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="deleteInvitationLink" href="javascript:void(0);">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/delete", "Delete")}</a></li>
+</ul>
+   
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/summary", "Summary")}</span>
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/createdBy", "Created By")}:</div>
+        <div class="left"><b>${CreatedBy}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/createdDate", "Created Date")}:</div>
+        <div class="left"><b>${dateUtils.jsonDateToInvariantDateString(CreatedDate)}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/lastSent", "Last Sent")}:</div>
+        <div class="left"><b>
+            {{if LastSent == null}}
+                ${textHelper.getTextValue("/controlText/invitationDashboard.ascx/notSent", "Not Sent")}
+            {{else}}
+                ${dateUtils.jsonDateToInvariantDateString(LastSent)}
+            {{/if}}</b>
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Message</span>
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/format", "Format")}:</div>
+        <div class="left"><b>${MailFormat}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/from", "From")}:</div>
+        <div class="left"><b>${FromAddress} &lt;${FromName}&gt;</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/loginOption", "Login Option")}:</div>
+        <div class="left"><b>${textHelper.getTextValue("/enum/loginOption/" + LoginOption, LoginOption)}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/allowOptOut", "Allow Opt Out")}:</div>
+        <div class="left"><b>${textHelper.getBooleanValue(IncludeOptOut)}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/subject", "Subject")}:</div>
+        <div class="left"><b>${Subject}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_100 left">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/body", "Body")}:</div>
+        <div class="left hiddenBody" style="display: none;">${Body}</div>
+        <div class="left invitationBody" />
+        <br class="clear" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.invitationBody').html($('.hiddenBody').text()).find('a').attr('onclick', 'return false;');
+    });
+</script>

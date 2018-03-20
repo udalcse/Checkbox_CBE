@@ -1,0 +1,10 @@
+﻿ <div class="gridHeader">
+     
+        <div class="left"><b>${textHelper.getTextValue("/pageText/availableReports.aspx/reportName", "")}</b></div>
+        <div class="left"></div>
+        <br class="clear" />
+     </div>
+
+{{each(index, item) items}}
+    {{tmpl(item, {index: index}) 'availableReportListReportTemplate.html'}}
+{{/each}}

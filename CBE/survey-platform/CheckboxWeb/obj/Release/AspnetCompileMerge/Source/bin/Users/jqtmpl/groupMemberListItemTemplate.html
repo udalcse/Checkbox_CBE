@@ -1,0 +1,12 @@
+﻿{{if $item.index % 2 == 0}}
+    <div  class="dashStatsContent zebra">
+{{else}}
+    <div  class="dashStatsContent detailZebra">
+        {{/if}}
+        {{if $item.allowEdit}}
+        <div class="fixed_25 left"><input type="checkbox" value="${UniqueIdentifier}" class="deleteMember" /></div>
+        {{/if}}
+        <div class="fixed_275 left truncate" sortField="UniqueIdentifier"><a class="edit-user-profile-link" onclick="showDialog('GroupsUserProfile.aspx' + '?u=${UserGuid}&onClose=onDialogClosed', 'screenSize');">${UniqueIdentifier}</a></div>
+        <div class="fixed_200 left" sortField="Email">${Email}</div>
+        <br class="clear" />
+    </div>

@@ -1,0 +1,13 @@
+﻿<div class="gridHeader">
+    <div class="fixed_25 left">Id</div>
+    <div class="fixed_125 left">Name</div>
+    <div class="fixed_100 left">Survey Name</div>
+    <div class="fixed_100 left">Created By</div>
+    <div class="fixed_100 left">Date Created</div>
+    <div class="fixed_100 left">Last Modified</div>
+    <br class="clear" />
+</div>
+
+{{each(index, report) items}}
+    {{tmpl(report, {index: index}) 'reportsByReportNameResultListItemTemplate.html'}}
+{{/each}}

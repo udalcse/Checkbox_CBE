@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dbAuthenticationProviderConfiguration>
+  <authentication type="GuidCredentials">
+    <tableName>ckbx_Credential</tableName>
+    <nameColumn>UniqueIdentifier</nameColumn>
+    <passwordColumn>GUID</passwordColumn>
+  </authentication>
+</dbAuthenticationProviderConfiguration>

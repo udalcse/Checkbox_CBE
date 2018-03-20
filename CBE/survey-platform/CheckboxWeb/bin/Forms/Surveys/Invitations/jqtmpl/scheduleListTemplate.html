@@ -1,0 +1,14 @@
+﻿<div class="gridHeader">
+   <div class="fixed_50 left"><input type="checkbox" id="_selectAllSchedule"/></div>
+   <div class="fixed_150 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.aspx/columns/type", "Type")}</b></div>
+   <div class="fixed_150 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.aspx/columns/dateScheduled", "Date Scheduled")}</b></div>
+   <div class="fixed_150 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.aspx/columns/dateSendingStarted", "Sending Started")}</b></div>
+   <div class="fixed_150 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.aspx/columns/dateSent", "Sent")}</b></div>
+   <div class="fixed_175 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/controls/schedule.aspx/columns/results", "Results")}</b></div>
+   <br class="clear" />
+</div>
+
+{{each(index, scheduleItem) items}}
+   {{tmpl(scheduleItem, {index: index}) 'scheduleListItemTemplate.html'}}     
+{{/each}}
+

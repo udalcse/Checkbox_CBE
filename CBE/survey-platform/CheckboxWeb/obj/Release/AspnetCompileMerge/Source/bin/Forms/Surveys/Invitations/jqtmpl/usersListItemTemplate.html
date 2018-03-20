@@ -1,0 +1,12 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra">
+{{else}}
+    <div class="gridContent detailZebra">
+{{/if}}
+        <div class="fixed_25 left"></div>
+        <div class="fixed_150 left truncate" title="${Name ? Name : '&nbsp;'}" >${Name ? Name : '&nbsp;'}</div>
+        <div class="fixed_50 left truncate">${CreatedDate ? dateUtils.jsonDateToInvariantDateString(CreatedDate) : '&nbsp;'}</div>
+        <div class="fixed_50 left">${LastSent ? dateUtils.jsonDateToInvariantDateString(LastSent) : '&nbsp;'}</div>
+        <div class="fixed_150 left">${LinkText ? LinkText : '&nbsp;'}</div>
+        <br class="clear" />
+    </div>

@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+	</resheader>
+	<!-- 
+	
+	COMMON ERRORS
+	Errors used throughout the assembly.
+	
+	-->
+	<data name="E_NotActivated">
+		<value>The license has not been activated. To activate, include "activateLicense={0}" as a 
+parameter in the querystring of this page and try again. This will lock the license to 
+the server machine it is running on,  which must have write access to 
+the original license to activate.</value>
+	</data>
+	<data name="E_CouldNotActivate">
+		<value>Could not activate license with {0}: {1}</value>
+	</data>
+	<data name="E_ActivateNotSaved">
+		<value>While writing the activated license to disk, access to the original license was denied. You will have to &lt;a href="{0}&amp;downloadLicense=true"&gt;download the activated license&lt;/a&gt; and copy it over the original license.</value>
+	</data>
+	<data name="E_ProfileMismatch">
+		<value>Machine profile does not match the machine used to activate the license. Replace {0} with original license to re-activate for this machine.</value>
+	</data>
+	<data name="E_InvalidSignature">
+		<value>Invalid license signature.</value>
+	</data>
+	<data name="E_InvalidProfileHash">
+		<value>Invalid profile hash.</value>
+	</data>
+	<data name="E_MissingActivation">
+		<value>No Activation limit in license.</value>
+	</data>
+	<data name="E_InvalidSigningKeys">
+		<value>Invalid signing keys: {0}. The keys could not be found or do not match the assembly.</value>
+	</data>
+	<data name="E_UnregisterNotSupported">
+		<value>This server does not support unregistering licenses.</value>
+	</data>
+	<data name="E_RegisterNotSupported">
+		<value>This server does not support registering licenses.</value>
+	</data>
+	<data name="E_NewLicenseRegister">
+		<value>This server does not support generating licenses during registration.</value>
+	</data>
+	<data name="E_InvalidLicenseCannotValidate">
+		<value>Invalid license, cannot validate.</value>
+	</data>
+	<data name="E_NewTrialNotSupported">
+		<value>This server does not support generating new trial  licenses.</value>
+	</data>
+	<data name="E_CouldNotValidateWithUnexpected">
+		<value>Unexpected error occured while trying to register with {0}: {1}</value>
+	</data>
+	<data name="E_MissingLicenseServer">
+		<value>No License Server limit found in license.</value>
+	</data>
+	<data name="E_AppLimitReached">
+		<value>Application limit reached. Max is {0}.</value>
+	</data>
+	<data name="E_MustBeWebControl">
+		<value>{0}  must derive from System.Web.UI.Control.</value>
+	</data>
+	<data name="E_DesigntimeOnly">
+		<value>Design-time only license.</value>
+	</data>
+	<data name="E_InvalidDomain">
+		<value>{0} is not one of the accepted domains or does not map to the required IP address.</value>
+	</data>
+	<data name="E_InvalidVersion">
+		<value>Invalid version, expected 1.0-{0}.</value>
+	</data>
+	<data name="E_LicenseNotSigned">
+		<value>The license must be signed before it can be registered.</value>
+	</data>
+	<data name="E_RegistrationFailed">
+		<value>Registration with {0} failed: {1}</value>
+	</data>
+	<data name="E_LaterVersion">
+		<value>License was created with a later version of XHEO|Licensing. Contact the manufacturer for an updated license.</value>
+	</data>
+	<data name="E_MissingComponents">
+		<value>No components in the license.</value>
+	</data>
+	<data name="E_LicenseExpired">
+		<value>License expired. Expiration date was {0}.</value>
+	</data>
+	<data name="E_InvalidLicense">
+		<value>Invalid license.</value>
+	</data>
+	<data name="E_LicenseReadOnly">
+		<value>The license is read only.</value>
+	</data>
+	<data name="E_InvalidSerialForIndexer">
+		<value>Invalid serial number. The license and the serial number must match when setting the indexer by serial number.</value>
+	</data>
+	<data name="E_CouldNotLoadPack">
+		<value>Could not load license pack: {0}</value>
+	</data>
+	<data name="E_ResponseMustBeBuffered">
+		<value>Response must be buffered. Set Response.BufferOutput = True.</value>
+	</data>
+	<data name="E_InvalidSearchPath">
+		<value>Invalid search path {0} ({1}).</value>
+	</data>
+	<data name="E_NoLicensesFound">
+		<value>No licenses found in {0}.</value>
+	</data>
+	<data name="E_ErrorLoadingPack">
+		<value>Unexpected error while loading {0}: {1}</value>
+	</data>
+	<data name="E_GetTrialFailure">
+		<value>Automatic trial license acquisition failed, server returned: {0}</value>
+	</data>
+	<data name="E_GetTrialUnexpectedFailure">
+		<value>Unexpected error while getting automatic trial license: {0}</value>
+	</data>
+	<data name="E_UnexpectedValidate">
+		<value>Unexpected error. {0}
+
+{1}</value>
+	</data>
+	<data name="E_UnexpectedErrorValidate">
+		<value>An unexpected error occurred while attempting to obtain a valid license for {0}. Please contact {1} for assistance (Url = {2}, Email = {3}, Phone = {4}). The exception thrown was {5}</value>
+	</data>
+	<data name="E_NoLicenseEx">
+		<value>A valid license could not be obtained for '{0}'. Please contact {1} for assistance (Url = {2}, Email = {3}, Phone = {4}). 
+Reason: 
+{5}</value>
+	</data>
+	<data name="E_SkipTrial">
+		<value>{0} skipped, trial licenses are disabled.</value>
+	</data>
+	<data name="E_CouldNotValidate">
+		<value>Could not validate (or skipped) {0} (#{2}) - {1}</value>
+	</data>
+	<data name="E_InvalidSignatureIn">
+		<value>License has been altered or was not signed for current assembly in {0}.</value>
+	</data>
+	<data name="E_NoPublicKey">
+		<value>Could not locate public license key embedded in assembly {0}. Expecting to find {1}.{2}.plsk.</value>
+	</data>
+	<data name="E_AllowedAlreadySet">
+		<value>AllowedInstances has already been set and may not be set again.</value>
+	</data>
+	<data name="E_CouldNotCreateInstanceBroker">
+		<value>Could not create InstanceBroker.</value>
+	</data>
+	<data name="E_InvalidIP">
+		<value>{0} is not one of the accepted IP addresses.</value>
+	</data>
+	<data name="E_FirstIPRange">
+		<value>First IP address in range must be less then or equal to the last address.</value>
+	</data>
+	<data name="E_InvalidDataIPRange">
+		<value>Invalid data for IPRangeCollection.</value>
+	</data>
+	<data name="E_NoLicenseUrl">
+		<value>No license URL provided.</value>
+	</data>
+	<data name="E_CouldNotValidateWith">
+		<value>Could not validate license with {0} and the maximum number of allowed failures has been reached.</value>
+	</data>
+	<data name="E_CouldNotValidateWithInvalid">
+		<value>Could not validate license with {0}. An invalid response was received and the maximum number of allowed failures has been reached.</value>
+	</data>
+	<data name="E_CouldNotValideWithUnexpected">
+		<value>Could not validate license with {0}, the server returned: {1}</value>
+	</data>
+	<data name="E_InvalidKeysVersion">
+		<value>Invalid license signing key. This version of the licensing only works with versions {0} or earlier.</value>
+	</data>
+	<data name="E_InvalidKeyFile">
+		<value>Invalid license signing key.</value>
+	</data>
+	<data name="E_LimitDoesNotExist">
+		<value>{0} limit does not exist or could not be located.</value>
+	</data>
+	<data name="E_InvalidXmlForLimits">
+		<value>Invalid XML, or could not load limits from XML.</value>
+	</data>
+	<data name="E_VersionOrder">
+		<value>Maximum version must be greater than or equal to minimum version.</value>
+	</data>
+	<data name="E_DidNotAcceptTrial">
+		<value>Did not accept terms of trial.</value>
+	</data>
+	<data name="E_TrialExpiredVisit">
+		<value>The trial license has expired. Please visit {0} to purchase the full license.</value>
+	</data>
+	<data name="E_ClockRolledBack">
+		<value>The clock has been rolled back.</value>
+	</data>
+	<data name="E_CollectionReadOnly">
+		<value>The {0} collection is read only.</value>
+	</data>
+	<data name="E_MissingContextOrSession">
+		<value>Missing HttpContext or web session. The call to LicenseManager.Validate must be made after the Page class is constructed. Move the call to the OnInit method.</value>
+	</data>
+	<data name="E_MaxSessionsReached">
+		<value>Too many users. Only {0} users are allowed to connect at the same time.</value>
+	</data>
+	<data name="E_MustRegister">
+		<value>You must register the license first.</value>
+	</data>
+	<data name="E_DidNotRegister">
+		<value>Did not register.</value>
+	</data>
+	<data name="E_ReplacedBy">
+		<value>Replaced by license at {0}.</value>
+	</data>
+	<data name="E_CustomFieldValidName">
+		<value>Custom fields must have a valid names.</value>
+	</data>
+	<data name="E_InvalidPublisher">
+		<value>Can only be used by assemblies signed by {0} with public key token {1}.</value>
+	</data>
+	<data name="E_InvalidMachine">
+		<value>License only usable on machine {0}.</value>
+	</data>
+	<data name="E_NotLocal">
+		<value>Not running on the local machine. You must access the site using http://localhost.</value>
+	</data>
+	<data name="E_VersionMismatch">
+		<value>Assembly version {0} does not match {1}.</value>
+	</data>
+	<data name="E_VersionMismatchRange">
+		<value>Assembly version {0} is not between {1} and {2}.</value>
+	</data>
+	<data name="E_DidNotContinue">
+		<value>Did not continue.</value>
+	</data>
+	<data name="E_BetaExpired">
+		<value>This beta version has expired. Please visit {0} to download the latest version.</value>
+	</data>
+	<data name="E_CannotChangeMask">
+		<value>Cannot change the serial number mask after the form has been shown.</value>
+	</data>
+	<data name="E_InvalidSerialNumber">
+		<value>The serial number provided is invalid.</value>
+	</data>
+	<data name="E_SerialNumberMismatch">
+		<value>Invalid serial number. Must begin with {0}. Try setting AbsoluteSerialNumber instead.</value>
+	</data>
+	<data name="E_InvalidEmulateVersion">
+		<value>Invalid emulation version. Must be one of the major release versions (i.e. 1.0, 1.1, etc.)</value>
+	</data>
+	<data name="E_InvalidSigningKeyFormat">
+		<value>Invalid license signing key format.</value>
+	</data>
+	<data name="E_KeyMustBeUpgraded">
+		<value>Old license signing key must be upgraded to at least version {0}.</value>
+	</data>
+	<data name="E_MissingPrivateKey">
+		<value>Missing private key portion of license signing keys.</value>
+	</data>
+	<data name="E_InvalidSerialKeySize">
+		<value>Cannot determine the key size used to sign the serial number.</value>
+	</data>
+	<data name="E_BadSerialNumber">
+		<value>Bad serial number, either invalid format or not for the this license.</value>
+	</data>
+	<data name="E_CannotValidateSerialNumbersOfLength">
+		<value>Cannot validate {0} bit serial numbers.</value>
+	</data>
+	<data name="E_NoComponentInLicense">
+		<value>The {0} component is not licensed by {1}.</value>
+	</data>
+	<data name="E_DidNotActivateOrContinue">
+		<value>Did not activate license or continue without activation.</value>
+	</data>
+	<data name="E_InvalidUnlockSerialNumber">
+		<value>Not unlocked or invalid serial number.</value>
+	</data>
+	<data name="E_Unlocked">
+		<value>Unlocked a different license in the same pack.</value>
+	</data>
+	<data name="E_InvalidActivationKey">
+		<value>The activation unlock key is invalid. Please double check the values entered.</value>
+	</data>
+	<data name="E_InvalidUsageRenewalKey">
+		<value>The usage renewal key is invalid. Please double check the values entered.</value>
+	</data>
+	<data name="E_UnlockedSamePack">
+		<value>The unlocked license must be in the same license pack (.LIC file) as the original license.</value>
+	</data>
+	<data name="E_NotAllowedOnServer">
+		<value>Not allowed on a web server/webservice.</value>
+	</data>
+	<data name="E_MustBeOnServer">
+		<value>Only allowed to run on a web server/web service.</value>
+	</data>
+	<data name="E_UsageTimeOut">
+		<value>The time allotted to use the component or application has expired.</value>
+	</data>
+	<data name="E_UsageRun">
+		<value>The component or application has been used too many times.</value>
+	</data>
+	<data name="E_RuntimeOnly">
+		<value>Run-time license only.</value>
+	</data>
+	<data name="E_RenewalTimeSpanTooLarge">
+		<value>The renewal timeout is too large. Must be less than 5 years.</value>
+	</data>
+	<data name="E_RenewalUsesTooLarge">
+		<value>The renewal usage count is too large. Must be less than 512 uses.</value>
+	</data>
+	
+	<!-- 
+	
+	COMMON USER INTERFACE STRINGS
+	Command names, and UI strings uses by multiple forms.
+	
+	-->
+	<data name="UI_SU">
+		<value>Support Url</value>
+	</data>
+	<data name="UI_SE">
+		<value>Support Email</value>
+	</data>
+	<data name="UI_SP">
+		<value>Support Phone</value>
+	</data>
+	<data name="UI_SN">
+		<value>Serial Number</value>
+	</data>
+	<data name="UI_Warning">
+		<value>WARNING: This computer program is protected by copyright law and international treaties. Circumvention of any copy protection scheme may result in severe civil and criminal penalties, and will be prosectued to the maximum extent possible under the law.</value>
+	</data>
+	<data name="UI_OK">
+		<value>O&amp;K</value>
+	</data>
+	<data name="UI_Browse">
+		<value>&amp;Browse...</value>
+	</data>
+	<data name="UI_Error">
+		<value>Error</value>
+	</data>
+	<data name="UI_ProxyInfo">
+		<value>Proxy Info</value>
+	</data>
+	<data name="UI_AlreadyHaveLicense">
+		<value>I already have a license</value>
+	</data>
+	<!-- 
+	
+	COMMON TEXT AND MESSAGES
+	Errors used throughout the assembly.
+	
+	-->
+	<data name="M_LicenseExistsOverwrite">
+		<value>{0} already exists. Overwrite?</value>
+	</data>
+	<data name="M_LicenseExistsOverwriteTitle">
+		<value>License exists, Overwrite?</value>
+	</data>
+	<!-- 
+	
+	ACTIVATION FORM USER INTERFACE
+
+	-->
+	<data name="UIA_Title">
+		<value>Activation Required</value>
+	</data>
+	<data name="UIA_Days">
+		<value>Days Left</value>
+	</data>
+	<data name="UIA_Key">
+		<value>Machine Key</value>
+	</data>
+	<data name="UIA_ActivationKey">
+		<value>Unlock Code</value>
+	</data>
+	<data name="UI_Continue">
+		<value>&amp;Continue</value>
+	</data>
+	<data name="UIA_MWarning">
+		<value>Activating will lock the license to the current machine. If you want to activate on a different machine you will need to run the activation process from there.</value>
+	</data>
+	<data name="UIA_Inst">
+		<value>You will need to contact support at the email address or phone number shown to the left and provide following information. They will provide further instructions on how to activate your license.</value>
+	</data>
+	<data name="UIA_Online">
+		<value>Activate online</value>
+	</data>
+	<data name="UIA_Phone">
+		<value>Activate by email or phone</value>
+	</data>
+	<data name="UIA_ACont">
+		<value>Continue without activation</value>
+	</data>
+	<data name="UIA_Welcome">
+		<value>Activation is required to register this product. Once a license has been activated on a computer, it cannot be used on another machine. By activating this license you will lock it to the current machine.</value>
+	</data>
+	<data name="UIA_Clipboard">
+		<value>C&amp;opy To Clipboard</value>
+	</data>
+	<data name="UIA_Email">
+		<value>Copy To &amp;Email</value>
+	</data>
+	<data name="UIA_Back">
+		<value>&lt;&lt; &amp;Back</value>
+	</data>
+	<!-- 
+	
+	ACTIVATION FORM TEXT AND MESSAGES
+	
+	-->
+	<data name="MAL_Clipboard">
+		<value>Serial Number: {0}
+Activation Key: {1}</value>
+	</data>
+	<!-- 
+	
+	USAGE RENEWAL FORM USER INTERFACE
+
+	-->
+	<data name="UIUR_Title">
+		<value>License Usage Renewal</value>
+	</data>
+	<data name="UIUR_Key">
+		<value>Machine Key</value>
+	</data>
+	<data name="UIUR_UsageRenewalKey">
+		<value>Renewal Code</value>
+	</data>
+	<data name="UI_Continue">
+		<value>&amp;Continue</value>
+	</data>
+	<data name="UIUR_MWarning">
+		<value>...Warning Here...</value>
+	</data>
+	<data name="UIUR_Inst">
+		<value>You will need to contact support at the email address or phone number shown to the left and provide following information. They will provide further instructions on how to renew your license.</value>
+	</data>
+	<data name="UIUR_Online">
+		<value>Renew online</value>
+	</data>
+	<data name="UIUR_Phone">
+		<value>Renew by email or phone</value>
+	</data>
+	<data name="UIUR_Welcome">
+		<value>The usage limits for this license have been exceeded. You may be able to renew this license.</value>
+	</data>
+	<data name="UIUR_Clipboard">
+		<value>C&amp;opy To Clipboard</value>
+	</data>
+	<data name="UIUR_Email">
+		<value>Copy To &amp;Email</value>
+	</data>
+	<data name="UIUR_Back">
+		<value>&lt;&lt; &amp;Back</value>
+	</data>
+	<!-- 
+	
+	ACTIVATION FORM TEXT AND MESSAGES
+	
+	-->
+	<data name="MAL_Clipboard">
+		<value>Serial Number: {0}
+Usage Key: {1}</value>
+	</data>
+	
+	<!-- 
+	
+	ADDITIONAL INFORMATION USER INTERFACE
+	
+	-->
+	<data name="UIAI_Title">
+		<value>Additional Information</value>
+	</data>
+	<data name="UIAI_Online">
+		<value>Additional information available online.</value>
+	</data>
+	<!-- 
+	
+	ADDRESS FORM USER INTERFACE
+
+	-->
+	<data name="UIAD_Country">
+		<value>Country</value>
+	</data>
+	<data name="UIAD_StreetAddress">
+		<value>Street Address</value>
+	</data>
+	<data name="UIAD_City">
+		<value>City</value>
+	</data>
+	<data name="UIAD_State">
+		<value>State/Province</value>
+	</data>
+	<data name="UIAD_Zip">
+		<value>Zip/PostalCode</value>
+	</data>
+	<data name="UIAD_Phone">
+		<value>Phone</value>
+	</data>
+	<data name="UI_BuyNow">
+		<value>&amp;Buy Now</value>
+	</data>
+	<data name="MAD_EnterStreet">
+		<value>Please enter your street address.</value>
+	</data>
+	<data name="MAD_EnterCity">
+		<value>Please enter your city.</value>
+	</data>
+	<data name="MAD_EnterState">
+		<value>Please select your state.</value>
+	</data>
+	<data name="MAD_EnterZip">
+		<value>Please enter your zip code.</value>
+	</data>
+	<data name="MAD_EnterPhone">
+		<value>Please enter your phone number.</value>
+	</data>
+	<data name="MAD_EnterCountry">
+		<value>Please select your country. Select XX - Other if not available.</value>
+	</data>
+	<!-- 
+	
+	REGISTRATION FORM USER INTERFACE
+	
+	-->
+	<data name="UIR_Title">
+		<value>Enter Registration Information</value>
+	</data>
+	<data name="UIR_Name">
+		<value>&amp;Name</value>
+	</data>
+	<data name="UIR_Organization">
+		<value>&amp;Organization</value>
+	</data>
+	<data name="UIR_More">
+		<value>&amp;More &gt;&gt;</value>
+	</data>
+	<data name="UIR_Less">
+		<value>&lt;&lt; &amp;Less</value>
+	</data>
+	<data name="UIR_AdditionalInformation">
+		<value>Additional Information</value>
+	</data>
+	<data name="UIR_Register">
+		<value>&amp;Register</value>
+	</data>
+	<data name="UIR_DontRegister">
+		<value>&amp;Don't Register</value>
+	</data>
+	<data name="UIR_RemindMeLater">
+		<value>Remind Me &amp;Later</value>
+	</data>
+	<data name="UIR_ConnectionWarning">
+		<value>NOTE: You may need an active Internet connection to register.</value>
+	</data>
+	<data name="UIR_Privacy">
+		<value>Read our Privacy Policy</value>
+	</data>
+	<!-- 
+	
+	REGISTRATION FORM ERRORS
+	
+	-->
+	<data name="ER_CannotAddCustomFieldAfterLoad">
+		<value>Cannot add custom fields once the form is loaded.</value>
+	</data>
+	<data name="ER_MustSetLicenseTypeToGetLicense">
+		<value>You must set the LicensedType property to generate a new license.</value>
+	</data>
+	<data name="ER_FirstNameRequired">
+		<value>You must enter your first name.</value>
+	</data>
+	<data name="ER_LastNameRequired">
+		<value>You must enter your last name.</value>
+	</data>
+	<data name="ER_MiddleNameRequired">
+		<value>You must enter your middle name.</value>
+	</data>
+	<data name="ER_SerialNumberRequired">
+		<value>You must enter your serial number.</value>
+	</data>
+	<data name="ER_OrganizationRequired">
+		<value>You must enter your organization.</value>
+	</data>
+	<data name="ER_YouMustSelect">
+		<value>You must select {0}.</value>
+	</data>
+	<data name="ER_YouMustEnterAValueFor">
+		<value>You must enter a value for {0}.</value>
+	</data>
+	<data name="ER_SNRequired">
+		<value>A serial number is required to register.</value>
+	</data>
+	<data name="ER_CouldNotRegister">
+		<value>Could not register with {0}: {1}
+</value>
+	</data>
+	<data name="ER_InvalidLicenseFromServer">
+		<value>Invalid license returned from server.</value>
+	</data>
+	<data name="ER_CouldNotComplete">
+		<value>Could not complete registration.</value>
+	</data>
+	<data name="ER_CouldNotComplete1">
+		<value>Could not complete registration: {0}</value>
+	</data>
+	<!-- 
+	
+	REGISTRATION FORM TEXT AND MESSAGES
+	
+	-->
+	<data name="MR_RegistrationRequired">
+		<value>Registration is required to continue. Are you sure you want to cancel?</value>
+	</data>
+	<data name="MR_RegistrationRequiredTitle">
+		<value>Registration Required</value>
+	</data>
+	<data name="MR_ContinueInTrial">
+		<value>The serial number provided is invalid. Continue in Trial mode?</value>
+	</data>
+	<data name="MR_ContinueInTrialTitle">
+		<value>Continue As Trial?</value>
+	</data>
+	<data name="MR_LicenseExistsOverwrite">
+		<value>The license file {0} already exists. Overwrite?</value>
+	</data>
+	<!-- 
+	
+	BUY NOW FORM USER INTERFACE
+	
+	-->
+	<data name="UIB_ConnectionSecure">
+		<value>Connection is secure</value>
+	</data>
+	<data name="UIB_Back">
+		<value>Back</value>
+	</data>
+	<data name="UIB_Forward">
+		<value>Forward</value>
+	</data>
+	<data name="UIB_Stop">
+		<value>Stop</value>
+	</data>
+	<data name="UIB_Refresh">
+		<value>Refresh</value>
+	</data>
+	<data name="UIB_Print">
+		<value>Print</value>
+	</data>
+	<data name="UIB_BuyNowTitle">
+		<value>Buy Now</value>
+	</data>
+	<data name="UIB_YouAreNowBuying">
+		<value>You are now buying</value>
+	</data>
+	<data name="UIB_DownloadingLicense">
+		<value>Downloading License...</value>
+	</data>
+	<data name="UIB_PageSecure">
+		<value>Page is secure</value>
+	</data>
+	<data name="UIB_PageNotSecure">
+		<value>Page is not secure</value>
+	</data>
+	<!-- 
+	
+	BUY NOW FORM TEXT AND MESSAGES
+	
+	-->
+	<data name="MB_SaveBackup">
+		<value>Your new license was downloaded and saved to {0}.
+Would you like to save a backup in case you need to re-install the software?</value>
+	</data>
+	<data name="MB_SaveBackupTitle">
+		<value>Save Backup?</value>
+	</data>
+	<!-- 
+	
+	BUY NOW FORM ERRORS
+	
+	-->
+	<data name="EB_CouldNotBackup">
+		<value>Could not make backup: {0}</value>
+	</data>
+	<data name="EB_CouldNotDownload">
+		<value>Could not download license: {0}</value>
+	</data>
+	<data name="EB_RequestTimedOut">
+		<value>Request timed out.</value>
+	</data>
+	<!-- 
+	
+	FAILURE REPORT FORM USER INTERFACE
+	
+	-->
+	<data name="UIF_DontShow">
+		<value>Don't show again</value>
+	</data>
+	<data name="UIF_Copy">
+		<value>&amp;Copy Info</value>
+	</data>
+	<data name="UIF_Details">
+		<value>Details</value>
+	</data>
+	<data name="UIF_Assemblies">
+		<value>Assemblies</value>
+	</data>
+	<data name="UIF_SysInfo">
+		<value>System Information</value>
+	</data>
+	<data name="UIF_Title">
+		<value>Failure Report</value>
+	</data>
+	<data name="UIF_Assembly">
+		<value>Assembly</value>
+	</data>
+	<data name="UIF_Version">
+		<value>Version</value>
+	</data>
+	<data name="UIF_FileVersion">
+		<value>File Version</value>
+	</data>
+	<data name="UIF_Location">
+		<value>Location</value>
+	</data>
+	<!-- 
+	
+	FAILUIRE REPORT FORM ERRORS
+	
+	-->
+	<data name="EF_Generic">
+		<value>'{0}' Please contact {1} for assistance.</value>
+	</data>
+	<data name="EF_NoLicense">
+		<value>A valid license could not be obtained for {0}. Please contact {1} for assistance.</value>
+	</data>
+	<data name="EF_Details">
+		<value>
+
+DETAILS:
+
+{0}</value>
+	</data>
+	<data name="EF_ErrorInfo">
+		<value>ERROR GETTING INFO: {0}</value>
+	</data>
+	<!-- 
+	
+	TRIAL FORM USER INTERFACE
+	
+	-->
+	<data name="UIT_Title">
+		<value>This is a Trial</value>
+	</data>
+	<data name="UIT_Info">
+		<value>&amp;Info</value>
+	</data>
+	<data name="UIT_Try">
+		<value>&amp;Try</value>
+	</data>
+	<data name="UI_Cancel">
+		<value>&amp;Cancel</value>
+	</data>
+	<data name="UIT_Warning">
+		<value>By continuing  the trial you agree to be bound by the terms of the EULA accompanying this software.</value>
+	</data>
+	<data name="UIT_Expired">
+		<value>Your trial has expired.</value>
+	</data>
+	<!-- 
+	
+	TRIAL FORM TEXT AND MESSAGES
+	
+	-->
+	<data name="MT_BNWarning">
+		<value>After purchasing you will need to select the location where you saved the new license.
+
+Press OK to select the location of the new license, or Cancel to return to the form.</value>
+	</data>
+	<data name="MT_BNWarningTitle">
+		<value>Purchase License</value>
+	</data>
+	<data name="MT_TrialExpired">
+		<value>Trial Expired</value>
+	</data>
+	<data name="MT_DaysRemaining">
+		<value>{0} days remaining.</value>
+	</data>
+	<!-- 
+	
+	TRIAL FORM ERRORS
+	
+	-->
+	<data name="ET_InvalidDateRange">
+		<value>Invalid trial date range.</value>
+	</data>
+	<!-- 
+
+	GUI BRANDED FORM USER INTERFACE
+	
+	-->
+	<data name="UIB_ContinueTerms">
+		<value>By continuing you agree to the terms</value>
+	</data>
+	<data name="UIB_Continuing">
+		<value>Continue ({0})</value>
+	</data>
+	<!-- 
+
+	SELECT EXISTING LICENSE FORM USER INTERFACE
+	
+	-->
+	<data name="UIS_Title">
+		<value>Select Existing License</value>
+	</data>
+	<data name="UIS_LicenseFileLabel">
+		<value>License File Location</value>
+	</data>
+	<data name="UIS_ThisApp">
+		<value>Install license for this application only</value>
+	</data>
+	<data name="UIS_AllApps">
+		<value>Install license for all applications that use this component (Requires administrative priviledges)</value>
+	</data>
+	<data name="UIS_Message">
+		<value>If you have already purchased a license for this product and have received the license file you can select it now. The license file will be installed properly to unlock the application. DO NOT use this form if you have a serial number, use the registration form to enter a serial number instead.</value>
+	</data>
+	<!-- 
+
+	SELECT EXISTING LICENSE FORM ERRORS
+	
+	-->
+	<data name="ES_MustSelectLocation">
+		<value>You must select an existing license file.</value>
+	</data>
+	<data name="ES_CouldNotCopy">
+		<value>Could not copy license: {0}</value>
+	</data>
+	<!-- 
+	
+	ACTIVATION LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MAL_HeaderHtml">
+		<value>&lt;table cellpadding="5" cellspacing="0" border="0" bgcolor="yellow" width="100%"&gt;&lt;tr&gt;&lt;td align="center"&gt;&lt;b&gt;Activation Required:&lt;/b&gt; &lt;a href="#DoActivation"&gt;See Below&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+	</data>
+	<data name="MAL_FooterHtml">
+		<value>
+&lt;A name="DoActivation"&gt;&lt;/a&gt;
+		&lt;TABLE cellSpacing="0" cellPadding="0" width="100%" border="0" style="border: solid 3px black"&gt;
+			&lt;TR&gt;
+				&lt;TD bgcolor="buttonface" background="{11}" vAlign="top"&gt;
+					&lt;table cellpadding="10" cellspacing="0" border="0" width="100%"&gt;
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;font size="1" color="white" face="Arial"&gt;
+									&lt;b&gt;Days Left&lt;/b&gt;&lt;br&gt;
+									&lt;font size="5" color="yellow" face="Arial"&gt;{0}&lt;/font&gt;
+									&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+									&lt;b&gt;Support Url&lt;/b&gt;&lt;br&gt;
+									&lt;a href="{1}" style="COLOR: white" target="_blank"&gt;{1}&lt;/a&gt;&lt;br&gt;
+									&lt;br&gt;
+									&lt;b&gt;Support Email&lt;/b&gt;&lt;br&gt;
+									&lt;a href="mailto:{2}" style="COLOR: white"&gt;{2}&lt;/a&gt;&lt;br&gt;
+									&lt;br&gt;
+									&lt;b&gt;Support Phone&lt;/b&gt;&lt;br&gt;
+									{3} &lt;/font&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/TD&gt;
+				&lt;td width="100%" vAlign="top" bgColor="buttonface"&gt;
+					&lt;TABLE cellSpacing="10" cellPadding="0" width="100%" border="0"&gt;
+						&lt;TR&gt;
+							&lt;TD&gt;
+								&lt;P&gt;&lt;FONT face="Arial Black" size="4"&gt;Activation Required&lt;/FONT&gt;&lt;/P&gt;
+								&lt;P&gt;&lt;FONT face="Arial" size="2" color="red"&gt;{5}&lt;/FONT&gt;&lt;/P&gt;
+								&lt;FONT face="Arial" size="2"&gt;
+								&lt;P&gt;Activation is required to register this license for &lt;b style="color: blue;"&gt;{6}&lt;/b&gt;. Once a 
+										license has been activated on a computer, it cannot be used on another machine. 
+										By activating this license you will lock it to the current machine.&lt;/P&gt;
+								&lt;P&gt;&lt;A href="{4}"&gt;&lt;b&gt;Click here to activate online&lt;/b&gt;&lt;/A&gt;&lt;/P&gt;
+								&lt;p&gt;&lt;b&gt;Activate By Phone or Email&lt;/b&gt;&lt;/p&gt;
+								&lt;p&gt;You can activate by phone or email by contacting {8} at the email address or phone number to the left. Provide them with the machine unlock
+								key below. They will provide further instructions.&lt;/p&gt;
+								&lt;p&gt;&lt;b&gt;Serial Number:&lt;/b&gt; {10}&lt;/p&gt;
+								&lt;p&gt;&lt;b&gt;Machine Key:&lt;/b&gt; {9}&lt;/p&gt;
+								
+								&lt;p&gt;&lt;b&gt;Activation Key:&lt;/b&gt;&lt;/p&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa1"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa2"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa3"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa4"/&gt;&lt;br/&gt;
+								
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa5"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa6"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa7"/&gt;
+								&lt;input type="text" size="8" style="FONT: 10pt, 'Courier New'" name="__xa8"/&gt;
+								&lt;p&gt;&lt;input type="button" value="Activate" onClick="location.href='{4},' + __xa1.value + __xa2.value + __xa3.value + __xa4.value + __xa5.value + __xa6.value + __xa7.value + __xa8.value;"/&gt;&lt;/p&gt;
+								&lt;/FONT&gt;
+
+								
+							&lt;/TD&gt;
+						&lt;/TR&gt;
+					&lt;/TABLE&gt;
+				&lt;/td&gt;
+			&lt;/TR&gt;
+			&lt;TR&gt;
+				&lt;td valign="bottom" height="0" bgcolor="black"&gt;{7}&lt;/td&gt;
+				&lt;TD valign="bottom" bgcolor="buttonface"&gt;
+					&lt;P style="padding: 5px;"&gt;&lt;FONT face="Verdana" color="threeddarkshadow" size="1"&gt;&lt;b&gt;WARNING:&lt;/b&gt; This computer 
+							program is protected by copyright law and international treaties. Circumvention 
+							of any copy protection scheme may result in severe civil and criminal 
+							penalties, and will be prosecuted to the maximum extent possible under the law.&lt;/FONT&gt;&lt;/P&gt;
+				&lt;/TD&gt;
+			&lt;/TR&gt;
+		&lt;/TABLE&gt;
+</value>
+	</data>
+	<data name="MAL_Description">
+		<value>Restricts use to the same machine profiled during the license activation.</value>
+	</data>
+	<!-- 
+	
+	APPLICATION LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MAPPL_Description">
+		<value>Restricts use to a limited number of applications a single machine for a given type.</value>
+	</data>
+	<data name="MAPPL_DetailedDescription">
+		<value>{0} applications, brokered on port {1}.</value>
+	</data>
+	<!-- 
+	
+	BRANDED LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MBRL_Description">
+		<value>Inserts branded HTML into the output stream.</value>
+	</data>
+	<!-- 
+	
+	DESIGN TIME LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MDTL_Description">
+		<value>Restricts use to the design time environment.</value>
+	</data>
+	<!-- 
+	
+	DOMAIN NAME LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MDL_Description">
+		<value>Restricts use to a group of domain names.</value>
+	</data>
+	<data name="MDL_DetailedDescription">
+		<value>Must resolve to {0}.</value>
+	</data>
+	<!-- 
+	
+	GUI BRANDED LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MGBL_Description">
+		<value>Describes the terms of a GUI Branded license.</value>
+	</data>
+	<data name="MGBL_DetailedDescription">
+		<value>Terms: {0}, Purchase At: {1}</value>
+	</data>
+	<!-- 
+	
+	IP LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MIPL_Description">
+		<value>Restricts use to a range of IP addresses.</value>
+	</data>
+	<!-- 
+	
+	VERSION LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MVL_Description">
+		<value>Restricts use to range of assembly versions.</value>
+	</data>
+	<data name="MVL_DetailedDescription">
+		<value>Between {0} and {1}.</value>
+	</data>
+	<!-- 
+	
+	TRIAL LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MTL_Description">
+		<value>Marks a license as a trial version and provides trial details and purchase information.</value>
+	</data>
+	<data name="MTL_DetailedDescription">
+		<value>Terms: {0}, Purchase At: {1}.</value>
+	</data>
+	<!-- 
+	
+	SESSION LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MSL_Description">
+		<value>Restricts use to a limited number of user sessions.</value>
+	</data>
+	<data name="MSL_DetailedDescription">
+		<value>{0} sessions, {1} timeout.</value>
+	</data>
+	<!-- 
+	
+	RUNTIME LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MRTL_Description">
+		<value>Restricts use to runtime only.</value>
+	</data>
+	<!-- 
+	
+	REGISTRATION LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MRL_Description">
+		<value>Requires the user to register.</value>
+	</data>
+	<!-- 
+	
+	PUBLISHER LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MPL_Description">
+		<value>Restricts use to assemblies strongly named by a certain publisher.</value>
+	</data>
+	<!-- 
+	
+	OR LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MOL_Description">
+		<value>Restricts use to any one of a group of limits.</value>
+	</data>
+	<!-- 
+	
+	NON-COMMERCIAL LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MNCL_Description">
+		<value>Restricts to non-commercial use.</value>
+	</data>
+	<!-- 
+	
+	LICENSE SERVER LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MLS_Description">
+		<value>Validates against a remote licensing server and restricts use to validated licenses.</value>
+	</data>
+	<!-- 
+	
+	MACHINE LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MML_Description">
+		<value>Restricts use to a single machine.</value>
+	</data>
+	<!-- 
+	
+	LOCAL COMPUTER LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MLCL_Description">
+		<value>Restricts use to the local computer.</value>
+	</data>
+	<!-- 
+	
+	BETA LIMIT TEXT AND MESSAGES
+	
+	-->
+	<data name="MBL_Description">
+		<value>Restricts the use of a BETA version past it's expiration.</value>
+	</data>
+	<data name="MBL_DetailedDescription">
+		<value>Expires: {0}, Updates: {1}</value>
+	</data>
+	<data name="MBL_BetaExpired">
+		<value>Beta Expired</value>
+	</data>
+	<!-- 
+	
+	AS SERVER LIMIT
+	
+	-->
+	<data name="MASL_Description">
+		<value>Restricts the use of an assembly to a web server/webservice</value>
+	</data>
+	<data name="MASL_DetailedDescription">
+		<value>Allowed = {0}, Required = {1}.</value>
+	</data>
+	<!-- 
+	
+	AND LIMIT
+	
+	-->
+	<data name="MANDL_Description">
+		<value>Container limit where all sublimits must be valid.</value>
+	</data>
+	<!--
+	
+	PROXY FORM
+	
+	!-->
+	<data name="UIP_Address">
+		<value>&amp;Address:</value>
+	</data>
+	<data name="UIP_Username">
+		<value>&amp;Username:</value>
+	</data>
+	<data name="UIP_Password">
+		<value>&amp;Password:</value>
+	</data>
+	<data name="UIP_Message">
+		<value>Please provide information necessary to connect with your proxy server. If you do not know this information, please contact your network administrator.</value>
+	</data>
+	<data name="UIP_Title">
+		<value>Proxy Details</value>
+	</data>
+	<data name="UIPE_Address">
+		<value>You must enter a value for the proxy address.</value>
+	</data>
+</root>

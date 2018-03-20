@@ -1,0 +1,11 @@
+﻿ <div class="gridHeader">
+    <div class="left fixed_25"><input type="checkbox" id="selectAllGroups"/></div>
+    <div class="left fixed_200"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddGroupsControl.ascx/grid/groupName", "Name")}</b></div>
+    <div class="left fixed_200"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddGroupsControl.ascx/grid/description", "Description")}</b></div>
+    <div class="left"><b>${textHelper.getTextValue("/controlText/forms/surveys/invitations/controls/AddGroupsControl.ascx/grid/members", "Members")}</b></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+  {{tmpl(user, {index: index}) 'addRecipientsGroupsListItemTemplate.html'}}
+{{/each}}

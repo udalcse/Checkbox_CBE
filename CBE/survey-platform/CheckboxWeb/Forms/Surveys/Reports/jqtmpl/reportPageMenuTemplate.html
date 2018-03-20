@@ -1,0 +1,14 @@
+﻿<div class="groupHeader surveyPageHeaderEdit pageMenuItems" style="float:right">
+    <div id="pageMenuMenu_${ID}" class="itemActionMenuSmall">
+        <a href="javascript:reportEditor.showAddItemDialog(${Id}, 'wizard');" class="left statistics_AddItem">${textHelper.getTextValue("/pageText/formEditor.aspx/addItem", "Add Item")}</a>
+        <a class="groupMenuToggle right" href="#" style="text-decoration: none;">&nbsp;</a>
+        <div class="groupMenu page-options-menu" id="pageMenuMenu_${Id}">
+            <ul class="itemActionMenuSmall allMenu" style="display: none;">
+                <li><a class="ckbxButton silverButton roundedCorners copyReportPageLink" pageId="${Id}" href="javascript:reportEditor.showCopyPageDialog(${Id}, 'dialog');">${textHelper.getTextValue("/pageText/formEditor.aspx/moveCopy", "Move/Copy")}</a></li>
+                {{if $item.pageCount > 1}}
+                <li><a class="ckbxButton silverButton roundedCorners deleteReportPageLink" pageId="${Id}" href="javascript:deletePage(${Id});">${textHelper.getTextValue("/pageText/formEditor.aspx/delete", "Delete")}</a></li>
+                {{/if}}
+            </ul>
+         </div>
+    </div>
+</div>

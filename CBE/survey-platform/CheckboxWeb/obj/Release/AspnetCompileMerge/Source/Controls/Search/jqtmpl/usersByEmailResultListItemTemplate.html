@@ -1,0 +1,9 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra userSearchResult" userId="${UniqueIdentifier}" id="userContainer_${UniqueIdentifier}" index="${index}">
+{{else}}
+    <div class="gridContent detailZebra userSearchResult" userId="${UniqueIdentifier}" id="userContainer_${UniqueIdentifier}" index="${index}">
+{{/if}}
+        <div class="fixed_150 left" sortField="UniqueIdentifier">${UniqueIdentifier}</div>
+        <div class="fixed_150 left userResultsEmailAddress" sortField="Email">${Email}</div>
+        <br class="clear" />
+    </div>

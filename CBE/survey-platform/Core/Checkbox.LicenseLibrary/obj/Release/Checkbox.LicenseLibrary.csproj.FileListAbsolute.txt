@@ -1,0 +1,10 @@
+C:\Project\CBE\survey-platform\Core\Checkbox.LicenseLibrary\bin\Release\Checkbox.License.dll
+C:\Project\CBE\survey-platform\Core\Checkbox.LicenseLibrary\bin\Release\Checkbox.License.pdb
+C:\Project\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.LicenseLibrary.csprojResolveAssemblyReference.cache
+C:\Project\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.License.dll
+C:\Project\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.License.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Core\Checkbox.LicenseLibrary\bin\Release\Checkbox.License.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Checkbox.LicenseLibrary\bin\Release\Checkbox.License.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.LicenseLibrary.csprojResolveAssemblyReference.cache
+C:\Project\RogerDev1\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.License.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Checkbox.LicenseLibrary\obj\Release\Checkbox.License.pdb

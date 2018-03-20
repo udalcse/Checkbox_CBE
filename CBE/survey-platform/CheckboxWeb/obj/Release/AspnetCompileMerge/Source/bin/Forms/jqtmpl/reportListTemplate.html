@@ -1,0 +1,12 @@
+﻿ <div class="gridHeader ckbxGridHeader">
+    <div class="fixed_50 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/reportList/id", "ID")}</b></div>
+    <div class="fixed_175 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/reportList/name", "Name")}</b></div>
+    <div class="fixed_100 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/reportList/createdBy", "Created By")}</b></div>
+    <div class="fixed_100 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/reportList/createdDate", "Created Date")}</b></div>
+    <div class="fixed_100 left"><b>${textHelper.getTextValue("/controlText/surveyDashboard/reportList/lastModified", "Last Modified")}</b></div>
+    <br class="clear" />
+ </div>
+
+{{each(index, report) items}}
+    {{tmpl(report, {index: index}) 'reportListItemTemplate.html'}}
+{{/each}}

@@ -1,0 +1,204 @@
+﻿/* Checkbox */
+
+.checkbox-item {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.checkBoxList td, .checkBoxList table {
+    width: 100%;
+}
+
+/* Radio */
+
+.radio-item {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.radioButtonList td, .radioButtonList table {
+    width: 100%;
+}
+
+/* Dropdown list */
+
+.dropdownList .inputContainer {
+    width: 100%;    
+}
+
+/* MultiLine Text */
+
+.multilineInput {
+    width: 100%;        
+}
+
+/* SingleLine Text */
+
+.singleLineInput {    
+    width: 100%;        
+}
+
+/* Text Slider */
+.slider-value-list-container {
+    padding-bottom: 15px;
+}
+
+div.ui-slider-vertical-track {
+     position: relative; 
+     display: inline-block; 
+     overflow: visible; 
+     min-height: 60px; 
+     padding: 0; 
+     margin: 12px 2% 0 20px; 
+     top: 4px; 
+     width:15px ;
+}
+label.ui-slider-vertical {
+     display: inline-block;  
+     width: 20%;  
+     margin: 0 2% 0 0;
+}
+div.ui-slider-vertical {
+     width: 15px;
+}
+a.ui-slider-handle-vertical {
+     position: absolute; 
+     z-index: 10;  
+     top: 50%; 
+     width: 28px; 
+     height: 28px; 
+     margin-top: -15px; 
+     margin-left: -8px;
+}
+.mobileTextSliderOptions {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.mobileTextSliderOptions div {
+    position: absolute;
+    margin-left: 60px;
+}
+
+.mobileTextSliderOptions div img {
+    height: 40px;
+    margin-top: -10px;
+}
+
+.mobileTextSliderOptions div span {
+    white-space: nowrap;
+    text-align: left;
+    position: absolute;
+    margin-left: 5px;
+}
+
+.vertical-mobile-text-slider-container {
+    margin-bottom: 25px;
+    margin-top: -20px;
+}
+
+.vertical-mobile-text-slider-container .ui-slider {
+    height: 0;
+}
+
+.mobile-numeric-slider-container {
+    width:100%;
+    position: relative;
+}
+
+.ui-slider-label {
+    word-wrap: break-word;
+    text-align: center;
+}
+
+/*Rating Scale*/
+
+.rating-scale-container {
+    margin-left: 5px;
+}
+
+.rating-scale-options-separator {
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+.rating-scale-mobile {
+    position: relative;
+}
+
+.rating-scale-mobile span.Answer {
+    position: absolute;
+    display: block;
+    white-space: nowrap;
+    margin-left: 100px;
+}
+
+.rating-scale-mobile-labels-table {
+    display: inline-table; 
+    height: 100%;
+}
+
+.rating-scale-mobile td {
+    padding-bottom: 0 !important;
+}
+
+.rating-scale-mobile #other {
+    margin-right: 10px;
+}
+
+/*Rank Order*/
+.rankOrderSelectable
+{
+    min-height:100px;background-color:#aaaaaa;width: 45%;
+}
+.rankOrderSelectableContainer {
+    width: 100%;
+}
+.rankorder-draggable
+{
+}
+
+.rankOrderLabelPlace
+{
+    display: block;
+}
+
+div.rankOrder.ui-sortable .rankOrderLabelPlace {
+    padding: 5px 10px; 
+    margin: 5px; 
+}
+
+.rankOrderSelectableContainer > div {
+    margin-bottom: 10px;
+}
+
+.rank-order-bottom-right-container,
+.rank-order-bottom-right-container > div {
+    width: 100%;
+}
+
+.rankOrderSelectable .ui-draggable-dragging {
+    width: 33%;    
+}
+
+/*Opt-out*/
+.optOutFrame {
+    text-align: left;
+}
+
+.optOutFrame h1 {
+    padding: 10px;
+}
+
+/* Survey Buttons */
+
+.ui-btn-inner { 
+    white-space: normal !important; 
+}
+
+.fileupload-buttonbar .ui-btn-shadow {
+    display: none;
+}

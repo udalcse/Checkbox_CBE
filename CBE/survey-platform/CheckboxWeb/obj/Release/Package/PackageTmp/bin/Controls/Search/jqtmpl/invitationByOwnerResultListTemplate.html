@@ -1,0 +1,12 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left">ID</div>
+    <div class="fixed_125 left">Name</div>
+    <div class="fixed_125 left">Created By</div>
+    <div class="fixed_100 left">Date Created</div>
+    <div class="fixed_100 left">Last Sent</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, invitation) items}}
+    {{tmpl(invitation, {index: index}) 'invitationByOwnerResultListItemTemplate.html'}}
+{{/each}}

@@ -1,0 +1,9 @@
+﻿ <div class="gridHeader">
+    <div class="left"><b>${textHelper.getTextValue("/pageText/availableSurveys.aspx/surveyTitle", "Survey Title")}</b></div>
+    <div class="left"></div>
+    <br class="clear" />
+ </div>
+{{each(index, item) items}}
+    {{tmpl(item, {index: index}) 'availableSurveyListSurveyTemplate.html'}}
+{{/each}}
+

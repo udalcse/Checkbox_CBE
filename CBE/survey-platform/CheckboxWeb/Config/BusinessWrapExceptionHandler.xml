@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wrapExceptionHandlerConfiguration>
+  <handlerType>Prezza.Framework.ExceptionHandling.WrapHandler,Prezza.Framework</handlerType>
+  <exceptionTypeName>Prezza.Framework.ExceptionHandling.BaseException,Prezza.Framework</exceptionTypeName>
+  <exceptionMessage>An error with id [{handlingInstanceId}] occurred.  For more details, please see the log file and/or the exception handling log.</exceptionMessage>
+</wrapExceptionHandlerConfiguration>

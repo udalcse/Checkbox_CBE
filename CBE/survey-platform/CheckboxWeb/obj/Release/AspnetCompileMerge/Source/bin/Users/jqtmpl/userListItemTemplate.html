@@ -1,0 +1,13 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra" id="user_${UniqueIdentifier}" index="${$item.index}">
+{{else}}
+    <div class="gridContent detailZebra" id="user_${UniqueIdentifier}" index="${$item.index}">
+{{/if}}
+        <div class="fixed_25 left">
+        <input type="checkbox" value="${UniqueIdentifier}" id="deleteUser_${UniqueIdentifier}" class="deleteUser" />
+        </div>
+        <div class="fixed_225 left userListItem truncate" sortField="UniqueIdentifier" title="${UniqueIdentifier}">${UniqueIdentifier}</div>
+        <div class="fixed_225 left userListItem truncate" sortField="Email" title="${Email}">${Email}</div>
+        <br class="clear" />
+    </div>
+  

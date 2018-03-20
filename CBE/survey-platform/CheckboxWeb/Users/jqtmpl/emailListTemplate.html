@@ -1,0 +1,17 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllEmailLists"/></div>
+     <div class="fixed_225 left headerPart">
+         <span class="header_sorter hand">
+             <span class="left">${textHelper.getTextValue("/users/emailListTemplate/listName", "List Name")}</span>
+             <span class="toggle-arrow-up gridsorter" sortField="Name" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+    <div class="fixed_225 left">${textHelper.getTextValue("/users/emailListTemplate/addressCount", "Address Count")}</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, emailList) items}}
+    <div id="emailListContainer_${emailList.DatabaseId}" index="${index}">
+        {{tmpl(emailList, {index: index}) 'emailListItemTemplate.html'}}
+    </div>
+{{/each}}

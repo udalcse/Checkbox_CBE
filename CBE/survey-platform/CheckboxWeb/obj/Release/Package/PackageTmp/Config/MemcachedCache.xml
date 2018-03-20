@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cacheConfiguration CacheType="MemcachedCache"> 
+  <servers>
+    <!-- 192.168.196.71 127.0.0.1-->
+    <server endpoint="[server_IP:port]" name="defaultServer"></server>
+    <!--<server endpoint="test.ogziqc.0001.euw1.cache.amazonaws.com:11211" name="defaultServer" weight="1"></server> -->
+  </servers>
+  <pools useOnePoolPerEachCacheManager="true">
+    <pool name="defaultPool" default="true"
+          initialConnections  = "10"
+          minSpareConnections = "5"
+          maxSpareConnections = "50"
+          maxIdleTime         = "180000"
+          maxBusyTime         = "30000"
+          mainThreadSleep     = "5000"
+          socketTimeOut       = "3000"
+          socketConnectTO     = "3000"
+          failover            = "false"
+          nagleAlg            = "false">
+      <server name="defaultServer" weight="1"/>
+    </pool>
+    <pool name="additionalPool"
+          initialConnections  = "10"
+          minSpareConnections = "5"
+          maxSpareConnections = "50"
+          maxIdleTime         = "180000"
+          maxBusyTime         = "30000"
+          mainThreadSleep     = "5000"
+          socketTimeOut       = "3000"
+          socketConnectTO     = "3000"
+          failover            = "false"
+          nagleAlg            = "false">
+      <server name="defaultServer" weight="1"/>
+    </pool>
+    <pool name="surveyWorkflowPool"
+          initialConnections  = "10"
+          minSpareConnections = "5"
+          maxSpareConnections = "500"
+          maxIdleTime         = "180000"
+          maxBusyTime         = "30000"
+          mainThreadSleep     = "5000"
+          socketTimeOut       = "3000"
+          socketConnectTO     = "3000"
+          failover            = "false"
+          nagleAlg            = "false">
+      <server name="defaultServer" weight="1"/>
+    </pool>
+    <pool name="templatePool"
+          initialConnections  = "10"
+          minSpareConnections = "5"
+          maxSpareConnections = "500"
+          maxIdleTime         = "180000"
+          maxBusyTime         = "30000"
+          mainThreadSleep     = "5000"
+          socketTimeOut       = "3000"
+          socketConnectTO     = "3000"
+          failover            = "false"
+          nagleAlg            = "false">
+      <server name="defaultServer" weight="1"/>
+    </pool>
+  </pools>
+  <cacheManagers>
+    <cacheManager name="defaultCacheManager" default="true" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="DefaultCacheManager.xml"/>
+    <cacheManager name="loggedInUserCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="LoggedInUserCacheManager.xml" />
+    <cacheManager name="textCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="TextCacheManager.xml" pool="additionalPool" />
+    <cacheManager name="templateCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="TemplateCacheManager.xml" pool="templatePool"/>
+    <cacheManager name="identityRolesCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="IdentityRolesCacheManager.xml" />
+    <cacheManager name="adIdentityRolesCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ADRolesCacheManager.xml" />
+    <cacheManager name="userPrincipalCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="UserPrincipalCacheManager.xml" />
+    <cacheManager name="surveyItemMetaDataCache" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemMetaDataCacheManager.xml" />
+    <cacheManager name="surveyItemOptionMetaDataCache" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="OptionMetaDataCacheManager.xml" />
+    <cacheManager name="surveyListOptionDataCache" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ListOptionDataCacheManager.xml" />
+    <cacheManager name="analysisTemplateCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AnalysisTemplateCacheManager.xml" />
+    <cacheManager name="analysisItemResultCache" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ReportItemResultCacheManager.xml" />
+    <cacheManager name="userProfileCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="UserProfileCacheManager.xml" />
+    <cacheManager name="userNonProfilePropertiesCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="UserNonProfilePropertiesCacheManager.xml" />
+    <cacheManager name="libraryTemplateCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="LibraryTemplateCacheManager.xml" />
+    <cacheManager name="surveyConditionsCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="SurveyConditionsCacheManager.xml" />
+
+    <cacheManager name="absentSessions" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AbsentSessionsCacheManager.xml" pool="surveyWorkflowPool"/>
+    <cacheManager name="stateMachines" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="StateMachinesCacheManager.xml" pool="surveyWorkflowPool"/>
+    <cacheManager name="stateMachinesByResponse" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="StateMachinesByResponseCacheManager.xml" pool="surveyWorkflowPool"/>
+    <cacheManager name="templateModificationDate" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="TemplateModificationDateCacheManager.xml" pool="templatePool"/>
+
+
+    <cacheManager name="appearanceDataDefaultTypesCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceDataDefaultTypesCacheManager.xml" />
+    <cacheManager name="appearanceTypeNamesByIDCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceTypeNamesByIDCacheManager.xml" />
+    <cacheManager name="appearanceTypeAssembliesByIDCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceTypeAssembliesByIDCacheManager.xml" />
+    <cacheManager name="appearanceTypeNamesByCodeCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceTypeNamesByCodeCacheManager.xml" />
+    <cacheManager name="appearanceTypeAssembliesByCodeCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceTypeAssembliesByCodeCacheManager.xml" />
+    <cacheManager name="appearanceDataByItemIDCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AppearanceDataByItemIDCacheManager.xml" />
+
+    <cacheManager name="itemConfigurationTypesByName" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemConfigurationTypesByNameCacheManager.xml" />
+    <cacheManager name="itemConfigurationTypesById" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemConfigurationTypesByIdCacheManager.xml" />
+    <cacheManager name="itemConfigurationTypesByItemId" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemConfigurationTypesByItemIdCacheManager.xml" />
+    <cacheManager name="itemConfigurationItemDataById" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemConfigurationItemDataByIdCacheManager.xml" />
+    <cacheManager name="itemConfigurationTypeNamesByItemId" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemConfigurationTypeNamesByItemIdCacheManager.xml" />
+    <cacheManager name="itemPrototypeByItemId" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemPrototypeByItemIdCacheManager.xml" />
+    <cacheManager name="itemBasicDataBySurveyIdAndPagePosition" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ItemBasicDataBySurveyIdAndPagePositionCacheManager.xml" />
+
+    <cacheManager name="applicationPageIds" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="ApplicationPageIdsCacheManager.xml" />
+
+    <cacheManager name="permissionMaskDisplayNames" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="PermissionMaskDisplayNamesCacheManager.xml" />
+    <cacheManager name="permissionMaskPermissionNames" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="PermissionMaskPermissionNamesCacheManager.xml" />
+    <cacheManager name="permissionNames" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="permissionNamesCacheManager.xml" />
+
+    <cacheManager name="roleIds" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="RoleIdsCacheManager.xml" />
+    <cacheManager name="rolePermissions" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="RolePermissionsCacheManager.xml" />
+
+    <cacheManager name="groups" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="GroupsCacheManager.xml" />
+    <cacheManager name="membership" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="MembershipCacheManager.xml" />
+
+    <cacheManager name="membershipUsersCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="MembershipUsersCacheManager.xml" />
+
+    <cacheManager name="policyCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="PolicyCacheManager.xml" />
+    <cacheManager name="aclCacheManager" default="false" configDataType="Prezza.Framework.Caching.Configuration.CacheManagerData,Prezza.Framework" filePath="AclCacheManager.xml" />
+
+  </cacheManagers>
+</cacheConfiguration>

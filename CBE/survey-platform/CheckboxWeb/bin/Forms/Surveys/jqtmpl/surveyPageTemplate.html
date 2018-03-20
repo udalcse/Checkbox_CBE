@@ -1,0 +1,14 @@
+﻿<div class="groupWrapper surveyWrapper pageWrapper clearfix" id="page_${Id}" >
+    <div class="groupHeader">
+        <div id="pageItemsToggle_${Id}" pageId="${Id}" class="toggle-arrow pageArrowDown" style="float:left">&nbsp;</div>
+        
+        {{tmpl($item.data, {surveyId: $item.surveyId, pageId: $item.Id}) 'surveyPageTitleTemplate.html'}}  
+        
+        {{if $item.isReadOnly!=true }}
+        {{tmpl($item.data, {surveyId: $item.surveyId, pageId: $item.Id, pageCount: $item.pageCount}) 'surveyPageMenuTemplate.html'}}
+        {{/if}}
+        <br class="clear" />
+    </div>
+    <div id="pageLogic_${Id}" style="display:none;"></div>
+    <div id="pageItems_${Id}" class="pageItems"></div>
+</div>

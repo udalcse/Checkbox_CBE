@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="_secureIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAzMzMzMzAAAD+7u7u7MAAAPzMzMzgwAAA/u7u7uzAAAD8zMzM4
+        MAAAP7u7u7swAAA//////zAAAAMzMzMzMAAAADAzMzAwAAAAMAAAMAAAAAAwAAAwAAAAADgAAzAAAAAA
+        A4ADAAAAAAAAMzMAAAD//wAAwAcAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADgAwAA8AcAAPPP
+        AADzzwAA8Y8AAPgfAAD8PwAA
+</value>
+  </data>
+</root>

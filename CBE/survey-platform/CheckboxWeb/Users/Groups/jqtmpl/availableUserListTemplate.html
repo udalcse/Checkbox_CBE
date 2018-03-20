@@ -1,0 +1,10 @@
+﻿ <div class="dashStatsHeader">
+    <div class="left fixed_25 mainStats"><input type="checkbox" id="_selectAllUsers"/></div>
+    <div class="left fixed_150 mainStats" sortField="UniqueIdentifier">${textHelper.getTextValue("/users/userListTemplate/userName", "User Name")}</div>
+    <div class="left fixed_175 mainStats" sortField="Email">${textHelper.getTextValue("/users/userListTemplate/email", "Email")}</div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+    {{tmpl(user, {index: index}) 'availableUserListItemTemplate.html'}}
+{{/each}}

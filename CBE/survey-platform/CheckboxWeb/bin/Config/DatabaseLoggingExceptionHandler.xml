@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<loggingExceptionHandlerConfiguration>
+  <handlerType>Prezza.Framework.ExceptionHandling.LoggingExceptionHandler,Prezza.Framework</handlerType>
+  <defaultCategory>ExceptionHandler</defaultCategory>
+  <defaultSeverity>Error</defaultSeverity>
+  <formatterTypeName>Prezza.Framework.ExceptionHandling.DatabaseExceptionFormatter,Prezza.Framework</formatterTypeName>
+  <minimumPriority>5</minimumPriority>
+</loggingExceptionHandlerConfiguration>

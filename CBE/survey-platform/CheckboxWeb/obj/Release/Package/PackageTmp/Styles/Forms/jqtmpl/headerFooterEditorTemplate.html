@@ -1,0 +1,22 @@
+﻿<div class="dashStatsContent formInput">
+    <p>
+        <label class="left fixed_150" for="_editorType" class="itemLabel" style="width:50px;margin-top:3px;font-weight:bold;">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/editType", "Edit: ")}</label>
+        <select class="left" id="_editorType" onchange="styleEditor.toggleEditor();">
+            <option value="header">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/header", "Header")}</option>
+            <option value="footer">${textHelper.getTextValue("/pageText/styles/forms/editor.aspx/footer", "Footer")}</option>
+        </select>
+        <br class="clear" />
+    </p>
+</div>
+
+<div class="centerContent" style="width:518px;">
+    <div id="_headerContent_parent">
+        <textarea id="_headerContent" class="tinymce"></textarea>
+    </div>
+    <!-- Not sure why, but I can't make footer initially hidden without extra wrapper, CHROME -->
+    <div id="_footerContent_parent_parent" style="display:none;">
+        <div id="_footerContent_parent">
+            <textarea id="_footerContent" class="tinymce"></textarea>
+        </div>
+    </div>
+</div>

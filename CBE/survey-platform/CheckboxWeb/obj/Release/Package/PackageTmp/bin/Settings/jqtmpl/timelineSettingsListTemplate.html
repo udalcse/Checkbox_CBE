@@ -1,0 +1,41 @@
+﻿<table class="timelineSettingsItem" style="width:100%;" manager="${Manager}" eventname="${EventName}" eventorder="${EventOrder}">
+    <tr>
+        <td width="40%"><span style="cursor:move;">${FullEventName}</span></td>
+    <td width="15%">
+        {{if Single}}
+        <input type="checkbox" name="Single" checked="checked" class="settingsCheckbox"
+               manager="${Manager}" eventname="${EventName}" />
+        {{else}}
+        <input type="checkbox" name="Single" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{/if}}
+    </td>
+    <td width="15%">
+        {{if Daily}}
+        <input type="checkbox" name="Daily" checked="checked" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{else}}
+        <input type="checkbox" name="Daily" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{/if}}
+    </td>
+    <td width="15%">
+        {{if Weekly}}
+        <input type="checkbox" name="Weekly" checked="checked" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{else}}
+        <input type="checkbox" name="Weekly" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{/if}}
+    </td>
+    <td width="15%">
+        {{if Monthly}}
+        <input type="checkbox" name="Monthly" checked="checked" class="settingsCheckbox"
+               manager="${Manager}" eventname="${EventName}" />
+        {{else}}
+        <input type="checkbox" name="Monthly" class="settingsCheckbox" manager="${Manager}"
+               eventname="${EventName}" />
+        {{/if}}
+    </td> 
+    </tr>
+</table>

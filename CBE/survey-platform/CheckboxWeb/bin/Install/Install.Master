@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="Install.master.cs" Inherits="CheckboxWeb.Install.InstallMaster" %>
+<%@ Register src="~/Controls/Footer.ascx" tagname="Footer" tagprefix="ckbx" %>
+
+<!DOCTYPE html>
+<html>
+    <head id="Head1" runat="server">
+        <meta charset="utf-8" />
+        <title id="_title" runat="server">Checkbox&reg; Survey Installation</title>
+        <link id="_favicon" runat="server" rel="icon" href="~/favicon.png" type="image/ico" />
+        <asp:Literal runat="server" ID="TypeKit"></asp:Literal>
+        <style type="text/css">
+            .logoWrapper {
+                margin-top: 12px;
+                margin-right: 10px;
+                padding-top: 10px;
+            }
+            .Wizard {    
+                padding-bottom: 80px;
+            }
+                .WizardStepContainer {
+                    padding: 10px;
+                }
+        </style>
+   
+        <%-- Specified script include placeholder --%>
+        <asp:PlaceHolder ID="_scriptIncludesPlace" runat="server" />
+    </head>
+    <body>
+        <%-- Script Includes --%>
+        <ckbx:ResolvingScriptElement ID="_jqueryInclude" runat="server" Source="~/Resources/jquery-latest.min.js" />
+        <ckbx:ResolvingScriptElement ID="_modalInclude" runat="server" Source="~/Resources/jquery.simplemodal.1.4.1.min.js" />
+        <ckbx:ResolvingScriptElement ID="_dialogInclude" runat="server" Source="~/Resources/DialogHandler.js" />
+        <ckbx:ResolvingScriptElement ID="_tabsInclude" runat="server" Source="~/Resources/jquery.ckbxtab.js" />
+        <ckbx:ResolvingScriptElement ID="_wizardHighlightInclude" runat="server" Source="~/Resources/WizardHighlight.js" />
+        <ckbx:ResolvingScriptElement ID="_jScrollPaneInclude" runat="server" Source="~/Resources/jquery.tinyscrollbar.min.js" />
+        <ckbx:ResolvingScriptElement ID="_jqueryMousewheelInclude" runat="server" Source="~/Resources/jquery.mousewheel.min.js" />
+        <ckbx:ResolvingScriptElement ID="_htmlParserInclude" runat="server" Source="~/Resources/htmlparser.js" />
+        <ckbx:ResolvingScriptElement ID="_uframeManagerInclude" runat="server" Source="~/Resources/uframe.js" />
+        <ckbx:ResolvingScriptElement ID="_liveSearch" runat="server" Source="~/Resources/gridLiveSearch.js" />
+        <ckbx:ResolvingScriptElement ID="_customInclude" runat="server" Source="~/Resources/custom.js" />
+        <asp:ContentPlaceHolder ID="scriptContent" runat="server" />
+
+        <form id="_installForm" class="formContainer" runat="server">
+            <!-- Dialog Container -->
+            <div id="ckbx_dialogContainer" class="ckbx_simplemodal-container"></div>
+            <header>
+                <asp:PlaceHolder ID="_headerPlace" runat="server">
+                    <div class="topWrapper">
+                        <div class="logoWrapper left">
+                            <asp:Image ID="_siteLogo" runat="server" SkinID="SiteLogo" ToolTip="Return to Checkbox" Width="195"/>
+                        </div>
+                    </div>
+                </asp:PlaceHolder>
+            </header>
+            <section>
+                <div class="pageContent">
+                    <asp:ContentPlaceHolder ID="ContentPlace" runat="server" />
+                </div>
+            </section>
+        </form>
+        <ckbx:Footer ID="_footer" runat="server" />
+    </body>
+</html>

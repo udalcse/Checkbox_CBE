@@ -1,0 +1,36 @@
+version: 1.0.{build}
+branches:
+  only:
+  - master
+  - engauge333_V2
+  - engauge28_EditModeLayout
+  - phantomJsImagesQuality
+  - release_candidate_1.6
+configuration: Debug
+platform: Any CPU
+before_build:
+- ps: nuget restore
+build:
+  project: CheckboxDB\CheckboxDB.csproj
+  verbosity: minimal
+after_build:
+- cmd: >-
+    "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -source:dirPath="c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeploy-FilesToPackage" -dest:package="c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeployment\CheckboxDb.appDeploy.package.zip" -verb:sync -declareParamFile:"c:\Projects\survey-platform-d4h6k\CheckboxDB\parameters_updated.xml"
+
+
+    dir "c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeploy-FilesToPackage"
+
+
+    dir "c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeployment"
+
+
+    cd c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeployment
+
+    7z u CheckboxDb.appDeploy.package.zip deploy.ps1
+
+
+    appveyor PushArtifact c:\Projects\survey-platform-d4h6k\CheckboxDB\bin\Debug\appDeployment\CheckboxDb.appDeploy.package.zip -Verbosity Normal -DeploymentName CheckboxDB.zip
+test: off
+deploy:
+- provider: Environment
+  name: engdev01

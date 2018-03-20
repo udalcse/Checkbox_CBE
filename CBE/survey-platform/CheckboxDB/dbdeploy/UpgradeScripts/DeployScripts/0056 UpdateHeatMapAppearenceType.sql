@@ -1,0 +1,2 @@
+ UPDATE ckbx_ItemAppearanceCode SET DataTypeName = 'Checkbox.Analytics.Items.UI.HeatMapSummaryAppearanceData' WHERE AppearanceCode = 'ANALYSIS_HEAT_MAP_SUMMARY'
+  UPDATE ckbx_ItemAppearanceCode SET DataTypeAssembly = 'Checkbox' WHERE AppearanceCode = 'ANALYSIS_HEAT_MAP_SUMMARY'

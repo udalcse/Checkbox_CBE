@@ -1,0 +1,13 @@
+﻿{{if Type.toLowerCase() == 'folder'}}
+   {{tmpl 'surveyListFolderTemplate.html'}}
+{{else}}
+    {{if IsActive}}
+        <ul class="groupContent allMenu" id="survey_${ID}" surveyId="${ID}">
+            <div class="activeSurvey">{{tmpl 'surveyListSurveyTemplate.html'}}</div>
+        </ul>
+    {{else}}
+        <ul class="groupContent allMenu" id="survey_${ID}" surveyId="${ID}" aaa="${IsActive}">
+            <div>{{tmpl 'surveyListSurveyTemplate.html'}}</div>
+        </ul>
+    {{/if}}
+{{/if}}

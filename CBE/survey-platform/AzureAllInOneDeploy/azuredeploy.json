@@ -1,0 +1,363 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmSku": {
+      "type": "string",
+      "defaultValue": "Standard_A2_v2",
+      "metadata": {
+        "description": "Size of VMs in the VM Scale Set."
+      },
+      "allowedValues": [
+        "Standard_A2_v2",
+        "Standard_D11_v2_promo",
+        "Standard_B4MS"
+      ]
+    },
+    "azureHostName": {
+      "type": "string",
+      "metadata": {
+        "description": "This is usually a RIPEMD5 hash of the uniqueEnvName, plus a prefix, to avoid collisions with other Azure hostnames"
+      },
+      "maxLength": 61
+    },
+    "azureRegion": {
+      "type": "string",
+      "defaultValue": "East US",
+      "metadata": {
+        "description": "The azure region to deploy to"
+      },
+      "allowedValues": [
+        "West US 2",
+        "East US",
+        "West Europe"
+      ]
+    },
+    "uniqueEnvName": {
+      "type": "string",
+      "metadata": {
+        "description": "String used as a base for naming resources. Must be 3-61 characters in length and globally unique across Azure. A hash is prepended to this string for some resources, and resource-specific information is appended."
+      },
+      "maxLength": 61
+    },
+    "appveyerEnvKey": {
+      "type": "string",
+      "metadata": {
+        "description": "Used for the remote deployer"
+      }
+    },
+    "fqdn": {
+      "type": "string",
+      "metadata": {
+        "description": "The fully quailfied domain name, required for proper cert registration"
+      }
+    },
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Admin username on all VMs."
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Admin password on all VMs."
+      }
+    } 
+  },
+  "variables": {
+    "storageprovider": {
+      "West US 2": "checkboxvhdst1",
+      "East US": "checkboxveasthdst1",
+      "West Europe": "checkboxveuwsthdst1"
+    },
+    "globalResourceGroup": {
+      "West US 2": "checkbox-global-rg",
+      "East US": "cbe-global-east",
+      "West Europe": "cbe-global-euwest"
+    },
+    "globalStorageAccountHost": {
+      "West US 2": "checkboxglobalstorage1.blob.core.windows.net",
+      "East US": "checkboxglobalstorage1.blob.core.windows.net",
+      "West Europe": "checkboxglobalstgeu1.blob.core.windows.net"
+    },
+    "recvaultName": {
+      "West US 2": "checkbox-recvault",
+      "East US": "cbeeast-recvault",
+      "West Europe": "cbeeuwst-recvault"
+    },
+    "postSingleBoxDeploy.ps1ScriptFolder": "CustomScripts",
+    "postSingleBoxDeploy.ps1ScriptFileName": "postSingleBoxDeploy.ps1",
+    "namingInfix": "[parameters('uniqueEnvName')]",
+    "longNamingInfix": "[toLower(parameters('uniqueEnvName'))]",
+    "vhdContainerName": "[concat(variables('namingInfix'), 'vhd')]",
+    "osDiskName": "[concat(variables('namingInfix'), 'osdisk')]",
+    "addressPrefix": "10.0.0.0/16",
+    "subnetPrefix": "10.0.0.0/24",
+    "virtualNetworkName": "[concat(variables('namingInfix'), 'vnet')]",
+    "publicIPAddressName": "[concat(variables('namingInfix'), 'pip')]",
+    "networkSecurityGroups_checkbox_db_vm_nsg_name": "[concat(variables('namingInfix'), 'dbnsg')]",
+    "subnetName": "[concat(variables('namingInfix'), 'subnet')]",
+    "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
+    "nicName": "[concat(variables('namingInfix'), 'nic')]",
+    "ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
+    "virtualMachines_checkbox_vm_name": "[concat(variables('namingInfix'), '-vm')]",
+    "storageAccounts_checkboxdbst1_name": "[variables('storageprovider')[parameters('azureRegion')]]",
+    "networkInterfaces_checkbox_name": "[concat(variables('namingInfix'), 'nic')]",
+    "computeApiVersion": "2016-03-30",
+    "networkApiVersion": "2016-03-30",
+    "storageApiVersion": "2015-06-15",
+    "insightsApiVersion": "2015-04-01",
+    "sourceImageVhdUri": "[concat('https://',variables('storageprovider')[parameters('azureRegion')],'.blob.core.windows.net/system/Microsoft.Compute/Images/allin1v7/allin1v7-osDisk.1016bcfc-e615-4c01-ba18-55528d6a5aee.vhd')]",
+
+    "postDeployScriptUrl": "[concat('https://', variables('globalStorageAccountHost')[parameters('azureRegion')],'/public/postSingleBoxDeploy.ps1')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[variables('virtualNetworkName')]",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "[variables('networkApiVersion')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[variables('addressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('subnetName')]",
+            "properties": {
+              "addressPrefix": "[variables('subnetPrefix')]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName')]",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "[variables('networkApiVersion')]",
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('azureHostName')]"
+
+        }
+      }
+    },
+    {
+      "comments": "VM nic",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('networkInterfaces_checkbox_name')]",
+      "apiVersion": "2016-03-30",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]"
+              },
+              "subnet": {
+                "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'), '/subnets/', variables('subnetName'))]"
+
+              }
+            }
+          }
+        ],
+        "dnsSettings": {
+          "dnsServers": []
+        },
+        "enableIPForwarding": false,
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_checkbox_db_vm_nsg_name'))]"
+        }
+      },
+      "resources": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_checkbox_db_vm_nsg_name'))]"
+      ]
+    },
+    {
+      "comments": "AllInOne VM",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('virtualMachines_checkbox_vm_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSku')]"
+        },
+        "storageProfile": {
+          "osDisk": {
+            "name": "[variables('virtualMachines_checkbox_vm_name')]",
+            "osType": "Windows",
+            "createOption": "FromImage",
+            "vhd": {
+              "uri": "[concat(concat(reference(resourceId(variables('globalResourceGroup')[parameters('azureRegion')], 'Microsoft.Storage/storageAccounts', variables('storageAccounts_checkboxdbst1_name')), '2015-06-15').primaryEndpoints['blob'], 'vhds/'), variables('virtualMachines_checkbox_vm_name'), '.vhd')]"
+            },
+            "image": {
+              "uri": "[variables('sourceImageVhdUri')]"
+            },
+            "caching": "ReadWrite"
+          },
+          "dataDisks": [
+            {
+              "lun": 0,
+              "name": "[concat(variables('virtualMachines_checkbox_vm_name'),'-disk-1')]",
+              "createOption": "Empty",
+              "vhd": {
+
+                "uri": "[concat(concat(reference(resourceId(variables('globalResourceGroup')[parameters('azureRegion')], 'Microsoft.Storage/storageAccounts', variables('storageAccounts_checkboxdbst1_name')), '2015-06-15').primaryEndpoints['blob'], 'datadisks/'), variables('virtualMachines_checkbox_vm_name'), '.vhd')]"
+              },
+              "diskSizeGB": "40",
+              "caching": "ReadWrite"
+            }
+          ]
+        },
+        "osProfile": {
+          "computerName": "[variables('virtualMachines_checkbox_vm_name')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "windowsConfiguration": {
+            "provisionVMAgent": true,
+            "enableAutomaticUpdates": true
+          },
+          "adminPassword": "[parameters('adminPassword')]"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_checkbox_name'))]"
+            }
+          ]
+        }
+      },
+      "resources": [
+        {
+          "apiVersion": "2015-06-15",
+          "dependsOn": [ "[concat('Microsoft.Compute/virtualMachines/', variables('virtualMachines_checkbox_vm_name'))]" ],
+          "location": "[resourceGroup().location]",
+          "name": "postSingleBoxDeploy.ps1",
+          "properties": {
+            "protectedSettings": {},
+            "autoUpgradeMinorVersion": false,
+            "publisher": "Microsoft.Compute",
+            "settings": {
+              "fileUris": [
+                "[variables('postDeployScriptUrl')]"
+              ],
+              "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('postSingleBoxDeploy.ps1ScriptFileName'), ' ', parameters('appveyerEnvKey'), ' ', parameters('fqdn'), ' ', parameters('uniqueEnvName'), ' ', variables('globalStorageAccountHost')[parameters('azureRegion')], ' ', variables('recvaultName')[parameters('azureRegion')])]"
+            },
+            "type": "CustomScriptExtension",
+            "typeHandlerVersion": "1.8"
+          },
+          "tags": {
+            "displayName": "postSingleBoxDeploy.ps1"
+          },
+          "type": "extensions"
+        }
+      ],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_checkbox_name'))]"
+      ]
+    },
+    {
+      "comments": "Webapp Net Security Group'.",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroups_checkbox_db_vm_nsg_name')]",
+      "apiVersion": "2016-03-30",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "default-allow-rdp",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "https_in",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "http_in",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "https_out",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1010,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "http_out",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1011,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "sqldb",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "1433",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1012,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      },
+      "resources": [],
+      "dependsOn": []
+    }
+    
+  ]
+}

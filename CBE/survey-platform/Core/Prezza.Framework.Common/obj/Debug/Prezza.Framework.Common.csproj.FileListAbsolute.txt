@@ -1,0 +1,11 @@
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.XML
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.dll
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.pdb
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Debug\Prezza.Framework.Common.dll
+C:\Project\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Debug\Prezza.Framework.Common.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.XML
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\bin\Prezza.Framework.Common.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Debug\Prezza.Framework.Common.csprojResolveAssemblyReference.cache
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Debug\Prezza.Framework.Common.dll
+C:\Project\RogerDev1\CBE\survey-platform\Core\Prezza.Framework.Common\obj\Debug\Prezza.Framework.Common.pdb

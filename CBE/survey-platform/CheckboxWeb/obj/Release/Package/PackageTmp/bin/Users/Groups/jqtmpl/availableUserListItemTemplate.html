@@ -1,0 +1,24 @@
+﻿{{if $item.index % 2 == 0}}
+    {{if IsInList == true }}
+        <div class="dashStatsContent zebra inactiveAclItem" id="user_${UniqueIdentifier}" index="${index}">
+    {{else}}
+        <div class="dashStatsContent zebra" id="user_${UniqueIdentifier}" index="${index}">
+    {{/if}}
+{{else}}
+    {{if IsInList == true }}
+        <div class="dashStatsContent detailZebra inactiveAclItem" id="user_${UniqueIdentifier}">
+    {{else}}
+        <div class="dashStatsContent detailZebra" id="user_${UniqueIdentifier}">
+    {{/if}}
+{{/if}}
+    <div class="fixed_25 left">
+        {{if IsInList == true }}
+            <input type="checkbox" checked="checked" value="${UniqueIdentifier}" class="addUser" />
+        {{else}}
+            <input type="checkbox" value="${UniqueIdentifier}" class="addUser" />
+        {{/if}}
+    </div>
+    <div class="fixed_150 left" sortField="UniqueIdentifier">${UniqueIdentifier}</div>
+    <div class="fixed_175 left" sortField="Email">${Email}</div>
+    <br class="clear" />
+</div>

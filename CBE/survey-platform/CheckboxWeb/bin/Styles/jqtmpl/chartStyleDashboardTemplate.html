@@ -1,0 +1,15 @@
+﻿<h3>${Name}</h3>
+
+<ul class="itemActionMenu allMenu">
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Charts/Properties.aspx?s=${Id}&onClose=onDialogClosed', 'properties');" id="_propertiesLink">Properties</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="Charts/Editor.aspx?s=${Id}">Edit</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton statistics_ExportData" href="Export.ashx?id=${Id}">Export</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="deleteStyleLink" href="javascript:void(0);">Delete style</a></li>
+</ul>
+    
+<div class="dashStatsWrapper">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">${textHelper.getTextValue("/pageText/styles/manage.aspx/preview", "Preview")}</span>
+    </div>
+    <div id="stylePreviewFrame" />
+</div>

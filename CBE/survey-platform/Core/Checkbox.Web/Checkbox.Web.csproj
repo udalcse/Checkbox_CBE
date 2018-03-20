@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D3246AB-205C-4490-B699-F23B78B625CA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Checkbox.Web</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Checkbox.Web</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Checkbox.Web/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Checkbox.Web.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x86'">
+    <OutputPath>bin\x86\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|x64'">
+    <OutputPath>bin\x64\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x86'">
+    <OutputPath>bin\x86\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|x64'">
+    <OutputPath>bin\x64\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType />
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Checkbox.Wcf.Services.Proxies\Checkbox.Wcf.Services.Proxies.csproj">
+      <Project>{B181F819-319B-4390-86C9-B51B940C4133}</Project>
+      <Name>Checkbox.Wcf.Services.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox.Common\Checkbox.Common.csproj">
+      <Name>Checkbox.Common</Name>
+      <Project>{50A76D2E-1479-4AB8-949F-9A5B699ED84E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox.LicenseLibrary\Checkbox.LicenseLibrary.csproj">
+      <Project>{3E42F329-2034-4B5F-B8B5-D7EA3D624120}</Project>
+      <Name>Checkbox.LicenseLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox\Checkbox.csproj">
+      <Project>{4FDE1F16-41BF-45BD-A1FC-4A8EFAE02AFB}</Project>
+      <Name>Checkbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework.Common\Prezza.Framework.Common.csproj">
+      <Name>Prezza.Framework.Common</Name>
+      <Project>{2328F020-50E3-4DAF-A4F9-9C1A4D3CA238}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Prezza.Framework\Prezza.Framework.csproj">
+      <Name>Prezza.Framework</Name>
+      <Project>{D8846AF1-ABF4-41AB-8BBE-07AF7AFB597C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analytics\AnalysisHandler.cs" />
+    <Compile Include="Analytics\AnalysisQueryParameters.cs" />
+    <Compile Include="Analytics\ExportFormat.cs" />
+    <Compile Include="Analytics\ReportExportPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Analytics\UI\Editing\AnalysisItemConfigRendererBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Analytics\UI\Editing\FilterEditor.cs" />
+    <Compile Include="Analytics\UI\Editing\IFilterSelector.cs" />
+    <Compile Include="Analytics\UI\Editing\UserControlAnalysisItemEditorBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Analytics\UI\Editing\UserControlHostAnalysisItemAppearanceEditor.cs" />
+    <Compile Include="Analytics\UI\Editing\UserControlHostAnalysisItemEditor.cs" />
+    <Compile Include="Analytics\UI\Rendering\DetailsItemRenderer.cs" />
+    <Compile Include="Analytics\UI\Rendering\IFilterDisplay.cs" />
+    <Compile Include="Analytics\UI\Rendering\UserControlAnalysisItemRendererBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Analytics\UI\Rendering\UserControlHostAnalysisItemRenderer.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\AspNetSessionBackingStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\AspNetSessionTokenProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ProtectedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\WebControlBase.cs" />
+    <Compile Include="Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQueryParameters.cs" />
+    <Compile Include="Forms\Items\Formatters\CaptchaItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\CategorizedMatrixItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\AddressVerifierItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\CalculatorFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\HtmlItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\ImageItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\MessageItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\RankOrderItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\HiddenItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\MatrixItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\MultiLineTextBoxItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\NetPromoterScoreItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\RatingScaleItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\Select1ItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\SelectManyItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\SingleLineTextBoxItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\SliderItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\UploadItemFormatter.cs" />
+    <Compile Include="Forms\Items\Formatters\WebItemFormatter.cs" />
+    <Compile Include="Forms\ResponseTemplateExportPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\TakeSurvey\EnterPasswordBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\TakeSurvey\LanguageSelectBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\TakeSurvey\LoginBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\TakeSurvey\ProgressSavedBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Editing\AppearanceEditorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Editing\IAppearanceEditor.cs" />
+    <Compile Include="Forms\UI\Editing\IDataEditor.cs" />
+    <Compile Include="Forms\UI\Editing\IDataEditorControl.cs" />
+    <Compile Include="Forms\UI\Editing\IItemEditor.cs" />
+    <Compile Include="Forms\UI\Editing\IRuleEditor.cs" />
+    <Compile Include="Forms\UI\Editing\ItemEditorFactory.cs" />
+    <Compile Include="Forms\UI\Editing\UserControlAppearanceEditorBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Editing\UserControlHostAppearanceEditor.cs" />
+    <Compile Include="Forms\UI\Editing\UserControlHostItemEditor.cs" />
+    <Compile Include="Forms\UI\Editing\UserControlItemEditorBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Rendering\FileUploadItemRenderer.cs" />
+    <Compile Include="Forms\UI\Rendering\IItemRuleDisplay.cs" />
+    <Compile Include="Forms\UI\Rendering\MatrixChildrensItemRenderer.cs" />
+    <Compile Include="Forms\UI\Rendering\UserControlHostItemRenderer.cs" />
+    <Compile Include="Forms\UI\Rendering\UserControlItemRendererBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Rendering\UserControlLoadErrorRenderer.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Rendering\UserControlSurveyItemRendererBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Rendering\WebItemRendererManager.cs" />
+    <Compile Include="Forms\UI\Templates\Configuration\AutoColumnsTemplateData.cs" />
+    <Compile Include="Forms\UI\Templates\Configuration\UserControlLayoutTemplateData.cs" />
+    <Compile Include="Forms\UI\Templates\IWebLayoutTemplate.cs" />
+    <Compile Include="Forms\UI\Templates\IWebLayoutZone.cs" />
+    <Compile Include="Forms\UI\Templates\UserControlLayoutTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UI\Templates\ControlLayoutZone.cs" />
+    <Compile Include="Memento.cs" />
+    <Compile Include="Page\ApplicationPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\CheckboxServerProtectedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\DatabasePageStatePersister.cs" />
+    <Compile Include="Page\EditUserPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ExportInvitationPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ExportResultsPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ImportPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\IStatusPage.cs" />
+    <Compile Include="Page\LicenseProtectedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PersistedStatePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ProgressReportingEnabledPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ResponseTemplatePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ResponseTemplateSecurityEditorPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SecuredPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SecurityEditorPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SettingsPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SimpleBaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\TextSettings.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionDataContextProvider.cs" />
+    <Compile Include="SystemSmtpEmailProvider.cs" />
+    <Compile Include="SystemSmtpEmailProviderData.cs" />
+    <Compile Include="UI\Controls\Adapters\ChangePasswordAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\CompositeDataBoundControlAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\CreateUserWizardAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\DataListAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\DetailsViewAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\FormViewAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\GridViewAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\LoginAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\LoginStatusAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\MenuAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\PasswordRecoveryAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\TreeViewAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\WarningCalloutAdapter.cs" />
+    <Compile Include="UI\Controls\Adapters\WebControlAdapterExtender.cs" />
+    <Compile Include="UI\Controls\Adapters\WizardAdapter.cs" />
+    <Compile Include="UI\Controls\CheckboxesControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DateTimePicker.cs" />
+    <Compile Include="UI\Controls\DropdownListControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RadioButtonsControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ResolvingScriptIncludesElement.cs" />
+    <Compile Include="UI\Controls\ResponseLifecycleChartControlHelper.cs" />
+    <Compile Include="UI\Controls\MultiLanguageLiteral.cs" />
+    <Compile Include="UI\Controls\GridTemplates\CustomCheckboxField.cs" />
+    <Compile Include="UI\Controls\GridTemplates\ItemTextField.cs" />
+    <Compile Include="UI\Controls\GridTemplates\LocalizedHeaderAclEntryField.cs" />
+    <Compile Include="UI\Controls\GridTemplates\LocalizedHeaderTemplateField.cs" />
+    <Compile Include="UI\Controls\ListSelector.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledColorPicker.cs" />
+    <Compile Include="UI\Controls\Menus\SecuredSiteMapProvider.cs" />
+    <Compile Include="UI\Controls\MultiLanguageCheckBoxList.cs" />
+    <Compile Include="UI\Controls\ResolvingCssElement.cs" />
+    <Compile Include="UI\Controls\ResolvingScriptElement.cs" />
+    <Compile Include="Forms\TakeSurvey\ResponseSelectBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SingleLineControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SummaryGrid.cs" />
+    <Compile Include="UI\Controls\UFrameFileUploadControl.cs" />
+    <Compile Include="UI\Controls\UFrameFileUploadHandler.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutFolderNameInUseValidator.cs" />
+    <Compile Include="UI\Controls\Captcha\CaptchaControl.cs" />
+    <Compile Include="UI\Controls\ErrorMessage.cs" />
+    <Compile Include="UI\Controls\GridTemplates\LocalizedHeaderBoundField.cs" />
+    <Compile Include="UI\Controls\HelpControl.cs" />
+    <Compile Include="UI\Controls\LabelledControl.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledCheckBox.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledControl.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledDropDownList.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledEnumDropDownList.cs" />
+    <Compile Include="UI\Controls\LocalizedLabelledTextBox.cs" />
+    <Compile Include="UI\Controls\MementoEnabledUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageCallout.cs" />
+    <Compile Include="UI\Controls\MultiLanguageCheckBox.cs" />
+    <Compile Include="UI\Controls\MultiLanguageDropDownList.cs" />
+    <Compile Include="UI\Controls\MultiLanguageHelpControl.cs" />
+    <Compile Include="UI\Controls\MultiLanguageImageButton.cs" />
+    <Compile Include="UI\Controls\MultiLanguageListBox.cs" />
+    <Compile Include="UI\Controls\MultiLanguageRadioButton.cs" />
+    <Compile Include="UI\Controls\MultiLanguageRadioButtonList.cs" />
+    <Compile Include="UI\Controls\MultiLanguageSliderDiv.cs" />
+    <Compile Include="UI\Controls\MutliLanguageLinkButton.cs" />
+    <Compile Include="UI\Controls\ProgressBar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ItemParameterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NullSessionValueException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueryParameterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\SecurityEditorData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\UI\SecurityEditorPolicyControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SessionParameterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ColorPicker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\FileUploadControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\IMultiLanguageControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageHyperLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageLabel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MultiLanguageTextBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\PagingControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RoundedCorners.cs" />
+    <Compile Include="UI\Controls\SearchControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SecuredControlContainer.cs" />
+    <Compile Include="UI\Controls\Security\SecurityEditorControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Security\SecurityEditorMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Styles\FontSelector.cs" />
+    <Compile Include="UI\Controls\Styles\XmlBoundDropDownList.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutColorValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutIntegerValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutLibraryNameInUseValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutNumericValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutRequiredFieldValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutStyleNameInUseValidator.cs" />
+    <Compile Include="UI\Controls\Validation\CalloutSurveyNameInUseValidator.cs" />
+    <Compile Include="UI\Controls\Validation\WarningCalloutValidator.cs" />
+    <Compile Include="UI\Controls\WarningCallout.cs" />
+    <Compile Include="UI\Utility\PaletteQuantizer.cs" />
+    <Compile Include="UI\Utility\Quantizer.cs" />
+    <Compile Include="UrlRewriting\FormRewriterControlAdapter.cs" />
+    <Compile Include="UrlRewriting\SurveyUrlRewriter.cs" />
+    <Compile Include="UrlRewriting\UrlRewriter.cs" />
+    <Compile Include="Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebParameterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebTextManager.cs" />
+    <Compile Include="XmlResourceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\Controls\Adapters\CSS\BrowserSpecific\IEMenu6.css" />
+    <Content Include="UI\Controls\Adapters\CSS\DetailsView.css" />
+    <Content Include="UI\Controls\Adapters\CSS\Menu.css" />
+    <Content Include="UI\Controls\Adapters\CSS\TreeView.css" />
+    <Content Include="UI\Controls\Adapters\JavaScript\AdapterUtils.js" />
+    <Content Include="UI\Controls\Adapters\JavaScript\MenuAdapter.js" />
+    <Content Include="UI\Controls\Adapters\JavaScript\TreeViewAdapter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Controls\UserControlBase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

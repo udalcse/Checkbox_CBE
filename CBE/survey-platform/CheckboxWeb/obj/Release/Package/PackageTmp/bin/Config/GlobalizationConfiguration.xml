@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<globalizationConfiguration>
+  <defaultLanguage>en-US</defaultLanguage>
+  <providers>
+    <provider type="text" default="false" name="DefaultLanguageTextProvider" filePath="DefaultLanguageTextProvider.xml" configDataType="Checkbox.Globalization.Text.Providers.DefaultLanguageTextProviderData,Checkbox" />
+    <provider type="text" default="true" name="MultiLanguageTextProvider" filePath="MultiLanguageTextProvider.xml" configDataType="Checkbox.Globalization.Text.Providers.MultiLanguageTextProviderData,Checkbox.Globalization.Text.MultiLanguageTextProvider" />
+  </providers>
+  <applicationLanguages>
+    <language>en-US</language>
+  </applicationLanguages>
+  <surveyLanguages>
+    <language>en-US</language>
+    <language>es-EU</language>
+    <language>fr-FR</language>
+    <language>zh-CN</language>
+    <language>ko-KR</language>
+    <language>cr-CR</language>
+    <language>cs-CS</language>
+    <language>nl-NL</language>
+    <language>pt-PT</language>
+    <language>de-DE</language>
+    <language>el-EL</language>
+    <language>in-IN</language>
+    <language>it-IT</language>
+    <language>ja-JP</language>
+    <language>es-NA</language>
+    <language>ms-MS</language>
+    <language>pl-PL</language>
+    <language>ru-RU</language>
+    <language>tl-TL</language>
+    <language>th-TH</language>
+    <language>vi-VI</language>
+    <language>sv-SE</language>
+    <language>fi-FI</language>
+    <language>nb-NO</language>
+    <language>da-DK</language>
+    <language>is-IS</language>
+    <language>sq-SQ</language>
+    <language>ar-AR</language>
+    <language>be-BE</language>
+    <language>bi-BI</language>
+    <language>bg-BG</language>
+    <language>hr-HR</language>
+    <language>et-ET</language>
+    <language>hu-HU</language>
+    <language>lv-LV</language>
+    <language>lt-LT</language>
+    <language>mk-MK</language>
+    <language>ro-RO</language>
+    <language>sr-SR</language>
+    <language>sk-SK</language>
+    <language>sl-SL</language>
+    <language>tr-TR</language>
+    <language>uk-UK</language>
+    <language>hi-IN</language>
+    <language>pt-BR</language>
+    <language>ht-HT</language>
+    <language>id-ID</language>
+  </surveyLanguages>
+  <datePickerLocales>
+    <locale language="en-GB" file="jquery.ui.datepicker-en-GB.js" />
+    <locale language="fr-FR" file="jquery.ui.datepicker-fr.js" />
+    <locale language="ru-RU" file="jquery.ui.datepicker-ru.js" />
+    <locale language="es-ES" file="jquery.ui.datepicker-es.js" />
+    <locale language="de-DE" file="jquery.ui.datepicker-de.js" />
+    <locale language="uk-UA" file="jquery.ui.datepicker-uk.js" />
+    <locale language="en-US" file="jquery.ui.datepicker-en-US.js" />
+    <locale language="en-AU" file="jquery.ui.datepicker-en-AU.js" />
+  </datePickerLocales>
+  <datePickerDefaultLocale>en-US</datePickerDefaultLocale>
+</globalizationConfiguration>

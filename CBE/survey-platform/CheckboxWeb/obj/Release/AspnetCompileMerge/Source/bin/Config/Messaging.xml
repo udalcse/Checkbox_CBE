@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messagingConfiguration>
+  <emailProviders>
+    <providers>
+      <provider name="databaseRelayEmailProvider" default="true" configDataType="Checkbox.Messaging.Email.DatabaseRelayEmailProviderData,Checkbox" filePath="DatabaseRelayEmailProvider.xml" />
+      <provider name="SystemSmtpEmailProvider" default="false" configDataType="Checkbox.Web.Mail.SystemSmtpEmailProviderData,Checkbox.Web" filePath="Messaging.xml" />
+    </providers>
+  </emailProviders>
+  <emailConfiguration>
+    <databaseRelayEmailProviderData>
+      <mailDbInstanceName>databaseRelayEmailProvider</mailDbInstanceName>
+    </databaseRelayEmailProviderData>
+  </emailConfiguration>
+</messagingConfiguration>

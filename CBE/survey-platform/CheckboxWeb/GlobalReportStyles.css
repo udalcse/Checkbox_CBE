@@ -1,0 +1,384 @@
+﻿/****************************************************************************
+ * GlobalSurveyStyles.css                                                   *
+ *  Use this page to set global styles to apply to all reports.             *
+ *  Styles for specific HTML elmeents can be applied, as well as styles     *
+ *  that apply to Checkbox Survey items.                                    *
+ *                                                                          *
+ * In general, this file should not be modified for customer installations. *
+ * Instead, css changes should be placed in CustomReportStyles.css which    *
+ * exists for this purpose.  That file is included last in the survey style *
+ * chain, so settings in that file can be used to override settings in this *
+ * file.                                                                    *ma
+ ****************************************************************************/
+ 
+ /**************************************************************************************
+  * "Resest" Styles to attempt to account for different browser handling of elements.  *
+  **************************************************************************************/
+strong { font-weight: bold; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent
+}
+
+body 
+{
+	line-height:1
+}
+
+ol, ul 
+{
+	list-style:none
+}
+
+blockquote, q 
+{
+	quotes:none
+}
+
+blockquote:before, blockquote:after, q:before, q:after 
+{
+	content:'';
+	content:none
+}
+:focus 
+{
+	outline:0
+}
+
+ins 
+{
+	text-decoration:none
+}
+
+del 
+{
+	text-decoration:line-through
+}
+
+table 
+{
+	border-collapse:collapse;
+	border-spacing:0
+}
+
+body 
+{
+	font:13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif
+}
+
+a:focus 
+{
+	outline:1px dotted
+}
+
+hr 
+{
+	border:0 #e3e3e3 solid;
+	border-top-width:1px;
+	margin-bottom: 0 !important;
+	clear:both;
+	height:0;
+	padding:0;
+}
+
+.clear 
+{
+	clear:both;
+}
+
+.left 
+{
+	float:left
+}
+
+.right 
+{
+	float:right
+}
+
+.pageBreak {
+    page-break-after: always;
+}
+ /***************************************************************************
+  * Default styles for various report elements.                             *
+  ***************************************************************************/
+
+
+ /***************************************************************************
+  * Page Layout Styles                                                      *
+  ***************************************************************************/
+.center 
+{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:25px;
+	padding:10px;
+	
+}
+.borderRadius {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.wrapperMaster {
+    height:auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.surveyContentFrame {
+    margin-left: auto;
+    margin-right: auto;
+    background:#F3F3F3;
+    display: inline-block;
+    min-width: 800px;
+}
+  
+
+ /***************************************************************************
+  * Wrappers for zones in default layout template.                          *
+  ***************************************************************************/
+
+.navigationWrapper
+{
+    margin-top:25px;
+}
+ /*
+    //General Layout for a Survey Item.  Depending on item appearance 
+    // options, item text and input elements may be moved from 
+    // topAndOrLeftContainer div to bottomAndOrRightContainer div
+    //
+    //Each "box" below represents a div and the associated style class
+    // name used.  For topAndOrLeftContainer and bottomAndOrRightContainer
+    // divs, the class name is dynamically set to one of the possible values
+    // at run time depending on item appearance options.
+
+    //Page is an empty div used for spacing between items.  The name "Page" is a legacy name
+    // maintained for backwards compatibility.
+ /- Page --------------------------------------------------------------------------------- /
+
+ /- itemContainer ------------------------------------------------------------------------\
+ |                                                                                        |
+ |  /- itemContent --------------------------------------------------------------------\  |
+ |  |                                                                                  |  |
+ |  |                                                                                  |  |
+ |  \----------------------------------------------------------------------------------/  |
+ |                                                                                        |
+ \----------------------------------------------------------------------------------------/
+ 
+*/
+
+/*****************************************************************************
+ * Element specific styles                                                   *
+ *****************************************************************************/
+ p
+ {
+     padding:0;
+     margin:5px 0 0 0;
+ }
+
+
+/*****************************************************************************
+ * Containers                                                                *
+ *****************************************************************************/
+div.Page
+ {
+     height:15px;
+ }
+ 
+div.itemContent
+{
+    text-align:center;
+    zoom:1;
+}
+
+.pageNumber
+{
+    font-size:24px;
+}
+
+.pageNumber select
+{
+    font-size:18px;
+    color:#333333;
+}
+
+
+.Matrix
+{
+    border:1px solid #666666;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Matrix .Item
+{
+    background-color:#FFFFFF;
+}
+
+.Matrix .Item td
+{
+    padding:3px;
+}
+
+.Matrix .AlternatingItem
+{
+    background-color:#EFEFEF;
+}
+
+.Matrix .AlternatingItem td
+{
+    padding:3px;
+}
+
+.Matrix .subheader
+{
+    background-color: #8E8E8E;
+	color: White;
+	font-family: Arial;
+	font-size: 11px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.Matrix .header
+{
+    background-color: #AAAAAA;
+}
+
+
+.crossTabCell
+{
+    margin-left:5px;
+    margin-right:5px;
+    text-align:center;
+}
+
+.crossTabAnswerCount
+{
+    font-weight:bold;
+}
+
+td.BorderTop
+{
+    border-top: 1px solid gray;
+}
+
+td.BorderRight
+{
+    border-right: 1px solid gray;
+}
+
+th.BorderRight
+{
+    border-right: 1px solid gray;
+}
+
+th.BorderTop
+{
+    border-top: 1px solid gray;
+}
+
+h1
+{
+    font-size: 22px;
+    line-height: 22px;
+    padding-top: 5px;
+}
+    
+.itemZoneWrapper
+{
+    background-color:#ffffff;
+}
+
+span.Question
+{
+    font-family:Arial;
+    font-size:13pt;
+    font-weight:bold;
+}
+
+/*PDF Export*/
+.pdfExportButton
+{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.pdfExportButton a
+{
+  /*  position: absolute;*/
+    right: 10px;
+    top: 10px;
+}
+
+.ckbxButton,
+div .ckbxButton {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px -2px #FFFFFF inset;
+    -webkit-box-shadow: 0 2px 2px -2px #FFFFFF inset;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.4em;
+    min-width: 35px;
+    padding: 2px 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    margin: 1px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+    .ckbxButton:hover {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        color: #ffffff;
+        text-decoration: none !important;
+    }
+    .ckbxButton.inactive {
+        background: transparent !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        border-color: transparent !important;
+        color: #4BA0D9 !important;
+    }
+        .ckbxButton.inactive:hover {
+            text-decoration: underline !important;
+        }
+    .ckbxButton.smallButton{
+        font-size: 0.85em;
+    }
+.roundedCorners{
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.border999{border: 1px solid #999;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.shadow999{-webkit-box-shadow:0 0 2px #999;-moz-box-shadow:0 0 2px #999;-o-box-shadow:0 0 2px #999;-ms-box-shadow:0 0 2px #999;box-shadow:0 0 2px #999;}
+    .ckbxButton.redButton{
+        background-color: #d94242;
+        background-image: none;
+        border: 1px solid #b32424;
+    }
+        .ckbxButton.redButton:active,
+        .ckbxButton.redButton:hover {
+            background-color: #cf2a2a;
+            border: 1px solid #b32424;
+        }

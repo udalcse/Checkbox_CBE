@@ -1,0 +1,15 @@
+﻿<div class="gridHeader">
+   <div class="fixed_50 left"><input type="checkbox" id="_selectAllRecipients"/></div>
+   <div class="fixed_225 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/emailAddress", "Email")}</b></div>
+   <div class="fixed_225 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/username", "User Name")}</b></div>
+   <div class="fixed_150 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/lastSent", "Last Sent")}</b></div>
+   <div class="fixed_100 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/status", "Status")}</b></div>
+   <div class="fixed_125 left messages-sent-count"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/messageCount", "Messages")}</b></div>
+   <div class="fixed_125 left opt-out-details"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/details", "Details")}</b></div>
+   <!--<div class="groupAttributes fixed_125"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/recipientId", "Recipient Id")}</b></div> -->
+   <br class="clear" />
+</div>
+
+{{each(index, recipient) items}}
+    {{tmpl(recipient, {index: index}) 'recipientEditorListItemTemplate.html'}}
+{{/each}}

@@ -1,0 +1,42 @@
+﻿<div class="gridHeader">
+    <div class="left input" style="width: 3%"><input type="checkbox" id="_selectAllResponses"/></div>
+    <div class="left groupAttributes headerPart" style="width: 7%" sortField="ResponseId">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/id", "ID")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="ResponseID" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="left groupAttributes headerPart" style="width: 25%" sortField="UniqueIdentifier">
+        <span class="header_sorter hand">
+            <span class="left" >${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/respondent", "Respondent")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="UniqueIdentifier" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="left groupAttributes  headerPart" style="width: 15%" sortField="Started">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/started", "Started")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="Started" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="left groupAttributes headerPart" style="width: 15%" sortField="LastEdit">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/lastEdit", "Last Edit")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="LastEdit" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="left groupAttributes fixed_50 headerPart" sortField="Ended">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/completed", "Completed")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="Ended" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    {{if items != null && items.length > 0 && items[0].isAggregativeResult }}
+        <div class="left groupAttributes fixed_100">${textHelper.getTextValue("/pageText/forms/surveys/responses/manage.aspx/surveyName", "Survey Name")}</div>
+    {{/if}}
+<br class="clear" />
+
+</div>
+
+{{each(index, response) items}}
+    {{tmpl(response, {index: index}) 'responseListItemTemplate.html'}}
+{{/each}}

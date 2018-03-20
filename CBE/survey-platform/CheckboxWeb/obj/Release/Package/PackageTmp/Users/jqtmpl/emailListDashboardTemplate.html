@@ -1,0 +1,33 @@
+﻿<div class="survey-header-container">
+    <div class="header-content clearfix">
+        <a class="action-menu-toggle action-button ckbxButton silverButton" href="#" id="user_actions_button"><span class="toggle-arrow"></span>List Actions</a>
+        <a class="action-button ckbxButton silverButton" protectPermission="EmailList.Edit" id="A1"  href="javascript:showDialog('EmailLists/AddAddresses.aspx?p=${DatabaseId}', 'wizard');">${textHelper.getTextValue("/users/emailListDashboardTemplate/addAddresses", "Add Addresses")}</a>
+        <div id="user_actions_menu" class="groupMenu" style="display: none;margin-top:30px !important;">
+            <ul class="itemActionMenu">
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" protectPermission="EmailList.Edit" id="_propertiesLink" href="javascript:showDialog('EmailLists/Properties.aspx?p=${DatabaseId}&onClose=onDialogClosed','properties');">${textHelper.getTextValue("/users/emailListDashboardTemplate/properties", "Properties")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" protectPermission="EmailList.Edit" id="_permissionsLink" href="javascript:showDialog('EmailLists/Security.aspx?p=${DatabaseId}','security');">${textHelper.getTextValue("/users/emailListDashboardTemplate/permissions", "Permissions")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_copyEmailListLink" href="javascript:copyEmailList(${DatabaseId});">${textHelper.getTextValue("/users/emailListDashboardTemplate/copy", "Copy")}</a></li>
+                <li><a class="ckbxButton redButton smallButton" protectPermission="EmailList.Edit" href="javascript:deleteEmailList(${DatabaseId});" id="deleteGroupLink">${textHelper.getTextValue("/users/emailListDashboardTemplate/delete", "Delete")}</a></li>
+            </ul>    
+        </div>
+        <h3>${Name}</h3>
+    </div>
+</div>
+<div class="surveyDescription">${Description}</div>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="left mainStats">${textHelper.getTextValue("/users/emailListDashboardTemplate/addresses", "Addresses")}</span>
+        <div class="right itemActionMenuSmall" style="padding-right:5px;">
+            <a class="cancelButton" protectPermission="EmailList.Edit" id="_deleteSelectedEmailAddressesLink" href="javascript:void(0);">Delete Selected</a>
+        </div>
+        <br class="clear" />
+    </div>
+    <div id="gridPaginationTopContainer" class="shadow999 gridPagingContainer">
+        <ul id="paginationTop" class="pagination"></ul>
+    </div>
+    <div id="emailAddressesPlace"></div>
+    <div id="gridPaginationBottomContainer" class="border999 shadow999 gridPagingContainer">
+        <ul id="paginationBottom" class="pagination"></ul>
+    </div>
+</div>

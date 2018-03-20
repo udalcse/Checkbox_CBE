@@ -1,0 +1,37 @@
+﻿<div class="survey-header-container">
+    <div class="header-content clearfix">
+        <a class="action-menu-toggle action-button ckbxButton silverButton" href="#" id="style_actions_button">
+            ${textHelper.getTextValue("/pageText/styles/edit.aspx/styleactions", "Style Actions")}
+        </a>
+        {{if CanBeEdited}}
+        <a class="action-button ckbxButton orangeButton" href="Forms/Edit.aspx?s=${Id}">
+            ${textHelper.getTextValue("/pageText/styles/edit.aspx/edit", "Edit Style")}&raquo;
+        </a>
+        {{/if}}
+        <div id="style_actions_menu" class="groupMenu" style="display: none;margin-top:30px !important;">
+            <ul class="itemActionMenu">
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:showDialog('Forms/Properties.aspx?s=${Id}&onClose=onDialogClosed', 'properties');" id="_propertiesLink">
+                        ${textHelper.getTextValue("/pageText/styles/edit.aspx/properties", "Properties")}  </a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" href="javascript:doCopy(${Id});" id="_copyLink">
+                        ${textHelper.getTextValue("/pageText/styles/edit.aspx/copy", "Copy")}
+                    </a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton statistics_ExportData" href="Export.ashx?id=${Id}&type=form">
+                        ${textHelper.getTextValue("/pageText/styles/edit.aspx/export", "Export")}
+                    </a></li>
+                {{if CanBeEdited}}
+                <li><a class="ckbxButton roundedCorners border999 shadow999 redButton" id="deleteStyleLink" href="javascript:void(0);">
+                        ${textHelper.getTextValue("/pageText/styles/edit.aspx/delete", "Delete")}
+                    </a></li>
+                {{/if}}
+            </ul>    
+        </div>
+        <h3 class="style-title">${Name}<span class="style-type-icon type-${Type}" title="${Type} Survey Style">${Type}</span></h3>
+    </div>
+</div>
+    
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader allMenu">
+        <span class="mainStats left">${textHelper.getTextValue("/pageText/styles/manage.aspx/preview", "Preview")}</span>
+    </div>
+    <div id="stylePreviewFrame" />
+</div>

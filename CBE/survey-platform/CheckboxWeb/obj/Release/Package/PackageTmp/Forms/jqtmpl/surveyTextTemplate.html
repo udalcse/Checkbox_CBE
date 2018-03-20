@@ -1,0 +1,9 @@
+﻿
+{{each(index, text) Texts}}
+    <div class="setting-item" customTextId="${TextId}">
+        <label class="inline medium">${Name}</label><input type="text" value="${Value}" style="width:500px;" /><span class="status"></span>
+        <div class="actions inline inactive save-options">
+            <a href="#" class="submit ckbxButton silverButton">Save</a><a href="#" class="cancel">Cancel</a>
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,10 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra" id="emailList_${DatabaseId}" index="${$item.index}">
+{{else}}
+    <div class="gridContent detailZebra" id="emailList_${DatabaseId}" index="${$item.index}">
+{{/if}}
+        <div class="fixed_25 left"><input type="checkbox" value="${DatabaseId}" class="deleteEmailList" /></div>
+        <div class="fixed_225 left truncate" title="${Name}">${Name}</div>
+        <div class="fixed_225 left">${AddressCount}</div>
+        <br class="clear" />
+    </div>

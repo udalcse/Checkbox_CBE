@@ -1,0 +1,55 @@
+﻿{{if ($item.index % 2 == 0)}}
+    {{if PanelMember}}
+        <div class="dashStatsContent zebra" style="display: none;">
+    {{else}}
+        <div class="dashStatsContent zebra">
+    {{/if}}
+{{else}}
+    {{if PanelMember}}
+        <div class="dashStatsContent detailZebra" style="display: none;">
+    {{else}}
+        <div class="dashStatsContent detailZebra">
+    {{/if}}
+{{/if}}
+        {{if !PanelMember}}
+            {{if GroupId != null}}
+                <div class="fixed_25 left"><input type="checkbox" recipientId="${DatabaseId}" groupId="${GroupId}" recipientEmail="${EmailToAddress}" recipientUserName ="${UserName}" class="selectRecipient" /></div>
+                <!--[if IE]>
+                <div class="fixed_25 left expanderBlockFixForEditor">
+                <![endif]-->
+                <!--[if !IE]><!-->
+                <div class="fixed_25 left">
+                <!--<![endif]-->
+                    <div class="fixed_25 left"><a class="expander" groupId="${GroupId}" onclick="expandGroupList(${GroupId})" style="padding-bottom: 1px;"/></div>
+                </div>
+            {{else EmailListId != null}}
+                <div class="fixed_25 left"><input type="checkbox" recipientUserName="" emailListId="${EmailListId}" recipientEmail="${EmailToAddress}" class="selectRecipient" /></div>
+                <!--[if IE]>
+                <div class="fixed_25 left expanderBlockFixForEditor">
+                <![endif]-->
+                <!--[if !IE]><!-->
+                <div class="fixed_25 left">
+                <!--<![endif]-->
+                    <div class="fixed_25 left"><a class="expander" emailListId="${EmailListId}" onclick="expandEmailList(${EmailListId})" style="padding-bottom: 1px;"/></div>
+                </div>
+            {{else}}
+                <div class="fixed_50 left"><input type="checkbox" recipientId="${DatabaseId}" recipientEmail="${EmailToAddress}" recipientUserName ="${UserName}" class="selectRecipient" /></div>
+            {{/if}}
+        {{else EmailListId != null}} 
+            <div class="fixed_50 left"><hidden emailListId="${EmailListId}" recipientEmail="${EmailToAddress}" class="selectRecipient" /></div>
+        {{else}}
+            <div class="fixed_50 left"><hidden recipientId="${DatabaseId}" groupId="${GroupId}" recipientEmail="${EmailToAddress}" recipientUserName ="${UserName}" class="selectRecipient" /></div>
+        {{/if}}
+        <div class="fixed_225 left">${EmailToAddress ? EmailToAddress : '&nbsp;'}</div>
+        <div class="fixed_225 left">${UserName ? UserName : '&nbsp;'}</div>
+        <div class="fixed_100 left">
+                {{if OptedOut}}
+                    ${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/optedOut", "Opted Out")}                            
+                {{/if}}
+                {{if Bounced}}
+                    ${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/bounced", "Bounced")}                            
+                {{/if}}
+        </div>
+        <br class="clear" />
+    </div>
+        

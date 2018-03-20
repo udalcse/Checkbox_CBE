@@ -1,0 +1,14 @@
+﻿<div class="gridHeader clearfix">
+    <div class="left fixed_25"><input type="checkbox" id="_selectAllLibraries"/></div>
+    <div class="left fixed_250 headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/libraries/manage.aspx/name", "Name")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="Name" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="left fixed_75">${textHelper.getTextValue("/pageText/libraries/manage.aspx/numItems", "# of Items")}</div>
+</div>
+
+{{each(index, library) items}}
+    {{tmpl(library, {index: index}) 'libraryListItemTemplate.html'}}
+{{/each}}

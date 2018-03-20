@@ -1,0 +1,27 @@
+﻿<h3>${Name}</h3>
+
+<ul class="itemActionMenu allMenu">
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" target="_blank" href="${$item.reportRunUrl}">Run Report</a></li>
+    <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" target="_blank" href="${$item.reportEditUrl}">Edit</a></li>
+</ul>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Properties</span>
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_75 left">Created By:</div>
+        <div class="left"><b>${CreatedBy}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent detailZebra">
+        <div class="fixed_75 left">Created Date:</div>
+        <div class="left"><b>${dateUtils.jsonDateToInvariantDateString(DateCreated)}</b></div>
+        <br class="clear" />
+    </div>
+    <div class="dashStatsContent zebra">
+        <div class="fixed_75 left">Last Updated:</div>
+        <div class="left"><b>${dateUtils.jsonDateToInvariantDateString(LastModified)}</b></div>
+        <br class="clear" />
+    </div>
+</div>

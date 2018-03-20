@@ -1,0 +1,69 @@
+﻿/****************************************************************************
+ * CustomSurveyStyles_IE.css                                                *
+ *  Workaround for IE <= 7 issues with rendering survey items.              *
+ ****************************************************************************/
+ 
+ /* Fixes for LabelPosition = "Right"
+    When label position is set to right, IE also moves all content to the right
+      which is generally not desired.
+*/
+
+ div.labelRight
+ {
+     float:left;
+ }
+ 
+ div.inputForLabelRight
+ {
+     float:right;
+ }
+ 
+ div.inputForLabelCenter
+ {
+     float:left;
+ }
+ 
+.radio-item label{
+    margin-top:2%;
+ }
+
+.checkbox-item label{
+    margin-top:2%;
+ }
+  
+div.ratingScaleTextContainer_vertical
+{
+    margin-left:50px;
+    float:left;
+    width:300px;
+}
+ 
+div.ratingScaleOuterTextContainer_vertical
+{
+    display:block;
+}
+
+div.ratingScaleOuterTextContainer_verticalSeparator
+{
+    border-left-style: solid;
+    border-left-width: 1px;
+    display:block;
+}
+
+div.ratingScaleOuterOptionContainer_vertical
+{
+    display:block; 
+    position:relative;
+    overflow:visible;
+}
+
+
+div.ratingScaleOuterNAOptionContainer_vertical
+{
+    display:block; 
+    position:relative;
+    overflow: visible;
+}
+ 
+ 
+ 

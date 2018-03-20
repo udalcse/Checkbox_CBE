@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CheckboxWeb.Services.UserManagementService" CodeBehind="UserManagementService.svc.cs" %>

@@ -1,0 +1,34 @@
+﻿ <div class="border999 shadow999" style="margin:5px;">
+     <div class="gridHeader ckbxGridHeader" id="responseSummaryHeader">
+        <div class="fixed_75 left"><b>ID</b></div>
+        <div class="fixed_200 left"><b>Invitee</b></div>
+        <div class="fixed_125 left"><b>Started</b></div>
+        <div class="fixed_125 left"><b>Ended</b></div>
+        <div class="fixed_125 left"><b>LastEdit</b></div>
+        <div class="clear"></div>
+     </div>
+     <div class="clear"></div>
+
+     {{each(index, response) responses}}
+        {{if (index % 2 == 0)}}
+            <div class="gridContent">
+        {{else}}
+            <div class="gridContent detailZebra">
+        {{/if}}
+            <div class="fixed_75 left">${Id}</div>
+            <div class="fixed_200 left">${Invitee}</div>
+            <div class="fixed_125 left">${dateUtils.jsonDateToInvariantDateString(Started)}</div>
+            <div class="fixed_125 left">${dateUtils.jsonDateToInvariantDateString(CompletionDate)}</div>
+            <div class="fixed_125 left">${dateUtils.jsonDateToInvariantDateString(LastEditDate)}</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    {{/each}}
+</div>
+
+<div class="dashStatsContent allMenu" id="responseSummaryNoResponses" style="display:none;">
+    <div>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/noResponses", "No responses to invitation.")}</div>
+    <div class="clear"></div>
+</div>
+
+ 

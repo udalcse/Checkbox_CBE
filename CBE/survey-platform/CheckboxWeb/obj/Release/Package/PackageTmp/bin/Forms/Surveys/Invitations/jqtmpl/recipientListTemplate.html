@@ -1,0 +1,40 @@
+﻿{{if recipients.length == 0}}
+    <div style="padding-left:10px;">${textHelper.getTextValue("/pageText/forms/surveys/invitations/invitationPropertiesPage.cs/noRecipients", "This invitation currently has no recipients")}</div>
+{{else}}
+<div class="dashStatsContentHeader">
+    <b>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/recentlySent", "Recently Sent Invitations")}</b>
+</div>
+
+ <div class="dashStatsWrapper border999 shadow999" id="recipientSummary">
+     <div class="gridHeader ckbxGridHeader">
+        <div class="fixed_200 left" style="margin-right:3px;"><b>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/email", "Email")}</b></div>
+        <div class="fixed_150 left"><b>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/lastSent", "Last Sent")}</b></div>
+        <div class="fixed_100 left"><b>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/responded", "Responded")}</b></div>
+        <div class="fixed_100 left"><b>${textHelper.getTextValue("/controlText/invitationDashboard.ascx/details", "Details")}</b></div>
+        <br class="clear" />
+     </div>
+
+{{each(index, recipient) recipients}}
+    {{if (index % 2 == 0)}}
+        <div class="gridContent zebra">
+    {{else}}
+        <div class="gridContent detailZebra">
+    {{/if}}
+            <div class="fixed_200 left truncate" style="overflow:hidden;margin-right:3px;padding-left:5px;" title="${EmailToAddress}">${EmailToAddress}</div>
+            <div class="fixed_150 left">${dateUtils.jsonDateToInvariantDateString(LastSent)}</div>
+            <div class="fixed_100 left">${textHelper.getBooleanValue(HasResponded)}</div>
+            <div class="fixed_100 left">
+               {{if OptedOut}}
+                    ${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/optedOut", "Opted Out")}
+               {{/if}}
+               {{if Bounced}}
+                    ${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/bounced", "Bounced")}
+               {{/if}}
+            </div>
+            <br class="clear" />
+        </div>
+{{/each}}
+</div>
+
+ <div class="gridContent" id="recipentSummaryNoRecipients" style="display:none;">${textHelper.getTextValue("/controlText/invitationDashboard.ascx/noRecipients", "No invitations have been sent.")}</div>
+ {{/if}}

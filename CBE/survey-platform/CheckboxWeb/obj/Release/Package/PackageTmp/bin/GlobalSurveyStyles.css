@@ -1,0 +1,1005 @@
+﻿/****************************************************************************
+ * GlobalSurveyStyles.css                                                   *
+ *  Use this page to set global styles to apply to all surveys.             *
+ *  Styles for specific HTML elmeents can be applied, as well as styles     *
+ *  that apply to Checkbox Survey items.                                    *
+ *                                                                          *
+ * In general, this file should not be modified for customer installations. *
+ * Instead, css changes should be placed in CustomSurveyStyles.css which    *
+ * exists for this purpose.  That file is included last in the survey style *
+ * chain, so settings in that file can be used to override settings in this *
+ * file.                                                                    *
+ ****************************************************************************/
+ 
+ /**************************************************************************************
+  * "Resest" Styles to attempt to account for different browser handling of elements.  *
+  **************************************************************************************/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent
+}
+
+body 
+{
+    line-height: 1;
+    background-position: center;
+    height: auto !important;
+    overflow:visible !important;
+}
+ 
+
+li {
+    margin-left: 25px;
+}
+
+blockquote, q 
+{
+	quotes:none
+}
+
+blockquote:before, blockquote:after, q:before, q:after 
+{
+	content:'';
+	content:none
+}
+:focus 
+{
+	outline:0
+}
+
+ins 
+{
+	text-decoration:none
+}
+
+del 
+{
+	text-decoration:line-through
+}
+
+table 
+{
+	border-collapse:collapse;
+	border-spacing:0
+}
+
+body 
+{
+	font:13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif
+}
+
+a:focus 
+{
+	outline:1px dotted
+}
+
+hr 
+{
+	border:0 #e3e3e3 solid;
+	border-top-width:1px;
+	margin-bottom:0 !important;
+	clear:both;
+	height:0;
+	padding:0;
+}
+
+.clear 
+{
+	clear:both;
+}
+
+.left 
+{
+	float:left
+}
+
+.right 
+{
+	float:right
+}
+ /***************************************************************************
+  * Default styles for various survey elements.                             *
+  ***************************************************************************/
+.Matrix
+{
+    border:1px solid #999999;
+}
+
+.Matrix .header
+{
+    background-color:#F9F9F9;
+    text-align:center;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.Matrix .Item
+{
+    background-color:#FFFFFF;
+}
+
+.Matrix .Item td
+{
+    padding:3px;
+    vertical-align: middle;
+    /*change rizwana*/
+    /*padding-right:20px !important;*/
+    /*width:180px;*/
+    /*POSITION: absolute;*/
+}
+.Matrix .AlternatingItem td:last-child * {
+    width:100px !important;
+}
+.Matrix .AlternatingItem td:last-child:before  {
+    width:100px !important;
+    content:"";
+    display:table;
+}
+.Matrix .AlternatingItem td:last-child:after  {
+    width:100px !important;
+    content:"";
+      display:table;
+}
+.Matrix .AlternatingItem td:last-child * input {
+    width:60px !important;
+   
+}
+.Matrix .AlternatingItem td:last-child img {
+    width:16px !important; 
+}
+.Matrix  .AlternatingItem td:last-child input {
+    width:60px !important;
+   
+}
+
+@media (max-width: 769px) {
+    td.BorderBoth input {
+    width: 45px !important;
+    float: left;
+}
+}
+
+.Matrix .AlternatingItem
+{
+    background-color:#EFEFEF;
+}
+
+.Matrix .AlternatingItem td
+{
+    padding:3px;
+    vertical-align: middle;
+    /*change rizwana*/
+    /*padding-right:20px;*/
+    /*padding-right:20px !important;*/
+    /*POSITION: absolute;*/
+}
+
+
+td.BorderTop
+{
+	border-top: 1px solid gray;
+}
+
+th.BorderTop
+{
+	border-top: 1px solid gray;
+}
+
+td.BorderRight
+{
+	border-right: 1px solid gray;
+}
+
+th.BorderRight
+{
+	border-right: 1px solid gray;
+}
+
+
+td.BorderBoth
+{
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+   
+}
+td.BorderBoth input
+{
+	width:60px !important;
+   
+   
+}
+th.BorderBoth
+{
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+.header td.Answer
+{
+    font-weight:normal;
+    font-size:11px;
+}
+
+
+.Error
+{
+    color:Red;
+}
+ 
+.Question
+{
+    font-weight:normal;
+    font-size:14px;
+  /*  display: -moz-stack;
+    display: -webkit-box;*/
+}
+
+.Question p
+{
+    margin: 5px 0 0 5px;
+}
+
+.numberedQuestion
+{
+    padding-left: 5px;
+}
+
+.Question ul,
+.Description ul,
+.MessageItem ul,
+.HtmlItemControl ul
+{
+    list-style-type:disc;
+    margin-left:20px;
+}
+
+.Question ol,
+.Description ol,
+.MessageItem ol,
+.HtmlItemControl ol
+{
+    list-style-type:decimal;
+    margin-left:20px;
+}
+
+.MessageItem h1 {
+    height: 100%;
+    line-height: 1.1;
+}
+.ScoreMessage  {
+    height: 100%;
+    line-height: 1.1;
+}
+ /***************************************************************************
+  * Page Layout Styles                                                      *
+  ***************************************************************************/
+.center 
+{
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:25px;*/
+	padding:10px;
+	
+}
+
+.borderRadius {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 5px;
+}
+
+.titleWrapper {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.wrapperMaster {
+	height:auto;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.innerSurveyContentFrame
+{
+    padding : 10px;
+}
+  
+    
+.surveyDialogFrame
+{
+    min-width:90% !important;
+    display:block !important;
+    width:90% !important;
+}
+.itemZoneWrapper
+{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+ /***************************************************************************
+  * Wrappers for zones in default layout template.                          *
+  ***************************************************************************/
+
+.navigationWrapper
+{
+    margin-top:25px;
+}
+
+.progressWrapper {
+    display: block;
+	padding-bottom:5px;
+}
+
+.progressWrapper.bottom {
+	padding-top:15px;
+}
+
+.progressWrapper.centered .ProgressBar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pageNumberWrapper{
+    display: block;
+	padding-bottom:8px;
+}
+	
+.surveyButtonsContainer
+{
+    text-align: center;
+    margin-top:10px;
+    padding-bottom: 5px;
+}
+  
+  
+ /*
+    //General Layout for a Survey Item.  Depending on item appearance 
+    // options, item text and input elements may be moved from 
+    // topAndOrLeftContainer div to bottomAndOrRightContainer div
+    //
+    //Each "box" below represents a div and the associated style class
+    // name used.  For topAndOrLeftContainer and bottomAndOrRightContainer
+    // divs, the class name is dynamically set to one of the possible values
+    // at run time depending on item appearance options.
+
+    //Page is an empty div used for spacing between items.  The name "Page" is a legacy name    
+    // maintained for backwards compatibility.
+ /- Page --------------------------------------------------------------------------------- /
+
+ /- itemContainer ------------------------------------------------------------------------\
+ |                                                                                        |
+ |  /- itemContent --------------------------------------------------------------------\  |
+ |  |                                                                                  |  |
+ |  |  /-- topAndOrLeftContainer [labelTop, labelLeft, labelRight, labelBottom] ----\  |  |
+ |  |  |                                                                            |  |  |
+ |  |  |  /- textContainer ------------------------------------------------------\  |  |  |
+ |  |  |  |                                                                      |  |  |  |
+ |  |  |  |  /----------------------------------------------------------------\  |  |  |  |
+ |  |  |  |  |   /-- questionTextContainer --------------------------------\  |  |  |  |  |
+ |  |  |  |  |   | -requiredIndicator                                      |  |  |  |  |  |
+ |  |  |  |  |   | -itemNumber                                             |  |  |  |  |  |
+ |  |  |  |  |   \---------------------------------------------------------/  |  |  |  |  | 
+ |  |  |  |  |                                                                |  |  |  |  |
+ |  |  |  |  |   /-- descriptionTextContainer -----------------------------\  |  |  |  |  |
+ |  |  |  |  |   |                                                         |  |  |  |  |  |
+ |  |  |  |  |   \---------------------------------------------------------/  |  |  |  |  | 
+ |  |  |  |  |                                                                |  |  |  |  |
+ |  |  |  |  \----------------------------------------------------------------/  |  |  |  |
+ |  |  |  |                                                                      |  |  |  |
+ |  |  |  \----------------------------------------------------------------------/  |  |  |
+ |  |  |                                                                            |  |  |
+ |  |  \----------------------------------------------------------------------------/  |  |
+ |  |                                                                                  |  |
+ |  |  /-- bottomAndOrRightContainer [inputForLabelTop, inputForLabelLeft, ---------\  |  | 
+ |  |  |                               inputForLabelRight, inputForLabelBottom]     |  |  |
+ |  |  |                                                                            |  |  |
+ |  |  |  /- inputContainer -----------------------------------------------------\  |  |  |
+ |  |  |  |                                                                      |  |  |  |
+ |  |  |  \----------------------------------------------------------------------/  |  |  |
+ |  |  |                                                                            |  |  |
+ |  |  \----------------------------------------------------------------------------/  |  |
+ |  |                                                                                  |  |
+ |  \----------------------------------------------------------------------------------/  |
+ |                                                                                        |
+ \----------------------------------------------------------------------------------------/
+ 
+*/
+
+/*****************************************************************************
+ * Element specific styles                                                   *
+ *****************************************************************************/
+ p
+ {
+     padding:0;
+     margin:5px 0 0 0;
+ }
+
+/*****************************************************************************
+ * Position/Label specific styles                                            *
+ *****************************************************************************/
+ div.Page
+ {
+     height:15px;
+     clear: both;
+ }
+ 
+ div.labelTop
+ {
+ }
+ 
+ div.labelBottom
+ {
+ }
+ 
+ div.labelLeft
+ {
+     float:left;
+ }
+ 
+ div.labelRight
+ {
+     float:right;
+     display: inline-block;
+     margin-left: 10px;
+ }
+
+ div.inputForLabelTop
+ {
+ }
+ 
+ div.inputForLabelBottom
+ {
+ }
+ 
+ div.inputForLabelLeft
+ {
+     float:left;
+ }
+ 
+ div.inputForLabelRight
+ {
+     float:right;
+ }
+ 
+ div.inputForLabelCenter
+ {
+     float:left;
+ }
+ 
+ div.itemPositionLeft
+ {
+     text-align:left;
+ }
+ 
+ div.itemPositionCenter
+ {
+     text-align:center;
+ }
+ 
+ div.itemPositionRight
+ {
+     text-align:right;
+ }
+ 
+ .rowTextPositionLeft
+ {
+     text-align:left;
+ }
+ 
+ .rowTextPositionCenter
+ {
+     text-align:center;
+ }
+ 
+ .rowTextPositionRight
+ {
+     text-align:right;
+ }
+
+/*****************************************************************************
+ * Containers                                                                *
+ *****************************************************************************/
+
+
+div.footerWrapper {
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+div.itemContainer
+{
+}
+
+div.topAndOrLeftContainer
+{
+}
+
+div.itemNumber
+{
+    float:left;
+    margin-right:5px;
+    margin-left:-20px;
+}
+
+div.textContainer
+{
+    text-align: left;
+}
+
+div.questionTextContainer
+{
+    white-space: normal;
+}
+
+div.descriptionTextContainer p
+{
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+.questionTextContainer table,
+.questionTextContainer table td,
+.descriptionTextContainer table,
+.descriptionTextContainer table td,
+.HtmlItemControl table,
+.HtmlItemControl table td,
+.Message table,
+.Message table td
+{
+    border-style: solid;
+    vertical-align: middle;
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+div.bottomAndOrRightContainer
+{
+}
+
+div.inputContainer
+{
+    margin-left:5px;
+    text-align: left;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.scaleText td
+{
+    vertical-align:bottom;
+}
+
+.scaleText td div
+{
+    font-weight:normal;
+    text-align:center;
+}
+
+
+.header td.Answer
+{
+    vertical-align:bottom;
+    padding-bottom:5px;
+}
+
+.Answer td
+{
+    padding-right: 10px;
+}
+
+/****************************************************************************
+ * Definitions for styles defined in aspx, user controls, or other places   *
+ ****************************************************************************/
+ 
+ /* Horizontal, Non-Matrix Rating Scales */
+ div.ratingScaleTextContainer_horizontal
+ {
+ }
+
+ div.ratingScaleStartText_horizontal
+ {
+     float:left;
+     text-align:center;
+ }
+ 
+ div.ratingScaleMidText_horizontal
+ {
+     float:left;
+     text-align:center;
+ }
+ 
+ div.ratingScaleEndText_horizontal
+ {
+     float:left;
+    text-align:center;
+ }
+ 
+ div.ratingScaleSpacerText_horizontal
+ {
+     float:left;
+     text-align:center;
+ }
+ 
+ div.ratingScaleInputRow_horizontal
+ {
+ }
+ 
+ div.ratingScaleOptionContainer_horizontal
+ {
+     float:left;
+     width:35px;
+     border-top-width:1px;
+     border-top-color:#999999;
+     border-top-style:solid;
+ }
+ 
+ div.ratingScaleOptionInput_horizontal
+ {
+     text-align:center;
+ }
+ 
+ div.ratingScaleOptionText_horizontal
+ {
+     text-align:center;
+ }
+ 
+ div.ratingScaleNaOptionContainer_horizontal
+ {
+     float:left;
+     text-align:center;
+     border-left-width:1px;
+     border-left-color:#999999;
+     border-left-style:solid;
+     border-top-width:1px;
+     border-top-color:#999999;
+     border-top-style:solid;
+ }
+ 
+/* Vertical, Non-Matrix Rating Scales */
+div.ratingScaleTextContainer_vertical
+{
+    float:left;
+    margin-left:10px;
+}
+
+div.ratingScaleOuterTextContainer_vertical
+{
+     display:table; 
+     /*#position:relative;*/
+     overflow: hidden;
+}
+
+div.ratingScaleOuterTextContainer_verticalSeparator
+{
+     border-left-style: solid;
+     border-left-width: 1px;
+     display:table; 
+     /*#position:relative;*/
+     overflow: hidden;
+}
+  
+div.ratingScaleMiddleTextContainer_vertical
+{
+     /*#position:absolute;
+     #top:50%;*/
+     display:table-cell;
+     vertical-align: middle;
+}
+ 
+div.ratingScaleInnerTextContainer_vertical
+{
+     /* #position:relative; 
+      #top: -50%;*/
+}
+
+div.ratingScaleInnerTextContainer_verticalSeparator
+{
+      margin-left: 5px;
+    /*  #position:relative; 
+      #top: -50%;*/
+}
+
+
+div.ratingScaleOuterNATextContainer_vertical
+{
+    display:table; 
+   /*  #position:relative;*/
+     overflow: hidden;
+}
+  
+div.ratingScaleMiddleNATextContainer_vertical
+{
+    /* #position:absolute;
+     #top:50%;*/
+     display:table-cell;
+     vertical-align: middle;
+}
+ 
+div.ratingScaleInnerNATextContainer_vertical
+{
+    /*  #position:relative; 
+      #top: -50%;*/
+}
+
+div.ratingScaleStartText_vertical
+{
+    vertical-align:middle;
+}
+ 
+div.ratingScaleMidText_vertical
+{
+    vertical-align:middle;
+}
+ 
+div.ratingScaleEndText_vertical
+{
+    vertical-align:middle;
+}
+ 
+div.ratingScaleOptionContainer_vertical
+{
+    float:left;
+}
+
+div.ratingScaleOuterOptionContainer_vertical
+{
+    display:table; 
+    /* #position:relative;*/
+     overflow: hidden;
+}
+  
+ div.ratingScaleMiddleOptionContainer_vertical
+ {
+    /* #position:absolute;
+     #top:50%;*/
+     display:table-cell;
+     vertical-align: middle;
+ }
+ 
+ div.ratingScaleInnerOptionContainer_vertical
+ {
+     /* #position:relative; 
+      #top: -50%;*/
+ } 
+ 
+div.ratingScaleOuterNAOptionContainer_vertical
+{
+    display:table; 
+  /*  #position:relative;*/
+    overflow: hidden;
+}
+  
+ div.ratingScaleMiddleNAOptionContainer_vertical
+ {
+   /*  #position:absolute;
+     #top:50%;*/
+     display:table-cell;
+     vertical-align: middle;
+ }
+ 
+ div.ratingScaleInnerNAOptionContainer_vertical
+ {
+     /* #position:relative; 
+      #top: -50%;*/
+ }
+ 
+
+/****************************************************************************
+ * Other Styles                                                             *
+ ****************************************************************************/
+ .required
+ {
+ 	color:Red;
+ }
+ 
+ .requiredField
+ {
+     color:Red;
+ }
+ 
+ 
+ /****************************************************************************
+  * Progress Saved                                                           *
+  ****************************************************************************/
+  div.progressSavedTitle
+  {
+      font-size:18px;
+      font-weight:bold;
+      margin-bottom:15px;
+  }
+  
+  div.progressSavedResumeContainer
+  {
+      margin-left:10px;
+  }
+  
+  input.progressSavedResumeLink
+  {
+      margin-top:4px;
+      padding:3px;
+      border-style:none;
+      font-size:14px;
+      font-weight:bold;
+  }
+  
+  div.progressSavedEmailContainer
+  {
+      margin-left:10px;
+      margin-top:20px;
+  }
+  
+  div.progressSavedEmailAddressLabel
+  {
+      margin-top:13px;
+      font-weight:bold;
+  }
+  
+  div.progressSavedEmailAddressInputContainer
+  {
+      margin-left:5px;
+      margin-top:10px;
+  }
+  
+  input.progressSavedEmailInput
+  {
+      color:#666666;
+      font-size:12px;
+      width:250px;
+      font-weight:bold;
+  }
+  
+  div.progressSavedEmailButtonContainer
+  {
+      margin-top:10px;
+      margin-left:10px;
+  }
+  
+  div.progressSavedEmailSent
+  {
+      margin-top:10px;
+      color:Green;
+  }
+  
+  .progressSavedEmailError {
+      margin-top:10px;
+      color: red;
+  }
+ 
+ /****************************************************************************
+ * Buttons Styles                                                            *
+ ****************************************************************************/
+ a.SubmitButton {
+	background-color: #f38800;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#bbbbbb));
+	background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+	background-image: -o-linear-gradient(top, #eeeeee, #bbbbbb);
+	background-image: -ms-linear-gradient(top, #eeeeee, #bbbbbb);
+	background-image: linear-gradient(top, #eeeeee, #bbbbbb);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#bbbbbb');
+	border:none !important;
+	padding:5px;
+	text-decoration:none;
+	margin-right:5px;
+	cursor:pointer;
+	display:inline-block;
+}
+
+a.SubmitButton span 
+{
+	color:black;
+    background: transparent;
+    line-height: 13px;
+}
+
+a.SubmitButton:active {
+    background: #d37400;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#bbbbbb));
+	background-image: -moz-linear-gradient(bottom, #eeeeee, #bbbbbb);
+	background-image: -webkit-linear-gradient(bottom, #eeeeee, #bbbbbb);
+	background-image: -o-linear-gradient(bottom, #eeeeee, #bbbbbb);
+	background-image: -ms-linear-gradient(bottom, #eeeeee, #bbbbbb);
+	background-image: linear-gradient(bottom, #eeeeee, #bbbbbb);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bbbbbb', EndColorStr='#eeeeee');
+}
+
+.border999{border: 1px solid #999;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.shadow999{-webkit-box-shadow:0 0 2px #999;-moz-box-shadow:0 0 2px #999;-o-box-shadow:0 0 2px #999;-ms-box-shadow:0 0 2px #999;box-shadow:0 0 2px #999;}
+.shadow999:hover{-webkit-box-shadow:0 0 4px #999;-moz-box-shadow:0 0 4px #999;-o-box-shadow:0 0 4px #999;-ms-box-shadow:0 0 4px #999;box-shadow:0 0 4px #999;}
+.inset{-webkit-box-shadow: inset 0 0 3px #262626;-moz-box-shadow: inset 0 0 3px #262626;-o-box-shadow: inset 0 0 3px #262626;-ms-box-shadow: inset 0 0 3px #262626;box-shadow: inset 0 0 3px #262626;}
+.roundedCorners{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.ckbxButton{
+    text-decoration:none;
+    cursor:pointer;
+    padding:2px 3px;
+    font-size:16px;
+    margin:1px;
+    min-width:35px;
+    text-align: center;
+    white-space: nowrap;
+    display:inline-block;
+    font-weight:bold;
+}
+.ckbxButton:focus{outline:#f0f0f0 dotted 1px;}
+.ckbxButton:hover{
+    border-color:#7f7f7f;
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;  
+    -ms-transition: all 0.3s ease-out;  
+    -o-transition: all 0.3s ease-out;  
+    transition: all 0.3s ease-out;  
+}
+.smallButton{font-size:11px;}
+.orangeButton{
+    background-color: #F38800;
+    color: #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F9A63E), to(#F38800));/* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #F9A63E, #F38800);/* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #F9A63E, #F38800);/* FF3.6 */
+    background-image: -ms-linear-gradient(top, #F9A63E, #F38800);/* IE10 */
+    background-image: -o-linear-gradient(top, #F9A63E, #F38800);/* Opera 11.10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#F9A63E', EndColorStr='#F38800');/* IE6–IE9 */
+    background-image: linear-gradient(top, #F9A63E, #F38800);
+}
+.orangeButton:hover{background-color:#F9A63E;}
+.orangeButton:active{
+    background-color: #F38800;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F38800), to(#F9A63E));/* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #F38800, #F9A63E);/* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #F38800, #F9A63E);/* FF3.6 */
+    background-image: -ms-linear-gradient(top, #F38800, #F9A63E);/* IE10 */
+    background-image: -o-linear-gradient(top, #F38800, #F9A63E);/* Opera 11.10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#F38800', EndColorStr='#F9A63E');/* IE6–IE9 */
+    background-image: linear-gradient(top, #F38800, #F9A63E);
+}
+.surveyFooterButton {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 3px 15px 5px 15px;
+
+}
+.ProgressBarInner {
+height: 15px;
+background-color: #9DBEFF;
+width: 250px;
+}
+
+.progressScreen {
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+}
+
+.progressScreen div {
+    height: 100%;
+    left: 0;
+    opacity: 0.01;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: white;
+}
+
+.progressScreen img {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+
+sup {font-size:xx-small; vertical-align:super;}
+sub {font-size:xx-small; vertical-align:sub;}

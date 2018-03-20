@@ -1,0 +1,71 @@
+﻿<div class="groupHeader surveyPageHeaderEdit pageMenuItems" style="float:right">
+    <div class="itemActionMenuSmall">
+        
+        {{if PageType.toLowerCase() != 'contentpage'}}
+        <a href="javascript:surveyEditor.showAddItemDialog(${Id}, 'addNewSurveyItemWizard');" class="left statistics_AddItem">${textHelper.getTextValue("/pageText/formEditor.aspx/addItem","Add Item")}</a>
+        {{/if}}
+        {{if PageType.toLowerCase() == 'contentpage'}}
+        <a href="" class="statistics_AddItem addLibraryItem">${textHelper.getTextValue("/pageText/formEditor.aspx/addItem","Add Item")}</a>
+        <ul class="libraryItems" style="display:none;position:absolute;top:25px;left:-15px;list-style-type:none;z-index:10000" data-pageId="${Id}"></ul>
+        <a class="groupMenuToggle right" href="#" style="text-decoration: none; outline: none;">&nbsp;</a>
+        <div class="groupMenu page-options-menu" id="pageMenuMenu_${ID}">
+            <ul class="itemActionMenuSmall allMenu" style="display: none;">
+                <li><a class="ckbxButton silverButton roundedCorners copySurveyPageLink" pageid="${Id}" href="javascript:surveyEditor.showCopyPageDialog(${Id}, 'dialog');">${textHelper.getTextValue("/pageText/formEditor.aspx/copyMove", "Move/Copy")}</a></li>
+                {{if $item.pageCount > 3}}
+                <li><a class="ckbxButton silverButton roundedCorners deleteSurveyPageLink" pageid="${Id}" href="javascript:void(0);">${textHelper.getTextValue("/pageText/formEditor.aspx/delete","Delete")}</a></li>
+                {{/if}}
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+<script>
+    $(function () {
+        svcSurveyManagement.listItemLibraries("", { pageNumber: 1, pageSize: 100000 }, function (resultData) {
+            $(".libraryItems").empty();
+            $.each(resultData.ResultPage, function (index, value) {
+                var libraryId = value.DatabaseId;
+                $(".addLibraryItem").attr("data-libraryId", libraryId);
+                $.each(value.ItemAliases, function (idx, val) {
+                    var elem = '<li class="left statistics_AddItem" data-libraryId="' + libraryId + '" data-itemId="' + val.Key + '"><a>' + val.Value + '</a></li>';
+
+                    var isCheckedMenu = false;
+                    var menuIndex = value.MenuSettings.findIndex(function (s) { return s.Key == val.Key });
+                    if (menuIndex != -1) {
+                        isCheckedMenu = value.MenuSettings[menuIndex].Value;
+                    }
+
+                    if (isCheckedMenu) {
+                        $(".libraryItems").append(elem);
+                    }
+                });
+            });
+            $(".libraryItems").append('<li class="left statistics_AddItem"><a>New Custom Item</a></li>')
+        }, null);        
+
+        $(".addLibraryItem").click(function (e) {
+            e.preventDefault();
+            $(this).next(".libraryItems").css("display", "block");
+        });
+
+        var mouseIsInside = false;
+        $('.libraryItems').hover(function () {
+            mouseIsInside = true;
+        }, function () {
+            mouseIsInside = false;
+        });
+
+        $("body").mouseup(function () {
+            if (!mouseIsInside) {
+                $('.libraryItems').css("display", "none");
+            }
+        });
+        $("#survey_preview").contents().find("body").mouseup(function () {
+            if (!mouseIsInside) {
+                $('.libraryItems').css("display", "none");
+            }
+        });
+    });
+</script>
+

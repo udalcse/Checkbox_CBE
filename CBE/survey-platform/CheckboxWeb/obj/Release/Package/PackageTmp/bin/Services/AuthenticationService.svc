@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Service="CheckboxWeb.Services.AuthenticationService"  CodeBehind="AuthenticationService.svc.cs" %>

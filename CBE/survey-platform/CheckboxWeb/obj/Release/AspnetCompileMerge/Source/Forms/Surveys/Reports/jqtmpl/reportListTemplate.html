@@ -1,0 +1,35 @@
+﻿<div class="gridHeader">
+    <div class="fixed_25 left" style="width:5%"><input type="checkbox" id="_selectAllReports"/></div>
+    <div class="fixed_25 left headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/id", "ID")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="AnalysisTemplateId" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_150 left headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/name", "Report Name")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="AnalysisName" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_125 left headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/createdBy", "Created By")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="CreatedBy" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_125 left headerPart">
+        <span class="header_sorter hand">
+            <span class="left">${textHelper.getTextValue("/pageText/forms/surveys/reports/manage.aspx/lastEdit", "Last Modified")}</span>
+            <span class="toggle-arrow-up gridsorter" sortField="ModifiedDate" id="toggle_arrow_sorter_${items.ClientID}"></span>
+        </span>
+    </div>
+    <div class="fixed_50 left headerPart">
+        <span class="left">Quick Access</span>
+    </div>
+    <br class="clear" />
+</div>
+
+{{each(index, report) items}}
+    {{tmpl(report, {index: index}) 'reportListItemTemplate.html'}}
+{{/each}}

@@ -1,0 +1,822 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prezza.Framework.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Prezza.Framework.Common.ArgumentValidation">
+            <summary>
+            <para>Common validation routines for argument validation.</para>
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckForEmptyString(System.String,System.String)">
+            <summary>
+            <para>Check if the <paramref name="variable"/> is an embpty string.</para>
+            </summary>
+            <param name="variable">
+            <para>The value to check.</para>
+            </param>
+            <param name="variableName">
+            <para>The name of the variable being checked.</para>
+            </param>
+            <remarks>
+            <para>Before checking the <paramref name="variable"/>, a call is made to <see cref="M:Prezza.Framework.Common.ArgumentValidation.CheckForNullReference(System.Object,System.String)"/>.</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <pararef name="variable"/> can not be <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="variableName"/> can not be <see langword="null"/> (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <pararef name="variable"/> can not be a zero length <see cref="T:System.String"/>.
+            </exception>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckForNullReference(System.Object,System.String)">
+            <summary>
+            <para>Check if the <paramref name="variable"/> is <see langword="null"/> (Nothing in Visual Basic).</para>
+            </summary>
+            <param name="variable">
+            <para>The value to check.</para>
+            </param>
+            <param name="variableName">
+            <para>The name of the variable being checked.</para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <pararef name="variable"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="variableName"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            </exception>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckForInvalidNullNameReference(System.String,System.String)">
+            <summary>
+            Validates that the input messageName is neither null nor empty
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="messageName">Parameter value</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckForZeroBytes(System.Byte[],System.String)">
+            <summary>
+            <para>Checks <paramref name="bytes"/> for zero length and throw an <see cref="T:System.ArgumentException"/> if the length equals zero.</para>
+            </summary>
+            <param name="bytes">
+            The <see cref="T:System.Byte"/> array to check.
+            </param>
+            <param name="variableName">
+            <para>The name of the variable being checked.</para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <pararef name="variable"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="variableName"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <para><paramref name="bytes"/> can not be zero length.</para>
+            </exception>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckExpectedType(System.Object,System.Type)">
+            <summary>
+            <para>Check <paramref name="variable"/> to determine if it matches the <see cref="T:System.Type"/> of <paramref name="type"/>.</para>
+            </summary>
+            <param name="variable">
+            <para>The value to check.</para>
+            </param>
+            <param name="type">
+            <para>The <see cref="T:System.Type"/> expected type of <paramref name="variable"/>.</para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <pararef name="variable"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="typeName"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="variable"/> is not the expected <see cref="T:System.Type"/>.
+            </exception>
+        </member>
+        <member name="M:Prezza.Framework.Common.ArgumentValidation.CheckEnumeration(System.Type,System.Object,System.String)">
+            <summary>
+            <para>Check <paramref name="variable"/> to determine if it is a valid defined enumeration for <paramref name="enumType"/>.</para>
+            </summary>
+            <param name="variable">
+            <para>The value to check.</para>
+            </param>
+            <param name="enumType">
+            <para>The <see cref="T:System.Type"/> expected type of <paramref name="variable"/>.</para>
+            </param>
+            <param name="variableName">
+            <para>The name of the variable being checked.</para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <pararef name="variable"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="enumType"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            <para>- or -</para>
+            <pararef name="variableName"/> can not <see langword="null"/> (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="variable"/> is not the expected <see cref="T:System.Type"/>.
+            <para>- or -</para>
+            <par><paramref name="enumType"/> is not an <see cref="T:System.Enum"/>. </par>
+            </exception>
+        </member>
+        <member name="T:Prezza.Framework.Common.Coordinate">
+            <summary>
+            Simple class for containing coordinates
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.Coordinate.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="P:Prezza.Framework.Common.Coordinate.X">
+            <summary>
+            X position
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.Coordinate.Y">
+            <summary>
+            Y Position
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.Coordinate.Equals(Prezza.Framework.Common.Coordinate)">
+            <summary>
+            Compare this coordinate to the specified coordinate.  Returns true if coordinate x and y values match.
+            </summary>
+            <param name="other">Coordinate to compare.</param>
+            <returns>Boolean indicating equality of the coordinates.</returns>
+        </member>
+        <member name="T:Prezza.Framework.Common.CoordinateComparer">
+            <summary>
+             Equality comparer for two coordinates
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.CoordinateComparer.Equals(Prezza.Framework.Common.Coordinate,Prezza.Framework.Common.Coordinate)">
+            <summary>
+            Determine if two coordinates are equal
+            </summary>
+            <param name="coordinate1"></param>
+            <param name="coordinate2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.CoordinateComparer.GetHashCode(Prezza.Framework.Common.Coordinate)">
+            <summary>
+            Get the hash code for a coordinate
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Prezza.Framework.Common.DataCollection">
+            <summary>
+            Base class for strongly typed, serializable collection.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.#ctor(System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="capacity">Number of _entries the collection can contain.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.#ctor(System.Int32,System.Collections.IEqualityComparer)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="capacity"></param>
+            <param name="equalityComparer"></param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.Keys">
+            <summary>
+            Collection of _keys for items in the collection.
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.Count">
+            <summary>
+            Number of items in the collection.
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.IsSynchronized">
+            <summary>
+            Indicates if the collection is synchronized
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Get the data for a specific object.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.OnDeserialization(System.Object)">
+            <summary>
+            Deserialize the collection.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.Remove(System.String)">
+            <summary>
+            Remove an item from the collection.
+            </summary>
+            <param name="name">Name of the item to remove.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.RemoveAt(System.Int32)">
+            <summary>
+            Remove the item at the specified index from the collection.
+            </summary>
+            <param name="index">Index of item to remove.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.Contains(System.String)">
+            <summary>
+            Get indication of whether item with specified name exists in the collection.
+            </summary>
+            <param name="name">Nam of item.</param>
+            <returns>True if item is contained in the collection, otherwise false is returned.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.Clear">
+            <summary>
+            Clear the collection and remove all items.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.GetEnumerator">
+            <summary>
+            Get an enumerator for iteration through items in the collection.
+            </summary>
+            <returns>Enumerator for iteration through items in the collection.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Coppy the contents of the collection to an array.
+            </summary>
+            <param name="array">Array to copy contents to.</param>
+            <param name="index">Index of item in array.</param>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.IsReadOnly">
+            <summary>
+            Indicates if the collection is read-only.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseHasKeys">
+            <summary>
+            Determine if there are any _keys.
+            </summary>
+            <returns>True if the _entriesTable contains any _entries.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseAdd(System.String,System.Object)">
+            <summary>
+            Add an object to the collection.
+            </summary>
+            <param name="name">Name of object to add.</param>
+            <param name="value">Object to add.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseRemove(System.String)">
+            <summary>
+            Remove the specified item from the collection.
+            </summary>
+            <param name="name">Name of item to remove from the collection.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseRemoveAt(System.Int32)">
+            <summary>
+            Remove an item from the collection.
+            </summary>
+            <param name="index">Index of the item to remove from the collection.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseClear">
+            <summary>
+            Clear the collection and remove all items.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGet(System.Int32)">
+            <summary>
+            Get an item in the collection.
+            </summary>
+            <param name="index">Index of item to get.</param>
+            <returns>Requested item.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGet(System.String)">
+            <summary>
+            Get an item in the collection.
+            </summary>
+            <param name="name">Name of item to get.</param>
+            <returns>Requested item.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseSet(System.Int32,System.Object)">
+            <summary>
+            Set the value of an item in the collection.
+            </summary>
+            <param name="index">Index of item to set.</param>
+            <param name="value">New value for item.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseSet(System.String,System.Object)">
+            <summary>
+            Set the value of an item in the collection.
+            </summary>
+            <param name="name">Name of item to set value of.</param>
+            <param name="value">New value of item.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGetKey(System.Int32)">
+            <summary>
+            Get the key of the item with the specified index.
+            </summary>
+            <param name="index">Index of item.</param>
+            <returns>Key of the specified item.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGetAllKeys">
+            <summary>
+            Get a string array containing the _keys of all the items in the collection.
+            </summary>
+            <returns>String array with all _keys.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGetAllValues">
+            <summary>
+            Get an object array containing all object values stored in the collection.
+            </summary>
+            <returns>Array of objects.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.BaseGetAllValues(System.Type)">
+            <summary>
+            Get all objects in the collection cast to a specific type.
+            </summary>
+            <param name="type">Type of objects</param>
+            <returns>Array of objects.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.Reset">
+            <summary>
+            Clear the collection.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.Reset(System.Int32)">
+            <summary>
+            Clear the collection and set the capacity.
+            </summary>
+            <param name="capacity">Capacity of the collection.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.FindEntry(System.String)">
+            <summary>
+            Find the item entry with the specified key.
+            </summary>
+            <param name="key">Key of item to find.</param>
+            <returns><see cref="T:Prezza.Framework.Common.DataCollection.DataObjectEntry"/> with the specified key.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.CheckIfReadOnly">
+            <summary>
+            Throw an exception if the collection is read-only.
+            </summary>
+        </member>
+        <member name="T:Prezza.Framework.Common.DataCollection.DataObjectEntry">
+            <summary>
+            Simple container for collection data objects.  Consists of a key and value.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.DataObjectEntry.Key">
+            <summary>
+            Key of item.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.DataObjectEntry.Value">
+            <summary>
+            Value of item
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.DataObjectEntry.#ctor(System.String,System.Object)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Name (key) of item.</param>
+            <param name="value">Value of item</param>
+        </member>
+        <member name="T:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator">
+            <summary>
+            <see cref="T:System.Collections.IEnumerator"/> implementation for the data _collection.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator._position">
+            <summary>
+            Current enumerator _position.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator._collection">
+            <summary>
+            Data _collection to enumerate.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator._version">
+            <summary>
+            Version to keep track of changes.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator.#ctor(Prezza.Framework.Common.DataCollection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="collection">Collection of items to enumerate</param>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator.Current">
+            <summary>
+            Current enumerator item.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator.MoveNext">
+            <summary>
+            Move to the next item.
+            </summary>
+            <returns>Returns true if the move was successful.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.DataCollectionValuesEnumerator.Reset">
+            <summary>
+            Reset the enumerator _position.
+            </summary>
+        </member>
+        <member name="T:Prezza.Framework.Common.DataCollection.KeysCollection">
+            <summary>
+            Simple <see cref="T:System.Collections.ICollection"/> container for item _keys.
+            </summary>
+        </member>
+        <member name="F:Prezza.Framework.Common.DataCollection.KeysCollection._collection">
+            <summary>
+            Collection of _keys items.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.KeysCollection.#ctor(Prezza.Framework.Common.DataCollection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="collection">Collection of _keys.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.KeysCollection.Get(System.Int32)">
+            <summary>
+            Get the key with the specified index.
+            </summary>
+            <param name="index">Index of key</param>
+            <returns>Key</returns>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.KeysCollection.Item(System.Int32)">
+            <summary>
+            Get the key with the specified index.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.KeysCollection.GetEnumerator">
+            <summary>
+            Get an enumerator for the key.
+            </summary>
+            <returns><see cref="T:System.Collections.IEnumerator"/> instance.</returns>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.KeysCollection.Count">
+            <summary>
+            Number of items in the _collection.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.KeysCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copy items to an array.
+            </summary>
+            <param name="array">Array to copy items to.</param>
+            <param name="index">Index in array.</param>
+        </member>
+        <member name="M:Prezza.Framework.Common.DataCollection.KeysCollection.CopyTo(System.String[],System.Int32)">
+            <summary>
+            Copy items to an array.
+            </summary>
+            <param name="array">Array to copy items to.</param>
+            <param name="index">Index of array.</param>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.KeysCollection.System#Collections#ICollection#SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.DataCollection.KeysCollection.System#Collections#ICollection#IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Prezza.Framework.Common.DateRange">
+            <summary>
+            Simple container class representing a date range
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.DateRange.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Constructor accepting low and high value for date range.
+            </summary>
+            <param name="low"></param>
+            <param name="high"></param>
+        </member>
+        <member name="P:Prezza.Framework.Common.DateRange.Low">
+            <summary>
+            Low end of date range
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.DateRange.High">
+            <summary>
+            High end of date range
+            </summary>
+        </member>
+        <member name="T:Prezza.Framework.Common.ITransactional">
+            <summary>
+            Interface marking objects as transactional, which means they support rollback and notification of abort or commit events.  Useful as
+            a marker in cases where eventing is not possible due to deserialization issues that cause events to become unbound.
+            </summary>
+        </member>
+        <member name="E:Prezza.Framework.Common.ITransactional.TransactionAborted">
+            <summary>
+            Event marking transaction aborted.
+            </summary>
+        </member>
+        <member name="E:Prezza.Framework.Common.ITransactional.TransactionCommitted">
+            <summary>
+            Event marking transaction committed.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.ITransactional.Rollback">
+            <summary>
+            Rollback transaction.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.ITransactional.NotifyAbort(System.Object,System.EventArgs)">
+            <summary>
+            Notify the transaction object that a transaction has been aborted.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Prezza.Framework.Common.ITransactional.NotifyCommit(System.Object,System.EventArgs)">
+            <summary>
+            Notify the transaction object that a transaction has been committed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Prezza.Framework.Common.TableCoordinate">
+            <summary>
+            Row/column class that supports comparision for use in storing table positions.
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.TableCoordinate.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a table coordinate
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+        </member>
+        <member name="P:Prezza.Framework.Common.TableCoordinate.Row">
+            <summary>
+            Get row position
+            </summary>
+        </member>
+        <member name="P:Prezza.Framework.Common.TableCoordinate.Column">
+            <summary>
+            Get column position
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.TableCoordinate.Equals(Prezza.Framework.Common.TableCoordinate)">
+            <summary>
+            Compare this coordinate to the specified coordinate.  Returns true if coordinate x and y values match.
+            </summary>
+            <param name="other">Coordinate to compare.</param>
+            <returns>Boolean indicating equality of the coordinates.</returns>
+        </member>
+        <member name="T:Prezza.Framework.Common.TableCoordinateComparer">
+            <summary>
+             Equality comparer for two coordinates
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.TableCoordinateComparer.Equals(Prezza.Framework.Common.TableCoordinate,Prezza.Framework.Common.TableCoordinate)">
+            <summary>
+            Determine if two coordinates are equal
+            </summary>
+            <param name="coordinate1"></param>
+            <param name="coordinate2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.TableCoordinateComparer.GetHashCode(Prezza.Framework.Common.TableCoordinate)">
+            <summary>
+            Get the hash code for a coordinate
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Prezza.Framework.Common.XmlUtility">
+            <summary>
+            Simple routines to get Xml data
+            </summary>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeEnum(System.Xml.XmlNode,System.Type,System.Boolean)">
+            <summary>
+            Get the value of a node as an enumerated type.
+            </summary>
+            <param name="node">Node to get the enumerated type data from.</param>
+            <param name="enumType">Enumerated type for the return data.</param>
+            <param name="required">Indicates whether this node is required to exist and contain a value.</param>
+            <returns>Enumtype with the value contained in the node text.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeEnum(System.Xml.XmlNode,System.Type)">
+            <summary>
+            Get the text of a node as an enumerated type.
+            </summary>
+            <param name="node">Node to get the enumerated type data from.</param>
+            <param name="enumType">Enumerated type for the return data.</param>
+            <returns>Enumtype with the value contained in the node text.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeDate(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="node"></param>
+            <param name="required"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetDate(System.String,System.Globalization.CultureInfo[])">
+            <summary>
+            Get a date value
+            </summary>
+            <param name="value"></param>
+            <param name="cultures">Explicit list of cultures to use for conversion.  
+            If none specified, us and euro culture will be used.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetCultures">
+            <summary>
+            Get cultures for conversions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetUsCulture">
+            <summary>
+            Get culture for us date/number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetRotwCulture">
+            <summary>
+            Get culture for rest of world date/culture
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeDouble(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="node"></param>
+            <param name="required"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeInt(System.Xml.XmlNode,System.Nullable{System.Int32})">
+            <summary>
+            Get the value of a node as an integer.
+            </summary>
+            <param name="node">Node to get value of.</param>
+            <param name="defaultValue"></param>
+            <returns>Integer value of the node data.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeInt(System.Xml.XmlNode,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+             Get the value of a node as an integer.
+             </summary>
+             <param name="node">Node to get value of.</param>
+             <param name="required">Indicates that the node must not be null and must contain a value.</param>
+            <param name="defaultValue"></param>
+            <returns>Integer value of the node data.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeText(System.Xml.XmlNode)">
+            <summary>
+            Get the value of a node as text.
+            </summary>
+            <param name="node">Node to get the value of.</param>
+            <returns>Value of a node as text.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeText(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Get the value of a node as text.
+            </summary>
+            <param name="node">Node to get the value of.</param>
+            <param name="required">Indicates whether the node must not be null and must contain a value.</param>
+            <returns>Value of the node as text.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeBool(System.Xml.XmlNode)">
+            <summary>
+            Get the value of an Xml node as a boolean.
+            </summary>
+            <param name="node">Node</param>
+            <returns>True if the text of the attribute is "true" otherwise false is returned.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeBool(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            Get the value of an Xml node as a boolean.
+            </summary>
+            <param name="node">Node</param>
+            <param name="required">Indicates whether the node must exist and contain a value.</param>
+            <returns>True if the node of the attribute is "true" otherwise false is returned.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeTextAsCSV(System.Xml.XmlNodeList)">
+            <summary>
+            Get node text as csv
+            </summary>
+            <param name="nodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetNodeTextAsCSV(System.Xml.XmlNodeList,System.Boolean)">
+            <summary>
+            Get node text as csv
+            </summary>
+            <param name="nodes"></param>
+            <param name="required"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeText(System.Xml.XmlNode,System.String)">
+            <summary>
+            Get the value of an Xml node attribute as text.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <returns>String containing the value of the attribute.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeText(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Get the value of an Xml node attribute as text.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <param name="required">Indicates whether the node attribute must exist and contain a value.</param>
+            <returns>String containing the value of the attribute.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeBool(System.Xml.XmlNode,System.String)">
+            <summary>
+            Get the value of an Xml node attribute as a boolean.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <returns>True if the text of the attribute is "true" otherwise false is returned.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeBool(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Get the value of an Xml node attribute as a boolean.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <param name="required">Indicates whether the node attribute must exist and contain a value.</param>
+            <returns>True if the text of the attribute is "true" otherwise false is returned.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeInt(System.Xml.XmlNode,System.String)">
+            <summary>
+            Get the value of an Xml node attribute as an integer.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <returns>Integer value of the attribute.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeInt(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Get the value of an Xml node attribute as an integer.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <param name="required">Indicates whether the attribute must exist and contain a value.</param>
+            <returns>Integer value of the attribute.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeEnum(System.Xml.XmlNode,System.String,System.Type)">
+            <summary>
+            Get the value of an Xml node attribute as a enumerated type.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <param name="enumType">Enumerated type to return.</param>
+            <returns>Attribute value as enumeratd type.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.GetAttributeEnum(System.Xml.XmlNode,System.String,System.Type,System.Boolean)">
+            <summary>
+            Get the value of an Xml node attribute as a enumerated type.
+            </summary>
+            <param name="node">Node containing the attribute.</param>
+            <param name="name">Name of the attribute.</param>
+            <param name="enumType">Enumerated type to return.</param>
+            <param name="required">Indicates whether the attribute must exist and contain a value.</param>
+            <returns>Attribute value as enumeratd type.</returns>
+        </member>
+        <member name="M:Prezza.Framework.Common.XmlUtility.SerializeNameValueCollection(System.Xml.XmlWriter,System.Collections.Specialized.NameValueCollection,System.Boolean)">
+            <summary>
+            Serialize a name value collection using the specified writer.
+            </summary>
+            <param name="writer">Xml writer</param>
+            <param name="values">Name values collection to serialize.</param>
+            <param name="includeNullValues">Specify where items with null values will be
+            written and flagged with an isNull value.</param>
+        </member>
+    </members>
+</doc>

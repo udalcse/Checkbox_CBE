@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Text_Set '/controlText/singleLineTextEditor/required', 'en-US', N'Answer is Required'

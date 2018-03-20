@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="false" CodeBehind="DetailList.master.cs" Inherits="CheckboxWeb.DetailList" %>
+<%@ Register TagPrefix="ckbx" TagName="BreadCrumbNavigator" Src="~/Controls/Navigation/BreadCrumbNavigator.ascx" %>
+<%@ MasterType VirtualPath="~/Admin.Master" %>
+
+<asp:Content ID="_scripts" runat="server" ContentPlaceHolderID="_scriptContent">
+	<asp:ContentPlaceHolder ID="_head" runat="server" />
+</asp:Content>
+
+<asp:Content ID="_pageContent" ContentPlaceHolderID="_pageContent" runat="server">
+    <asp:ContentPlaceHolder ID="_topContent" runat="server" />
+
+	<asp:Panel id="_leftPanel" runat="server" CssClass="leftPanel left">
+        <%--<div class="pageHeaderContainer">
+            <span class="closeExitButtonContainer"><a id="_backButton" runat="server" visible="false">back to manager</a>&nbsp;&nbsp;&nbsp;&nbsp;<span id="closeLeftPanel" title="Hide the navigation section">collapse</span></span>
+            <asp:ContentPlaceHolder runat="server" ID="_titlePlace"></asp:ContentPlaceHolder>
+            <div class="pageHeader">
+                <asp:ContentPlaceHolder ID="_titleLinks" runat="server" />
+            </div>
+        </div>--%>
+        <asp:ContentPlaceHolder runat="server" ID="_titlePlace"></asp:ContentPlaceHolder>
+        <div class="left-header clearfix">
+            <a id="leftColumn_toggle" class="ckbxButton blueButton toggle-column"></a>
+            <div class="header-actions">
+                <asp:ContentPlaceHolder ID="_titleLinks" runat="server" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="breadcrumbTopPanel" style="margin-left: 6px;"></div>
+        <div id="leftPanel_search" class="left-search" style="display: none;">
+            <div id="left_column_search" class="search-input-container clearfix">
+                <input type="text" class="search-text" placeholder="Search..." />
+                <a class="liveSearch-applyBtn search-action search-btn" href="#"></a>
+                <span class="liveSearch-loadIcon search-action loading-icon"></span>
+                <a class="liveSearch-cancelBtn search-action clear-btn" href="#"></a>
+            </div>
+        </div>
+        <div class="viewport overflow-y">
+            <div class="overview">
+                <div class="overview-inner">
+		            <asp:ContentPlaceHolder ID="_leftContent" runat="server" />
+                </div>
+            </div>
+        </div><!-- .viewport -->
+	</asp:Panel>
+	<asp:Panel id="_rightPanel" CssClass="rightPanel left invitation-dashboard-container" runat="server">
+        <span class="openLeftPanel" title="Show the navigation section">Open Left Panel</span>
+        <div class="viewport">
+            <ckbx:BreadCrumbNavigator runat="server" />
+            <div class="overview">
+                <div class="dashboard">
+                    <div class="dashPadding">
+		                <asp:ContentPlaceHolder ID="_rightContent" runat="server" />
+                    </div>
+                </div>
+            </div>
+        </div><!-- .viewport -->
+	</asp:Panel>
+    <br class="clear" />
+</asp:Content>

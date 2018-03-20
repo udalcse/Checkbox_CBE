@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseSettings defaultInstance="checkboxSql">
+  <databaseTypes>
+    <databaseType name="sqlserver" type="Prezza.Framework.Data.Sql.SqlDatabase, Prezza.Framework" />
+  </databaseTypes>
+  <instances>
+      <instance name="MultiMasterDB" type="sqlserver" connectionString="MasterDBConnectionString" />
+
+      <!-- Instance Data for Types used by Checkbox must be present here to map to the database provider -->
+      <!-- Connection strings in web.config are overridden for the following when running in Multi-DB mode -->
+      <instance name="checkboxSql" type="sqlserver" connectionString="checkboxSql" />
+      <instance name="DBAuthenticationProvider" type="sqlserver" connectionString="DefaultConnectionString" />
+      <instance name="DBProfileProvider" type="sqlserver" connectionString="DefaultConnectionString" />
+  </instances>
+</databaseSettings>

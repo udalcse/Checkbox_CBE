@@ -1,0 +1,21 @@
+﻿{{if $item.index % 2 == 0}}
+<div class="gridContent zebra" id="style_${Id}" index="${$item.index}">
+{{else}}
+<div class="gridContent detailZebra" id="style_${Id}" index="${$item.index}">
+{{/if}}
+
+{{if IsDefault}}
+    <div class="fixed_25 left">&nbsp;<img src="../App_Themes/CheckboxTheme/Images/style16.gif" alt="system default" title="This is the default style template for new surveys."/></div>
+{{else}}
+    <div class="fixed_25 left"><input type="checkbox" value="${Id}" class="deleteStyle" /></div>
+{{/if}}
+
+{{if IsInUse}}
+    <div class="fixed_25 left">&nbsp;<img src="../App_Themes/CheckboxTheme/Images/check.png" alt="in use" title="This style is currently in use by a survey or report." /></div>
+{{else}}
+    <div class="fixed_25 left">&nbsp;</div>
+{{/if}}
+
+    <div class="fixed_225 left" sortField="Name">${Name}</div
+    <div class="fixed_150 left" sortField="CreatedBy">${CreatedBy}</div>
+</div>

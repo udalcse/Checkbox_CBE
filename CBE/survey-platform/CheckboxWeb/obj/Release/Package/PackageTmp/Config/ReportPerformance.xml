@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reportPerformanceConfiguration>
+  <maxResponseCountForUserInputItemsVisibility>10000</maxResponseCountForUserInputItemsVisibility>
+  <maxResponseDetailsItemRowsForPdfExport>250</maxResponseDetailsItemRowsForPdfExport>
+</reportPerformanceConfiguration>

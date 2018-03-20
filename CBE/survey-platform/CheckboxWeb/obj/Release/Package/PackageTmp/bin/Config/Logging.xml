@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loggingConfiguration>
+  <settings>
+    <setting name="tracingEnabled" value="true" />
+    <setting name="loggingEnabled" value="true" />
+    <setting name="distributionStrategy" value="inProcLogDistributionStrategy" />
+    <setting name="minimumPriority" value="1" />
+    <setting name="categoryFilterMode" value="DenyAllExceptAllowed" />
+  </settings>
+  <categoryFilters>
+    <!-- <categoryFilter name="Info" />
+    <categoryFilter name="Unspecified" /> -->
+    <categoryFilter name="Warning" />
+    <categoryFilter name="Error" />
+    <categoryFilter name="ExceptionHandler" />
+  </categoryFilters>
+  <distributionStrategies>
+    <distributionStrategy name="inProcLogDistributionStrategy" />
+  </distributionStrategies>
+  <categories>
+    <category name="Info" default="true">
+      <destinations>
+        <destination name="infoFlatFile" sink="flatFileSink" format="textLogFormatter" />
+        <destination name="systemLog" sink="DatabaseExceptionHandlerSinkSystemEventLogSink" format="nullLogFormatter" />
+      </destinations>
+    </category>
+    <category name="Debug">
+      <destinations>
+        <destination name="debugFlatFile" sink="flatFileSink" format="textLogFormatter" />
+      </destinations>
+    </category>
+    <category name="Warning">
+      <destinations>
+        <destination name="warningFlatFile" sink="flatFileSink" format="textLogFormatter" />
+        <destination name="systemLog" sink="DatabaseExceptionHandlerSinkSystemEventLogSink" format="nullLogFormatter" />
+      </destinations>
+    </category>
+    <category name="Error">
+      <destinations>
+        <destination name="errorFlatFile" sink="flatFileSink" format="textLogFormatter" />
+        <destination name="systemLog" sink="DatabaseExceptionHandlerSinkSystemEventLogSink" format="nullLogFormatter" />
+      </destinations>
+    </category>
+    <category name="ExceptionHandler">
+      <destinations>
+        <destination name="exceptionHandlerDatabase" sink="DatabaseExceptionHandlerSink" format="nullLogFormatter" />
+        <destination name="systemLog" sink="SystemEventLogSink" format="nullLogFormatter" />
+        <!-- <destination name="exceptionHandlerFlatFile" sink="exceptionHandlerFileSink" format="xmlLogFormatter" /> -->
+      </destinations>
+    </category>
+  </categories>
+  <formatters>
+    <formatter default="true" name="textLogFormatter" filePath="TextLogFormatter.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.TextFormatterData,Prezza.Framework" />
+    <formatter name="xmlLogFormatter" filePath="XmlLogFormatter.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.XmlFormatterData,Prezza.Framework" />
+    <formatter default="true" name="nullLogFormatter" filePath="NullLogFormatter.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.NullFormatterData,Prezza.Framework" />
+  </formatters>
+  <sinks>
+    <sink name="flatFileSink" filePath="FlatFileSink.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.FlatFileSinkData,Prezza.Framework" />
+    <sink name="exceptionHandlerFileSink" filePath="ExceptionHandlerFileSink.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.FlatFileSinkData,Prezza.Framework" />
+
+    <!-- Add a file sink for logging exceptions to the database -->
+    <sink name="DatabaseExceptionHandlerSink" filePath="DatabaseExceptionHandlerSink.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.DatabaseSinkData,Prezza.Framework" />
+
+    <!-- Add a file sink for logging exceptions to the sytem event log -->
+    <sink name="SystemEventLogSink" filePath="SystemEventLogSink.xml" configDataType="Prezza.Framework.Logging.Distributor.Configuration.SystemEventLogSinkData,Prezza.Framework" />
+
+  </sinks>
+</loggingConfiguration>

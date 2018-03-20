@@ -1,0 +1,1916 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DatabaseDeploy.Core</name>
+    </assembly>
+    <members>
+        <member name="T:DatabaseDeploy.Core.Configuration.IConfigurationService">
+            <summary>
+            The Configuration service service.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.ChangeLog">
+            <summary>
+            Gets or sets the name of the change log table.
+            </summary>
+            <value>The change log.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.ConnectionString">
+            <summary>
+            Gets or sets a connection string to be used by the system
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.DatabaseManagementSystem">
+            <summary>
+            Gets or sets a value indicating the type of DBMS to use.
+            </summary>
+            <value>The database management system.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.DatabaseScriptPath">
+            <summary>
+            Gets or sets the database script path
+            </summary>
+            <value>The database script path.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.FileNamePattern">
+            <summary>
+            Gets or sets the pattern to use for parsing the name of the script file
+            </summary>
+            <value>The file name pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.LastChangeToApply">
+            <summary>
+            Gets or sets a value indicating the last change that should be applied to the database.
+            </summary>
+            <value>The last change to apply.</value>
+            <remarks>Set to 0 or max value (the default) to apply all changes. Any other positive number will stop applying changes at
+            that level.</remarks>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.OutputFile">
+            <summary>
+            Gets or sets the directory and file name that will be used for writing out the change script
+            </summary>
+            <value>The output file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.Recursive">
+            <summary>
+            Gets or sets a value indicating whether or not the script search should be recursive
+            </summary>
+            <value><c>true</c> if recursive; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.RootDirectory">
+            <summary>
+            Gets or sets the root directory for processong
+            </summary>
+            <value>The root directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.Schema">
+            <summary>
+            Gets or sets the schema to use as a prefix for the change log table.
+            </summary>
+            <value>The schema.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.ScriptListFile">
+            <summary>
+            Gets or sets the name of the file where the list of found scripts should be written.
+            </summary>
+            <value>The script list file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.SearchPattern">
+            <summary>
+            Gets or sets the search pattern to use for finding script files
+            </summary>
+            <value>The search pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.UndoOutputFile">
+            <summary>
+            Gets or sets the directory and file name that will be used for writing out the undo change script
+            </summary>
+            <value>The undo output file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.IConfigurationService.DatabaseService">
+            <summary>
+            Gets the database service that should be used for database operations.
+            </summary>
+            <value>The database service.</value>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Configuration.ConfigurationService">
+            <summary>
+            Provides a service for managing configuration values.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.DefaultDatabasePath">
+            <summary>
+            The default database path
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.DefaultOutputFile">
+            <summary>
+            The default output filename
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.DefaultScriptListFile">
+            <summary>
+            The default file to contain the list of scripts.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.DefaultUndoFile">
+            <summary>
+            The default undo filename
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.changeLog">
+            <summary>
+            The changelog table.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.databaseManagementSystem">
+            <summary>
+            The database management type
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.fileNamePattern">
+            <summary>
+            The pattern to use for parsing the name of the script file
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.lastChangeToApply">
+            <summary>
+            The last change to apply in the database.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.outputFile">
+            <summary>
+            The output file to use for this run.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.rootDirectory">
+            <summary>
+            The root directory to use for this run.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.schema">
+            <summary>
+            The schema
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.scriptListFile">
+            <summary>
+            Contains the name of the script file where scripts should be written.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.searchPattern">
+            <summary>
+            The search pattern to use for finding script files
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Configuration.ConfigurationService.undoOutputFile">
+            <summary>
+            The undo output file.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.ChangeLog">
+            <summary>
+            Gets or sets the name of the change log table.
+            </summary>
+            <value>The change log.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.ConnectionString">
+            <summary>
+            Gets or sets a connection string to be used by the system
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.DatabaseManagementSystem">
+            <summary>
+            Gets or sets a value indicating the type of DBMS to use.
+            </summary>
+            <value>The database management system.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.DatabaseScriptPath">
+            <summary>
+            Gets or sets the database script path
+            </summary>
+            <value>The database script path.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.DatabaseService">
+            <summary>
+            Gets the database service that should be used for database operations.
+            </summary>
+            <value>The database service.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.FileNamePattern">
+            <summary>
+            Gets or sets the pattern to use for parsing the name of the script file
+            </summary>
+            <value>The file name pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.LastChangeToApply">
+            <summary>
+            Gets or sets a value indicating the last change that should be applied to the database.
+            </summary>
+            <value>The last change to apply.</value>
+            <remarks>Set to 0 or max value (the default) to apply all changes. Any other positive number will stop applying changes at
+            that level.</remarks>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.OutputFile">
+            <summary>
+            Gets or sets the directory and file name that will be used for writing out the change script
+            </summary>
+            <value>The output file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.Recursive">
+            <summary>
+            Gets or sets a value indicating whether or not the script search should be recursive
+            </summary>
+            <value><c>true</c> if recursive; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.RootDirectory">
+            <summary>
+            Gets or sets the root directory for processing
+            </summary>
+            <value>The root directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.Schema">
+            <summary>
+            Gets or sets the schema to use as a prefix for the change log table.
+            </summary>
+            <value>The schema.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.ScriptListFile">
+            <summary>
+            Gets or sets the name of the file where the list of found scripts should be written.  If no path is provided, a
+            relative path is assumed and the file will be in the RootDirectory directory.
+            </summary>
+            <value>The script list file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.SearchPattern">
+            <summary>
+            Gets or sets the search pattern to use for finding script files
+            </summary>
+            <value>The search pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Configuration.ConfigurationService.UndoOutputFile">
+            <summary>
+            Gets or sets the directory and file name that will be used for writing out the undo change script
+            </summary>
+            <value>The undo output file.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Configuration.ConfigurationService.SetupDatabaseType">
+            <summary>
+            Sets up the container to have the appropriate mappings for the appropriate database types.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Configuration.ConfigurationService.ToString">
+            <summary>
+            Overrides tostring to get a descriptive list of all settings.
+            </summary>
+            <returns>A string containing a list of all settings.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.IDeploymentService">
+            <summary>
+                The i deployment service.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.IDeploymentService.ConfigurationService">
+            <summary>
+                Gets the current configuration service that is being used.
+            </summary>
+            <value>The configuration service.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IDeploymentService.BuildDeploymentScript">
+            <summary>
+                Builds the deployment scripts based on the information that is known at the time.
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.BuildTasks.DbDeploy">
+            <summary>
+            Represents an MSBuild task for performing db deploy's inside of msbuild
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.BuildTasks.DbDeploy.Logger">
+            <summary>
+            Creates the default logger
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.BuildTasks.DbDeploy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.BuildTasks.DbDeploy"/> class.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.ChangeLog">
+            <summary>
+            Gets or sets the name of the change log table.  Defaults to changelog
+            </summary>
+            <value>The change log.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.ConfigurationService">
+            <summary>
+            Gets or sets the deployment service to use. This is injected by unity and should not be set.
+            </summary>
+            <value>The configuration service.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.ConnectionString">
+            <summary>
+            Gets or sets a connection string to be used by the system. There is no default for this value.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.DatabaseType">
+            <summary>
+            Gets or sets the database type to be used. mssql, mysql, and ora
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.DeploymentService">
+            <summary>
+            Gets or sets the deployment service to use. This is injected by unity and should not be set.
+            </summary>
+            <value>The deployment service.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.FileNamePattern">
+            <summary>
+            Gets or sets the pattern to use for parsing the name of the script file
+            </summary>
+            <value>The file name pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.LastChangeToApply">
+            <summary>
+            Gets or sets the last change to apply to the database. The default is int.MaxValue. The max is int.MaxValue.
+            </summary>
+            <value>The last change to apply.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.OutputFile">
+            <summary>
+            Gets or sets the output file where the generated script will be placed. The default is DbDeploy.sql in the same
+            directory where dbdeploy is run.
+            </summary>
+            <value>The output file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.Recursive">
+            <summary>
+            Gets or sets a value indicating whether or not the script search should be recursive. If true, all scripts matching
+            the search criteria below the RootDirectory will be included in the script run.
+            </summary>
+            <value><c>true</c> if recursive; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.RootDirectory">
+            <summary>
+            Gets or sets the root directory where dbdeploy begins its search for scripts
+            </summary>
+            <value>The root directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.Schema">
+            <summary>
+            Gets or sets the schema to use as a prefix for the change log table.  Defaults to dbo.
+            </summary>
+            <value>The schema.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.SearchPattern">
+            <summary>
+            Gets or sets the search pattern to use for finding script files. The default is "*.sql"
+            </summary>
+            <value>The search pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.BuildTasks.DbDeploy.UndoFile">
+            <summary>
+            Gets or sets the undo file that will be used for this run.  The default is DbDeployUndo.sql in the same directory
+            where dbdeploy is run.
+            </summary>
+            <value>The undo file.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.BuildTasks.DbDeploy.Execute">
+            <summary>
+            Executes the task.
+            </summary>
+            <returns>A boolean indicating whether or not the execution was successful.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.ChangeLog">
+            <summary>
+            A record of a changelog
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.ChangeLog.Log">
+            <summary>
+            Creates the default logger
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.ChangeLog.ApplicationEndDate">
+            <summary>
+            Gets or sets the application end date
+            </summary>
+            <value>The application end date.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.ChangeLog.AppliedBy">
+            <summary>
+            Gets or sets the person who applied the change set
+            </summary>
+            <value>The applied by.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.ChangeLog.ChangeNumber">
+            <summary>
+            Gets or sets the change number Id
+            </summary>
+            <value>The change number.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.ChangeLog.Description">
+            <summary>
+            Gets or sets the script description
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.ChangeLog.Parse(System.Data.DataRow)">
+            <summary>
+            Parses a data row to extract the information for this changelog record
+            </summary>
+            <param name="row">The row to parse</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum">
+            <summary>
+            Represents the scripts that are available in the system.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.ChangeScriptFooter">
+            <summary>
+            Represents the footer of the change script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.UndoScriptFooter">
+            <summary>
+            Represents the footer of the change script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.ChangeScriptHeader">
+            <summary>
+            Contains the header of the change script
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.UndoScriptHeader">
+            <summary>
+            Contains the header of the change script
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.EnsureChangeLogExists">
+            <summary>
+            The script to check and see if the changelog table exists. If not, it should be created.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.GetChangeLog">
+            <summary>
+            Gets the change log table completely.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.ScriptFooter">
+            <summary>
+            Represents the footer placed right after each script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.UndoFooter">
+            <summary>
+            Represents the footer placed right after each script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.ScriptHeader">
+            <summary>
+            Represents the header placed right before each script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.UndoHeader">
+            <summary>
+            Represents the header placed right before each script.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseScriptEnum.UndoToken">
+            <summary>
+            Represents the file containing the undo token.
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase">
+            <summary>
+            A base class for all database implementations.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.tokenReplacer">
+            <summary>
+            The token replacer to use for script token replacement.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase" /> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.ITokenReplacer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase" /> class.
+            </summary>
+            <param name="configurationService">The configuration service.</param>
+            <param name="fileService">The file service to use for file operations.</param>
+            <param name="tokenReplacer">The token Replacer.</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.ConfigurationService">
+            <summary>
+            Gets or sets the configuration service to use for generation
+            </summary>
+            <value>The configuration service.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.DatabaseType">
+            <summary>
+            Gets the database type for the class.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.FileService">
+            <summary>
+            Gets or sets the file service to use for file operations.
+            </summary>
+            <value>The file service.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.ExecuteScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script without returning results. Use RunScript if a result is expected.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed.</param>
+            <param name="parameters">The parameters for the script run.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.GetAppliedChanges">
+            <summary>
+            Gets the applied changes already in the database
+            </summary>
+            <returns>A dictionary containing the change logs and the ids for those change logs</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.GetScriptFromFile(System.String)">
+            <summary>
+            Gets the database script from a file.
+            </summary>
+            <param name="scriptFileName">The script to retrieve.</param>
+            <returns>A string containing the script to be run.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.RunScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script and returns a result.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed.</param>
+            <param name="parameters">The parameters for the script</param>
+            <returns>A dataset containing the results from the script run</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.GetCommandText(System.String)">
+            <summary>
+            Gets a script and prepares it for execution.
+            </summary>
+            <param name="scriptFileName">The name of the script to get</param>
+            <returns>A sql string read for execution.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.EnsureChangelogExists">
+            <summary>
+            Ensures that the changelog table exists.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.DatabaseServiceBase.GetChangelog">
+            <summary>
+            Gets the changelog table as a dataset
+            </summary>
+            <returns>A dataset containing the changelogs</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService">
+            <summary>
+            Represents a class responsible for making calls to the database.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.ConfigurationService">
+            <summary>
+            Gets or sets the configuration service to use for generation
+            </summary>
+            <value>The configuration service.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.DatabaseType">
+            <summary>
+            Gets the database type for the class.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.ExecuteScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script without returning results. Use RunScript if a result is expected.
+            </summary>
+            <param name="scriptFileName">The name of the scrip that will be run.</param>
+            <param name="parameters">The parameters for the script run.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.GetAppliedChanges">
+            <summary>
+            Gets the applied changes already in the database
+            </summary>
+            <returns>A dictionary containing the change logs and the ids for those change logs</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.GetScriptFromFile(System.String)">
+            <summary>
+            Gets the database script from a file.
+            </summary>
+            <param name="scriptFileName">The script to retrieve.</param>
+            <returns>A string containing the script to be run.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.IDatabaseService.RunScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script and returns a result.
+            </summary>
+            <param name="scriptFileName">The name of a script that will be executed.</param>
+            <param name="parameters">The parameters for the script</param>
+            <returns>A dataset containing the results from the script run</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.IMySqlDatabaseService">
+            <summary>
+            Represents a MySql instance of the database
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService">
+            <summary>
+            Represents a MySql database implementation
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.ITokenReplacer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService" /> class.
+            </summary>
+            <param name="configurationService">The configuration service.</param>
+            <param name="fileService">The file service to use</param>
+            <param name="tokenReplacer">The token replacer to use.</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService.DatabaseType">
+            <summary>
+            Gets the database type for the class.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService.ExecuteScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script without returning results. Use RunScript if a result is expected.
+            </summary>
+            <param name="scriptFileName">The name of the script to be executed.</param>
+            <param name="parameters">The parameters for the script run.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.MySql.MySqlDatabaseService.RunScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script and returns a result.
+            </summary>
+            <param name="scriptFileName">The name of the script to be executed.</param>
+            <param name="parameters">The parameters for the script</param>
+            <returns>A dataset containing the results from the script run</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.IOracleDatabaseService">
+            <summary>
+            Represents an oracle database instance
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService">
+            <summary>
+                Represents an oracle database instance
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.ITokenReplacer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService" /> class.
+            </summary>
+            <param name="configurationService">The configuration service.</param>
+            <param name="fileService">The file service to use</param>
+            <param name="tokenReplacer">The token replacer to use</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService.DatabaseType">
+            <summary>
+                Gets the database type for the class.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService.ExecuteScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Runs a script without returning results. Use RunScript if a result is expected.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed</param>
+            <param name="parameters">The parameters for the script run.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.Oracle.OracleDatabaseService.RunScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Runs a script and returns a result.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed.</param>
+            <param name="parameters">The parameters for the script</param>
+            <returns>A dataset containing the results from the script run</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.ISqlServerDatabaseService">
+            <summary>
+            Represents an SQL Server database instance
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService">
+            <summary>
+            Represents a SQL Server database instance
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.ITokenReplacer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService" /> class.
+            </summary>
+            <param name="configurationService">The configuration service.</param>
+            <param name="fileService">The file service to use.</param>
+            <param name="tokenReplacer">The token replacer to use.</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService.DatabaseType">
+            <summary>
+            Gets the database type for the class.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService.ExecuteScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script without returning results. Use RunScript if a result is expected.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed.</param>
+            <param name="parameters">The parameters for the script run.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.DatabaseInstances.SqlServer.SqlServerDatabaseService.RunScript(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Runs a script and returns a result.
+            </summary>
+            <param name="scriptFileName">The name of a script file that will be executed</param>
+            <param name="parameters">The parameters for the script</param>
+            <returns>A dataset containing the results from the script run</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.IChangeLog">
+            <summary>
+            Represents a changelog record
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.IChangeLog.ApplicationEndDate">
+            <summary>
+            Gets or sets the application end date
+            </summary>
+            <value>The application end date.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.IChangeLog.AppliedBy">
+            <summary>
+            Gets or sets the person who applied the change set
+            </summary>
+            <value>The applied by.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.IChangeLog.ChangeNumber">
+            <summary>
+            Gets or sets the change number Id
+            </summary>
+            <value>The change number.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Database.IChangeLog.Description">
+            <summary>
+            Gets or sets the script description
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Database.IChangeLog.Parse(System.Data.DataRow)">
+            <summary>
+            Parses a data row to extract the information for this changelog record
+            </summary>
+            <param name="row">The row to parse</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Database.DatabaseTypesEnum">
+            <summary>
+            An enum for the allowed database types in the system
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseTypesEnum.SqlServer">
+            <summary>
+            Microsoft Sql Server
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseTypesEnum.Oracle">
+            <summary>
+            Oracle Database
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Database.DatabaseTypesEnum.MySql">
+            <summary>
+            MySQL database
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.FileManagement.IIoProxy">
+            <summary>
+                Represents a class that works as a proxy for calls into the file system.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.Exists(System.String)">
+            <summary>
+                Checks to see if a file exists
+            </summary>
+            <param name="fileName">The file to check.</param>
+            <returns>True if it exists, false otherwise.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.GetFiles(System.String,System.String,System.IO.SearchOption)">
+            <summary>
+                Executes a Dictionary.GetFiles call
+            </summary>
+            <param name="rootDirectory">The root directory for the search/</param>
+            <param name="searchPattern">The search pattern to use.</param>
+            <param name="searchOption">The search options to use</param>
+            <returns>A string array of files that were found.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.GetStreamReader(System.String)">
+            <summary>
+                Gets a stream reader for the given filename
+            </summary>
+            <param name="fileName">The filename to open.</param>
+            <returns>A stream reader for the filename</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.GetStreamWriter(System.String)">
+            <summary>
+                Returns a stream writer with the given filename
+            </summary>
+            <param name="fileName">The filename to open.</param>
+            <returns>A stream for the given filename.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.ReadAllLines(System.String)">
+            <summary>
+                Read all lines from a file
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>An object of type System.String[].</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IIoProxy.ReadAllText(System.String)">
+            <summary>
+                Read all text from a file
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.FileManagement.IoProxy">
+            <summary>
+                This class is purely a proxy for calls into the file system for FileService.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.Exists(System.String)">
+            <summary>
+                Checks to see if a file exists
+            </summary>
+            <param name="fileName">The file to check.</param>
+            <returns>True if it exists, false otherwise.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.GetFiles(System.String,System.String,System.IO.SearchOption)">
+            <summary>
+                Executes a Dictionary.GetFiles call
+            </summary>
+            <param name="rootDirectory">The root directory for the search/</param>
+            <param name="searchPattern">The search pattern to use.</param>
+            <param name="searchOption">The search options to use</param>
+            <returns>A string array of files that were found.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.GetStreamReader(System.String)">
+            <summary>
+                Gets a stream reader for the given filename
+            </summary>
+            <param name="fileName">The filename to open.</param>
+            <returns>A stream reader for the filename</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.GetStreamWriter(System.String)">
+            <summary>
+                Returns a stream writer with the given filename
+            </summary>
+            <param name="fileName">The filename to open.</param>
+            <returns>A stream for the given filename.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.ReadAllLines(System.String)">
+            <summary>
+                Read all lines from the file
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>An object of type System.String[].</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IoProxy.ReadAllText(System.String)">
+            <summary>
+                Read all of the text from a file
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.FileManagement.FileService">
+            <summary>
+                Manages file interactions for the generation
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.FileManagement.FileService.Log">
+            <summary>
+                Creates the default logger
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.FileManagement.FileService.configurationService">
+            <summary>
+                The configuration service to use for this file manager
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.FileManagement.FileService.fileCache">
+            <summary>
+                Caches file contents, upon request to speed up retrieval of the contents.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.FileManagement.FileService.ioProxy">
+            <summary>
+                A proxy for certain IO functions to make this class more testable.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.FileManagement.IIoProxy)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.FileManagement.FileService" /> class.
+            </summary>
+            <param name="configurationService">The configuration service.</param>
+            <param name="ioProxy">Represents a proxy for certain file system functions</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.CleanupPastRuns">
+            <summary>
+                Removes previous files and leftovers to ensure a clean run.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.GetFileContents(System.String,System.Boolean)">
+            <summary>
+                Reads the contents of a file from disc
+            </summary>
+            <param name="fileName">The name of the file to read.</param>
+            <param name="useCache">Indicates whether or not the cache should be used for getting file contents.</param>
+            <returns>A string containing the contents of the file.</returns>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.GetLinesFromFile(System.String)">
+            <summary>
+                Gets the lines from a file
+            </summary>
+            <param name="fileName">The name of the file to read.</param>
+            <returns>A string containing the contents of the file.</returns>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.GetScriptFiles">
+            <summary>
+                Gets a list of script files from disk
+            </summary>
+            <returns>A dictionary of script files that are on disc.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.WriteChangeScript(System.String)">
+            <summary>
+                Writes the change script file to disk
+            </summary>
+            <param name="changeScript">The change script contents</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.WriteScriptList(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+                Writes the list of scripts found to a text file in the order in which they were found.
+            </summary>
+            <param name="scripts">The scripts that were found.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.WriteUndoScript(System.String)">
+            <summary>
+                Writes the undo script file to disk
+            </summary>
+            <param name="undoScript">The undo disk</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.FileService.WriteStringToFile(System.String,System.String)">
+            <summary>
+                Writes the contents of a string to the specified filename.
+            </summary>
+            <param name="fileName">The filename to which the content should be written</param>
+            <param name="content">The content to write</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.FileManagement.IFileService">
+            <summary>
+            Represents service that control file oprations for this run
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.CleanupPastRuns">
+            <summary>
+            Removes previous files and leftovers to ensure a clean run.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.GetFileContents(System.String,System.Boolean)">
+            <summary>
+            Reads the contents of a file from disc
+            </summary>
+            <param name="fileName">The name of the file to read.</param>
+            <param name="useCache">Indicates whether or not the cache should be used for getting file contents.</param>
+            <returns>A string containing the contents of the file.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.GetLinesFromFile(System.String)">
+            <summary>
+            Reads the lines of a file from disc
+            </summary>
+            <param name="fileName">The name of the file to read.</param>
+            <returns>A string containing the contents of the file.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.GetScriptFiles">
+            <summary>
+            Gets a list of script files from disk
+            </summary>
+            <returns>A dictionary of script files that are on disc.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.WriteChangeScript(System.String)">
+            <summary>
+            Writes the change script file to disk
+            </summary>
+            <param name="changeScript">The change script contents</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.WriteScriptList(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+            Writes the list of scripts found to a text file in the order in which they were found.
+            </summary>
+            <param name="scripts">The scripts that were found.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.FileManagement.IFileService.WriteUndoScript(System.String)">
+            <summary>
+            Writes the undo script file to disk
+            </summary>
+            <param name="undoScript">The undo disk</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.IoC.Container">
+            <summary>
+                Provides a static container wrapper for Unity
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.IoC.Container.LockObject">
+            <summary>
+                Used for locking
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.IoC.Container.container">
+            <summary>
+                The container to use for IoC
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.IoC.Container.UnityContainer">
+            <summary>
+                Gets the container to use for IoC
+            </summary>
+            <value>The unity container.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.Container.RegisterInstance``1(``0)">
+            <summary>
+                Registers an instance of the given type.
+            </summary>
+            <typeparam name="T">The type that we're registering for.</typeparam>
+            <param name="instance">The instance we're registering.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.Container.Reset">
+            <summary>
+                Resets the container by setting it to null, which will cause it to be recreated on the next call.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.Container.SetLifetimeManager``1(Microsoft.Practices.Unity.LifetimeManager)">
+            <summary>
+                Sets the lifetime manager for a registration. If the type isn't yet registered, will add a lifetime manager to the
+                registration. If the type is already registered, it will do nothing.
+            </summary>
+            <typeparam name="T">The type that will be resolved.</typeparam>
+            <param name="lifetimeManager">The lifetime manager to use.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.IoC.ContainerFactory">
+            <summary>
+                Class ContainerFactory.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.IoC.ContainerFactory.Log">
+            <summary>
+                Creates the default logger
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.IoC.ContainerFactory.Container">
+            <summary>
+                Gets or sets the unity container.
+            </summary>
+            <value>The container.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.ContainerFactory.BuildUnityContainer">
+            <summary>
+                The build unity container.
+            </summary>
+            <returns>An IUnityContainer that is the container for injection.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.ContainerFactory.BuildUnityContainer(System.Boolean)">
+            <summary>
+                The build unity container.
+            </summary>
+            <param name="loadConfiguration">Whether or not the configuration from the app.config should be loaded.</param>
+            <returns>An IUnityContainer that is the container for injection.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.IoC.ContainerFactory.BuildUnityContainer(System.Boolean,System.Action{Microsoft.Practices.Unity.IUnityContainer})">
+            <summary>
+                Builds the unity container optionally loading the configuration and with a callback for registering additional
+                items.
+            </summary>
+            <param name="loadConfiguration">Whether or not the configuration should be loaded.</param>
+            <param name="registrationCallback">A callback for loading additional configuration</param>
+            <returns>A configured unity container.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.LogAspect">
+            <summary>
+                Logging advice for a logging aspect
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogAspect.Namespace">
+            <summary>
+                The namespace to pay attention to.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogAspect.cachedMethodName">
+            <summary>
+                cached method name
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogAspect.lastException">
+            <summary>
+                the last exception that was logged.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogAspect.logger">
+            <summary>
+                The logger used
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Utilities.LogAspect" /> class
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.CompileTimeInitialize(System.Reflection.MethodBase,PostSharp.Aspects.AspectInfo)">
+            <summary>
+                Cache the method name during compilation
+            </summary>
+            <param name="method">The methodbase reflection info</param>
+            <param name="aspectInfo">Reserved for later PostSharp use</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.OnEntry(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+                Log at method entry pointcut
+            </summary>
+            <param name="args">The MethodExecutionArgs</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.OnException(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+                Log when a method exception occurs
+            </summary>
+            <param name="args">The MethodExecutionArgs which includes the exception</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.OnExit(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+                Log at method exist pointcut
+            </summary>
+            <param name="args">The MethodExecutionArgs</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogAspect.RuntimeInitialize(System.Reflection.MethodBase)">
+            <summary>
+                Apply runtime processing for the aspect
+            </summary>
+            <param name="method">The methodbase information</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.DefaultEnvironmentProvider">
+            <summary>
+                Default Environment provider which uses the stardard .NET Environment class
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultEnvironmentProvider.CurrentDirectory">
+            <summary>
+                User standard .NET environment to return current directory
+            </summary>
+            <value>The current directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultEnvironmentProvider.ExecutingAssemblyDirectory">
+            <summary>
+                The location of the currently executing assembly
+            </summary>
+            <value>The executing assembly directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultEnvironmentProvider.UserName">
+            <summary>
+                User standard .NET environment to return current user name
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.DefaultTimeProvider">
+            <summary>
+                The default time provider which uses DateTime to do its work
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultTimeProvider.Now">
+            <summary>
+                The current local time
+            </summary>
+            <value>The now.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultTimeProvider.Today">
+            <summary>
+                The current Date in local time
+            </summary>
+            <value>The today.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.DefaultTimeProvider.UtcNow">
+            <summary>
+                The current UTC time
+            </summary>
+            <value>The UTC now.</value>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.EnvironmentProvider">
+            <summary>
+                Abstract class which represents something that provides the current time
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.EnvironmentProvider.current">
+            <summary>
+                The current
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.EnvironmentProvider.#cctor">
+            <summary>
+                Initializes static members of the <see cref="T:DatabaseDeploy.Core.Utilities.EnvironmentProvider" /> class.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.EnvironmentProvider.Current">
+            <summary>
+                The current TimeProvider
+            </summary>
+            <value>The current.</value>
+            <exception cref="T:System.ArgumentNullException">value</exception>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.EnvironmentProvider.CurrentDirectory">
+            <summary>
+                The current directory
+            </summary>
+            <value>The current directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.EnvironmentProvider.ExecutingAssemblyDirectory">
+            <summary>
+                The currently executing assembly name
+            </summary>
+            <value>The executing assembly directory.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.EnvironmentProvider.UserName">
+            <summary>
+                The current username
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.EnvironmentProvider.ResetToDefault">
+            <summary>
+                Reset to the default environment provider
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.IScriptMessageFormatter">
+            <summary>
+                Takes an IDictionary and parses it into a pretty format
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.IScriptMessageFormatter.FormatCollection(System.Collections.Generic.ICollection{System.Int32})">
+            <summary>
+                Formats a collection of int values int a pretty string.
+            </summary>
+            <param name="values">The values to format</param>
+            <returns>A string containing the pretty values (for example "1 to 5, 10 to 15, 20, 40, 60")</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.IScriptMessageFormatter.FormatCollection(System.Collections.Generic.ICollection{System.Decimal})">
+            <summary>
+                Concatenates values with commas
+            </summary>
+            <param name="values">The values.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.ITokenReplacer">
+            <summary>
+                Represents a class that replaces tokens in strings.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.ITokenReplacer.CurrentVersion">
+            <summary>
+                Gets or sets the current version.
+            </summary>
+            <value>The current version.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.ITokenReplacer.Script">
+            <summary>
+                Gets or sets the current script being worked on.
+            </summary>
+            <value>The script.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.ITokenReplacer.Replace(System.String)">
+            <summary>
+                Performs a replacement on the string that is passed in.
+            </summary>
+            <param name="stringToParse">The string to parse.</param>
+            <returns>A string that has been fully replaced.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.LogExtensions">
+            <summary>
+                Extensions that allow single line log calls
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogExtensions.DebugIfEnabled(log4net.ILog,System.String,System.Object[])">
+            <summary>
+                Log only if Debug level is enabled
+            </summary>
+            <param name="log">The log.</param>
+            <param name="format">The format.</param>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogExtensions.InfoIfEnabled(log4net.ILog,System.String,System.Object[])">
+            <summary>
+                Log only if Info level is enabled
+            </summary>
+            <param name="log">The log.</param>
+            <param name="format">The format.</param>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.LogUtility">
+            <summary>
+                Represents a class for assisting with logging statements.
+            </summary>
+            <remarks>
+                Throughout this class, logging is NOT done as recommended in other classes to avoid potential recursion from
+                calling
+                this static class over and over.
+            </remarks>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogUtility.MaxDepth">
+            <summary>
+                Limits the maximum logging depth.  Basically, if you're deeper than this, you're probably recursing, so don't go
+                any deeper
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogUtility.Log">
+            <summary>
+                Creates the default logger
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.LogUtility.currentDepth">
+            <summary>
+                A counter for preventing recursive depths in logging.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetContext(System.Reflection.MethodBase,System.Object[])">
+            <summary>
+                Gets the context using a method base and the args passed to it.  Ideal for PostSharp
+            </summary>
+            <param name="currentMethod">The current method.</param>
+            <param name="passedValues">The values passed.</param>
+            <returns>a string containing the formatted text for the method</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetContext(System.Object[])">
+            <summary>
+                Gets the context for the current method call and translates it into a debug logging statement.
+            </summary>
+            <param name="passedValues">The parameters of the call.</param>
+            <returns>A string containing the context string.</returns>
+            <exception cref="T:System.ArgumentException">
+                Thrown when the number of parameters passed does not match the number of parameters
+                defined on the method.
+            </exception>
+            <remarks>
+                The parameters of the call are not available to reflection, so they must be passed in.  If the number of
+                parameters passed to GetContext doesn't match the number expected, and exception is thrown.
+            </remarks>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetObjectValue(System.Object)">
+            <summary>
+                Gets the value for an object.
+            </summary>
+            <param name="value">The value to get a string for.</param>
+            <returns>A string representation of the object.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetResult">
+            <summary>
+                Gets the result string message for result calls.
+            </summary>
+            <returns>A string containing the method get result string and the result value.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetResult(System.Object)">
+            <summary>
+                Gets the result string message for result calls.
+            </summary>
+            <param name="result">The result value to be added to the string.</param>
+            <returns>A string containing the method get result string and the result value.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetResult(System.Reflection.MethodBase,System.Object)">
+            <summary>
+                Gets the result string message for result calls.
+            </summary>
+            <param name="currentMethod">The current method to get a result for.</param>
+            <param name="result">The result value to be added to the string.</param>
+            <returns>A string containing the method get result string and the result value.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.BuildLoggingStatement(System.Reflection.MethodBase,System.Reflection.ParameterInfo[],System.Object[])">
+            <summary>
+                Builds a logging statement from the given parameters and passed values.
+            </summary>
+            <param name="currentMethod">The current method that we're logging.</param>
+            <param name="methodParameters">The parameters from the method</param>
+            <param name="passedValues">The values that have been passed for logging.</param>
+            <returns>A string containing the built up logging statement.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetCurrentMethod">
+            <summary>
+                Gets the current method for the calls to logutility.
+            </summary>
+            <returns>A method base containing the current logging method.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetGenericTypes(System.Text.StringBuilder,System.Type[])">
+            <summary>
+                Gets a list of the generic types for the method.
+            </summary>
+            <param name="loggingStatement">The logging statement being built</param>
+            <param name="genericTypes">Type types ot put into the statement.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetMethodDeclaration(System.Text.StringBuilder,System.Reflection.MethodBase,System.Reflection.ParameterInfo[])">
+            <summary>
+                Gets a method declaration for the current method.
+            </summary>
+            <param name="loggingStatement">The logging statement we're building.</param>
+            <param name="currentMethod">The current method to log.</param>
+            <param name="methodParameters">The method paramters for the current method.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetMethodParameterValues(System.Text.StringBuilder,System.Reflection.ParameterInfo[],System.Object[])">
+            <summary>
+                Gets the values for all parameters.
+            </summary>
+            <param name="loggingStatement">The logging statement we're building.</param>
+            <param name="methodParameters">The method parameters for the current method.</param>
+            <param name="passedValues">The values that have been passed for logging.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.GetObjectValue(System.Object,System.Collections.Generic.IDictionary{System.Object,System.String},System.Collections.Generic.IList{System.Object})">
+            <summary>
+                Gets the value for an object.
+            </summary>
+            <param name="value">The value to get a string for.</param>
+            <param name="appendedObjects">The objects that have already been parsed.</param>
+            <param name="seenObjects">Objects that have been seen.  May or may not have string values created.</param>
+            <returns>A string representation of the object.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.IsArray(System.Object)">
+            <summary>
+                Determines whether or not the value passed is an array.
+            </summary>
+            <param name="valueToCheck">The value to verify.</param>
+            <returns>True of the valueToCheck is or contains an array, false otherwise.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.LogUtility.ValidateParameters(System.Reflection.MethodBase,System.Reflection.ParameterInfo[],System.Object[])">
+            <summary>
+                Verifies taht the parameters passed match the method's properties
+            </summary>
+            <param name="currentMethod">The current method we're testing for.</param>
+            <param name="methodParameters">The parameters for the method.</param>
+            <param name="passedValues">The values that have been passed in.</param>
+            <exception cref="T:System.ArgumentException">
+            </exception>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.ScriptMessageFormatter">
+            <summary>
+                Takes an IDictionary and makes a pretty script message
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.ScriptMessageFormatter.FormatCollection(System.Collections.Generic.ICollection{System.Int32})">
+            <summary>
+                Formats a collection of int values int a pretty string.
+            </summary>
+            <param name="values">The values to format</param>
+            <returns>A string containing the pretty values (for example "1 to 5, 10 to 15, 20, 40, 60")</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.ScriptMessageFormatter.FormatCollection(System.Collections.Generic.ICollection{System.Decimal})">
+            <summary>
+                Returns the list of decimal numbers as a string
+            </summary>
+            <param name="values">The values.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.ScriptMessageFormatter.AppendRange(System.Text.StringBuilder,System.Int32,System.Int32)">
+            <summary>
+                Appends a range of values to the stringbuilder
+            </summary>
+            <param name="textString">The stringbuilder</param>
+            <param name="lastNumber">The last number that was found.</param>
+            <param name="rangeStart">The start of the range.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.StringExtensions">
+            <summary>
+                Replaces strings for text in sql server.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.StringExtensions.Canonicalize(System.String)">
+            <summary>
+                Replace multiple spaces with a single space
+            </summary>
+            <param name="script">The script.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.StringExtensions.Combine(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Combine multiple lines into 1
+            </summary>
+            <param name="lines">The lines.</param>
+            <returns>An object of type System.String.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.StringExtensions.ReplaceEx(System.String,System.String,System.String)">
+            <summary>
+                Performs a string replacement on the given string.
+            </summary>
+            <param name="value">The value that will have replacement done against it.</param>
+            <param name="oldValue">What to search for in the string.</param>
+            <param name="newValue">What to replace the string with.</param>
+            <returns>A string that has had tokens replaced and bad charachters replacesd.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.StringExtensions.StripSingleLineComments(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                String all of the -- comments
+            </summary>
+            <param name="lines">The lines.</param>
+            <returns>An object of type IEnumerable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.TimeProvider">
+            <summary>
+                Abstract class which represents something that provides the current time
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TimeProvider.current">
+            <summary>
+                The current
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.TimeProvider.#cctor">
+            <summary>
+                Initializes static members of the <see cref="T:DatabaseDeploy.Core.Utilities.TimeProvider" /> class.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TimeProvider.Current">
+            <summary>
+                The current TimeProvider
+            </summary>
+            <value>The current.</value>
+            <exception cref="T:System.ArgumentNullException">value</exception>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TimeProvider.Now">
+            <summary>
+                The current local time
+            </summary>
+            <value>The now.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TimeProvider.Today">
+            <summary>
+                The current date in local time
+            </summary>
+            <value>The today.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TimeProvider.UtcNow">
+            <summary>
+                The current UTC time
+            </summary>
+            <value>The UTC now.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.TimeProvider.ResetToDefault">
+            <summary>
+                Reset to the default time provider
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.TokenEnum">
+            <summary>
+                Represents tokens that are available for replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.CurrentDateTimeToken">
+            <summary>
+                Used for CurrentDateTime replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.CurrentUserToken">
+            <summary>
+                Used for CurrentUser replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.CurrentVersionToken">
+            <summary>
+                Used for CurrentVersion replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.ScriptDescriptionToken">
+            <summary>
+                Used for ScriptDescription replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.ScriptIdToken">
+            <summary>
+                Used for ScriptId replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.ScriptNameToken">
+            <summary>
+                Used for ScriptName replacement.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.SchemaToken">
+            <summary>
+                Used for schema token replacement
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenEnum.ChangeLogToken">
+            <summary>
+                Used for change log token replacement.
+            </summary>
+        </member>
+        <member name="T:DatabaseDeploy.Core.Utilities.TokenReplacer">
+            <summary>
+                Replaces Tokens in strings.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.Utilities.TokenReplacer.configurationService">
+            <summary>
+                The configuration service to use.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.TokenReplacer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Utilities.TokenReplacer"/> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.TokenReplacer.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.Utilities.TokenReplacer"/> class.
+            </summary>
+            <param name="configurationService">The configuration service to use for this instance</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TokenReplacer.CurrentVersion">
+            <summary>
+                Gets or sets the current version.
+            </summary>
+            <value>The current version.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.Utilities.TokenReplacer.Script">
+            <summary>
+                Gets or sets the current script being worked on.
+            </summary>
+            <value>The script.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.Utilities.TokenReplacer.Replace(System.String)">
+            <summary>
+                Performs a replacement on the string that is passed in. This assumes that any properties, such as current version,
+                that are needed have been set.
+            </summary>
+            <param name="stringToParse">The string to parse.</param>
+            <returns>A string that has been fully replaced.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.ScriptGeneration.IScriptFile">
+            <summary>
+                Represents a script file in the system.
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.Contents">
+            <summary>
+                Gets or sets the contents of the script read in from the files
+            </summary>
+            <value>The contents.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.Description">
+            <summary>
+                Gets or sets the description for this file.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.FileInfo">
+            <summary>
+                Gets or sets the file info for this script
+            </summary>
+            <value>The file information.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.FileName">
+            <summary>
+                Gets or sets the full file name for this script
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.Id">
+            <summary>
+                Gets or sets the script Id. These must be unique
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.IScriptFile.Parse(DatabaseDeploy.Core.FileManagement.IFileService,System.String)">
+            <summary>
+                Parses a file.
+            </summary>
+            <param name="fileService">The service that interacts with files</param>
+            <param name="filePath">The file that is going to be parsed.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.ScriptGeneration.ScriptFile">
+            <summary>
+                Represents a script in the system.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.Log">
+            <summary>
+                Creates the default logger
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.regexFileName">
+            <summary>
+                The regex file name
+            </summary>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.FileNamePattern">
+            <summary>
+                Pattern used to parse the file names
+            </summary>
+            <value>The file name pattern.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.Contents">
+            <summary>
+                Gets or sets the contents of the script
+            </summary>
+            <value>The contents.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.Description">
+            <summary>
+                Gets or sets the description for this file.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.FileInfo">
+            <summary>
+                Gets or sets the file info for this script
+            </summary>
+            <value>The file information.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.FileName">
+            <summary>
+                Gets or sets the full file name for this script
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.Id">
+            <summary>
+                Gets or sets the script Id. These must be unique
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.Parse(DatabaseDeploy.Core.FileManagement.IFileService,System.String)">
+            <summary>
+                Parses a file info for the information needed in the script
+            </summary>
+            <param name="fileService">Service to deal with files</param>
+            <param name="filePath">The file info to parse</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.GetIdAndDescription">
+            <summary>
+                Gets the Id and description from the file name
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptFile.ReadContents(DatabaseDeploy.Core.FileManagement.IFileService,System.String)">
+            <summary>
+                Reads the contents.
+            </summary>
+            <param name="fileService">The file service.</param>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.ScriptGeneration.IScriptService">
+            <summary>
+                Represents a service for building scripts.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.IScriptService.BuildChangeScript(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+                Builds a change script from the given configuration.
+            </summary>
+            <param name="changes">The changes that are to be included.</param>
+            <returns>A string containing the script to be run.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.IScriptService.BuildUndoScript(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+                Builds an undo script from the changes given. This is not currently used.
+            </summary>
+            <param name="changes">The changes that are to be used to build an undo script.</param>
+            <returns>A string containing the undo script.</returns>
+        </member>
+        <member name="T:DatabaseDeploy.Core.ScriptGeneration.ScriptService">
+            <summary>
+                Used to generate scripts for dbdeploy
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptService.configurationService">
+            <summary>
+                The configuration service to use for processing.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptService.fileService">
+            <summary>
+                The file service to use for file stuff.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptService.tokenReplacer">
+            <summary>
+                The token replacer to use for processing.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.ScriptGeneration.ScriptService.undoToken">
+            <summary>
+                Represents the token to use for undo files.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.ScriptGeneration.ScriptService" /> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.#ctor(DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.ITokenReplacer,DatabaseDeploy.Core.Configuration.IConfigurationService)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.ScriptGeneration.ScriptService" /> class.
+            </summary>
+            <param name="fileService">the File service to use for file requests.</param>
+            <param name="tokenReplacer">The token replacer to use for script processing.</param>
+            <param name="configurationService">The configuration service to use for processing.</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.BuildChangeScript(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+                The build change script.
+            </summary>
+            <param name="changes">The changes.</param>
+            <returns>A string containing the contents of the provided change files</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.BuildUndoScript(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile})">
+            <summary>
+                The build undo script.
+            </summary>
+            <param name="changes">The changes.</param>
+            <returns>A string containing the contents of the undo portion of the scripts.</returns>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.AppendScript(System.String,System.Text.StringBuilder)">
+            <summary>
+                Appends a script to the contents of the current building script.
+            </summary>
+            <param name="scriptToUse">The script to use for the append.</param>
+            <param name="changeScript">The overall change script</param>
+        </member>
+        <member name="M:DatabaseDeploy.Core.ScriptGeneration.ScriptService.AppendScriptBody(System.Text.StringBuilder,System.String,System.Boolean)">
+            <summary>
+                Appends a script to the output file
+            </summary>
+            <param name="changeScript">The overall change script</param>
+            <param name="scriptContents">The contents of the script file.</param>
+            <param name="undo">True if an undo script is being generated, false otherwise.</param>
+        </member>
+        <member name="T:DatabaseDeploy.Core.DeploymentService">
+            <summary>
+                Manages the overall database deployment.
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.DeploymentService.Log">
+            <summary>
+                Creates the default logger
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.DeploymentService.configurationService">
+            <summary>
+                The configuration service to use for the build
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.DeploymentService.fileService">
+            <summary>
+                The file service to use for the build
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.DeploymentService.scriptMessageFormatter">
+            <summary>
+                The formatter for formatting script concats
+            </summary>
+        </member>
+        <member name="F:DatabaseDeploy.Core.DeploymentService.scriptService">
+            <summary>
+                The script service to use for the build
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.DeploymentService.#ctor(DatabaseDeploy.Core.Configuration.IConfigurationService,DatabaseDeploy.Core.ScriptGeneration.IScriptService,DatabaseDeploy.Core.FileManagement.IFileService,DatabaseDeploy.Core.Utilities.IScriptMessageFormatter)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DatabaseDeploy.Core.DeploymentService" /> class.
+            </summary>
+            <param name="configurationService">The configuration Service.</param>
+            <param name="scriptService">The script Service.</param>
+            <param name="fileService">The file Service.</param>
+            <param name="scriptMessageFormatter">The script formatter for messages</param>
+        </member>
+        <member name="P:DatabaseDeploy.Core.DeploymentService.ConfigurationService">
+            <summary>
+                Gets the current configuration service that is being used.
+            </summary>
+            <value>The configuration service.</value>
+        </member>
+        <member name="M:DatabaseDeploy.Core.DeploymentService.BuildDeploymentScript">
+            <summary>
+                Builds the deployment scripts based on the information that is known at the time.
+            </summary>
+        </member>
+        <member name="M:DatabaseDeploy.Core.DeploymentService.GetScriptsToApply(System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.ScriptGeneration.IScriptFile},System.Collections.Generic.IDictionary{System.Decimal,DatabaseDeploy.Core.Database.IChangeLog})">
+            <summary>
+                Compares the applied scripts to the available scripts and determines which scripts to apply.
+            </summary>
+            <param name="availableScripts">The scripts that are available to be applied to the database.</param>
+            <param name="appliedChanges">The scripts that have already been applied to the database</param>
+            <returns>A dictionary containing the scripts that need to be applied to the current database instance</returns>
+        </member>
+    </members>
+</doc>

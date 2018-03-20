@@ -1,0 +1,173 @@
+﻿/* Checkbox */
+.checkbox-item {
+    margin: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Radio */
+.radio-item {
+    margin: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/*Rank Order*/
+.rankOrderSelectable
+{
+    min-height:100px;background-color:#aaaaaa;width:350px;
+}
+.rankOrderSelectableContainer {
+    min-width: 750px;
+}
+.rankorder-draggable
+{
+    width:320px !important;
+}
+
+.rankOrderLabelPlace
+{
+    display: block;
+}
+
+div.rankOrder.ui-sortable .rankOrderLabelPlace {
+    padding:5px 10px; 
+    margin: 5px; 
+    max-width:500px;
+}
+
+.rank-order-drag-n-drop {
+    min-width:500px;    
+}
+
+.numeric-rank-order-label-place {
+    max-width: 350px;
+}
+
+/*Opt-out*/
+.optOutFrame {
+    text-align: left;
+    position:absolute; 
+    width: 650px; 
+    height:600px; left: 50%; 
+    top:50%;
+    margin:-300px 0 0 -350px;
+}
+
+/*Slider*/
+.slider-value-list-container {
+    padding-bottom: 50px;
+}
+
+.numeric-slider-margin {
+    margin-left: 50px;
+}
+
+.ui-slider-label {
+    word-wrap: break-word;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.ui-slider-handle {
+    height: 28px !important;
+    margin-left: -14px !important;
+    margin-top: -15px !important;
+    position: absolute !important;
+    top: 50% !important;
+    width: 28px !important;
+    z-index: 10 !important;
+
+    cursor: pointer !important;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+    background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE !important;
+    border: 1px solid #CCCCCC;
+    color: #222222;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #FFFFFF;
+
+    border-radius: 1em;
+}
+
+.sliderSelectedValue {
+    -moz-box-sizing: content-box;
+    background-image: none;
+    border-width: 0;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    font-weight: 700;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+    outline: 0 none;
+    padding: 4px;
+    text-align: center;
+    vertical-align: text-bottom;
+    width: 40px;
+    border-width: 0px;
+    border-radius: 0.6em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+    font-family: Helvetica,Arial,sans-serif;
+    background-color: #F9F9F9;
+    outline-color: #333333;
+}
+
+.sliderSelectedValue:focus {
+    box-shadow: 0 0 12px #387BBE;
+}
+
+.slider-value-wrapper {
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    float: left;    
+}
+
+.ui-slider-horizontal .ui-state-hover {
+    background: linear-gradient(#F6F6F6, #E0E0E0) repeat scroll 0 0 #DFDFDF !important;
+    border: 1px solid #BBBBBB;
+    color: #222222;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.ui-slider-horizontal .ui-state-focus {
+    box-shadow: 0 0 3px #387BBE inset, 0 0 9px #387BBE;
+    outline: none;
+    border: 1px solid #D3D3D3;
+}
+
+.ui-slider-horizontal .ui-state-active {
+    background: url("Resources/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png") repeat-x scroll 50% 50% #E6E6E6;
+    border: 1px solid #D3D3D3;
+    color: #555555;
+}
+
+.ui-slider.ui-slider-horizontal {
+    height: 15px !important;
+    margin-right: 15px !important;
+    overflow: visible !important;
+    position: relative !important;
+    top: 6px !important;
+
+    background: linear-gradient(#D0D0D0, #DFDFDF) repeat scroll 0 0 #D6D6D6 !important;
+    border: 1px solid #BBBBBB !important;
+    color: #222222 !important;
+    font-weight: bold !important;
+    text-shadow: 0 1px 0 #FFFFFF !important;
+
+    border-top-left-radius:	8.5px !important;
+    border-top-right-radius:	8.5px !important;
+    border-bottom-left-radius:	8.5px !important;
+    border-bottom-right-radius:	8.5px !important;
+    outline-color: #222222;
+}

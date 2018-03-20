@@ -1,0 +1,11 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="dashStatsContent zebra">
+{{else}}
+    <div class="dashStatsContent detailZebra">
+    {{/if}}
+        <div class="left fixed_25"><input type="checkbox" value="${DatabaseId}" class="addEmailList" /></div>
+        <div class="left fixed_200">${Name}</div>
+        <div class="left fixed_200">${Description}</div>
+        <div class="left">${AddressCount}</div>
+        <br class="clear" />
+    </div>

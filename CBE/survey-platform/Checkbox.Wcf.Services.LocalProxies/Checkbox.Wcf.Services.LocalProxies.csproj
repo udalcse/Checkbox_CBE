@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC348C49-5C7F-4AFE-9359-A4BD84FC01FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Checkbox.Wcf.Services.LocalProxies</RootNamespace>
+    <AssemblyName>Checkbox.Wcf.Services.LocalProxies</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'develop|AnyCPU'">
+    <OutputPath>bin\develop\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'online|AnyCPU'">
+    <OutputPath>bin\online\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LocalReportDataServiceProxy.cs" />
+    <Compile Include="LocalReportMetaDataServiceProxy.cs" />
+    <Compile Include="LocalSurveyResponseServiceProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Checkbox.Wcf.Services.Proxies\Checkbox.Wcf.Services.Proxies.csproj">
+      <Project>{B181F819-319B-4390-86C9-B51B940C4133}</Project>
+      <Name>Checkbox.Wcf.Services.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Checkbox.Wcf.Services\Checkbox.Wcf.Services.csproj">
+      <Project>{61D717EB-ED78-498F-8834-CBED233EDF58}</Project>
+      <Name>Checkbox.Wcf.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Checkbox\Checkbox.csproj">
+      <Project>{4FDE1F16-41BF-45BD-A1FC-4A8EFAE02AFB}</Project>
+      <Name>Checkbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Prezza.Framework.Common\Prezza.Framework.Common.csproj">
+      <Project>{2328F020-50E3-4DAF-A4F9-9C1A4D3CA238}</Project>
+      <Name>Prezza.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Prezza.Framework\Prezza.Framework.csproj">
+      <Project>{D8846AF1-ABF4-41AB-8BBE-07AF7AFB597C}</Project>
+      <Name>Prezza.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

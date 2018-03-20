@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Checkbox.Forms.Items.Configuration.CaptchaItemData">
+    <Position X="0.75" Y="9" Width="4.75" />
+    <TypeIdentifier>
+      <FileName>Forms\Items\Configuration\CaptchaItemData.cs</FileName>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Checkbox.Forms.Items.Configuration.LabelledItemData" Collapsed="true">
+    <Position X="0.75" Y="7.5" Width="4.75" />
+    <TypeIdentifier>
+      <FileName>Forms\Items\Configuration\LabelledItemData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAABAAEAAAAEAAAAAAAAAAAAAAAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Checkbox.Forms.Items.Configuration.LocalizableResponseItemData" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="4.75" />
+    <TypeIdentifier>
+      <FileName>Forms\Items\Configuration\LocalizableResponseItemData.cs</FileName>
+      <HashCode>AAIAAQAAAAAACAAAAAAAAAAAAAAAIAAAAACACAAgQEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Checkbox.Forms.Items.Configuration.ResponseItemData" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="4.75" />
+    <TypeIdentifier>
+      <FileName>Forms\Items\Configuration\ResponseItemData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAgAAEAAAAAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Checkbox.Forms.Items.Configuration.ItemData" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="4.75" />
+    <TypeIdentifier>
+      <FileName>Forms\Items\Configuration\ItemData.cs</FileName>
+      <HashCode>AQRAgQAIAAIAAAAAgAFCBABCEgEAAEAAAEAAwQgQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Checkbox.Common.AbstractPersistedDomainObject" Collapsed="true">
+    <Position X="0.75" Y="2" Width="4.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Checkbox.Common.PersistedDomainObject" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+</ClassDiagram>

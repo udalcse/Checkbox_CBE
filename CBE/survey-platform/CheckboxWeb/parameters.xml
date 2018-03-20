@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+
+  <parameter name="InstallSuccess"   defaultValue="" description="True if already intalled">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='InstallSuccess']/@value" />
+  </parameter>
+
+  <parameter name="ApplicationURL" defaultValue="http://localhostblah" description="URL.  IE http://localhost:8889">
+    <parameterEntry kind="XMLFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='ApplicationURL']/@value" />
+  </parameter>
+
+  <parameter name="ApplicationRoot"  defaultValue="" description="URL.  IE /">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='ApplicationRoot']/@value" />
+  </parameter>
+  
+  <parameter name="AzureRegion"  defaultValue="West US 2" description="The region the applicaiton is running in">
+      <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='AzureRegion']/@value" />
+  </parameter>
+  
+  <parameter name="LicensePath"  defaultValue="c:\license" description="Path to the license file">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='LicensePath']/@value" />
+  </parameter>
+
+  <parameter name="TempPath"  defaultValue="Temp" description="Path to the temp dir">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='TempPath']/@value" />
+  </parameter>
+  
+  <parameter name="PartnerLinkApiRoot"  defaultValue="http://partners.corpgov.tech:5000" description="URL to the partnerlink server">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='PartnerLinkApiRoot']/@value" />
+  </parameter>
+
+  <parameter name="EnvironmentName"  defaultValue="UNSET" description="Name of the current environment">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='EnvironmentName']/@value" />
+  </parameter>
+
+  <parameter name="DefaultConnectionString-Web.config Connection String"  defaultValue="" description="URL. Server=localhost\sqlexpress;Database=checkbox;User Id=checkbox;Password=checkbox;Application Name=Checkbox Survey Server; /">
+    <parameterEntry kind="XmlFile"
+                    scope="Web.config"
+                    match="//*[local-name()='configuration']/*[local-name()='connectionStrings']/*[local-name()='add' and @name='DefaultConnectionString']/@connectionString" />
+  </parameter>
+
+</parameters>

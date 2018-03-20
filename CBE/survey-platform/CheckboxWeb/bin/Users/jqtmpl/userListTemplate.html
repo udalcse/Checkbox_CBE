@@ -1,0 +1,22 @@
+﻿ <div class="gridHeader">
+    <div class="fixed_25 left"><input type="checkbox" id="_selectAllUsers"/></div>
+     <div class="fixed_225 left headerPart">
+         <span class="header_sorter hand">
+             <span class="left">${textHelper.getTextValue("/users/userListTemplate/userName", "User Name")}</span>
+             <span class="toggle-arrow-up gridsorter" sortField="UniqueIdentifier" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+     <div class="fixed_225 left headerPart">
+         <span class="header_sorter hand">
+             <span class="left">${textHelper.getTextValue("/users/userListTemplate/email", "Email")}</span>
+             <span class="toggle-arrow-up gridsorter" sortField="Email" id="toggle_arrow_sorter_${items.ClientID}"></span>
+         </span>
+     </div>
+    <br class="clear" />
+ </div>
+
+{{each(index, user) items}}
+    <div id="userContainer_${user.UniqueIdentifier}" index="${index}">
+        {{tmpl(user, {index: index}) 'userListItemTemplate.html'}}
+    </div>
+{{/each}}

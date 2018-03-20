@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.xheo.com/licensing/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.xheo.com/licensing/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.xheo.com/licensing/">
+      <s:element name="RenewLease">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="originalLicenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profileHash" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenewLeaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewLeaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LicenseCultureSoapHeader" type="s0:LicenseCultureSoapHeader" />
+      <s:complexType name="LicenseCultureSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CultureName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrialLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="extra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assemblyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profileHash" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrialLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrialLicenseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="salt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profileHash" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valuesXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Validate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="salt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="generateLicense" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="valuesXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Unregister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnregisterResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="RenewLeaseSoapIn">
+    <part name="parameters" element="s0:RenewLease" />
+  </message>
+  <message name="RenewLeaseSoapOut">
+    <part name="parameters" element="s0:RenewLeaseResponse" />
+  </message>
+  <message name="RenewLeaseLicenseCultureSoapHeader">
+    <part name="LicenseCultureSoapHeader" element="s0:LicenseCultureSoapHeader" />
+  </message>
+  <message name="GetTrialLicenseSoapIn">
+    <part name="parameters" element="s0:GetTrialLicense" />
+  </message>
+  <message name="GetTrialLicenseSoapOut">
+    <part name="parameters" element="s0:GetTrialLicenseResponse" />
+  </message>
+  <message name="ValidateExSoapIn">
+    <part name="parameters" element="s0:ValidateEx" />
+  </message>
+  <message name="ValidateExSoapOut">
+    <part name="parameters" element="s0:ValidateExResponse" />
+  </message>
+  <message name="ValidateExLicenseCultureSoapHeader">
+    <part name="LicenseCultureSoapHeader" element="s0:LicenseCultureSoapHeader" />
+  </message>
+  <message name="ValidateSoapIn">
+    <part name="parameters" element="s0:Validate" />
+  </message>
+  <message name="ValidateSoapOut">
+    <part name="parameters" element="s0:ValidateResponse" />
+  </message>
+  <message name="RegisterExSoapIn">
+    <part name="parameters" element="s0:RegisterEx" />
+  </message>
+  <message name="RegisterExSoapOut">
+    <part name="parameters" element="s0:RegisterExResponse" />
+  </message>
+  <message name="RegisterSoapIn">
+    <part name="parameters" element="s0:Register" />
+  </message>
+  <message name="RegisterSoapOut">
+    <part name="parameters" element="s0:RegisterResponse" />
+  </message>
+  <message name="UnregisterSoapIn">
+    <part name="parameters" element="s0:Unregister" />
+  </message>
+  <message name="UnregisterSoapOut">
+    <part name="parameters" element="s0:UnregisterResponse" />
+  </message>
+  <portType name="Xheo.Licensing_x0020_ServerSoap">
+    <operation name="RenewLease">
+      <documentation>Renews the original lease for a period of time established in the license.</documentation>
+      <input message="s0:RenewLeaseSoapIn" />
+      <output message="s0:RenewLeaseSoapOut" />
+    </operation>
+    <operation name="GetTrialLicense">
+      <documentation>Generates a new trial license.</documentation>
+      <input message="s0:GetTrialLicenseSoapIn" />
+      <output message="s0:GetTrialLicenseSoapOut" />
+    </operation>
+    <operation name="ValidateEx">
+      <documentation>Validates a previously issued license.</documentation>
+      <input message="s0:ValidateExSoapIn" />
+      <output message="s0:ValidateExSoapOut" />
+    </operation>
+    <operation name="Validate">
+      <documentation>Validates a previously issued license.</documentation>
+      <input message="s0:ValidateSoapIn" />
+      <output message="s0:ValidateSoapOut" />
+    </operation>
+    <operation name="RegisterEx">
+      <documentation>Registers an existing license with additional information, or optionally generates a new license with the given serial numnber.</documentation>
+      <input message="s0:RegisterExSoapIn" />
+      <output message="s0:RegisterExSoapOut" />
+    </operation>
+    <operation name="Register">
+      <documentation>Registers a signed license for later validation.</documentation>
+      <input message="s0:RegisterSoapIn" />
+      <output message="s0:RegisterSoapOut" />
+    </operation>
+    <operation name="Unregister">
+      <documentation>Registers a signed license for later validation.</documentation>
+      <input message="s0:UnregisterSoapIn" />
+      <output message="s0:UnregisterSoapOut" />
+    </operation>
+  </portType>
+  <binding name="Xheo.Licensing_x0020_ServerSoap" type="s0:Xheo.Licensing_x0020_ServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="RenewLease">
+      <soap:operation soapAction="http://www.xheo.com/licensing/RenewLease" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:RenewLeaseLicenseCultureSoapHeader" part="LicenseCultureSoapHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+        <soap:header message="s0:RenewLeaseLicenseCultureSoapHeader" part="LicenseCultureSoapHeader" use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTrialLicense">
+      <soap:operation soapAction="http://www.xheo.com/licensing/GetTrialLicense" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateEx">
+      <soap:operation soapAction="http://www.xheo.com/licensing/ValidateEx" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:ValidateExLicenseCultureSoapHeader" part="LicenseCultureSoapHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+        <soap:header message="s0:ValidateExLicenseCultureSoapHeader" part="LicenseCultureSoapHeader" use="literal" />
+      </output>
+    </operation>
+    <operation name="Validate">
+      <soap:operation soapAction="http://www.xheo.com/licensing/Validate" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterEx">
+      <soap:operation soapAction="http://www.xheo.com/licensing/RegisterEx" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Register">
+      <soap:operation soapAction="http://www.xheo.com/licensing/Register" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Unregister">
+      <soap:operation soapAction="http://www.xheo.com/licensing/Unregister" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Xheo.Licensing_x0020_Server">
+    <documentation>Licensing enforcement and registration service for the XHEO|Licensing package.</documentation>
+    <port name="Xheo.Licensing_x0020_ServerSoap" binding="s0:Xheo.Licensing_x0020_ServerSoap">
+      <soap:address location="http://www.xheo.local/licensingserver.asmx" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,19 @@
+﻿{{if $item.index % 2 == 0}}
+    <div class="gridContent zebra" reportId = "${ReportId}">
+{{else}}
+    <div class="gridContent detailZebra" reportId = "${ReportId}">
+{{/if}}
+        <div class="fixed_25 left input" style="width:5%">
+            {{if Deletable == true}}
+                <input type="checkbox" value="${ReportId}" class="deleteReport" />
+            {{/if}}
+        </div>
+        <div class="fixed_25 left">${ReportId}</div>
+        <div class="fixed_150 left truncate" title="${Name}">${Name}</div>
+        <div class="fixed_125 left truncate">${CreatedBy}</div>
+        <div class="fixed_125 left truncate">${dateUtils.jsonDateToInvariantDateString(LastModified)}</div>
+        <div class="fixed_50 left">
+            <a href="Edit.aspx?r=${ReportId}" style="padding-right:30px">Edit</a>
+            <a target="_blank" href="../../../RunAnalysis.aspx?aid=${ReportId}" >Run</a></div>
+        <br class="clear" />
+    </div>

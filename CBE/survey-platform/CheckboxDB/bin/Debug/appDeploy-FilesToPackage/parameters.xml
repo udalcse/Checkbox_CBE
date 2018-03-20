@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter name="DatabaseName"  defaultValue="checkbox" description="The default database name">
+    <parameterEntry kind="XmlFile"
+                    scope="app.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='DatabaseType']/@value" />
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@database_name@@" />
+    <parameterEntry kind="TextFile"
+                scope="DatabaseDeploy.ps1"
+                match="@@database_name@@" />
+  </parameter>
+
+  <parameter name="DatabaseHostname"  defaultValue="localhost" description="The default database hostname">
+    <parameterEntry kind="XmlFile"
+                    scope="app.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='DatabaseHostname']/@value" />
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@database_hostname@@" />
+    <parameterEntry kind="TextFile"
+                scope="DatabaseDeploy.ps1"
+                match="@@database_hostname@@" />
+  </parameter>
+
+  <parameter name="DatabaseInstanceName" defaultValue="" description="The default database instance name">
+    <parameterEntry kind="XmlFile"
+                    scope="app.config"
+                    match="//*[local-name()='configuration']/*[local-name()='appSettings']/*[local-name()='add' and @key='DatabaseInstanceName']/@value" />
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@database_instancename@@" />
+    <parameterEntry kind="TextFile"
+                scope="DatabaseDeploy.ps1"
+                match="@@database_instancename@@" />
+  </parameter>
+
+  <parameter name="DatabaseUsername"  defaultValue="checkbox" description="The default database username">
+    <parameterEntry kind="TextFile"
+                scope=".*UpgradeScripts.*.sql"
+                match="@@database_username@@" />
+    <parameterEntry kind="TextFile"
+            scope="DatabaseDeploy.ps1"
+            match="@@database_username@@" />
+  </parameter>
+  <parameter name="DatabasePassword"  defaultValue="checkbox" description="The default database password">
+    <parameterEntry kind="TextFile"
+                scope=".*UpgradeScripts.*.sql"
+                match="@@database_password@@" />
+    <parameterEntry kind="TextFile"
+            scope="DatabaseDeploy.ps1"
+            match="@@database_password@@" />
+  </parameter>
+  <parameter name="DatabaseAdminUsername"  defaultValue="checkbox" description="The default database admin user, with add/drop DB permissions">
+    <parameterEntry kind="TextFile"
+                scope="DatabaseDeploy.ps1"
+                match="@@database_admin_username@@" />
+    <parameterEntry kind="TextFile"
+            scope=".*UpgradeScripts.*.sql"
+            match="@@database_admin_username@@" />
+  </parameter>
+  <parameter name="DatabaseAdminPassword"  defaultValue="checkbox" description="The default database admin password">
+    <parameterEntry kind="TextFile"
+                scope="DatabaseDeploy.ps1"
+                match="@@database_admin_password@@" />
+    <parameterEntry kind="TextFile"
+            scope=".*UpgradeScripts.*.sql"
+            match="@@database_admin_password@@" />
+  </parameter>
+  <parameter name="AdminUsername"  defaultValue="admin" description="The web admin user">
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@admin_username@@" />
+  </parameter>
+  <parameter name="AdminPassword"  defaultValue="2getin" description="The default admin password">
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@admin_password@@"/>
+  </parameter>
+  <parameter name="DatabaseDeployArgs"  defaultValue="" description="Extra DatabaseDeploy.exe args">
+    <parameterEntry kind="TextFile"
+              scope="DatabaseDeploy.ps1"
+              match="@@databasedeploy_args@@" />
+  </parameter>
+  <parameter name="AdminUserGUID"  defaultValue="da6271f2-b898-4489-87f4-1e548645a335" description="The admin user's GUID">
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@admin_user_guid@@" />
+  </parameter>
+  
+  <parameter name="SystemEmailAddress" description="The default email address">
+    <parameterEntry kind="TextFile"
+                    scope=".*UpgradeScripts.*.sql"
+                    match="@@system_email_address@@" />
+  </parameter>
+  
+</parameters>

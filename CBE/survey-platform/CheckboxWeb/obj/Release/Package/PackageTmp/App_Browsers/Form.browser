@@ -1,0 +1,29 @@
+<!--
+    You can find existing browser definitions at
+    <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers
+--> 
+<browsers>
+  <!--
+    <browser refID="Default">
+        <controlAdapters>
+          <adapter controlType="System.Web.UI.HtmlControls.HtmlForm" adapterType="Checkbox.Web.UrlRewriting.FormRewriterControlAdapter,Checkbox.Web" />
+        </controlAdapters>
+    </browser>
+  
+  
+    <browser refID="MozillaFirefox">
+        <controlAdapters>
+            <adapter controlType="Checkbox.Web.UI.Controls.WarningCallout" adapterType="Checkbox.Web.UI.Controls.Adapters.WarningCalloutAdapter" />
+        </controlAdapters>
+    </browser>
+    <browser refID="Opera8to9">
+        <controlAdapters>
+            <adapter controlType="Checkbox.Web.UI.Controls.WarningCallout" adapterType="Checkbox.Web.UI.Controls.Adapters.WarningCalloutAdapter" />
+        </controlAdapters>
+    </browser>
+    <browser refID="Safari">
+        <controlAdapters>
+            <adapter controlType="Checkbox.Web.UI.Controls.WarningCallout" adapterType="Checkbox.Web.UI.Controls.Adapters.WarningCalloutAdapter" />
+        </controlAdapters>
+    </browser> -->
+</browsers>

@@ -1,0 +1,98 @@
+﻿<%@ Register TagPrefix="ckbx" Namespace="Checkbox.Web.UI.Controls" Assembly="Checkbox.Web" %>
+
+<%--
+  Skin template for pages in the Checkbox application.
+--%>
+
+<%-- Master Page  --%>
+
+<asp:Image runat="server" SkinID="ProgressSpinner" CssClass="ProgressSpinner" ImageUrl="Images/ProgressSpinner.gif" Width="31" Height="31" />
+<asp:Image runat="server" SkinID="Warning" ImageUrl="Images/Stop.png" />
+
+<asp:ImageButton SkinID="PipeToggle" runat="server" ImageUrl="Images/Plus-blue.png" Height="16" Width="16" />
+
+<asp:GridView runat="server" CssClass="DefaultGrid border999 shadow999">
+    <HeaderStyle CssClass="HeaderRow" />
+    <RowStyle CssClass="EvenRow" />
+    <AlternatingRowStyle CssClass="OddRow" />
+    <PagerStyle CssClass="pagination"></PagerStyle>
+</asp:GridView>
+
+
+<%-- Page Specific --%>
+<asp:Image runat="server" SkinID="Forms_Manage_ResponseTemplate" ImageUrl="Images/form16.gif" />
+<asp:Image runat="server" SkinID="Forms_Manage_Folder" ImageUrl="Images/folder16.gif" />
+<asp:Image runat="server" SkinID="Forms_Manage_Active" ImageUrl="Images/check.png" />
+<asp:Image runat="server" SkinID="SiteLogo" ImageUrl="Images/CheckboxLogo.png" />
+
+<ckbx:MultiLanguageImageButton SkinID="FileFieldMoveUpButton" runat="server" ImageUrl="Images/Up_16.gif" CssClass="fileMoveUpButton" TextId="/pageText/users/import.aspx/moveUpTip" />
+<ckbx:MultiLanguageImageButton SkinID="FileFieldMoveDownButton" runat="server" ImageUrl="Images/Down_16.gif" CssClass="fileMoveDownButton" TextId="/pageText/users/import.aspx/moveDownTip" />
+
+<ckbx:MultiLanguageImageButton SkinID="UserFieldMoveUpButton" runat="server" ImageUrl="Images/Up_16.gif" TextId="/pageText/settings/customUserFields.aspx/moveUpTip" />
+<ckbx:MultiLanguageImageButton SkinID="UserFieldMoveDownButton" runat="server" ImageUrl="Images/Down_16.gif" TextId="/pageText/settings/customUserFields.aspx/moveDownTip" />
+<ckbx:MultiLanguageImageButton SkinID="UserFieldDeleteButton" runat="server" ImageUrl="Images/delete16.gif" TextId="/pageText/settings/customUserFields.aspx/deleteTip" />
+<ckbx:MultiLanguageImageButton SkinID="UserFieldAddButton" runat="server" ImageUrl="Images/Plus-blue.png" TextId="/pageText/settings/customUserFields.aspx/addTip" />
+
+
+<%-- ACL Editor --%>
+<asp:ImageButton SkinID="ACLApply" runat="server" ImageUrl="Images/arrowright.png" Height="16" Width="16" />
+<asp:ImageButton SkinID="ACLRemove" runat="server" ImageUrl="Images/Stop.png" Height="16" Width="16" />
+<asp:ImageButton SkinID="ACLAddRemove" runat="server" ImageUrl="Images/arrowleft.png" Height="16" Width="16" />
+<ckbx:MultiLanguageImageButton SkinID="ACLFilterOn" runat="server" ImageUrl="Images/search-blue-small.png" Height="12" Width="11" />
+<ckbx:MultiLanguageImageButton SkinID="ACLFilterOff" runat="server" ImageUrl="Images/clear-grey-small.png" Height="12" Width="12" />
+
+<ckbx:PagingControl SkinID="ACLPager" runat="server" 
+    FirstPageEnabledImageUrl="Images/page-first.gif"
+    NextPageEnabledImageUrl="Images/page-next.gif"
+    PreviousPageEnabledImageUrl="Images/page-prev.gif"
+    LastPageEnabledImageUrl="Images/page-last.gif"
+    FirstPageDisabledImageUrl="Images/page-first-off.gif"
+    NextPageDisabledImageUrl="Images/page-next-off.gif"
+    PreviousPageDisabledImageUrl="Images/page-prev-off.gif"
+    LastPageDisabledImageUrl="Images/page-last-off.gif" />
+
+<%-- Limited paging Images --%>
+<asp:ImageButton SkinId="NextBtn" runat="server" ImageUrl="Images/page-next.gif" />
+<asp:ImageButton SkinId="PrevBtn" runat="server" ImageUrl="Images/page-prev.gif" />
+
+<%-- Section header --%>
+<asp:Image runat="server" SkinID="H1RightEdge" ImageUrl="Images/SectionHeaderRightEdge.png" Height="37" Width="5" style="float:right; vertical-align:middle !important;"/>
+<asp:Image runat="server" SkinID="H1LeftEdge" ImageUrl="Images/SectionHeaderLeftEdge.png" Height="37" Width="5" style="vertical-align:middle !important;" />
+<asp:Image runat="server" SkinID="SettingsSectionBullet" ImageUrl="Images/SettingSectionArrow.gif" Height="11" Width="10"  />
+
+<asp:Image runat="server" SkinID="NewWindow" ImageUrl="Images/newWindow.gif"/>
+
+<%-- Login --%>
+<ckbx:MultiLanguageImageButton runat="server" SkinID="LoginButton" ImageUrl="Images/loginBtn.jpg" />
+<asp:Image runat="server" SkinID="LoginLogo" ImageUrl="Images/loginLogo.jpg" />
+
+<%-- Buttons --%>
+<asp:LinkButton SkinID="Submit" runat="server" CssClass="ckbxButton roundedCorners border999 shadow999 orangeButton" />
+<asp:LinkButton SkinID="Cancel" runat="server" CssClass="ckbxButton roundedCorners border999 shadow999 redButton" />
+<asp:Label SkinID="Submit" runat="server" CssClass="" />
+<asp:Label SkinID="Cancel" runat="server" CssClass="" />
+
+<%-- Style Editor --%>
+<asp:Image runat="server" SkinID="StylesManageInUse" ImageUrl="Images/check.png" />
+<asp:Image runat="server" SkinID="StylesManageIsDefault" ImageUrl="Images/style16.gif" />
+<asp:Image runat="server" SkinID="StyleEditorToggleExpand" ImageUrl="Images/expand.gif" />
+<asp:Image runat="server" SkinID="StyleEditorToggleCollapse" ImageUrl="Images/collapse.gif" />
+<ckbx:MultiLanguageImageButton runat="server" SkinID="StyleEditorChangeImage" ImageUrl="Images/photo_scenery16.png" />
+<ckbx:MultiLanguageImageButton runat="server" SkinID="StyleEditorDeleteImage" ImageUrl="Images/delete16.gif" />
+<ckbx:MultiLanguageImageButton runat="server" SkinID="StyleEditorAddProperty" ImageUrl="Images/Plus-blue.png" />
+
+<ckbx:MultiLanguageLabel runat="server" SkinID="Header" CssClass="header" />
+<ckbx:MultiLanguageLinkButton runat="server" SkinID="PageViewLinkHeader" CssClass="header" />
+<ckbx:MultiLanguageLabel runat="server" SkinID="PageViewSubHeader" CssClass="subHeader" />
+<ckbx:MultiLanguageLabel runat="server" SkinID="Label" CssClass="itemLabel" />
+<ckbx:MultiLanguageLabel runat="server" SkinID="PageViewItem" CssClass="item" />
+
+<ckbx:MultiLanguageCheckBox runat="server" SkinID="StyleEditorCheckbox" CssClass="item" />
+
+<%-- Survey Editor --%>
+<ckbx:MultiLanguageLabel runat="server" SkinID="SurveyEditorLabel" CssClass="label" />
+<ckbx:MultiLanguageLabel runat="server" SkinID="ConfirmLabel" CssClass="label" />
+<asp:ImageButton runat="server" SkinID="MatrixAddColumn" ImageUrl="Images/AddAColumn.png" />
+
+<%-- Wizard --%>
+<asp:Image SkinID="WizardCompletedPlaceholder" runat="server" ImageUrl="Images/WizardCompletedPlaceholder.gif" />

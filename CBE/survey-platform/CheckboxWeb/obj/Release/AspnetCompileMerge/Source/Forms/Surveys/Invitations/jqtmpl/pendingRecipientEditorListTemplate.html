@@ -1,0 +1,10 @@
+﻿<div class="gridHeader">
+   <div class="fixed_50 left"><input type="checkbox" id="_selectAllRecipients"/></div>
+   <div class="fixed_225 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/emailAddress", "Email")}</b></div>
+   <div class="fixed_225 left"><b>${textHelper.getTextValue("/pageText/forms/surveys/invitations/recipients.aspx/columns/username", "User Name")}</b></div>
+   <br class="clear" />
+</div>
+
+{{each(index, recipient) items}}
+    {{tmpl(recipient, {index: index}) 'pendingRecipientEditorListItemTemplate.html'}}
+{{/each}}

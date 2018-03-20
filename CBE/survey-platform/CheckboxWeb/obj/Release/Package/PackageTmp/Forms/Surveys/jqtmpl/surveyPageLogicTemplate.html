@@ -1,0 +1,15 @@
+﻿<div class="conditionHeader left">
+    <span style="font-weight:normal;font-size: 0.85em;">${textHelper.getTextValue("/pageText/formEditor.aspx/pageLogic", "Logic:")}</span>
+    <a href="javascript:surveyEditor.showEditPageBranchesDialog(${$item.pageId}, ${$item.position});">
+        ${textHelper.getTextValue("/pageText/formEditor.aspx/branching", "Branching")}  
+    </a>
+    <span class="groupAttributes num-items-parentheses items-${BranchesCount}" title="${BranchesCount} ${textHelper.getTextValue("/pageText/formEditor.aspx/branching", "Branching rule(s)")}">(${BranchesCount})</span>
+    {{if $item.pageType == 'contentpage'}}
+    <a href="javascript:surveyEditor.showEditPageConditionsDialog(${$item.pageId}, ${$item.position}, ${ConditionsCount});">
+        ${textHelper.getTextValue("/pageText/formEditor.aspx/conditions", "Conditions")} 
+    </a>
+    <span class="groupAttributes num-items-parentheses items-${ConditionsCount}" title="${TotalConditionsCount} ${textHelper.getTextValue("/pageText/formEditor.aspx/conditions", "Conditions")}">(${ConditionsCount})</span>  
+    {{/if}}
+</div>
+
+<br class="clear" />

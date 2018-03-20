@@ -1,0 +1,17 @@
+﻿<div class="dashStatsWrapper">
+{{each(index, expression) OrExpressions}}
+{{if (index % 2 == 0)}}
+    <div class="padding10 zebra expressionContainer">
+{{else}}
+    <div class="padding10 detailZebra expressionContainer">
+{{/if}}
+        {{tmpl(expression, {index: index}) 'leafExpressionTemplate.html'}}
+    </div>
+    <div class="dialogSubTitle top-divider">${textHelper.getTextValue("/expressionEditor/or", "Or")}</div>
+{{/each}}
+</div>
+
+<div class="expressionContainer">
+    {{tmpl 'addExpressionTemplate.html'}}
+</div>
+<br class="clear" />

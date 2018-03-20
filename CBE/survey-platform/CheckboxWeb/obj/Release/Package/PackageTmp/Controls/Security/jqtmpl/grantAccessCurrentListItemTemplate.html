@@ -1,0 +1,24 @@
+﻿{{if ($item.index % 2 == 0)}}
+    {{if IsInList == true }}
+        <div class="zebra inactiveAclItem">
+    {{else}}
+        <div class="gridContent zebra">
+    {{/if}}
+{{else}}
+     {{if IsInList == true }}
+        <div class="detailZebra inactiveAclItem">
+    {{else}}
+        <div class="gridContent detailZebra">
+    {{/if}}
+{{/if}}
+    
+    <div class="fixed_25 left">&nbsp;</div>
+
+{{if EntryType.toLowerCase() == "checkbox.users.group"}}
+    <div class="fixed_30 left aclEntryGroup">&nbsp;</div>
+{{else}}
+    <div class="fixed_30 left aclEntryUser">&nbsp;</div>
+{{/if}}
+        <div class="fixed_250 left">${ShortEntryIdentifier}</div>
+        <br class="clear" />
+    </div>

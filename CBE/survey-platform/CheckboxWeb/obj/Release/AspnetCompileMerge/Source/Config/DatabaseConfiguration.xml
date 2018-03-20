@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseSettings defaultInstance="CheckboxSql">
+  <databaseTypes>
+    <databaseType name="sqlserver" type="Prezza.Framework.Data.Sql.SqlDatabase, Prezza.Framework" />
+  </databaseTypes>
+  <instances>
+    <instance name="CheckboxSql" type="sqlserver" connectionString="DefaultConnectionString" />
+    <instance name="CheckboxMembershipProvider" type="sqlserver" connectionString="DefaultConnectionString" />
+    <instance name="CheckboxRoleProvider" type="sqlserver" connectionString="DefaultConnectionString" />
+    <instance name="CheckboxProfileProvider" type="sqlserver" connectionString="DefaultConnectionString" />
+    <instance name="CheckboxExceptionDb" type="sqlserver" connectionString="DefaultConnectionString" />
+    <instance name="MailRelayDb" type="sqlserver" connectionString="MailDbConnectionString" />
+    <instance name="MultiMasterDB" type="sqlserver" connectionString="MasterDBConnectionString" />
+  </instances>
+</databaseSettings>

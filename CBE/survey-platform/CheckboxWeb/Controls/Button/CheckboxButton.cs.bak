@@ -1,0 +1,257 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI.WebControls;
+
+namespace CheckboxWebb.Controls.Button
+{
+    /// <summary>
+    /// Button that uses sliding doors technique to show a pretty button
+    /// - Also localizes text
+    /// </summary>
+    public class CheckboxButton : CompositeControl, IButtonControl
+    {
+        private Label _label;
+        private LinkButton _button;
+        private static readonly object EventCommandKey = new object();
+        private static readonly object EventClickKey = new object();
+
+        #region Properties
+
+        public String TextID { get; set; }
+        public String LanguageCode { get; set; }
+        public String ToolTipTextID { get; set; }
+
+        public String CommandName
+        {
+            get
+            {
+                EnsureChildControls();
+                return _button.CommandName;
+            }
+            set
+            {
+                EnsureChildControls();
+                _button.CommandName = value;
+            }
+        }
+
+        public String CommandArgument
+        {
+            get
+            {
+                EnsureChildControls();
+                return _button.CommandArgument;
+            }
+            set
+            {
+                EnsureChildControls();
+                _button.CommandArgument = value;
+            }
+        }
+
+        public String Text
+        {
+            get
+            {
+                EnsureChildControls();
+                return _button.Text;
+            }
+            set
+            {
+                EnsureChildControls();
+                _button.Text = value;
+            }
+        }
+
+        public String ImageUrl
+        {
+            get
+            {
+                EnsureChildControls();
+                return _image.ImageUrl;
+            }
+            set
+            {
+                EnsureChildControls();
+                _image.ImageUrl = value;
+            }
+        }
+
+        public String OnClientClick
+        {
+            get
+            {
+                return _button.OnClientClick;
+            }
+            set
+            {
+                _button.OnClientClick = value;
+            }
+        }
+
+	    public Boolean CausesValidation
+        {
+            get
+            {
+                EnsureChildControls();
+                return _button.CausesValidation;
+            }
+            set
+            {
+                EnsureChildControls();
+                _button.CausesValidation = value;
+            }
+        }
+
+        //Test properties
+        public String Text
+        {
+            get
+            {
+                EnsureChildControls();
+                return _label.Text;
+            }
+            set
+            {
+                EnsureChildControls();
+                _label.Text = value;
+            }
+		}
+
+		public override Unit Width
+        {
+            get
+            {
+                return _button.Width;
+            }
+            set
+            {
+                _button.Width = value;
+            }
+        }
+
+        public override Unit Height
+        {
+            get
+            {
+                return _button.Height;
+            }
+            set
+            {
+                _button.Height = value;
+            }
+        }
+        
+
+        #endregion
+
+        protected override void CreateChildControls()
+        {
+            Controls.Clear();
+            CreateControlHierarchy();
+            ClearChildViewState();
+        }
+
+        protected virtual void CreateControlHierarchy()
+        {
+            _button = new LinkButton();
+            _label = new Label();
+
+            _button.Command += new CommandEventHandler(Button_Command);
+            _button.Click += new EventHandler(Button_Click);
+			_button.Controls.Add(_label);
+            this.Controls.Add(_button);
+        }
+
+        protected override void Render(System.Web.UI.HtmlTextWriter writer)
+        {
+
+			foreach (String attributeName in this.Attributes.Keys)
+            {
+                _button.Attributes.Add(attributeName, this.Attributes[attributeName]);
+            }
+
+            _button.Attributes.Add("id", this.ClientID);
+
+            _button.CssClass = CssClass;
+            _button.RenderBeginTag(writer);
+            _label.RenderControl(writer);
+            _button.RenderEndTag(writer);
+        }
+
+        #region Event handling
+
+        protected virtual void Button_Command(object sender, CommandEventArgs e)
+        {
+            OnCommand(new CommandEventArgs(CommandName, CommandArgument));
+        }
+
+        void Button_Click(object sender, EventArgs e)
+        {
+            OnClick(e);
+        }
+
+        protected virtual void OnCommand(CommandEventArgs e)
+        {
+            CommandEventHandler CommandHandler = (CommandEventHandler)Events[EventCommandKey];
+            if (CommandHandler != null)
+            {
+                CommandHandler(this, e);
+            }
+        }
+
+        protected virtual void OnClick(EventArgs e)
+        {
+            EventHandler ClickHandler = (EventHandler)Events[EventClickKey];
+            if (ClickHandler != null)
+            {
+                ClickHandler(this, e);
+            }
+        }
+
+        #endregion
+
+        #region IButtonControl Members
+
+
+        event EventHandler IButtonControl.Click
+        {
+            add
+            {
+                Events.AddHandler(EventClickKey, value);
+            }
+            remove
+            {
+                Events.RemoveHandler(EventClickKey, value);
+            }
+        }
+
+        public event CommandEventHandler Command
+        {
+            add
+        {
+                Events.AddHandler(EventCommandKey, value);
+            }
+            remove
+            {
+                Events.RemoveHandler(EventCommandKey, value);
+            }
+        }
+
+        public string PostBackUrl
+        {
+            get;
+            set;
+        }
+
+        public string ValidationGroup
+        {
+            get;
+            set;
+        }
+
+        #endregion
+    }
+}

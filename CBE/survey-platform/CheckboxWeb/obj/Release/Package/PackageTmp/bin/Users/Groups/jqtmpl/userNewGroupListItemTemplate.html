@@ -1,0 +1,17 @@
+﻿{{if $item.index % 2 == 0}}
+    {{if IsInList == true }}
+        <div class="zebra gridContent inGroupMembers" id="user_${UniqueIdentifier}" index="${index}">
+    {{else}}
+        <div class="zebra gridContent" id="user_${UniqueIdentifier}" index="${index}">
+    {{/if}}
+{{else}}
+    {{if IsInList == true }}
+        <div class="detailZebra gridContent inGroupMembers" id="user_${UniqueIdentifier}">
+    {{else}}
+        <div class="detailZebra gridContent" id="user_${UniqueIdentifier}">
+    {{/if}}
+{{/if}}
+        <div class="fixed_30 left groupMembersUser">&nbsp;</div>
+        <div class="fixed_150 left truncate" sortField="UniqueIdentifier">${UniqueIdentifier}</div>
+        <br class="clear" />
+        </div>

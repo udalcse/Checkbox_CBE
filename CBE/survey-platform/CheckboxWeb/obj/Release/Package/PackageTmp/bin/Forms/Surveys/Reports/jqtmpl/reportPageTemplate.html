@@ -1,0 +1,11 @@
+﻿<div class="groupWrapper surveyWrapper pageWrapper clearfix" id="page_${Id}">
+    <div class="groupHeader">
+        <div id="pageItemsToggle_${Id}" pageId="${Id}" class="toggle-arrow pageArrowDown" style="float:left">&nbsp;</div>
+        {{tmpl($item.data, {reportId: $item.reportId, pageId: $item.Id}) 'reportPageTitleTemplate.html'}}  
+        
+        {{tmpl($item.data, {reportId: $item.reportId, pageId: $item.Id, pageCount: $item.pageCount}) 'reportPageMenuTemplate.html'}}
+        <br class="clear" />
+    </div>
+    <div id="pageLogic_${Id}" style="display:none;"></div>
+    <div id="pageItems_${Id}" class="pageItems"></div>
+</div>

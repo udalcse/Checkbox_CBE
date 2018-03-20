@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="Dialog.master.cs" Inherits="CheckboxWeb.Dialog" %>
+<%@ Import Namespace="Checkbox.Web" %>
+<%@ Import Namespace="Checkbox.Globalization" %>
+<%@ Register src="./Controls/Status/StatusControl.ascx" tagname="StatusControl" tagprefix="status" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="_header" runat="server">
+        <title id="_title" runat="server">Engauge&reg; Survey</title>
+        <link id="_favicon" runat="server" rel="icon" href="~/favicon.png" type="image/ico" />
+        
+        <asp:Literal runat="server" ID ="TypeKit"></asp:Literal>
+      
+        <%-- CSS Includes --%>
+        <ckbx:ResolvingCssElement ID="_uiSmoothnessInclude" runat="server" Source="~/Resources/css/smoothness/jquery-ui-1.10.2.custom.css" />
+        <ckbx:ResolvingCssElement ID="_multiSelectInclude" runat="server" Source="~/Resources/css/jquery.multiselect.css" />
+        <%-- Script Includes --%>
+        <ckbx:ResolvingScriptElement ID="_jqueryInclude" runat="server" Source="~/Resources/jquery-latest.min.js" />
+        <ckbx:ResolvingScriptElement ID="_mDomUpdateInclude" runat="server" Source="~/Resources/mDOMupdate.js" Visible="false" />
+        <ckbx:ResolvingScriptElement ID="_json2Include" runat="server" Source="~/Resources/json2.min.js" />
+        <ckbx:ResolvingScriptElement ID="_jqueryUIInclude" runat="server" Source="~/Resources/jquery-ui-1.10.2.custom.min.js" />
+        <ckbx:ResolvingScriptElement ID="_jqTemplateInclude" runat="server" Source="~/Resources/jquery.tmpl.min.js" />
+        <ckbx:ResolvingScriptElement ID="_dialogHandlerInclude" runat="server" Source="~/Resources/DialogHandler.js" />
+        <ckbx:ResolvingScriptElement ID="_textHelperInclude" runat="server" Source="~/Resources/textHelper.js" />
+        <ckbx:ResolvingScriptElement ID="_watermarkInclude" runat="server" Source="~/Resources/jquery.watermark.js" />
+        <ckbx:ResolvingScriptElement ID="_uniformInclude" runat="server" Source="~/Resources/jquery.uniform.min.js" />
+        <ckbx:ResolvingScriptElement ID="_modalInclude" runat="server" Source="~/Resources/jquery.simplemodal.1.4.1.min.js" />
+        <ckbx:ResolvingScriptElement ID="_templateHelper" runat="server" Source="~/Resources/templateHelper.js" />
+        <ckbx:ResolvingScriptElement ID="_datetimepickerAddon" runat="server" Source="~/Resources/jquery-ui-timepicker-addon.js" />
+        <ckbx:ResolvingScriptElement ID="_jqueryUICombobox" runat="server" Source="~/Resources/jquery-ui-combobox.js" />
+        <ckbx:ResolvingScriptElement ID="_dateutils" runat="server" Source="~/Resources/dateUtils.js" />
+        <ckbx:ResolvingScriptElement ID="_momentJs" runat="server" Source="~/Resources/moment.js" />
+        <ckbx:ResolvingScriptElement ID="_datePickerLocaleResolver" runat="server" />
+        <ckbx:ResolvingScriptElement ID="_tinymce" runat="server" Source="~/Resources/tiny_mce/jquery.tinymce.min.js" />
+        <ckbx:ResolvingScriptElement ID="_liveSearch" runat="server" Source="~/Resources/gridLiveSearch.js" />
+        <ckbx:ResolvingScriptElement ID="_globalHelper" runat="server" Source="~/Resources/globalHelper.js" />
+         <ckbx:ResolvingScriptElement runat="server" Source="~/Resources/jquery.multiselect.js" />
+         <ckbx:ResolvingScriptElement runat="server" Source="~/Resources/jquery.validate.min.js" />
+      
+        <%-- clean up tinymce editors --%>
+        <%-- workaround of using tinyMCE.execCommand("mceRemoveEditor") as it breaks firefox  --%>
+        <asp:Panel ID="_tinyMceUFrameFix" runat=server>
+            <script language="javascript" type="text/javascript">
+                if (typeof (tinymce) != 'undefined') {
+                    for (var i = 0; i < tinymce.editors.length; i++) {
+                        var inst = tinyMCE.get(tinymce.editors[i].id);
+                        if (inst && inst.isHidden())
+                            tinyMCE.remove(inst);
+                    }
+                    tinymce.editors = [];
+                }
+            </script>
+        </asp:Panel>
+
+        <script language="javascript" type="text/javascript">
+            var _at = '';
+            var _preventEnterKeyBinding = false;
+            var _pageTitle = '';
+
+            
+            $(document).ready(function () {
+                $('select, input:checkbox, input:radio, input:text').filter(':not([uniformIgnore])').uniform();
+
+                setPageTitle(_pageTitle);
+
+                if (_preventEnterKeyBinding) {
+                    return;
+                }
+
+                $('.dialogFormContainer').keypress(
+                    function (e) {
+                        if (e.which == 13) {
+                            eval($('.DialogButtonsContainer .orangeButton').attr('href'));
+                            if (!$(e.target).hasClass('quickEntryText') &&
+                                !$(e.target).hasClass('questionText') &&
+                                !$(e.target).hasClass('ace_text-input')) {
+                                return false;
+                            }
+                        }
+                    }
+                );
+            });
+            
+            function setPageTitle(pageTitle) {
+                if (top === self)
+                    $('.ckbx_dialogTitle').html(pageTitle);
+                else
+                    $('.ckbx_dialogTitle', window.parent.document).html(pageTitle);
+            }
+            
+            function htmlEncode(val) { if (val) { return jQuery('<div/>').text(val).html(); } else { return ''; } }
+            function htmlDecode(val) { if (val) { return $('<div/>').html(val).text(); } else { return ''; } }
+        </script>
+        <asp:ContentPlaceHolder ID="_headContent" runat="server" />
+        <style type="text/css">
+            body { margin:0; padding:0; }
+            form { height: 100%; }
+        </style>
+        
+        <%-- Specified script include placeholder --%>
+        <asp:PlaceHolder ID="_scriptIncludesPlace" runat="server" />
+    </head>
+
+    <body>
+        <script language="javascript" type="text/javascript">
+            var _dateFormat = '<%=GlobalizationManager.GetDateFormat()%>';
+            var _timeFormat = '<%=GlobalizationManager.GetTimeFormat()%>';
+        </script>
+
+        <form id="_dialogForm" runat="server">
+            <div class="dialogFormContainer">
+                <asp:PlaceHolder ID="_trialMessagePlace" runat="server" />
+
+                <asp:PlaceHolder ID="_errorPlace" runat="server" Visible="false">
+                    <asp:Panel ID="_errorPanel" runat="server" CssClass="MasterErrorPanel">
+                        <div class="left">
+                            <asp:Image ID="_warningImage" SkinID="Warning" runat="server" />
+                        </div>
+                        <div class="left" style="margin-left:15px;">
+                            <div style="font-weight:bold;"><asp:Literal ID="_errorMessageLiteral" runat="server" /></div>
+                            <div style="color:#333333;"><asp:Literal ID="_errorDescriptionLiteral" runat="server" /></div>
+                        </div>
+                        <br class="clear" />
+                    </asp:Panel>
+                </asp:PlaceHolder>
+                <status:StatusControl ID="_statusControl" runat="server" />
+                <div class="dialogMainContent">
+                    <asp:ContentPlaceHolder ID="_pageContent" runat="server" />
+                </div>
+                <div class="dialogFormPush"></div>
+
+                
+                <!-- Dialog Container -->
+                <div id="ckbx_dialogContainer" class="ckbx_simplemodal-container"></div>
+                <!-- Ckbx Dialog Windows -->
+                <div id="confirmationDialog" class="ckbx_simplemodal-container">
+                    <div class="confirmContainer">
+                        <div class="label confirmText"></div>
+                    </div>
+                    <div class="confirmButtonsContainer">
+                        <hr size="1" />
+                        <div class="<%=ButtonWrapperClass%>">
+                            <a href="javascript:void(0);" id="_noBtn" class="left ckbxButton roundedCorners redButton shadow999 border999 ckbx-closedialog"><%=WebTextManager.GetText("/common/no") %></a>
+                            <a href="javascript:void(0);" id="_yesBtn" class="right ckbxButton roundedCorners orangeButton shadow999 border999 ckbx-closedialog"><%=WebTextManager.GetText("/common/yes") %></a>
+                            <br class="clear" />
+                        </div>
+                    </div>
+                </div>
+                <div id="messageDialog" class="ckbx_simplemodal-container">
+                    <div class="confirmContainer">
+                        <div class="label confirmText"></div>
+                    </div>
+                    <div class="confirmButtonsContainer">
+                        <hr size="1" />
+                        <div class="buttonWrapper">
+                            <a href="javascript:void(0);" id="_okDialogBtn" class="center ckbxButton roundedCorners orangeButton shadow999 border999 ckbx-closedialog"><%=WebTextManager.GetText("/common/ok") %></a>
+                            <br class="clear" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <asp:Panel ID="_buttonsPanel" runat="server" CssClass="DialogButtonsContainer">
+                <div class="<%=ButtonWrapperClass%>">
+                    <btn:CheckboxButton runat="server" ID="_cancelBtn" TextId="/common/cancel" CausesValidation="false" CssClass="cancelButton left" />
+                    <btn:CheckboxButton runat="server" ID="_okBtn" TextId="/common/save" CssClass="ckbxButton silverButton saveButton" />
+                    <br class="clear" />
+                </div>
+            </asp:Panel>
+        </form>
+         <%-- Init Service Helper --%>
+        <script type="text/javascript">
+            if (typeof (serviceHelper) != 'undefined') {
+                serviceHelper.initialize('<%=ResolveUrl("~/Services/") %>');
+            }
+        </script>
+    </body>
+</html>

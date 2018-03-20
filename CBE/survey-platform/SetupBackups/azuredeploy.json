@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+       
+    },
+  "variables": {
+    "resourceGroup": "[resourceGroup().name]",
+    "backupFabric": "Azure",
+    "v2VmType": "Microsoft.Compute/virtualMachines",
+    "v2VmContainer": "iaasvmcontainer;iaasvmcontainerv2;",
+    "v2Vm": "vm;iaasvmcontainerv2;",
+    "existingBackupPolicy": "DefaultPolicy",
+    "existingVirtualMachines":["[concat(variables('resourceGroup'),'-vm')]" ],
+    "existingRecoveryServicesVault": "[concat(variables('resourceGroup'),'recvlt')]"
+
+  },
+    "resources": [
+      {
+        "name": "[concat(variables('existingRecoveryServicesVault'), '/', variables('backupFabric'), '/', variables('v2VmContainer'), concat(variables('resourceGroup'),';',variables('existingVirtualMachines')[copyIndex()]), '/', variables('v2Vm'), concat(variables('ResourceGroup'),';',variables('existingVirtualMachines')[copyIndex()]))]",
+        "apiVersion": "2016-06-01",
+        "location": "[resourceGroup().location]",
+        "type": "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems",
+        "copy": {
+          "name": "v2VmsCopy",
+          "count": "[length(variables('existingVirtualMachines'))]"
+        },
+        "properties": {
+          "protectedItemType": "[variables('v2VmType')]",
+          "policyId": "[resourceId('Microsoft.RecoveryServices/vaults/backupPolicies',variables('existingRecoveryServicesVault'),variables('existingBackupPolicy') )]",
+          "sourceResourceId": "[resourceId(subscription().subscriptionId,variables('ResourceGroup'),'Microsoft.Compute/virtualMachines',variables('existingVirtualMachines')[copyIndex()])]"
+        }
+      }
+    ]
+}

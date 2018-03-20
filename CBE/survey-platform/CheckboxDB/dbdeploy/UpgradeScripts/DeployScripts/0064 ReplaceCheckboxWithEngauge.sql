@@ -1,0 +1,6 @@
+EXEC ckbx_sp_Text_Set '/pageText/users/properties.aspx/loginType/checkbox', 'en-US', N'Engauge authentication'
+EXEC ckbx_sp_Text_Set '/pageText/users/add.aspx/loginType/checkbox/explanation', 'en-US', N'Engauge users are authenticated directly against Engauge.  All user information and properties are controlled within Engauge.'
+EXEC ckbx_sp_Text_Set '/controlText/forms/surveys/surveyUploader.ascx/selectSurveyToUpload', 'en-US', N'Only surveys from Engauge versions 5 and 6 may be imported. To import an existing survey, first export the survey XML from Engauge, then choose the XML file to upload below.'
+EXEC ckbx_sp_Text_Set '/pageText/forms/surveys/responses/export.aspx/mergeCheckboxResults', 'en-US', N'Merge Engauge Results'
+EXEC ckbx_sp_Text_Set '/pageText/settings/customUserFields.aspx/description', 'en-US', N'These properties are applied to every user in the Engauge application.  Please note that any changes you make will take effect immediately.'
+EXEC ckbx_sp_Text_Set '/pageText/settings/customUserFields.aspx/customFieldRequired', 'en-US', N'This property is required by Engauge® and cannot be removed.'

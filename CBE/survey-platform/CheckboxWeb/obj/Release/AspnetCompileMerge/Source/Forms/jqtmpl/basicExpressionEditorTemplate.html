@@ -1,0 +1,17 @@
+﻿<div class="dashStatsWrapper">
+{{each(index, expression) OrExpressions}}
+{{if (index % 2 == 0)}}
+    <div class="padding10 zebra expressionContainer" expressionId="${ExpressionId}">
+{{else}}
+    <div class="padding10 detailZebra expressionContainer" expressionId="${ExpressionId}">
+{{/if}}
+        {{tmpl(expression, {index: index}) 'basicLeafExpressionTemplate.html'}}
+    </div>
+    <br class="clear"/>    
+{{/each}}
+</div>
+
+<div class="expressionContainer">
+    {{tmpl 'addExpressionTemplate.html'}}
+</div>
+<br class="clear" />

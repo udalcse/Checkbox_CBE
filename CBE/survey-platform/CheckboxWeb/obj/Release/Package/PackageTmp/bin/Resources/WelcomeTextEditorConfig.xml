@@ -1,0 +1,177 @@
+<!-- ==============================================================================================
+	Config File valid structure:
+	<configuration>
+		<property>
+			<item>...</item>
+			<item>...</item>
+			...
+		</property>
+		...
+	</configuration>
+
+	"property" element valid attributes:
+	name (required):
+				ToolsFile, Skin, SkinsPath,
+				AllowCustomColors, SaveAsXhtml, Width, Height,
+				ToolsHeight, StripAbsoluteImagesPaths,
+				StripAbsoluteAnchorPaths, ConvertFontToSpan, FocusOnLoad,
+				AllowThumbGeneration, OffsetAbsoluteImages, OffsetAbsoluteImagesTop,
+				OffsetAbsoluteImagesLeft, ThumbSuffix, Html, SaveInFile,
+				CausesValidation, Editable, HasPermission,
+				MaxImageSize, MaxFlashSize, MaxMediaSize, MaxDocumentSize,
+				ShowHtmlMode, FileEncoding, NewLineBr,
+				Language,	OnFileUpload, OnFileDelete,
+				ImagesPaths, UploadImagesPaths, DeleteImagesPaths,
+				EnableTab, EnableDocking, EnableClientSerialize,
+				FlashPaths, UploadFlashPaths, DeleteFlashPaths, MediaPaths,
+				UploadMediaPaths, DeleteMediaPaths, DocumentsPaths,
+				UploadDocumentsPaths, DeleteDocumentsPaths, DocumentsFilters,
+				MediaFilters, LicenseFile, CookieExpirationTime,
+				UseClassicDialogs, EnableHtmlIndentation, EnableEnhancedEdit,
+				EnableContextMenus, ConvertTagsToLower, ConvertToXhtml,
+				AnchorPathToStrip, ImagesPathToStrip, CssFiles, TemplatePaths,
+				UploadTemplatePaths, DeleteTemplatePaths, TemplateFilters,
+				MaxTemplateSize, DialogParametersMode, EnableServerSideRendering, 
+				RenderAsTextArea, ToolbarMode
+				
+
+	"item" element valid attributes:
+	(item elements should appear as child elements of a property element with "name" attribute set to:
+	"ImagesPaths", "UploadImagesPaths", "DeleteImagesPaths",
+	"FlashPaths", "UploadFlashPaths", "DeleteFlashPaths", "MediaPaths", "UploadMediaPaths",
+	"DeleteMediaPaths", "DocumentsPaths", "UploadDocumentsPaths", "DeleteDocumentsPaths",
+	"DocumentsFilters", "MediaFilters", "ImagesFilters",
+	"TemplatePaths", "UploadTemplatePaths", "DeleteTemplatePaths", "CssFiles"
+	)
+	
+=============================================================================================== -->
+<configuration>
+  <property name="AllowCustomColors">true</property>
+  <property name="AllowScripts">false</property>
+  <property name="AllowThumbGeneration">false</property>
+  <property name="AnchorPathToStrip"></property>
+  <property name="CausesValidation">false</property>
+  <property name="ConvertFontToSpan">false</property>
+  <property name="ConvertTagsToLower">true</property>
+  <property name="ConvertToXhtml">true</property>
+  <property name="CookieExpirationTime">40</property>
+  <property name="DialogParametersMode">Javascript</property>
+  <property name="EnableEnhancedEdit">false</property>
+  <property name="EnableClientSerialize">false</property>
+  <property name="EnableContextMenus">true</property>
+  <property name="EnableDocking">false</property>
+  <property name="EnableHtmlIndentation">true</property>
+  <property name="EnableServerSideRendering">false</property>
+  <property name="EnableTab">true</property>
+  <property name="ImagesPathToStrip"></property>
+  <property name="FileEncoding">65001</property>
+  <property name="FocusOnLoad">false</property>
+  <property name="Editable">true</property>
+  <property name="HasPermission">true</property>
+  <property name="Height">400px</property>
+  <property name="Language">en-US</property>
+  <property name="MaxImageSize">4096000</property>
+  <property name="MaxFlashSize">4096000</property>
+  <property name="MaxMediaSize">4096000</property>
+  <property name="MaxDocumentSize">4096000</property>
+  <property name="MaxTemplateSize">204800</property>
+  <property name="NewLineBr">true</property>
+  <property name="RadSpellTypeName">Telerik.WebControls.RadSpell, RadSpell.Net2</property>
+  <property name="RenderAsTextArea">false</property>
+  <property name="SaveAsXhtml">true</property>
+  <property name="SaveInFile">false</property>
+  <property name="ShowPreviewMode">true</property>
+  <property name="ShowSubmitCancelButtons">false</property>
+  <property name="ShowHtmlMode">true</property>
+  <property name="SkinsPath">~/RadControls/Editor/Skins</property>
+  <property name="Skin">Outlook</property>
+  <property name="StripAbsoluteImagesPaths">true</property>
+  <property name="StripAbsoluteAnchorPaths">true</property>
+  <property name="StripFormattingOnPaste">None</property>
+  <property name="ThumbSuffix">Thumbnail</property>
+  <property name="ToolbarMode">Default</property>
+  <property name="ToolsFile">~/RadControls/Editor/ToolsFile.xml</property>
+  <property name="ToolsHeight">70px</property>
+  <property name="UseClassicDialogs">false</property>
+  <property name="Width">630px</property>
+
+	<!-- RadSpell properties -->
+	<property name="SpellAllowAddCustom">true</property>
+  <property name="SpellCheckProvider">EditDistanceProvider</property>
+  <property name="SpellCustomDictionarySourceTypeName"></property>
+  <property name="SpellCustomDictionarySuffix">-custom</property>
+  <property name="SpellDictionaryPath"></property>
+  <property name="SpellDictionaryLanguage"></property>
+	<property name="SpellEditDistance">1</property>
+	<property name="SpellFragmentIgnoreOptions">None</property>
+	<property name="SpellWordIgnoreOptions">RepeatedWords</property>
+	<!-- /RadSpell properties -->
+
+	<property name="ImagesPaths">		
+		<item></item>
+	</property>
+	<property name="UploadImagesPaths">
+		<item></item>
+	</property>
+	<property name="DeleteImagesPaths">
+		<item></item>
+	</property>
+	<property name="ImagesFilters">
+		<item>*.gif</item>
+		<item>*.jpg</item>
+		<item>*.jpeg</item>
+		<item>*.png</item>
+		<item>*.bmp</item>
+	</property>
+	<property name="FlashPaths">
+		<item></item>		
+	</property>
+	<property name="UploadFlashPaths">
+		<item></item>
+	</property>
+	<property name="DeleteFlashPaths">
+		<item></item>
+	</property>
+	<property name="MediaPaths">
+		<item></item>		
+	</property>
+	<property name="UploadMediaPaths">
+		<item></item>
+	</property>
+	<property name="DeleteMediaPaths">
+		<item></item>
+	</property>
+	<property name="MediaFilters">
+		<item>*.avi</item>
+		<item>*.mpeg</item>
+	</property>
+	<property name="DocumentsPaths">
+		<item></item>		
+	</property>
+	<property name="UploadDocumentsPaths">
+		<item></item>
+	</property>
+	<property name="DeleteDocumentsPaths">
+		<item></item>
+	</property>
+	<property name="DocumentsFilters">
+		<item>*.doc</item>
+		<item>*.pdf</item>
+	</property>
+	<property name="TemplatePaths">
+		<item></item>		
+	</property>
+	<property name="UploadTemplatePaths">
+		<item></item>
+	</property>
+	<property name="DeleteTemplatePaths">
+		<item></item>
+	</property>
+	<property name="TemplateFilters">
+		<item>*.html</item>
+		<item>*.htm</item>
+	</property>	
+	<property name="CssFiles">		
+		<item></item>
+	</property>
+</configuration>

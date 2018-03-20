@@ -1,0 +1,35 @@
+﻿{{if $item.index % 2 == 0}}
+    {{if IsInList == true }}
+        <div class="dashStatsContent zebra inactiveAclItem">
+    {{else}}
+        <div class="dashStatsContent zebra">
+    {{/if}}
+{{else}}
+     {{if IsInList == true }}
+        <div class="dashStatsContent detailZebra inactiveAclItem">
+    {{else}}
+        <div class="dashStatsContent detailZebra">
+            {{/if}}
+            {{/if}}
+            <div class="fixed_25 left">
+                {{if IsInList == true }}
+                <input type="checkbox" checked="checked" data-username="${EscapedUniqueIdentifier}" value="${UniqueIdentifier}" class="addUser"/>
+                {{else}}
+                <input type="checkbox" data-username="${EscapedUniqueIdentifier}" value="${UniqueIdentifier}" class="addUser"/>
+                {{/if}}
+            </div>
+            <div class="fixed_200 left">${UniqueIdentifier}</div>
+            <!---->
+           
+            {{if AllEmails.length  > 1 }}
+            <select class="invitation-email-drop-down" multiple="multiple" name="initation-dd-${UniqueIdentifier}">
+                {{each(i) AllEmails}}
+                <option value="${AllEmails[i]}">${AllEmails[i]}</option>
+                {{/each}}
+            </select>
+            {{else}}
+            <div class="left" data-primary-email-username="${UniqueIdentifier}">${AllEmails[0]}</div>
+            {{/if}}
+
+            <br class="clear"/>
+        </div>

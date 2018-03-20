@@ -1,0 +1,15 @@
+﻿/****************************************************************************
+ * CustomSurveyStyles.css                                                   *
+ * This stylesheet is included in survey pages after survey style template  *
+ * so this file may be used to override style settings for all surveys and  *
+ * to make additional custom styles available in the "Apply Style" dropdown *
+ * of item text editors.                                                    *
+ ****************************************************************************/
+ 
+ .important
+ {
+     font-weight:bold;
+     color:Orange;
+ }
+ 
+ 

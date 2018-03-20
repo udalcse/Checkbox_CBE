@@ -1,0 +1,34 @@
+﻿<h3>${Name} (${ChildrenCount} Surveys) </h3>
+<div class="surveyDescription">${Description}</div>
+
+<div class="dashStatsWrapper border999 shadow999">
+    <div class="dashStatsHeader">
+        <span class="mainStats left">Surveys</span>
+    </div>
+    
+    <div class="dashStatsContentHeader">
+        <div class="fixed_200 left">Survey Name</div>
+        <div class="fixed_125 left">Created By</div>
+        <div class="fixed_200 left">Survey Links</div>
+        <br class="clear" />
+    </div>
+
+{{each(index, surveyListItem) ChildItems}}
+    {{if (index % 2 == 0) }}
+        <div class="dashStatsContent zebra">
+    {{else}}
+        <div class="dashStatsContent detailZebra">
+    {{/if}}
+            <div class="fixed_200 left">${Name}</div>
+            <div class="fixed_125 left">${Creator}</div>
+            <ul class="itemActionMenu allMenu">
+                <li><a class="ckbxButton roundedCorners border999 shadow999 orangeButton" style="color:white" href="Forms/Manage.aspx?s=${ID}&ret=search&term=${searchTerm}">${textHelper.getTextValue("", "Dashboard")}</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyEditorLink" href="Forms/Surveys/Edit.aspx?s=${ID}&ret=search&term=${searchTerm}">Edit Survey</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyResponsesLink" href="Forms/Surveys/Responses/Manage.aspx?s=${ID}&ret=search&term=${searchTerm}">Responses</a></li>
+                <li><a class="ckbxButton roundedCorners border999 shadow999 silverButton" id="_surveyReportsLink"  href="Forms/Surveys/Reports/Manage.aspx?s=${ID}&ret=search&term=${searchTerm}">Reports</a></li>
+            </ul>
+            
+            <br class="clear" />
+        </div>
+        {{/each}}
+        </div>

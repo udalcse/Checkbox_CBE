@@ -1,0 +1,10 @@
+C:\Project\CBE\survey-platform\Enyim.Caching\bin\Debug\Enyim.dll
+C:\Project\CBE\survey-platform\Enyim.Caching\bin\Debug\Enyim.pdb
+C:\Project\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.Caching.csprojResolveAssemblyReference.cache
+C:\Project\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.dll
+C:\Project\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Enyim.Caching\bin\Debug\Enyim.dll
+C:\Project\RogerDev1\CBE\survey-platform\Enyim.Caching\bin\Debug\Enyim.pdb
+C:\Project\RogerDev1\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.Caching.csprojResolveAssemblyReference.cache
+C:\Project\RogerDev1\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.dll
+C:\Project\RogerDev1\CBE\survey-platform\Enyim.Caching\obj\Debug\Enyim.pdb

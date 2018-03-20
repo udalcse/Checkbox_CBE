@@ -1,0 +1,1 @@
+EXEC ckbx_sp_Text_Set '/pageText/users/add.aspx/loginType/external/explanation', 'en-US', N'Externally authenticated users are authenticated by another system, which Engauge has been configured to trust.  Adding an externally authenticated user allows you to manage profile properties within Engauge.'
